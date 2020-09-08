@@ -26,8 +26,6 @@ namespace Vistas {
             } else {
                 MessageBox.Show("Datos Incorrectos");
             }
-            
-            
         }
     }
 }
