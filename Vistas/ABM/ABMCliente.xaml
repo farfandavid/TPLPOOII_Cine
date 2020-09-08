@@ -7,7 +7,7 @@
       d:DesignHeight="300" d:DesignWidth="300"
 	Title="ABMCliente">
 
-    <Grid>
+    <Grid Background="#FF6BEFD0" HorizontalAlignment="Center" Height="300" Width="297">
         <Label Content="DNI" Height="28" HorizontalAlignment="Left" Margin="53,65,0,0" Name="label1" VerticalAlignment="Top" />
         <Label Content="Nombre" Height="28" HorizontalAlignment="Left" Margin="53,99,0,0" Name="label5" VerticalAlignment="Top" />
         <Label Content="Apellido" Height="28" HorizontalAlignment="Left" Margin="53,133,0,0" Name="label2" VerticalAlignment="Top" />

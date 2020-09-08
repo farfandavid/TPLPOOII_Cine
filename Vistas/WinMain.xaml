@@ -3,38 +3,44 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="WinMain" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Height="354" Width="662"
          IsEnabled="True" ShowInTaskbar="True" Topmost="False" WindowStartupLocation="CenterScreen" WindowStyle="SingleBorderWindow">
-    
-        <DockPanel Name="dockPanel1">
-        <DockPanel DockPanel.Dock="Top" VerticalAlignment="Top">
-            <Menu>
-                <MenuItem Header="_Sistema">
-                    <MenuItem Name="menuItem_ABMUsu" Header="_ABM Usuario"></MenuItem>
-                    <MenuItem Name="menuItem_ABMCli" Header="_ABM Cliente" Click="menuItem_ABMCli_Click"></MenuItem>
-                    <Separator></Separator>
-                    <MenuItem Header="_Salir"></MenuItem>
-                </MenuItem>
-                <MenuItem Name="menuItem_ticket" Header="_Ticket">
-                    <MenuItem Header="_Vender"></MenuItem>
-                </MenuItem>
-                <MenuItem Name="menuItem_Peli" Header="_Peliculas">
-                    <MenuItem Header="_Catalogo"></MenuItem>
-                    <MenuItem Header="_ABM Peliculas" Click="MenuItem_Click_1"></MenuItem>
-                </MenuItem>
-                <MenuItem Name="menuItem_Proy" Header="_Proyeccion">
-                    <MenuItem Header="_Lista de Proyeccion"></MenuItem>
-                    <MenuItem Header="_ABM Proyeccion"></MenuItem>
-                </MenuItem>
-                <MenuItem Name="menuItem_Sala" Header="_Salas">
-                    <MenuItem Header="_ABM Salas" Click="MenuItem_Click"></MenuItem>
-                    <MenuItem Header="_ABM Butacas"></MenuItem>
-                </MenuItem>
-                <MenuItem Header="_Ayuda">
-                    <MenuItem Header="_Acerca de"></MenuItem>
-                </MenuItem>
-            </Menu>
+    <Grid>
+        <Grid.Resources>
+            <Image x:Key="myImage" Source="/Vistas;component/Images/mainImage.jpg">
+            </Image>
+            <VisualBrush x:Key="myBrush"  Visual="{StaticResource myImage}"/>
+        </Grid.Resources>
+        <DockPanel Name="dockPanel1" Background="{StaticResource myBrush}">
+            <DockPanel DockPanel.Dock="Top" VerticalAlignment="Top">
+                <Menu>
+                    <MenuItem Header="_Sistema">
+                        <MenuItem Name="menuItem_ABMUsu" Header="_ABM Usuario"></MenuItem>
+                        <MenuItem Name="menuItem_ABMCli" Header="_ABM Cliente" Click="menuItem_ABMCli_Click"></MenuItem>
+                        <Separator></Separator>
+                        <MenuItem Header="_Salir"></MenuItem>
+                    </MenuItem>
+                    <MenuItem Name="menuItem_ticket" Header="_Ticket">
+                        <MenuItem Header="_Vender"></MenuItem>
+                    </MenuItem>
+                    <MenuItem Name="menuItem_Peli" Header="_Peliculas">
+                        <MenuItem Header="_Catalogo"></MenuItem>
+                        <MenuItem Header="_ABM Peliculas" Click="MenuItem_Click_1"></MenuItem>
+                    </MenuItem>
+                    <MenuItem Name="menuItem_Proy" Header="_Proyeccion">
+                        <MenuItem Header="_Lista de Proyeccion"></MenuItem>
+                        <MenuItem Header="_ABM Proyeccion"></MenuItem>
+                    </MenuItem>
+                    <MenuItem Name="menuItem_Sala" Header="_Salas">
+                        <MenuItem Header="_ABM Salas" Click="MenuItem_Click"></MenuItem>
+                        <MenuItem Header="_ABM Butacas"></MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="_Ayuda">
+                        <MenuItem Header="_Acerca de"></MenuItem>
+                    </MenuItem>
+                </Menu>
+            </DockPanel>
+            <DockPanel>
+                <Frame x:Name="FrameMain" NavigationUIVisibility="Hidden" HorizontalAlignment="Center"></Frame>
+            </DockPanel>
         </DockPanel>
-        <DockPanel >
-            <Frame x:Name="FrameMain" NavigationUIVisibility="Hidden" HorizontalAlignment="Center"></Frame>
-        </DockPanel>
-        </DockPanel>
+    </Grid>
 </Window>
