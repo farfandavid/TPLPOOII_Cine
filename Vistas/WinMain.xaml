@@ -5,7 +5,7 @@
          IsEnabled="True" ShowInTaskbar="True" Topmost="False" WindowStartupLocation="CenterScreen" WindowStyle="SingleBorderWindow">
     <Grid>
         <Grid.Resources>
-            <Image x:Key="myImage" Source="/Vistas;component/Images/mainImage.jpg">
+            <Image x:Key="myImage" Source="/Vistas;component/Images/mainImage2.png">
             </Image>
             <VisualBrush x:Key="myBrush"  Visual="{StaticResource myImage}"/>
         </Grid.Resources>
