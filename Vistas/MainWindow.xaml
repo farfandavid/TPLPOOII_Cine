@@ -1,0 +1,70 @@
+﻿<Window x:Class="Vistas.MainWindow"
+        
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Vistas"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="470" Width="425" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="Transparent" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+            <Grid>
+                <materialDesign:ColorZone Mode="PrimaryDark">
+                <StackPanel HorizontalAlignment="Right">
+                        <Button Width="30" Height="30" materialDesign:ShadowAssist.ShadowDepth="Depth3" Padding="0" Click="btnClose_Click" Name="btnClose">
+                            <materialDesign:PackIcon Kind="WindowClose"/>
+                        </Button>
+                </StackPanel>
+                </materialDesign:ColorZone>
+            </Grid>
+
+        </Border>
+        <Grid Grid.Row="1" >
+            <materialDesign:ColorZone Mode="PrimaryMid">
+                <TextBlock Text="Bienvenidos!" FontSize="35" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="30 50 0 10"/>
+            </materialDesign:ColorZone>
+            <Image Source="imagenes/PapitasPochas.png" HorizontalAlignment="Right" />
+
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <StackPanel Orientation="Vertical" Margin="40 70 0 0"> 
+                <StackPanel Orientation="Horizontal" >
+                    <materialDesign:PackIcon Kind="Account" Foreground="{Binding ElementName=txtUserName, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                    <TextBox  Name="txtUserName" Width="300" materialDesign:HintAssist.Hint="Usuario" materialDesign:HintAssist.IsFloating="True" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 40 0 0">
+                    <materialDesign:PackIcon Kind="Key" Foreground="{Binding ElementName=passBoxInicio, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                    <PasswordBox Name="passBoxInicio" Width="300" PasswordChar="*" materialDesign:HintAssist.Hint="Contraseña" materialDesign:HintAssist.IsFloating="True"/>
+                </StackPanel>
+                <Button 
+                    Style="{DynamicResource MaterialDesignRaisedAccentButton}" Content="Aceptar" Height="23" HorizontalAlignment="Right" Margin="0,20,70,0" Name="btnAcept" VerticalAlignment="Top" Width="80" Click="btnAcept_Click"/>
+            </StackPanel>
+        </Grid>
+
+        <materialDesign:DialogHost  x:Name="error" Grid.RowSpan="3">
+            <materialDesign:DialogHost.DialogContent>
+                <StackPanel Margin="15" Orientation="Vertical">
+                    <Image Source="imagenes/sadfall.png" Width="178" Height="92" Margin="20 30"/>
+                    <TextBlock Text="Los datos ingresados son Incorrectos"/>
+                    <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" CommandTarget="{Binding ElementName=error}"
+                            Style="{DynamicResource MaterialDesignFlatButton}" Content="Aceptar" Margin="0 10 0 0"/>
+                </StackPanel>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
+
+    </Grid>
+</Window>

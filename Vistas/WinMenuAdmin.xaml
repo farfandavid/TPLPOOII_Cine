@@ -1,0 +1,57 @@
+﻿<Window x:Class="Vistas.WinMenuAdmin"
+        
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+        
+        
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Vistas" 
+        xmlns:control="clr-namespace:Vistas.ControlUsuario" 
+        mc:Ignorable="d"
+        
+        Title="WinMenuAdmin" Height="600" Width="1080" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" >
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.ColumnSpan="2" Background="Transparent" MouseLeftButtonDown="borde_MouseLeftButtonDown">
+            <materialDesign:ColorZone Mode="PrimaryMid"  HorizontalAlignment="Stretch">
+                <Grid >
+                    <Button Width="30" Height="30" materialDesign:ShadowAssist.ShadowDepth="Depth3" Padding="0" Click="btnMenuClose_Click" Name="btnCloseMenu" HorizontalAlignment="Right" Margin="10">
+                        <materialDesign:PackIcon Kind="PowerSettingsNew"/>
+                    </Button>
+                </Grid>
+            </materialDesign:ColorZone>
+        </Border>
+        <Grid HorizontalAlignment="Stretch" Grid.Row="1" Background="#b716d4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="GhostWhite">
+                <Image  Source="imagenes/FondoMenu.jpg" Stretch="Fill" />    
+            </Grid>
+            <ScrollViewer HorizontalAlignment="Stretch" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Row="1">
+                <StackPanel x:Name="Menu" Margin="10"/>
+            </ScrollViewer>
+        </Grid>
+        <StackPanel Grid.Row="1" Grid.Column="1" >
+            <Image Source="imagenes/Fondo.jpg" Stretch="Fill" Height="558" Margin="0,0,0.4,0"/>
+        </StackPanel>
+        
+        <StackPanel x:Name="StackPanelMain" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch"/>
+    </Grid>
+</Window>

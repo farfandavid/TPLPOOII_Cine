@@ -1,0 +1,5 @@
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\ClasesBase\bin\Debug\ClasesBase.dll
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\ClasesBase\bin\Debug\ClasesBase.pdb
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\ClasesBase\obj\Debug\ClasesBase.csprojResolveAssemblyReference.cache
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\ClasesBase\obj\Debug\ClasesBase.dll
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\ClasesBase\obj\Debug\ClasesBase.pdb
