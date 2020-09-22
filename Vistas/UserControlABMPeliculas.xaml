@@ -25,7 +25,7 @@
             <Image Source="imagenes/freeman.png" HorizontalAlignment="Right" Margin="0,0,40.2,11"/>
         </Grid>
         <Grid Grid.Row="1">
-            <StackPanel Orientation="Vertical" Margin="40 20 450 50" Background="White">
+            <StackPanel Orientation="Vertical" Margin="40,20,450.2,-0.4" Background="White">
                 <StackPanel Orientation="Horizontal" >
                     <materialDesign:PackIcon Kind="Movie" Foreground="{Binding ElementName=txtCod_Pel, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                     <TextBox  Name="txtCod_Pel" Width="300" materialDesign:HintAssist.Hint="Codigo de la Pelicula" materialDesign:HintAssist.IsFloating="True" CaretBrush="#FFF99118" SelectionBrush="#FFF99118" />
@@ -40,25 +40,39 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
                     <materialDesign:PackIcon Kind="Stars" Foreground="{Binding ElementName=txtGenero_Pel, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <TextBox  Name="txtGenero_Pel" Width="300" materialDesign:HintAssist.Hint="Genero de la Pelicula" materialDesign:HintAssist.IsFloating="True" CaretBrush="#FFF99118" />
+                    <ComboBox Name="Generos" Width="300" SelectionChanged="cmbGenero_SelectionChanged">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Peli_Genero}" FontSize="16"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
                     <materialDesign:PackIcon Kind="ImageFilterVintage" Foreground="{Binding ElementName=txtClase_Pel, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <TextBox  Name="txtClase_Pel" Width="300" materialDesign:HintAssist.Hint="Clase de la Pelicula" materialDesign:HintAssist.IsFloating="True" CaretBrush="#FFF99118" />
+                    <ComboBox Name="Clases" Width="300" SelectionChanged="cmbClases_SelectionChanged">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Peli_Clase}" FontSize="16"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
                 </StackPanel>
                 
                
             </StackPanel>
 
             <Grid Grid.Row="2" >
-
-                <Button Background="#f99118" Content="Agregar" Height="28" Width="85" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="87,0,0,-38.4" Name="btnAgregarPel" Click="btnAgregarPel_Click" />
-                
-                <StackPanel Margin="266,375,288.2,0.4"/>
-
-                <Button Background="#f99118" Content="Eliminar" Height="28" Width="85" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,79.2,-38.4" x:Name="btnEliminarPel" Click="btnEliminarPel_Click" />
-                <Button Background="#f99118" Content="Modificar" Height="28" Width="85" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,377.2,-38.4" x:Name="btnModificarcPel" />
-                <DataGrid x:Name="dgListadoClientes" HorizontalAlignment="Left" Height="288" Margin="442,35,0,0" VerticalAlignment="Top" Width="357">
+                <StackPanel Margin="18,367,32.2,-84.4" Height="87" Orientation="Horizontal">
+                    <Button Background="#f99118" Content="Agregar" Height="28" Width="85"  HorizontalAlignment="Left"  Name="btnAgregarPel" Click="btnAgregarPel_Click"/>
+                    <Button Background="#f99118" Content="Eliminar" Height="28" Width="85"  HorizontalAlignment="Right"  x:Name="btnEliminarPel" Margin="230 0"  Click="btnEliminarPel_Click"/>
+                    <Button Background="#f99118" Content="Modificar" Height="28" Width="85"  HorizontalAlignment="Center"  x:Name="btnModificalPel" />
+                </StackPanel>
+                <DataGrid x:Name="dgListadoPeliculas" HorizontalAlignment="Left" Height="288" Margin="442,35,0,0" VerticalAlignment="Top" Width="357">
                     <DataGrid.Columns>
                         <DataGridTextColumn/>
                     </DataGrid.Columns>

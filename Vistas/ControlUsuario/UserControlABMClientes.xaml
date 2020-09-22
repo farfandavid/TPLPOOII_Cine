@@ -51,13 +51,11 @@
 
             </StackPanel>
             <Grid Grid.Row="2" >
-                <StackPanel Margin="10,375,544.2,0.4">
-                    <Button Background="#65b3f6" Content="Agregar" Height="28" Width="85" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="57,0,0,17.4" Name="btnAgregarCli" Click="btnAgregarCli_Click" />
+                <StackPanel Margin="18,363,32.2,-11.6" Height="87" Orientation="Horizontal">
+                    <Button Background="#65b3f6" Content="Agregar" Height="28" Width="85"  HorizontalAlignment="Left"  Name="btnAgregarCli" Click="btnAgregarCli_Click"/>
+                    <Button Background="#65b3f6" Content="Eliminar" Height="28" Width="85"  HorizontalAlignment="Right"  x:Name="btnEliminarCli" Margin="230 0"  Click="btnEliminarCli_Click"/>
+                    <Button Background="#65b3f6" Content="Modificar" Height="28" Width="85"  HorizontalAlignment="Center"  x:Name="btnModificalCli" />
                 </StackPanel>
-                <StackPanel Margin="266,375,288.2,0.4"/>
-
-                <Button Background="#65b3f6" Content="Eliminar" Height="28" Width="85" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,83.2,35.4" x:Name="btnEliminarPel" Click="btnEliminarPel_Click" />
-                <Button Background="#65b3f6" Content="Modificar" Height="28" Width="85" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,376.2,35.4" x:Name="btnModificarcCli" />
                 <DataGrid x:Name="dgListadoClientes" HorizontalAlignment="Left" Height="288" Margin="442,35,0,0" VerticalAlignment="Top" Width="357">
                     <DataGrid.Columns>
                         <DataGridTextColumn/>

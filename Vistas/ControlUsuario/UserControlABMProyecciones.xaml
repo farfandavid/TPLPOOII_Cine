@@ -24,7 +24,7 @@
             <Image Source="/imagenes/t_rex_2.png" HorizontalAlignment="Right" Margin="0,0,27.2,0" Width="135"/>
         </Grid>
         <Grid Grid.Row="1">
-            <StackPanel Orientation="Vertical" Margin="40 20 0 0" Background="White">
+            <StackPanel Orientation="Vertical" Margin="40,20,450.2,64.4" Background="White">
                 <StackPanel Orientation="Horizontal" >
                     <materialDesign:PackIcon Kind="Movie" Foreground="{Binding ElementName=txtProy_Codigo, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                     <TextBox  Name="txtProy_Codigo" Width="300" materialDesign:HintAssist.Hint="Codigo de la Proyeccion" materialDesign:HintAssist.IsFloating="True" CaretBrush="#FFF99118" SelectionBrush="#FFF99118" />
@@ -39,17 +39,33 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
                     <materialDesign:PackIcon Kind="Stars" Foreground="{Binding ElementName=txtProy_NroSala, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <TextBox  Name="txtProy_NroSala" Width="300" materialDesign:HintAssist.Hint="Numero Sala" materialDesign:HintAssist.IsFloating="True" CaretBrush="#FFF99118" />
+                    <ComboBox Name="cmbNroSala" Width="300" SelectionChanged="cmbSalas_SelectionChanged">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Proy_NroSala}" FontSize="16"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
                     <materialDesign:PackIcon Kind="ImageFilterVintage" Foreground="{Binding ElementName=txtProy_PelCod, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <TextBox  Name="txtProy_PelCod" Width="300" materialDesign:HintAssist.Hint="Codigo de la Pelicula" materialDesign:HintAssist.IsFloating="True" CaretBrush="#FFF99118" />
+                    <TextBox  Name="txtProy_CodPel" Width="300" materialDesign:HintAssist.Hint="Codigo de Pelicula" materialDesign:HintAssist.IsFloating="True" CaretBrush="#FFF99118" />
                 </StackPanel>
-                <StackPanel Margin="0,0,50.2,0" Height="87">
-                    <Button Background="#db439c" Content="Agregar" Height="28" Width="85" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="50,30,100,0" Name="btnAgregarPel"/>
-                </StackPanel>
+                
 
             </StackPanel>
+            <StackPanel Margin="40,351,10.2,0.4" Height="87" Orientation="Horizontal">
+                <Button Background="#db439c" Content="Agregar" Height="28" Width="85"  HorizontalAlignment="Left"  Name="btnAgregarProy" Click="btnAgregarProy_Click" />
+                <Button Background="#db439c" Content="Eliminar" Height="28" Width="85"  HorizontalAlignment="Right"  x:Name="btnEliminarProy" Margin="230 0" />
+                <Button Background="#db439c" Content="Modificar" Height="28" Width="85"  HorizontalAlignment="Center"  x:Name="btnModificalProy" />
+            </StackPanel>
+            <DataGrid x:Name="dgListadoProyecciones" HorizontalAlignment="Left" Height="288" Margin="442,35,0,0" VerticalAlignment="Top" Width="357">
+                <DataGrid.Columns>
+                    <DataGridTextColumn/>
+                </DataGrid.Columns>
+            </DataGrid>
         </Grid>
 
     </Grid>

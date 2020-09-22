@@ -21,18 +21,15 @@ namespace Vistas.ControlUsuario
     /// </summary>
     public partial class UserControlABMClientes : UserControl
     {
-        Cliente[] clientes = new Cliente[0];
+        List<Cliente> listaClientes = new List<Cliente>();
+        //Cliente[] clientes = new Cliente[0];
         public UserControlABMClientes()
         {
             InitializeComponent();
             
         }
 
-        private void btnEliminarPel_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
+        
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
                             
@@ -49,10 +46,12 @@ namespace Vistas.ControlUsuario
             ocliente.Cli_Telefono = txtCli_Telefono.Text;
             ocliente.Cli_Email = txtCli_Email.Text;
 
-            Array.Resize(ref clientes, clientes.Length+1);
-            clientes[clientes.Length - 1] = ocliente;
+            listaClientes.Add(ocliente);
+            //Array.Resize(ref clientes, clientes.Length+1);
+            //clientes[clientes.Length - 1] = ocliente;
 
-            dgListadoClientes.ItemsSource = clientes;
+            //dgListadoClientes.ItemsSource = clientes;
+            dgListadoClientes.ItemsSource = listaClientes;
             dgListadoClientes.Items.Refresh();
 
             MessageBox.Show("Los datos fueron guardados con exito \nDNI=" + txtCli_Dni.Text + "\nNombre=" + txtCli_Nombre.Text + "\nApellido="
@@ -65,6 +64,11 @@ namespace Vistas.ControlUsuario
             txtCli_Email.Clear();
 
             
+        }
+
+        private void btnEliminarCli_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
