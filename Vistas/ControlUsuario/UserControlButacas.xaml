@@ -1,11 +1,6 @@
 ﻿<UserControl x:Class="Vistas.ControlUsuario.UserControlButacas"
              
-             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-            Background="{DynamicResource MaterialDesignPaper}"
-            TextElement.FontWeight="Medium"
-            TextElement.FontSize="14"
-            FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
-            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             
              
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -13,6 +8,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Vistas.ControlUsuario"
              mc:Ignorable="d" 
+             DataContext="{Binding RelativeSource={RelativeSource Self}}"
              d:DesignHeight="558" d:DesignWidth="831">
     <Grid>
         <Grid Background="White">
@@ -23,6 +19,7 @@
             <Grid Grid.Row="0" Background="#01ec6b">
                 <Image Source="/imagenes/ASIGNACION_DE_BUTACAS.png" HorizontalAlignment="Stretch" Margin="114,0,10.2,0"/>
                 <Image Source="/imagenes/scout.png" HorizontalAlignment="Left" Margin="0,0,40.2,11"/>
+                
             </Grid>
             <Grid Grid.Row="1" Background="White">
                 <StackPanel  HorizontalAlignment="Center" Loaded="StackPanel_Loaded">
@@ -30,12 +27,12 @@
                         <ItemsControl ItemsSource="{Binding Butaca}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <Button x:Name="Seat" Width="25" Height="25" Margin="1,2" Click="butaca_Click"/>
+                                    <Button x:Name="Seat" Width="25" Height="25" Margin="1" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"  />
                                     <DataTemplate.Triggers>
                                         <Trigger SourceName="Seat" Property="Button.IsPressed" Value="True">
                                             <Setter TargetName="Seat" Property="Effect">
                                                 <Setter.Value>
-                                                    <DropShadowEffect Color="Red" ShadowDepth="1"/>
+                                                    <DropShadowEffect Color="Red"/>
                                                 </Setter.Value>
                                             </Setter>
                                         </Trigger>
@@ -44,7 +41,7 @@
                             </ItemsControl.ItemTemplate>
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
-                                    <WrapPanel Height="auto" Width="270"/>
+                                    <WrapPanel Height="auto" Width="440"/>
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
                         </ItemsControl>

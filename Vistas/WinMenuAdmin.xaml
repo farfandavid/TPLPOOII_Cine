@@ -52,6 +52,6 @@
             <Image Source="imagenes/Fondo.jpg" Stretch="Fill" Height="558" Margin="0,0,0.4,0"/>
         </StackPanel>
         
-        <StackPanel x:Name="StackPanelMain" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch"/>
+        <StackPanel x:Name="StackPanelMain" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" d:IsHidden="True"/>
     </Grid>
 </Window>

@@ -47,9 +47,14 @@ namespace Vistas.ControlUsuario
                 for (int i = 1; i <= col; i++)
                 {
                     Button btn = new Button();
-                    btn.Width = 25;
-                    btn.Height = 25;
+                    btn.Width = 40;
+                    btn.Height = 40;
+                    btn.Margin = new Thickness(2);
                     btn.Background = new SolidColorBrush(Colors.LightGray);
+                    btn.BorderThickness = new Thickness(1);
+                    btn.Padding = new Thickness(0);
+                    btn.FontSize = 12;
+                    btn.FontStretch = FontStretches.UltraExpanded;
                     btn.Name = "btn" + abcd[j] + i.ToString();
                     //if (btn.Name == "btnB3") {
                     //    btn.Background = new SolidColorBrush(Colors.Red);
