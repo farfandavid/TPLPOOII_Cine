@@ -26,10 +26,23 @@
         </Grid>
         <Grid Grid.Row="1">
             <StackPanel Orientation="Vertical" Margin="40,20,450.2,-0.4" Background="White">
-                <StackPanel Orientation="Horizontal" >
+                <DockPanel>
+                    <Label Content="Codigo de la Pelicula" DockPanel.Dock="Top" Margin="25 0 0 0"/>
                     <materialDesign:PackIcon Kind="Movie" Foreground="{Binding ElementName=txtCod_Pel, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <TextBox  Name="txtCod_Pel" Width="300" materialDesign:HintAssist.Hint="Codigo de la Pelicula" materialDesign:HintAssist.IsFloating="True" CaretBrush="#FFF99118" SelectionBrush="#FFF99118" />
-                </StackPanel>
+                    <TextBox Style="{StaticResource TextboxStyle}" Name="txtCod_Pel" Width="300" materialDesign:HintAssist.Hint="Codigo de la Pelicula" materialDesign:HintAssist.IsFloating="True" CaretBrush="#FFF99118" SelectionBrush="#FFF99118" />
+                </DockPanel>
+                <DockPanel>
+                    <Label Content="Codigo de la Pelicula" DockPanel.Dock="Top" Margin="25 0 0 0"/>
+                    <materialDesign:PackIcon Kind="LocalMovies" Foreground="{Binding ElementName=txtTitulo_Pel, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                    <TextBox  Style="{StaticResource TextboxStyle}" Name="txtTitulo_Pel" Width="300" materialDesign:HintAssist.Hint="Titulo de la Pelicula" materialDesign:HintAssist.IsFloating="True" CaretBrush="#FFF99118" />
+                </DockPanel>
+                <DockPanel>
+                    <Label Content="Codigo de la Pelicula" DockPanel.Dock="Top" Margin="25 0 0 0"/>
+                    <materialDesign:PackIcon Kind="AccessTime" Foreground="{Binding ElementName=txtDuracion_Pel, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                    <TextBox Style="{StaticResource TextboxStyle}" Name="txtDuracion_Pel" Width="300" materialDesign:HintAssist.Hint="Duracion de la Pelicula" materialDesign:HintAssist.IsFloating="True" CaretBrush="#FFF99118" />
+                </DockPanel>
+                <!--<StackPanel Orientation="Horizontal" >
+                    </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
                     <materialDesign:PackIcon Kind="LocalMovies" Foreground="{Binding ElementName=txtTitulo_Pel, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                     <TextBox  Name="txtTitulo_Pel" Width="300" materialDesign:HintAssist.Hint="Titulo de la Pelicula" materialDesign:HintAssist.IsFloating="True" CaretBrush="#FFF99118" />
@@ -37,7 +50,7 @@
                 <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
                     <materialDesign:PackIcon Kind="AccessTime" Foreground="{Binding ElementName=txtDuracion_Pel, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                     <TextBox  Name="txtDuracion_Pel" Width="300" materialDesign:HintAssist.Hint="Duracion de la Pelicula" materialDesign:HintAssist.IsFloating="True" CaretBrush="#FFF99118" />
-                </StackPanel>
+                </StackPanel>-->
                 <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
                     <materialDesign:PackIcon Kind="Stars" Foreground="{Binding ElementName=txtGenero_Pel, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                     <ComboBox Name="Generos" Width="300" SelectionChanged="cmbGenero_SelectionChanged">
