@@ -30,22 +30,7 @@ namespace Vistas
 
         
 
-        private void btnAcept_Click(object sender, RoutedEventArgs e)
-        {
-
-            if ((txtUserName.Text == "admin" && passBoxInicio.Password.ToString() == "12345") || (txtUserName.Text == "vend" && passBoxInicio.Password.ToString() == "12345"))
-            {
-                WinMenuAdmin atrWinMenu = new WinMenuAdmin(txtUserName.Text);
-                atrWinMenu.Show();
-                txtUserName.Text = "";
-                passBoxInicio.Password = "";
-            }
-            else
-            {
-                    error.IsOpen = true;
-            }
-
-        }
+        
 
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {

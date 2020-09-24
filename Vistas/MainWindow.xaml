@@ -12,6 +12,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Vistas"
+        xmlns:control="clr-namespace:Vistas.ControlUsuario"
         mc:Ignorable="d"
         Title="MainWindow" Height="470" Width="425" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen">
     <Grid>
@@ -41,30 +42,10 @@
         </Grid>
 
         <Grid Grid.Row="2">
-            <StackPanel Orientation="Vertical" Margin="40 70 0 0"> 
-                <StackPanel Orientation="Horizontal" >
-                    <materialDesign:PackIcon Kind="Account" Foreground="{Binding ElementName=txtUserName, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <TextBox  Name="txtUserName" Width="300" materialDesign:HintAssist.Hint="Usuario" materialDesign:HintAssist.IsFloating="True" />
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0 40 0 0">
-                    <materialDesign:PackIcon Kind="Key" Foreground="{Binding ElementName=passBoxInicio, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <PasswordBox Name="passBoxInicio" Width="300" PasswordChar="*" materialDesign:HintAssist.Hint="Contraseña" materialDesign:HintAssist.IsFloating="True"/>
-                </StackPanel>
-                <Button 
-                    Style="{DynamicResource MaterialDesignRaisedAccentButton}" Content="Aceptar" Height="23" HorizontalAlignment="Right" Margin="0,20,70,0" Name="btnAcept" VerticalAlignment="Top" Width="80" Click="btnAcept_Click"/>
-            </StackPanel>
+            <control:UserControlLogin x:Name="login"/>
         </Grid>
 
-        <materialDesign:DialogHost  x:Name="error" Grid.RowSpan="3">
-            <materialDesign:DialogHost.DialogContent>
-                <StackPanel Margin="15" Orientation="Vertical">
-                    <Image Source="imagenes/sadfall.png" Width="178" Height="92" Margin="20 30"/>
-                    <TextBlock Text="Los datos ingresados son Incorrectos"/>
-                    <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" CommandTarget="{Binding ElementName=error}"
-                            Style="{DynamicResource MaterialDesignFlatButton}" Content="Aceptar" Margin="0 10 0 0"/>
-                </StackPanel>
-            </materialDesign:DialogHost.DialogContent>
-        </materialDesign:DialogHost>
+        
 
     </Grid>
 </Window>

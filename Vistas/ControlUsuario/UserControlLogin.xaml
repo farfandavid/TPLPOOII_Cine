@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="Vistas.ControlUsuario.UserControlLogin"
+             
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Vistas.ControlUsuario"
+             mc:Ignorable="d" 
+             d:DesignHeight="340" d:DesignWidth="425">
+    <Grid>
+            <StackPanel Orientation="Vertical" Margin="40 70 0 0"> 
+                <StackPanel Orientation="Horizontal" >
+                    <materialDesign:PackIcon Kind="Account" Foreground="{Binding ElementName=txtUserName, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                    <TextBox  Name="txtUserName" Width="300" materialDesign:HintAssist.Hint="Usuario" materialDesign:HintAssist.IsFloating="True" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 40 0 0">
+                    <materialDesign:PackIcon Kind="Key" Foreground="{Binding ElementName=passBoxInicio, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                    <PasswordBox Name="passBoxInicio" Width="300" PasswordChar="*" materialDesign:HintAssist.Hint="Contraseña" materialDesign:HintAssist.IsFloating="True"/>
+                </StackPanel>
+                <Button 
+                    Style="{DynamicResource MaterialDesignRaisedAccentButton}" Content="Aceptar" Height="23" HorizontalAlignment="Right" Margin="0,20,70,0" Name="btnAcept" VerticalAlignment="Top" Width="80" Click="btnAcept_Click"/>
+            </StackPanel>
+
+        <materialDesign:DialogHost  x:Name="error" Grid.RowSpan="3">
+            <materialDesign:DialogHost.DialogContent>
+                <StackPanel Margin="15" Orientation="Vertical">
+                    <Image Source="/imagenes/sadfall.png" Width="178" Height="92" Margin="20 30"/>
+                    <TextBlock Text="Los datos ingresados son Incorrectos"/>
+                    <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" CommandTarget="{Binding ElementName=error}"
+                            Style="{DynamicResource MaterialDesignFlatButton}" Content="Aceptar" Margin="0 10 0 0"/>
+                </StackPanel>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
+    </Grid>
+</UserControl>
