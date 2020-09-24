@@ -74,6 +74,9 @@
     <Compile Include="ControlUsuario\UserControlButacas.xaml.cs">
       <DependentUpon>UserControlButacas.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ControlUsuario\UserControlLogin.xaml.cs">
+      <DependentUpon>UserControlLogin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlABMPeliculas.xaml.cs">
       <DependentUpon>UserControlABMPeliculas.xaml</DependentUpon>
     </Compile>
@@ -97,6 +100,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ControlUsuario\UserControlButacas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ControlUsuario\UserControlLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
