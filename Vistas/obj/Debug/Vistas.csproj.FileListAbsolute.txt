@@ -70,3 +70,4 @@ C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\WinMenuAdmin.ba
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.g.resources
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.Properties.Resources.resources
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.csproj.GenerateResource.Cache
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\PlantillaDicc\ButtonChange.baml
