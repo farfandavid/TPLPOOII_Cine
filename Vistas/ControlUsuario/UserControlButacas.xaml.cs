@@ -54,6 +54,7 @@ namespace Vistas.ControlUsuario
                     btn.BorderThickness = new Thickness(1);
                     btn.Padding = new Thickness(0);
                     btn.FontSize = 12;
+                    btn.Foreground = new SolidColorBrush(Colors.Black);
                     btn.FontStretch = FontStretches.UltraExpanded;
                     btn.Name = "btn" + abcd[j] + i.ToString();
                     //if (btn.Name == "btnB3") {

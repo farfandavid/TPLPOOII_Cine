@@ -108,7 +108,21 @@ namespace Vistas
 
         private void btnMenuClose_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            cerrarSesion.IsOpen = true;
+
+            Button btn = new Button();
+
+            btn = sender as Button;
+
+            if (btn.Name == "btnSalir"){
+
+                Application.Current.Shutdown();
+            }else if (btn.Name == "btnCerrarSesion")
+            {
+                this.Close();
+                
+            }
+            //Application.Current.Shutdown();
         }
     }
 }

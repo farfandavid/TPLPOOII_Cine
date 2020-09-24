@@ -37,6 +37,8 @@ namespace Vistas
             {
                 WinMenuAdmin atrWinMenu = new WinMenuAdmin(txtUserName.Text);
                 atrWinMenu.Show();
+                txtUserName.Text = "";
+                passBoxInicio.Password = "";
             }
             else
             {
