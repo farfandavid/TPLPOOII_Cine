@@ -27,10 +27,6 @@ namespace Vistas
             InitializeComponent();
         }
 
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
