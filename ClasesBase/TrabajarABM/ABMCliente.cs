@@ -88,8 +88,7 @@ namespace ClasesBase.TrabajarABM {
             cmd.CommandText = "SPClienteEliminar";
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
-
-            cmd.Parameters.AddWithValue("@idCli", cliente.Cli_ID);
+            
             cmd.Parameters.AddWithValue("@dniCli", cliente.Cli_DNI);
             cmd.Parameters.AddWithValue("@apeCli", cliente.Cli_Apellido);
             cmd.Parameters.AddWithValue("@nomCli", cliente.Cli_Nombre);
