@@ -80,6 +80,27 @@ namespace ClasesBase.TrabajarABM {
             cnn.Close();
 
         }
+
+        public static void agregar_cliente(Cliente cliente) {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.conexion);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SPClienteEliminar";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@idCli", cliente.Cli_ID);
+            cmd.Parameters.AddWithValue("@dniCli", cliente.Cli_DNI);
+            cmd.Parameters.AddWithValue("@apeCli", cliente.Cli_Apellido);
+            cmd.Parameters.AddWithValue("@nomCli", cliente.Cli_Nombre);
+            cmd.Parameters.AddWithValue("@emailCli", cliente.Cli_Email);
+            cmd.Parameters.AddWithValue("@telCli", cliente.Cli_Telefono);
+
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
+
         public Cliente valCliente() {
 
             Cliente oCliente = new Cliente();
