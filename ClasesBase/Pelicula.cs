@@ -5,15 +5,14 @@ using System.Text;
 
 namespace ClasesBase
 {
-    public class Pelicula
-    {
-        private String peli_Codigo;
+    public class Pelicula {
+        private int peli_Codigo;
         private String peli_Titulo;
         private String peli_Duracion;
         private String peli_Genero;
         private String peli_Clase;
 
-        public string Peli_Codigo
+        public int Peli_Codigo
         {
             get
             {

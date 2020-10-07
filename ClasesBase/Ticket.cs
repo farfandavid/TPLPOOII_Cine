@@ -5,90 +5,61 @@ using System.Text;
 
 namespace ClasesBase
 {
-    public class Ticket
-    {
-        private int tick_Nro;
-        private DateTime tick_FechaVenta;
-        private int cli_Dni;
-        private int proy_Codigo;
-        private String but_Fila;
-        private String but_Nro;
+    public class Ticket {
+        private int tick_ID;
+        private int proy_ID;
+        private int but_ID;
+        private bool tick_Estado;
 
-        public int Tick_Nro
+        public int Tick_ID
         {
             get
             {
-                return tick_Nro;
+                return tick_ID;
             }
 
             set
             {
-                tick_Nro = value;
+                tick_ID = value;
             }
         }
 
-        public DateTime Tick_FechaVenta
+        public int Proy_ID
         {
             get
             {
-                return tick_FechaVenta;
+                return proy_ID;
             }
 
             set
             {
-                tick_FechaVenta = value;
+                proy_ID = value;
             }
         }
 
-        public int Cli_Dni
+        public int But_ID
         {
             get
             {
-                return cli_Dni;
+                return but_ID;
             }
 
             set
             {
-                cli_Dni = value;
+                but_ID = value;
             }
         }
 
-        public int Proy_Codigo
+        public bool Tick_Estado
         {
             get
             {
-                return proy_Codigo;
+                return tick_Estado;
             }
 
             set
             {
-                proy_Codigo = value;
-            }
-        }
-
-        public string But_Fila
-        {
-            get
-            {
-                return but_Fila;
-            }
-
-            set
-            {
-                but_Fila = value;
-            }
-        }
-
-        public string But_Nro
-        {
-            get
-            {
-                return but_Nro;
-            }
-
-            set
-            {
-                but_Nro = value;
+                tick_Estado = value;
             }
         }
     }

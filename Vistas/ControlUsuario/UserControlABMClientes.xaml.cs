@@ -38,9 +38,8 @@ namespace Vistas.ControlUsuario
         private void btnAgregarCli_Click(object sender, RoutedEventArgs e)
         {
             Cliente ocliente = new Cliente();
-            int numero;
-            Int32.TryParse(txtCli_Dni.Text, out numero);
-            ocliente.Cli_Dni = numero;
+           
+            ocliente.Cli_DNI = txtCli_Dni.Text;
             ocliente.Cli_Nombre = txtCli_Nombre.Text;
             ocliente.Cli_Apellido = txtCli_Apellido.Text;
             ocliente.Cli_Telefono = txtCli_Telefono.Text;

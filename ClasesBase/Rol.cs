@@ -5,12 +5,11 @@ using System.Text;
 
 namespace ClasesBase
 {
-    public class Rol
-    {
-        private String rol_Codigo;
+    public class Rol {
+        private int rol_Codigo;
         private String rol_Descripcion;
 
-        public string Rol_Codigo
+        public int Rol_Codigo
         {
             get
             {

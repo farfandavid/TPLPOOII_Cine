@@ -5,13 +5,13 @@ using System.Text;
 
 namespace ClasesBase
 {
-    public class Butaca
-    {
-        private String but_Fila;
-        private String but_Nro;
-        private String but_NroSala;
+    public class Butaca {
+        private int but_Fila;
+        private int but_ID;
+        private int but_Col;
+        private int sala_ID;
 
-        public string But_Fila
+        public int But_Fila
         {
             get
             {
@@ -24,29 +24,42 @@ namespace ClasesBase
             }
         }
 
-        public string But_Nro
+        public int But_ID
         {
             get
             {
-                return but_Nro;
+                return but_ID;
             }
 
             set
             {
-                but_Nro = value;
+                but_ID = value;
             }
         }
 
-        public string But_NroSala
+        public int But_Col
         {
             get
             {
-                return but_NroSala;
+                return but_Col;
             }
 
             set
             {
-                but_NroSala = value;
+                but_Col = value;
+            }
+        }
+
+        public int Sala_ID
+        {
+            get
+            {
+                return sala_ID;
+            }
+
+            set
+            {
+                sala_ID = value;
             }
         }
     }

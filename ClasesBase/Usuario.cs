@@ -11,7 +11,7 @@ namespace ClasesBase
         private String usu_NombreUsuario;
         private String usu_Contraseña;
         private String usu_ApellidoNombre;
-        private String rol_Codigo;
+        private int rol_Codigo;
 
         public int Usu_Id
         {
@@ -65,7 +65,7 @@ namespace ClasesBase
             }
         }
 
-        public string Rol_Codigo
+        public int Rol_Codigo
         {
             get
             {

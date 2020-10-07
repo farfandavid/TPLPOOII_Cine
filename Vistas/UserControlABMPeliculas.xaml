@@ -32,12 +32,12 @@
                     <TextBox Style="{StaticResource TextboxStyle}" Name="txtCod_Pel" Width="300" materialDesign:HintAssist.Hint="Codigo de la Pelicula" materialDesign:HintAssist.IsFloating="True" CaretBrush="#FFF99118" SelectionBrush="#FFF99118" />
                 </DockPanel>
                 <DockPanel>
-                    <Label Content="Codigo de la Pelicula" DockPanel.Dock="Top" Margin="25 0 0 0"/>
+                    <Label Content="Titulo" DockPanel.Dock="Top" Margin="25 0 0 0"/>
                     <materialDesign:PackIcon Kind="LocalMovies" Foreground="{Binding ElementName=txtTitulo_Pel, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                     <TextBox  Style="{StaticResource TextboxStyle}" Name="txtTitulo_Pel" Width="300" materialDesign:HintAssist.Hint="Titulo de la Pelicula" materialDesign:HintAssist.IsFloating="True" CaretBrush="#FFF99118" />
                 </DockPanel>
                 <DockPanel>
-                    <Label Content="Codigo de la Pelicula" DockPanel.Dock="Top" Margin="25 0 0 0"/>
+                    <Label Content="Duracion" DockPanel.Dock="Top" Margin="25 0 0 0"/>
                     <materialDesign:PackIcon Kind="AccessTime" Foreground="{Binding ElementName=txtDuracion_Pel, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                     <TextBox Style="{StaticResource TextboxStyle}" Name="txtDuracion_Pel" Width="300" materialDesign:HintAssist.Hint="Duracion de la Pelicula" materialDesign:HintAssist.IsFloating="True" CaretBrush="#FFF99118" />
                 </DockPanel>
@@ -52,6 +52,13 @@
                     <TextBox  Name="txtDuracion_Pel" Width="300" materialDesign:HintAssist.Hint="Duracion de la Pelicula" materialDesign:HintAssist.IsFloating="True" CaretBrush="#FFF99118" />
                 </StackPanel>-->
                 <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
+                    <StackPanel.Resources>
+                        <XmlDataProvider x:Key="peli_clase" Source="ListaXML/Clasificaciones.xml" XPath="/clasificacion"/>
+                    </StackPanel.Resources>
+                    <ComboBox ItemsSource="{Binding Source={StaticResource peli_clase},XPath=clase/@name}" Width="300"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
+                    
                     <materialDesign:PackIcon Kind="Stars" Foreground="{Binding ElementName=txtGenero_Pel, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                     <ComboBox Name="Generos" Width="300" SelectionChanged="cmbGenero_SelectionChanged">
                         <ComboBox.ItemTemplate>

@@ -8,10 +8,10 @@ namespace ClasesBase
     public class Proyeccion
     {
         private int proy_Codigo;
-        private String proy_Fecha;
+        private DateTime proy_Fecha;
         private String proy_Hora;
-        private String proy_NroSala;
-        private String peli_Codigo;
+        private int sala_ID;
+        private int peli_Codigo;
 
         public int Proy_Codigo
         {
@@ -26,7 +26,7 @@ namespace ClasesBase
             }
         }
 
-        public string Proy_Fecha
+        public DateTime Proy_Fecha
         {
             get
             {
@@ -52,20 +52,20 @@ namespace ClasesBase
             }
         }
 
-        public string Proy_NroSala
+        public int Sala_ID
         {
             get
             {
-                return proy_NroSala;
+                return sala_ID;
             }
 
             set
             {
-                proy_NroSala = value;
+                sala_ID = value;
             }
         }
 
-        public string Peli_Codigo
+        public int Peli_Codigo
         {
             get
             {
