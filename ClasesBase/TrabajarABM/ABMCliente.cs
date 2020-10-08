@@ -65,7 +65,7 @@ namespace ClasesBase.TrabajarABM {
             return dt;
         }
 
-        public static void eliminar_cliente(Cliente cliente) {
+        public static void eliminar_cliente(Cliente cli) {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.conexion);
 
             SqlCommand cmd = new SqlCommand();
@@ -73,7 +73,7 @@ namespace ClasesBase.TrabajarABM {
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
 
-            cmd.Parameters.AddWithValue("@idCli", cliente.Cli_ID);
+            cmd.Parameters.AddWithValue("@idCli", cli.Cli_DNI);
 
             cnn.Open();
             cmd.ExecuteNonQuery();
@@ -85,7 +85,7 @@ namespace ClasesBase.TrabajarABM {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.conexion);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SPClienteEliminar";
+            cmd.CommandText = "SPClienteAgregar";
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
             

@@ -12,8 +12,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Vistas"
+             xmlns:svc="clr-namespace:ClasesBase.TrabajarABM;assembly=ClasesBase"
              mc:Ignorable="d" 
              d:DesignHeight="558" d:DesignWidth="831">
+    <UserControl.Resources>
+        <ObjectDataProvider ObjectType="{x:Type svc:ABMPelicula}"
+                            MethodName="traerPelicula"
+                            x:Key="lista_Pelicula"/>
+    </UserControl.Resources>
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="120"/>
@@ -63,11 +69,19 @@
                     <Button Style="{StaticResource FormButton}" Background="#f99118" Content="Eliminar" Height="28" Width="85"  HorizontalAlignment="Right"  x:Name="btnEliminarPel" Margin="230 0"  Click="btnEliminarPel_Click"/>
                     <Button Style="{StaticResource FormButton}" Background="#f99118" Content="Modificar" Height="28" Width="85"  HorizontalAlignment="Center"  x:Name="btnModificalPel" />
                 </StackPanel>
-                <DataGrid x:Name="dgListadoPeliculas" HorizontalAlignment="Left" Height="288" Margin="442,35,0,0" VerticalAlignment="Top" Width="357">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn/>
-                    </DataGrid.Columns>
-                </DataGrid>
+                <ListView Name="dgPeliculas" Height="288" Width="357" ItemsSource="{Binding Source={StaticResource lista_Pelicula}}" Margin="408,49,66.2,101.4" >
+                    <ListView.View>
+                        <GridView>
+
+                            <GridViewColumn Width="80" Header="Codigo" DisplayMemberBinding="{Binding Path=peli_Codigo}"/>
+                            <GridViewColumn Width="80" Header="Titulo" DisplayMemberBinding="{Binding Path=peli_Titulo}"/>
+                            <GridViewColumn Width="80" Header="Duracion" DisplayMemberBinding="{Binding Path=peli_Duracion}"/>
+                            <GridViewColumn Width="80" Header="Clase" DisplayMemberBinding="{Binding Path=peli_Clase}"/>
+                            <GridViewColumn Width="80" Header="Genero" DisplayMemberBinding="{Binding Path=peli_Genero}"/>
+
+                        </GridView>
+                    </ListView.View>
+                </ListView>
 
             </Grid>
         </Grid>

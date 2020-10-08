@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ClasesBase;
+using ClasesBase.TrabajarABM;
 
 namespace Vistas {
     /// <summary>
@@ -21,11 +22,11 @@ namespace Vistas {
     public partial class UserControlABMPeliculas : UserControl {
         List<Pelicula> listPeliculas = new List<Pelicula>();
 
-        int cont = 1;
+        
         public UserControlABMPeliculas() {
             InitializeComponent();
-
-            txtCod_Pel.Text = cont.ToString();
+            
+             
 
 
 
@@ -35,21 +36,19 @@ namespace Vistas {
 
         private void btnAgregarPel_Click(object sender, RoutedEventArgs e) {
             Pelicula oPelicula = new Pelicula();
-            oPelicula.Peli_Codigo = int.Parse(txtCod_Pel.Text);
             oPelicula.Peli_Titulo = txtTitulo_Pel.Text;
             oPelicula.Peli_Duracion = txtDuracion_Pel.Text;
             oPelicula.Peli_Genero = cmbGeneros.SelectedValue.ToString();
             oPelicula.Peli_Clase = cmbClases.SelectedValue.ToString();
 
-            listPeliculas.Add(oPelicula);
-            dgListadoPeliculas.ItemsSource = listPeliculas;
-            dgListadoPeliculas.Items.Refresh();
+            ABMPelicula.agregar_Pelicula(oPelicula);
+            dgPeliculas.ItemsSource = listPeliculas;
+            dgPeliculas.Items.Refresh();
 
             MessageBox.Show("Los datos fueron guardados con exito \nCodigo=" + txtCod_Pel.Text + "\nTitulo=" + txtTitulo_Pel.Text + "\nDuracion="
                 + txtDuracion_Pel.Text + "\nGenero=" + cmbGeneros.SelectedValue.ToString() + "\nClase=" + cmbClases.SelectedValue.ToString(), "Acccion realizada con exito", MessageBoxButton.OK, MessageBoxImage.Information);
 
-            cont = cont + 1;
-            txtCod_Pel.Text = cont.ToString();
+            
             txtDuracion_Pel.Clear();
             txtTitulo_Pel.Clear();
 

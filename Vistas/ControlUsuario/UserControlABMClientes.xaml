@@ -12,9 +12,48 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Vistas.ControlUsuario"
+             xmlns:svc="clr-namespace:ClasesBase.TrabajarABM;assembly=ClasesBase"
              mc:Ignorable="d" 
              d:DesignHeight="558" d:DesignWidth="831" Loaded="Window_Loaded">
-    <Grid Background="White">
+
+    <UserControl.Resources>
+        <ObjectDataProvider ObjectType="{x:Type svc:ABMCliente}"
+                            MethodName="traerCliente"
+                            x:Key="lista_Clientes"/>
+        <ObjectDataProvider ObjectType="{x:Type svc:ABMCliente}"
+                            MethodName="valCliente"
+                            x:Key="DATA_CLIENTE"/>
+        <ControlTemplate x:Key="TextBoxErroTemplate">
+            <DockPanel>
+                <Ellipse DockPanel.Dock="Right" Margin="2,0" Width="10" Height="10">
+                    <Ellipse.Fill>
+                        <LinearGradientBrush>
+                            <GradientStop Color="#FFFFD4ED" Offset="0"/>
+                            <GradientStop Color="#db439c" Offset="1"/>
+                        </LinearGradientBrush>
+                        
+                    </Ellipse.Fill>
+                </Ellipse>
+                <AdornedElementPlaceholder/>
+            </DockPanel>
+        </ControlTemplate>
+        <Style x:Key="EstiloError" TargetType="TextBox">
+            <Setter Property="Margin" Value="4 4 10 4"/>
+            <Setter Property="Validation.ErrorTemplate" Value="{StaticResource TextBoxErroTemplate}"/>
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="ToolTip">
+                        <Setter.Value>
+                            <Binding Path="(Validation.Errors)[0].ErrorContent"
+                                     RelativeSource="{x:Static RelativeSource.Self}"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
+        <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="120"/>
             <RowDefinition Height="370"/>
@@ -28,25 +67,61 @@
         <Grid Grid.Row="1" Margin="0,0,0.2,0.4" Grid.RowSpan="2">
 
             <StackPanel Orientation="Vertical" Margin="40 20 450 50" Background="White">
-                <StackPanel Orientation="Horizontal" >
-                    <materialDesign:PackIcon Kind="Movie" Foreground="{Binding ElementName=txtCli_Dni, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <TextBox  Name="txtCli_Dni" Width="300" materialDesign:HintAssist.Hint="DNI" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6" />
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="DNI" Foreground="#65b3f6" Width="186" HorizontalAlignment="Left" Margin="20 0" FontWeight="Bold" />
+                        <Button Content="Buscar" Background="#65b3f6" Foreground="White" Width="90" Height="20" FontSize="12" Name="btnBuscarCliente" Click="btnBuscarCli_Click"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" >
+                    <materialDesign:PackIcon Kind="AccountCircle" Foreground="{Binding ElementName=txtCli_Dni, Path=SelectionBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                    <TextBox  Name="txtCli_Dni" Width="300"  CaretBrush="#65b3f6" SelectionBrush="#65b3f6" 
+                              Style="{StaticResource EstiloError}" DataContext="{StaticResource DATA_CLIENTE}" Margin="0 0 0 0">
+                        <TextBox.Text>
+                        <Binding Path="Cli_DNI" UpdateSourceTrigger="PropertyChanged" ValidatesOnExceptions="True" ValidatesOnDataErrors="True"/>
+                        </TextBox.Text>
+                    </TextBox>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
-                    <materialDesign:PackIcon Kind="LocalMovies" Foreground="{Binding ElementName=txtCli_Nombre, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <TextBox  Name="txtCli_Nombre" Width="300" materialDesign:HintAssist.Hint="Nombre" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" />
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
-                    <materialDesign:PackIcon Kind="AccessTime" Foreground="{Binding ElementName=txtCli_Apellido, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <TextBox  Name="txtCli_Apellido" Width="300" materialDesign:HintAssist.Hint="Apellido" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" />
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Nombre" Foreground="#65b3f6" Width="300" HorizontalAlignment="Left" Margin="20 30 0 0" FontWeight="Bold" />
+                <StackPanel Orientation="Horizontal"  Margin="0,0,-0.4,0">
+                    <materialDesign:PackIcon Kind="Person" Foreground="{Binding ElementName=txtCli_Nombre, Path=SelectionBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                    <TextBox  Name="txtCli_Nombre" Width="300"  CaretBrush="#65b3f6" 
+                              Style="{StaticResource EstiloError}" DataContext="{StaticResource DATA_CLIENTE}" Margin="4,10,10,3.8">
+                            <TextBox.Text>
+                                <Binding Path="Cli_Nombre" UpdateSourceTrigger="PropertyChanged" ValidatesOnExceptions="True" ValidatesOnDataErrors="True"/>
+                            </TextBox.Text>
+                        </TextBox>
+                    </StackPanel>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
-                    <materialDesign:PackIcon Kind="Stars" Foreground="{Binding ElementName=txtCli_Telefono, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <TextBox  Name="txtCli_Telefono" Width="300" materialDesign:HintAssist.Hint="Telefono" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" />
+                <StackPanel Orientation="Vertical" Margin="0,0,-0.4,0">
+                    <TextBlock Text="Apellido" Foreground="#65b3f6" Width="300" HorizontalAlignment="Left" Margin="20 30 0 0" FontWeight="Bold" />
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 0">
+                        <materialDesign:PackIcon Kind="PersonOutline" Foreground="{Binding SelectionBrush, ElementName=txtCli_Apellido}" VerticalAlignment="Bottom" Margin="0 4"/>
+                        <TextBox  x:Name="txtCli_Apellido" Width="300" Style="{StaticResource EstiloError}" DataContext="{StaticResource DATA_CLIENTE}" CaretBrush="#65b3f6" Text="{Binding Cli_Apellido, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, ValidatesOnExceptions=True}" />
+                    </StackPanel>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
-                    <materialDesign:PackIcon Kind="ImageFilterVintage" Foreground="{Binding ElementName=txtCli_Email, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <TextBox  Name="txtCli_Email" Width="300" materialDesign:HintAssist.Hint="Email" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" />
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Telefono" Foreground="#65b3f6" Width="300" HorizontalAlignment="Left" Margin="20 30 0 0" FontWeight="Bold" />
+                <StackPanel Orientation="Horizontal" Margin="0 0 0 0">
+                    <materialDesign:PackIcon Kind="LocalPhone" Foreground="{Binding ElementName=txtCli_Telefono, Path=SelectionBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                    <TextBox  Name="txtCli_Telefono" Width="300" Style="{StaticResource EstiloError}" DataContext="{StaticResource DATA_CLIENTE}" CaretBrush="#65b3f6" >
+                        <TextBox.Text>
+                            <Binding Path="Cli_Telefono" UpdateSourceTrigger="PropertyChanged" ValidatesOnExceptions="True" ValidatesOnDataErrors="True"/>
+                        </TextBox.Text>
+                    </TextBox>
+                </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Email" Foreground="#65b3f6" Width="300" HorizontalAlignment="Left" Margin="20 30 0 0" FontWeight="Bold" />
+                <StackPanel Orientation="Horizontal" Margin="0 0 0 0">
+                    <materialDesign:PackIcon Kind="Email" Foreground="{Binding ElementName=txtCli_Email, Path=SelectionBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                    <TextBox  Name="txtCli_Email" Width="300" Style="{StaticResource EstiloError}" DataContext="{StaticResource DATA_CLIENTE}" CaretBrush="#65b3f6" >
+                        <TextBox.Text>
+                            <Binding Path="Cli_Email" UpdateSourceTrigger="PropertyChanged" ValidatesOnExceptions="True" ValidatesOnDataErrors="True"/>
+                        </TextBox.Text>
+                    </TextBox>
+                </StackPanel>
                 </StackPanel>
 
             </StackPanel>
@@ -58,11 +133,19 @@
                     <Button Style="{StaticResource FormButton}" Background="#65b3f6" Content="Modificar" Height="28" Width="85"  HorizontalAlignment="Center"  x:Name="btnModificalCli" />
 
                 </StackPanel>
-                <DataGrid x:Name="dgListadoClientes" HorizontalAlignment="Left" Height="288" Margin="442,35,0,0" VerticalAlignment="Top" Width="357">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn/>
-                    </DataGrid.Columns>
-                </DataGrid>
+                <ListView Name="dgClientes" Height="288" Width="357" ItemsSource="{Binding Source={StaticResource lista_Clientes}}" Margin="408,49,66.2,101.4" SelectionChanged="dgClientes_SelectionChanged" >
+                    <ListView.View>
+                        <GridView>
+                            
+                            <GridViewColumn Width="70" Header="DNI" DisplayMemberBinding="{Binding Path=cli_DNI}"/>
+                            <GridViewColumn Width="80" Header="Nombre" DisplayMemberBinding="{Binding Path=cli_Nombre}"/>
+                            <GridViewColumn Width="80" Header="Apellido" DisplayMemberBinding="{Binding Path=cli_Apellido}"/>
+                            <GridViewColumn Width="80" Header="Telefono" DisplayMemberBinding="{Binding Path=cli_Telefono}"/>
+                            <GridViewColumn Width="100" Header="Email" DisplayMemberBinding="{Binding Path=cli_Email}"/>
+                            
+                        </GridView>
+                    </ListView.View>
+                </ListView>
 
             </Grid>
         </Grid>
