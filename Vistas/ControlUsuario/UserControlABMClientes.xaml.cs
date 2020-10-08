@@ -38,7 +38,7 @@ namespace Vistas.ControlUsuario {
         private void btnAgregarCli_Click(object sender, RoutedEventArgs e) {
             if (txtCli_Dni.Equals(null)&&txtCli_Nombre.Equals(null) && txtCli_Apellido.Equals(null) && txtCli_Telefono.Equals(null) && txtCli_Email.Equals(null))
             {
-                MessageBox.Show("TODOS LOS CAMPOS DEBEN ESTAR COMPLETADOS");
+                CamposIncompletos.IsOpen = true;
             }
             else
             {
@@ -68,7 +68,7 @@ namespace Vistas.ControlUsuario {
                     cliente = null;
 
                 } catch {
-                    MessageBox.Show("DNI Repetido");
+                    DniRepetido.IsOpen=true;
                 }
                 
                 //Array.Resize(ref clientes, clientes.Length+1);
@@ -87,7 +87,7 @@ namespace Vistas.ControlUsuario {
 
             if (dgClientes.SelectedItem == null)
             {
-                MessageBox.Show("SELECCIONE UN CLIENTE ANTES DE ELIMINAR");
+                EliminarCli.IsOpen=true;
                 return;            
             }
             else
@@ -105,7 +105,7 @@ namespace Vistas.ControlUsuario {
                     dgClientes.ItemsSource = ABMCliente.traerCliente().AsDataView();
                     cliente = null;
                 }catch{
-                    MessageBox.Show("Id incorrecta");
+                    DniInexistente.IsOpen= true;
                 }
                 
             }
@@ -128,7 +128,7 @@ namespace Vistas.ControlUsuario {
                 txtCli_Email.Text = row[5].ToString();
             } catch {
                 
-                MessageBox.Show("No existe DNI");
+                DniInexistente.IsOpen=true;
             }
             
 
@@ -181,7 +181,7 @@ namespace Vistas.ControlUsuario {
 
         private void btnModificalCli_Click(object sender, RoutedEventArgs e) {
             if (dgClientes.SelectedItem == null) {
-                MessageBox.Show("SELECCIONE UN CLIENTE ANTES DE ELIMINAR");
+                EliminarCli.IsOpen=true;
                 return;
             } else {
 

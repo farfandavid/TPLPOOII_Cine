@@ -8,8 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("tipoclasificacion.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("tipogenero.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("tiposala.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("imagenes/fall_guys_enojado.png")]
 
 

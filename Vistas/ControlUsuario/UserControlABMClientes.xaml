@@ -31,7 +31,7 @@
                             <GradientStop Color="#FFFFD4ED" Offset="0"/>
                             <GradientStop Color="#db439c" Offset="1"/>
                         </LinearGradientBrush>
-                        
+
                     </Ellipse.Fill>
                 </Ellipse>
                 <AdornedElementPlaceholder/>
@@ -53,7 +53,7 @@
         </Style>
     </UserControl.Resources>
 
-        <Grid Background="White">
+    <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="120"/>
             <RowDefinition Height="370"/>
@@ -73,20 +73,20 @@
                         <Button Content="Buscar" Background="#65b3f6" Foreground="White" Width="90" Height="20" FontSize="12" Name="btnBuscarCliente" Click="btnBuscarCli_Click"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" >
-                    <materialDesign:PackIcon Kind="AccountCircle" Foreground="{Binding ElementName=txtCli_Dni, Path=SelectionBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <TextBox  Name="txtCli_Dni" Width="300"  CaretBrush="#65b3f6" SelectionBrush="#65b3f6" 
+                        <materialDesign:PackIcon Kind="AccountCircle" Foreground="{Binding ElementName=txtCli_Dni, Path=SelectionBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                        <TextBox  Name="txtCli_Dni" Width="300"  CaretBrush="#65b3f6" SelectionBrush="#65b3f6" 
                               Style="{StaticResource EstiloError}" DataContext="{StaticResource DATA_CLIENTE}" Margin="0 0 0 0">
-                        <TextBox.Text>
-                        <Binding Path="Cli_DNI" UpdateSourceTrigger="PropertyChanged" ValidatesOnExceptions="True" ValidatesOnDataErrors="True"/>
-                        </TextBox.Text>
-                    </TextBox>
-                </StackPanel>
+                            <TextBox.Text>
+                                <Binding Path="Cli_DNI" UpdateSourceTrigger="PropertyChanged" ValidatesOnExceptions="True" ValidatesOnDataErrors="True"/>
+                            </TextBox.Text>
+                        </TextBox>
+                    </StackPanel>
                 </StackPanel>
                 <StackPanel Orientation="Vertical">
                     <TextBlock Text="Nombre" Foreground="#65b3f6" Width="300" HorizontalAlignment="Left" Margin="20 30 0 0" FontWeight="Bold" />
-                <StackPanel Orientation="Horizontal"  Margin="0,0,-0.4,0">
-                    <materialDesign:PackIcon Kind="Person" Foreground="{Binding ElementName=txtCli_Nombre, Path=SelectionBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <TextBox  Name="txtCli_Nombre" Width="300"  CaretBrush="#65b3f6" 
+                    <StackPanel Orientation="Horizontal"  Margin="0,0,-0.4,0">
+                        <materialDesign:PackIcon Kind="Person" Foreground="{Binding ElementName=txtCli_Nombre, Path=SelectionBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                        <TextBox  Name="txtCli_Nombre" Width="300"  CaretBrush="#65b3f6" 
                               Style="{StaticResource EstiloError}" DataContext="{StaticResource DATA_CLIENTE}" Margin="4,10,10,3.8">
                             <TextBox.Text>
                                 <Binding Path="Cli_Nombre" UpdateSourceTrigger="PropertyChanged" ValidatesOnExceptions="True" ValidatesOnDataErrors="True"/>
@@ -103,25 +103,25 @@
                 </StackPanel>
                 <StackPanel Orientation="Vertical">
                     <TextBlock Text="Telefono" Foreground="#65b3f6" Width="300" HorizontalAlignment="Left" Margin="20 30 0 0" FontWeight="Bold" />
-                <StackPanel Orientation="Horizontal" Margin="0 0 0 0">
-                    <materialDesign:PackIcon Kind="LocalPhone" Foreground="{Binding ElementName=txtCli_Telefono, Path=SelectionBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <TextBox  Name="txtCli_Telefono" Width="300" Style="{StaticResource EstiloError}" DataContext="{StaticResource DATA_CLIENTE}" CaretBrush="#65b3f6" >
-                        <TextBox.Text>
-                            <Binding Path="Cli_Telefono" UpdateSourceTrigger="PropertyChanged" ValidatesOnExceptions="True" ValidatesOnDataErrors="True"/>
-                        </TextBox.Text>
-                    </TextBox>
-                </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 0">
+                        <materialDesign:PackIcon Kind="LocalPhone" Foreground="{Binding ElementName=txtCli_Telefono, Path=SelectionBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                        <TextBox  Name="txtCli_Telefono" Width="300" Style="{StaticResource EstiloError}" DataContext="{StaticResource DATA_CLIENTE}" CaretBrush="#65b3f6" >
+                            <TextBox.Text>
+                                <Binding Path="Cli_Telefono" UpdateSourceTrigger="PropertyChanged" ValidatesOnExceptions="True" ValidatesOnDataErrors="True"/>
+                            </TextBox.Text>
+                        </TextBox>
+                    </StackPanel>
                 </StackPanel>
                 <StackPanel Orientation="Vertical">
                     <TextBlock Text="Email" Foreground="#65b3f6" Width="300" HorizontalAlignment="Left" Margin="20 30 0 0" FontWeight="Bold" />
-                <StackPanel Orientation="Horizontal" Margin="0 0 0 0">
-                    <materialDesign:PackIcon Kind="Email" Foreground="{Binding ElementName=txtCli_Email, Path=SelectionBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <TextBox  Name="txtCli_Email" Width="300" Style="{StaticResource EstiloError}" DataContext="{StaticResource DATA_CLIENTE}" CaretBrush="#65b3f6" >
-                        <TextBox.Text>
-                            <Binding Path="Cli_Email" UpdateSourceTrigger="PropertyChanged" ValidatesOnExceptions="True" ValidatesOnDataErrors="True"/>
-                        </TextBox.Text>
-                    </TextBox>
-                </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 0">
+                        <materialDesign:PackIcon Kind="Email" Foreground="{Binding ElementName=txtCli_Email, Path=SelectionBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                        <TextBox  Name="txtCli_Email" Width="300" Style="{StaticResource EstiloError}" DataContext="{StaticResource DATA_CLIENTE}" CaretBrush="#65b3f6" >
+                            <TextBox.Text>
+                                <Binding Path="Cli_Email" UpdateSourceTrigger="PropertyChanged" ValidatesOnExceptions="True" ValidatesOnDataErrors="True"/>
+                            </TextBox.Text>
+                        </TextBox>
+                    </StackPanel>
                 </StackPanel>
 
             </StackPanel>
@@ -143,13 +143,63 @@
                             <GridViewColumn Width="80" Header="Apellido" DisplayMemberBinding="{Binding Path=cli_Apellido}"/>
                             <GridViewColumn Width="80" Header="Telefono" DisplayMemberBinding="{Binding Path=cli_Telefono}"/>
                             <GridViewColumn Width="100" Header="Email" DisplayMemberBinding="{Binding Path=cli_Email}"/>
-                            
+
                         </GridView>
                     </ListView.View>
                 </ListView>
 
             </Grid>
         </Grid>
+        <materialDesign:DialogHost  x:Name="CamposIncompletos" Grid.RowSpan="3" Margin="-1,0,1.2,68.4">
+            <materialDesign:DialogHost.DialogContent>
+                <StackPanel Margin="15" Orientation="Vertical">
+                    <Image Source="/imagenes/Fall_Guys_Enojado.png" Width="178" Height="92" Margin="20 30"/>
+                    <TextBlock Text="Todos los campos deben estar completados" HorizontalAlignment="Center"/>
+                    <DockPanel>
+                        <Button DockPanel.Dock="Right" Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" CommandTarget="{Binding ElementName=CamposIncompletos}"
+                            Style="{DynamicResource MaterialDesignFlatButton}" Content="Aceptar" Margin="5 10 0 0"/>
+                    </DockPanel>
+                </StackPanel>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
 
+        <materialDesign:DialogHost  x:Name="DniRepetido" Grid.RowSpan="3" Margin="0,0,0.2,68.4">
+            <materialDesign:DialogHost.DialogContent>
+                <StackPanel Margin="15" Orientation="Vertical">
+                    <Image Source="/imagenes/Fall_Guys_Enojado.png" Width="178" Height="92" Margin="20 30"/>
+                    <TextBlock Text="El DNI ingresado ya se encuentra registrado" HorizontalAlignment="Center"/>
+                    <DockPanel>
+                        <Button DockPanel.Dock="Right" Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" CommandTarget="{Binding ElementName=DniRepetido}"
+                            Style="{DynamicResource MaterialDesignFlatButton}" Content="Aceptar" Margin="5 10 0 0"/>
+                    </DockPanel>
+                </StackPanel>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
+
+        <materialDesign:DialogHost  x:Name="EliminarCli" Grid.RowSpan="3" Margin="0,0,0.2,68.4">
+            <materialDesign:DialogHost.DialogContent>
+                <StackPanel Margin="15" Orientation="Vertical">
+                    <Image Source="/imagenes/Fall_Guys_Enojado.png" Width="178" Height="92" Margin="20 30"/>
+                    <TextBlock Text="Seleccione un cliente antes de eliminar" HorizontalAlignment="Center"/>
+                    <DockPanel>
+                        <Button DockPanel.Dock="Right" Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" CommandTarget="{Binding ElementName=EliminarCli}"
+                            Style="{DynamicResource MaterialDesignFlatButton}" Content="Aceptar" Margin="5 10 0 0"/>
+                    </DockPanel>
+                </StackPanel>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
+
+        <materialDesign:DialogHost  x:Name="DniInexistente" Grid.RowSpan="3" Margin="0,0,0.2,68.4">
+            <materialDesign:DialogHost.DialogContent>
+                <StackPanel Margin="15" Orientation="Vertical">
+                    <Image Source="/imagenes/Fall_Guys_Enojado.png" Width="178" Height="92" Margin="20 30"/>
+                    <TextBlock Text="El DNI ingresado no existe" HorizontalAlignment="Center"/>
+                    <DockPanel>
+                        <Button DockPanel.Dock="Right" Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" CommandTarget="{Binding ElementName=DniInexistente}"
+                            Style="{DynamicResource MaterialDesignFlatButton}" Content="Aceptar" Margin="5 10 0 0"/>
+                    </DockPanel>
+                </StackPanel>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
     </Grid>
 </UserControl>
