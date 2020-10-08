@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\
+c:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\
 Vistas
 none
 false
 DEBUG;TRACE
-C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\App.xaml
-111190978305
+c:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\App.xaml
+11879101260
 
-16896955982
-161331501464
+17-1409362437
+16-297057020
 ControlUsuario\UserControlABMClientes.xaml;ControlUsuario\UserControlABMProyecciones.xaml;ControlUsuario\UserControlButacas.xaml;ControlUsuario\UserControlLogin.xaml;ControlUsuario\UserControlValidarCliente.xaml;PlantillaDicc\ButtonChange.xaml;UserControlABMPeliculas.xaml;ControlUsuario\UserControlDashboard.xaml;UserControlMenuItem.xaml;MainWindow.xaml;WinMenuAdmin.xaml;
 
-False
+True
 
