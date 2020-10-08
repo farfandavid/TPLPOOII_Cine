@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Reflection;
 using ClasesBase;
 using ClasesBase.TrabajarABM;
 using System.Data;
@@ -22,6 +23,7 @@ namespace Vistas.ControlUsuario {
     /// </summary>
     public partial class UserControlABMClientes : UserControl {
         ABMCliente trabajarCli = new ABMCliente();
+        Cliente cliente = new Cliente();
         //Cliente[] clientes = new Cliente[0];
         public UserControlABMClientes() {
             InitializeComponent();
@@ -74,22 +76,26 @@ namespace Vistas.ControlUsuario {
 
         private void btnEliminarCli_Click(object sender, RoutedEventArgs e) {
             Cliente ocliente = new Cliente();
-            if(dgClientes.SelectedItem == null)
+
+            if (dgClientes.SelectedItem == null)
             {
                 MessageBox.Show("SELECCIONE UN CLIENTE ANTES DE ELIMINAR");
                 return;            
             }
             else
             {
-                int numero;
-                Int32.TryParse(txtCli_Dni.Text, out numero);
-                ocliente.Cli_DNI = numero.ToString();
-                ocliente.Cli_Nombre = txtCli_Nombre.Text;
-                ocliente.Cli_Apellido = txtCli_Apellido.Text;
-                ocliente.Cli_Telefono = txtCli_Telefono.Text;
-                ocliente.Cli_Email = txtCli_Email.Text;
-                ABMCliente.eliminar_cliente(ocliente);
-            }
+                //int numero;
+                //Int32.TryParse(txtCli_Dni.Text, out numero);
+                //ocliente.Cli_DNI = numero.ToString();
+                //ocliente.Cli_Nombre = txtCli_Nombre.Text;
+                //ocliente.Cli_Apellido = txtCli_Apellido.Text;
+                //ocliente.Cli_Telefono = txtCli_Telefono.Text;
+                //ocliente.Cli_Email = txtCli_Email.Text;
+                //ABMCliente.eliminar_cliente(ocliente);
+
+                ABMCliente.eliminar_cliente(cliente);
+                principal.UpdateLayout();
+           }
 
             
             
@@ -99,7 +105,15 @@ namespace Vistas.ControlUsuario {
         {
             DataTable dt = new DataTable();
             dt=ABMCliente.buscarCli_DNI(txtCli_Dni.Text.ToString());
-            
+            DataRow row = dt.Rows[0];
+
+            txtCli_Dni.Text = row[3].ToString();
+            txtCli_Nombre.Text = row[2].ToString();
+            txtCli_Apellido.Text = row[1].ToString();
+            txtCli_Telefono.Text = row[4].ToString();
+            txtCli_Email.Text = row[5].ToString();
+
+
         }
 
         private void dgClientes_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -109,11 +123,67 @@ namespace Vistas.ControlUsuario {
             if (row_selected != null)
             {
                 txtCli_Dni.Text = row_selected[1].ToString();
-                txtCli_Nombre.Text = row_selected[2].ToString();
-                txtCli_Apellido.Text = row_selected[3].ToString();
+                txtCli_Nombre.Text = row_selected[3].ToString();
+                txtCli_Apellido.Text = row_selected[2].ToString();
                 txtCli_Telefono.Text = row_selected[4].ToString();
                 txtCli_Email.Text = row_selected[5].ToString();
+                this.cliente.Cli_ID = int.Parse(row_selected[0].ToString());
+                this.cliente.Cli_DNI = row_selected[1].ToString();
+                this.cliente.Cli_Nombre = row_selected[2].ToString();
+                this.cliente.Cli_Apellido = row_selected[3].ToString();
+                this.cliente.Cli_Telefono = row_selected[4].ToString();
+                this.cliente.Cli_Email = row_selected[5].ToString();
+                MessageBox.Show(cliente.Cli_ID.ToString());
             }
+        }
+        private static List<T> ConvertDataTable<T>(DataTable dt) {
+            List<T> data = new List<T>();
+            foreach (DataRow row in dt.Rows) {
+                T item = GetItem<T>(row);
+                data.Add(item);
+            }
+            return data;
+        }
+
+        private static T GetItem<T>(DataRow dr) {
+            Type temp = typeof(T);
+            T obj = Activator.CreateInstance<T>();
+
+            foreach (DataColumn column in dr.Table.Columns) {
+                foreach (PropertyInfo pro in temp.GetProperties()) {
+                    if (pro.Name == column.ColumnName)
+                        pro.SetValue(obj, dr[column.ColumnName], null);
+                    else
+                        continue;
+                }
+            }
+            return obj;
+        }
+
+        private void btnModificalCli_Click(object sender, RoutedEventArgs e) {
+            if (dgClientes.SelectedItem == null) {
+                MessageBox.Show("SELECCIONE UN CLIENTE ANTES DE ELIMINAR");
+                return;
+            } else {
+
+                this.cliente.Cli_DNI = txtCli_Dni.Text;
+                this.cliente.Cli_Nombre = txtCli_Nombre.Text;
+                this.cliente.Cli_Apellido = txtCli_Apellido.Text;
+                this.cliente.Cli_Telefono = txtCli_Telefono.Text;
+                this.cliente.Cli_Email = txtCli_Email.Text;
+                ABMCliente.modificar_Cliente(cliente);
+                vaciarCampos();
+                dgClientes.SelectedItem = null;
+                cliente = null;
+            }
+        }
+
+        private void vaciarCampos() {
+            txtCli_Dni.Text = "";
+            txtCli_Nombre.Text = "";
+            txtCli_Apellido.Text = "";
+            txtCli_Telefono.Text = "";
+            txtCli_Email.Text = "";
         }
     }
 }

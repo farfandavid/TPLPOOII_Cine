@@ -125,18 +125,19 @@
                 </StackPanel>
 
             </StackPanel>
-            <Grid Grid.Row="2" >
+            <Grid Grid.Row="2" Name="principal">
                 <StackPanel Margin="18,363,32.2,-11.6" Height="87" Orientation="Horizontal">
 
                     <Button Style="{StaticResource FormButton}" Background="#65b3f6" Content="Agregar" Height="28" Width="85"  HorizontalAlignment="Left"  Name="btnAgregarCli" Click="btnAgregarCli_Click"/>
                     <Button Style="{StaticResource FormButton}" Background="#65b3f6" Content="Eliminar" Height="28" Width="85"  HorizontalAlignment="Right"  x:Name="btnEliminarCli" Margin="230 0"  Click="btnEliminarCli_Click"/>
-                    <Button Style="{StaticResource FormButton}" Background="#65b3f6" Content="Modificar" Height="28" Width="85"  HorizontalAlignment="Center"  x:Name="btnModificalCli" />
+                    <Button Style="{StaticResource FormButton}" Background="#65b3f6" Content="Modificar" Height="28" Width="85"  HorizontalAlignment="Center"  x:Name="btnModificalCli" Click="btnModificalCli_Click" />
 
                 </StackPanel>
                 <ListView Name="dgClientes" Height="288" Width="357" ItemsSource="{Binding Source={StaticResource lista_Clientes}}" Margin="408,49,66.2,101.4" SelectionChanged="dgClientes_SelectionChanged" >
                     <ListView.View>
                         <GridView>
-                            
+
+                            <GridViewColumn Width="100" Header="ID" DisplayMemberBinding="{Binding Path=cli_ID}"/>
                             <GridViewColumn Width="70" Header="DNI" DisplayMemberBinding="{Binding Path=cli_DNI}"/>
                             <GridViewColumn Width="80" Header="Nombre" DisplayMemberBinding="{Binding Path=cli_Nombre}"/>
                             <GridViewColumn Width="80" Header="Apellido" DisplayMemberBinding="{Binding Path=cli_Apellido}"/>

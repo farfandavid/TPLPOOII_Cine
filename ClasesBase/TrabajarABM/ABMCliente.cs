@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace ClasesBase.TrabajarABM {
     public class ABMCliente {
-        public DataTable traerCliente() {
+        public static DataTable traerCliente() {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.conexion);
 
             SqlCommand cmd = new SqlCommand();
@@ -73,7 +73,7 @@ namespace ClasesBase.TrabajarABM {
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
 
-            cmd.Parameters.AddWithValue("@idCli", cli.Cli_DNI);
+            cmd.Parameters.AddWithValue("@idCli", cli.Cli_ID);
 
             cnn.Open();
             cmd.ExecuteNonQuery();
