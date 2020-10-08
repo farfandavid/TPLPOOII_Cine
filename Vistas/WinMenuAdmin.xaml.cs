@@ -76,7 +76,7 @@ namespace Vistas
 
                 var menuClientes = new List<SubItem>();
                 menuClientes.Add(new SubItem("ABM Clientes", new UserControlABMClientes()));
-                menuClientes.Add(new SubItem("Validar Clientes", new UserControlValidarCliente()));
+                menuClientes.Add(new SubItem("algo 2"));
                 menuClientes.Add(new SubItem("algo 3"));
                 menuClientes.Add(new SubItem("algo 4"));
                 var item5 = new ItemMenu("Gestionar Clientes", menuClientes, PackIconKind.Group);

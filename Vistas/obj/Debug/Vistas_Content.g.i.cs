@@ -8,10 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-<<<<<<< HEAD
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("listaxml/clasificaciones.xml")]
-=======
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("imagenes/validar_cliente.png")]
->>>>>>> Tp-versionMili
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("tipoclasificacion.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("tipogenero.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("tiposala.xml")]
 
 

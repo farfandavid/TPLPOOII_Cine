@@ -13,15 +13,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Vistas.ControlUsuario
-{
+namespace Vistas.ControlUsuario {
     /// <summary>
     /// Lógica de interacción para UserControlValidarCliente.xaml
     /// </summary>
-    public partial class UserControlValidarCliente : UserControl
-    {
-        public UserControlValidarCliente()
-        {
+    public partial class UserControlValidarCliente : UserControl {
+        public UserControlValidarCliente() {
             InitializeComponent();
         }
     }

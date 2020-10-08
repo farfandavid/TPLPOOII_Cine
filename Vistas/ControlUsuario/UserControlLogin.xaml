@@ -15,7 +15,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="340" d:DesignWidth="425">
     <Grid>
-<<<<<<< HEAD
         <StackPanel Orientation="Vertical" Margin="40 70 0 0">
             <StackPanel Orientation="Horizontal" >
                 <materialDesign:PackIcon Kind="Account" Foreground="{Binding ElementName=txtUserName, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
@@ -28,20 +27,6 @@
             <Button 
                     Style="{DynamicResource MaterialDesignRaisedAccentButton}" Content="Aceptar" Height="23" HorizontalAlignment="Right" Margin="0,20,70,0" Name="btnAcept" VerticalAlignment="Top" Width="80" Click="btnAcept_Click"/>
         </StackPanel>
-=======
-            <StackPanel Orientation="Vertical" Margin="40 70 0 0"> 
-                <StackPanel Orientation="Horizontal" >
-                    <materialDesign:PackIcon Kind="Account" Foreground="{Binding ElementName=txtUserName, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <TextBox  Name="txtUserName" Width="300" materialDesign:HintAssist.Hint="Usuario" materialDesign:HintAssist.IsFloating="True" />
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0 40 0 0">
-                    <materialDesign:PackIcon Kind="Key" Foreground="{Binding ElementName=passBoxInicio, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <PasswordBox Name="passBoxInicio" Width="300" PasswordChar="*" materialDesign:HintAssist.Hint="Contraseña" materialDesign:HintAssist.IsFloating="True"/>
-                </StackPanel>
-                <Button 
-                    Style="{DynamicResource MaterialDesignRaisedAccentButton}" Content="Aceptar" Height="23" HorizontalAlignment="Right" Margin="0,20,70,0" Name="btnAcept" VerticalAlignment="Top" Width="80" Click="btnAcept_Click"/>
-            </StackPanel>
->>>>>>> Tp-versionMili
 
         <materialDesign:DialogHost  x:Name="error" Grid.RowSpan="3">
             <materialDesign:DialogHost.DialogContent>

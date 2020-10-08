@@ -50,7 +50,7 @@
         </Grid>
         <StackPanel Grid.Row="1" Grid.Column="1" >
             <Image Source="imagenes/Fondo.jpg" Stretch="Fill" Height="558" Margin="0,0,0.4,0"/>
-             
+
         </StackPanel>
 
         <StackPanel x:Name="StackPanelMain" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch"/>
@@ -67,7 +67,7 @@
                         <Button DockPanel.Dock="Right" Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" CommandTarget="{Binding ElementName=cerrarSesion}"
                             Style="{DynamicResource MaterialDesignFlatButton}" Content="Cancelar" Margin="5 10 0 0"/>
                     </DockPanel>
-                    
+
                 </StackPanel>
             </materialDesign:DialogHost.DialogContent>
         </materialDesign:DialogHost>

@@ -4,25 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\
 Vistas
 none
 false
 DEBUG;TRACE
-C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\App.xaml
-<<<<<<< HEAD
-12-908122905
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\App.xaml
+13-1462032111
 
-20-212058212
-161946665010
-ControlUsuario\UserControlABMClientes.xaml;ControlUsuario\UserControlABMProyecciones.xaml;ControlUsuario\UserControlButacas.xaml;ControlUsuario\UserControlLogin.xaml;PlantillaDicc\ButtonChange.xaml;PlantillaDicc\TextBoxStyle.xaml;Prueba.xaml;UserControlABMPeliculas.xaml;ControlUsuario\UserControlDashboard.xaml;UserControlMenuItem.xaml;MainWindow.xaml;WinMenuAdmin.xaml;
-=======
-111190978305
+21-2003768262
+16913794750
+ControlUsuario\UserControlABMClientes.xaml;ControlUsuario\UserControlABMProyecciones.xaml;ControlUsuario\UserControlButacas.xaml;ControlUsuario\UserControlLogin.xaml;ControlUsuario\UserControlValidarCliente.xaml;PlantillaDicc\ButtonChange.xaml;PlantillaDicc\TextBoxStyle.xaml;Prueba.xaml;UserControlABMPeliculas.xaml;ControlUsuario\UserControlDashboard.xaml;UserControlMenuItem.xaml;MainWindow.xaml;WinMenuAdmin.xaml;
 
-201971464817
-161946665010
-ControlUsuario\UserControlABMClientes.xaml;ControlUsuario\UserControlABMProyecciones.xaml;ControlUsuario\UserControlButacas.xaml;ControlUsuario\UserControlLogin.xaml;ControlUsuario\UserControlValidarCliente.xaml;PlantillaDicc\ButtonChange.xaml;UserControlABMPeliculas.xaml;ControlUsuario\UserControlDashboard.xaml;UserControlMenuItem.xaml;MainWindow.xaml;WinMenuAdmin.xaml;
->>>>>>> Tp-versionMili
-
-True
+False
 

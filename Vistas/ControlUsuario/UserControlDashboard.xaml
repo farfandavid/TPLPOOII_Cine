@@ -29,9 +29,10 @@
                     <materialDesign:PackIcon Kind="Movie" Foreground="{Binding ElementName=txtCod_Pel, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                     <TextBox  Name="txtCod_Pel" Width="300" materialDesign:HintAssist.Hint="Codigo de la Pelicula" materialDesign:HintAssist.IsFloating="True" CaretBrush="#FFF99118" SelectionBrush="#FFF99118" />
                 </StackPanel>
-                
+
             </StackPanel>
         </Grid>
-        
+
     </Grid>
 </UserControl>
+

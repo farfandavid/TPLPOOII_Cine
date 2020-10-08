@@ -13,37 +13,22 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-<<<<<<< HEAD
 namespace Vistas.ControlUsuario {
     /// <summary>
     /// Lógica de interacción para UserControlLogin.xaml
     /// </summary>
     public partial class UserControlLogin : UserControl {
-=======
-namespace Vistas.ControlUsuario
-{
-    /// <summary>
-    /// Lógica de interacción para UserControlLogin.xaml
-    /// </summary>
-    public partial class UserControlLogin : UserControl
-    {
->>>>>>> Tp-versionMili
-        public UserControlLogin()
-        {
+        public UserControlLogin() {
             InitializeComponent();
         }
-        private void btnAcept_Click(object sender, RoutedEventArgs e)
-        {
+        private void btnAcept_Click(object sender, RoutedEventArgs e) {
 
-            if ((txtUserName.Text == "admin" && passBoxInicio.Password.ToString() == "12345") || (txtUserName.Text == "vend" && passBoxInicio.Password.ToString() == "12345"))
-            {
+            if ((txtUserName.Text == "admin" && passBoxInicio.Password.ToString() == "12345") || (txtUserName.Text == "vend" && passBoxInicio.Password.ToString() == "12345")) {
                 WinMenuAdmin atrWinMenu = new WinMenuAdmin(txtUserName.Text);
                 atrWinMenu.Show();
                 txtUserName.Text = "";
                 passBoxInicio.Password = "";
-            }
-            else
-            {
+            } else {
                 error.IsOpen = true;
             }
 

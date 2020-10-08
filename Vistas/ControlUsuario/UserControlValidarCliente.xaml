@@ -58,7 +58,7 @@
                         <Button Background="#65b3f6" Content="Eliminar" Height="28" Width="85"  HorizontalAlignment="Right"  x:Name="btnEliminarCli" Margin="230 0"  Click="btnEliminarCli_Click"/>
                         <Button Background="#65b3f6" Content="Modificar" Height="28" Width="85"  HorizontalAlignment="Center"  x:Name="btnModificalCli" />
                     -->
-                        </StackPanel>
+                    </StackPanel>
                     <DataGrid x:Name="dgListadoClientes" HorizontalAlignment="Left" Height="288" Margin="442,35,0,0" VerticalAlignment="Top" Width="357">
                         <DataGrid.Columns>
                             <DataGridTextColumn/>

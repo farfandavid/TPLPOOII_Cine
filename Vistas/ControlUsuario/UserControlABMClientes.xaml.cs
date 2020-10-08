@@ -14,32 +14,28 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ClasesBase;
 
-namespace Vistas.ControlUsuario
-{
+namespace Vistas.ControlUsuario {
     /// <summary>
     /// Lógica de interacción para UserControlABMClientes.xaml
     /// </summary>
-    public partial class UserControlABMClientes : UserControl
-    {
+    public partial class UserControlABMClientes : UserControl {
         List<Cliente> listaClientes = new List<Cliente>();
         //Cliente[] clientes = new Cliente[0];
-        public UserControlABMClientes()
-        {
+        public UserControlABMClientes() {
             InitializeComponent();
-            
+
         }
 
-        
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-                            
+
+        private void Window_Loaded(object sender, RoutedEventArgs e) {
+
         }
 
-        private void btnAgregarCli_Click(object sender, RoutedEventArgs e)
-        {
+        private void btnAgregarCli_Click(object sender, RoutedEventArgs e) {
             Cliente ocliente = new Cliente();
-           
-            ocliente.Cli_DNI = txtCli_Dni.Text;
+            int numero;
+            Int32.TryParse(txtCli_Dni.Text, out numero);
+            ocliente.Cli_DNI = numero.ToString();
             ocliente.Cli_Nombre = txtCli_Nombre.Text;
             ocliente.Cli_Apellido = txtCli_Apellido.Text;
             ocliente.Cli_Telefono = txtCli_Telefono.Text;
@@ -54,7 +50,7 @@ namespace Vistas.ControlUsuario
             dgListadoClientes.Items.Refresh();
 
             MessageBox.Show("Los datos fueron guardados con exito \nDNI=" + txtCli_Dni.Text + "\nNombre=" + txtCli_Nombre.Text + "\nApellido="
-                + txtCli_Apellido.Text + "\nTelefono=" + txtCli_Telefono.Text + "\nEmail=" + txtCli_Email.Text, "Acccion realizada con exito", MessageBoxButton.OK,MessageBoxImage.Information);
+                + txtCli_Apellido.Text + "\nTelefono=" + txtCli_Telefono.Text + "\nEmail=" + txtCli_Email.Text, "Acccion realizada con exito", MessageBoxButton.OK, MessageBoxImage.Information);
 
             txtCli_Dni.Clear();
             txtCli_Nombre.Clear();
@@ -62,11 +58,10 @@ namespace Vistas.ControlUsuario
             txtCli_Telefono.Clear();
             txtCli_Email.Clear();
 
-            
+
         }
 
-        private void btnEliminarCli_Click(object sender, RoutedEventArgs e)
-        {
+        private void btnEliminarCli_Click(object sender, RoutedEventArgs e) {
 
         }
     }

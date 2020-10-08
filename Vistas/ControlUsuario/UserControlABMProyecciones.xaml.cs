@@ -14,83 +14,42 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ClasesBase;
 
-namespace Vistas.ControlUsuario
-{
+namespace Vistas.ControlUsuario {
     /// <summary>
     /// Lógica de interacción para UserControlABMProyecciones.xaml
     /// </summary>
-    public partial class UserControlABMProyecciones : UserControl
-    {
+    public partial class UserControlABMProyecciones : UserControl {
         List<Proyeccion> listaProyecciones = new List<Proyeccion>();
-        int cont=1;
-<<<<<<< HEAD
-        //String sala;
-=======
->>>>>>> Tp-versionMili
-        public UserControlABMProyecciones()
-        {
+        int cont = 1;
+        public UserControlABMProyecciones() {
             InitializeComponent();
-            
+
             txtProy_Codigo.Text = cont.ToString();
 
-<<<<<<< HEAD
-            List<Proyeccion> listaSalas = new List<Proyeccion>();
-            listaSalas.Add(new Proyeccion { Sala_ID = 1 });
-            listaSalas.Add(new Proyeccion { Sala_ID = 2 });
-            listaSalas.Add(new Proyeccion { Sala_ID = 3 });
-            listaSalas.Add(new Proyeccion { Sala_ID = 4 });
-            listaSalas.Add(new Proyeccion { Sala_ID = 5 });
 
-            cmbNroSala.ItemsSource = listaSalas;
-=======
-            
->>>>>>> Tp-versionMili
         }
 
-        private void btnAgregarProy_Click(object sender, RoutedEventArgs e)
-        {
-<<<<<<< HEAD
-            //Proyeccion oProyeccion = new Proyeccion();
-            //oProyeccion.Proy_Codigo = cont;
-            //oProyeccion.Proy_Fecha = DateTime.Parse(txtProy_Fecha.Text);
-            //oProyeccion.Proy_Hora = txtProy_Hora.Text;
-            //oProyeccion.Proy_Nro = sala;
-            //oProyeccion.Peli_Codigo = txtProy_CodPel.Text;
-=======
+        private void btnAgregarProy_Click(object sender, RoutedEventArgs e) {
             Proyeccion oProyeccion = new Proyeccion();
             oProyeccion.Proy_Codigo = cont;
-            oProyeccion.Proy_Fecha = txtProy_Fecha.Text;
+            oProyeccion.Proy_Fecha = new DateTime();
             oProyeccion.Proy_Hora = txtProy_Hora.Text;
-            oProyeccion.Proy_NroSala = cmbNroSala.SelectedValue.ToString();
-            oProyeccion.Peli_Codigo = txtProy_CodPel.Text;
->>>>>>> Tp-versionMili
+            oProyeccion.Sala_ID = 1;
+            oProyeccion.Peli_Codigo = int.Parse(txtProy_CodPel.Text);
 
-            //listaProyecciones.Add(oProyeccion);
-            //dgListadoProyecciones.ItemsSource = listaProyecciones;
-            //dgListadoProyecciones.Items.Refresh();
+            listaProyecciones.Add(oProyeccion);
+            dgListadoProyecciones.ItemsSource = listaProyecciones;
+            dgListadoProyecciones.Items.Refresh();
 
-<<<<<<< HEAD
-            //MessageBox.Show("Los datos fueron guardados con exito \nCodigo=" + cont + "\nFecha=" + txtProy_Fecha.Text + "\nHora="
-            //    + txtProy_Hora.Text + "\nNumero Sala=" + sala + "\nCodigo Pelicula=" + txtProy_CodPel.Text, "Acccion realizada con exito", MessageBoxButton.OK, MessageBoxImage.Information);
-=======
             MessageBox.Show("Los datos fueron guardados con exito \nCodigo=" + cont + "\nFecha=" + txtProy_Fecha.Text + "\nHora="
                 + txtProy_Hora.Text + "\nNumero Sala=" + cmbNroSala.SelectedValue.ToString() + "\nCodigo Pelicula=" + txtProy_CodPel.Text, "Acccion realizada con exito", MessageBoxButton.OK, MessageBoxImage.Information);
->>>>>>> Tp-versionMili
 
-            //cont = cont + 1;
-            //txtProy_Codigo.Text = cont.ToString();
-            //txtProy_Fecha.Clear();
-            //txtProy_Hora.Clear();
-            //txtProy_CodPel.Clear();
+            cont = cont + 1;
+            txtProy_Codigo.Text = cont.ToString();
+            txtProy_Fecha.Clear();
+            txtProy_Hora.Clear();
+            txtProy_CodPel.Clear();
         }
 
-<<<<<<< HEAD
-        private void cmbSalas_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            //Proyeccion selec = this.cmbNroSala.SelectedItem as Proyeccion;
-            //sala = selec.Proy_NroSala;
-        }
-=======
->>>>>>> Tp-versionMili
     }
 }

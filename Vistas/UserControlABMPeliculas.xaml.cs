@@ -14,52 +14,28 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ClasesBase;
 
-namespace Vistas
-{
+namespace Vistas {
     /// <summary>
     /// Lógica de interacción para UserControlABMPeliculas.xaml
     /// </summary>
-    public partial class UserControlABMPeliculas : UserControl
-    {
+    public partial class UserControlABMPeliculas : UserControl {
         List<Pelicula> listPeliculas = new List<Pelicula>();
-        
+
         int cont = 1;
-        public UserControlABMPeliculas()
-        {
+        public UserControlABMPeliculas() {
             InitializeComponent();
 
             txtCod_Pel.Text = cont.ToString();
 
 
-            
 
-            
+
+
         }
 
-        private void btnAgregarPel_Click(object sender, RoutedEventArgs e)
-        {
-<<<<<<< HEAD
-            //Pelicula oPelicula = new Pelicula();
-            //oPelicula.Peli_Codigo = txtCod_Pel.Text;
-            //oPelicula.Peli_Titulo = txtTitulo_Pel.Text;
-            //oPelicula.Peli_Duracion = txtDuracion_Pel.Text;
-            //oPelicula.Peli_Genero = gen;
-            //oPelicula.Peli_Clase = clas;
-
-            //listPeliculas.Add(oPelicula);
-            //dgListadoPeliculas.ItemsSource = listPeliculas;
-            //dgListadoPeliculas.Items.Refresh();
-
-            //MessageBox.Show("Los datos fueron guardados con exito \nCodigo=" + txtCod_Pel.Text + "\nTitulo=" + txtTitulo_Pel.Text + "\nDuracion="
-            //    + txtDuracion_Pel.Text + "\nGenero=" + gen + "\nClase=" + clas, "Acccion realizada con exito", MessageBoxButton.OK, MessageBoxImage.Information);
-
-            //cont = cont + 1;
-            //txtCod_Pel.Text = cont.ToString();
-            //txtDuracion_Pel.Clear();
-            //txtTitulo_Pel.Clear();
-=======
+        private void btnAgregarPel_Click(object sender, RoutedEventArgs e) {
             Pelicula oPelicula = new Pelicula();
-            oPelicula.Peli_Codigo = txtCod_Pel.Text;
+            oPelicula.Peli_Codigo = int.Parse(txtCod_Pel.Text);
             oPelicula.Peli_Titulo = txtTitulo_Pel.Text;
             oPelicula.Peli_Duracion = txtDuracion_Pel.Text;
             oPelicula.Peli_Genero = cmbGeneros.SelectedValue.ToString();
@@ -76,15 +52,14 @@ namespace Vistas
             txtCod_Pel.Text = cont.ToString();
             txtDuracion_Pel.Clear();
             txtTitulo_Pel.Clear();
->>>>>>> Tp-versionMili
-            
-        }
-
-        private void btnEliminarPel_Click(object sender, RoutedEventArgs e)
-        {
 
         }
 
-        
+        private void btnEliminarPel_Click(object sender, RoutedEventArgs e) {
+
+        }
+
+
     }
 }
+

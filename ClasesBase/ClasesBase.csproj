@@ -60,6 +60,9 @@
     <Compile Include="Sala.cs" />
     <Compile Include="Ticket.cs" />
     <Compile Include="TrabajarABM\ABMCliente.cs" />
+    <Compile Include="TrabajarABM\ABMRol.cs" />
+    <Compile Include="TrabajarABM\ABMSala.cs" />
+    <Compile Include="TrabajarABM\ABMUsuario.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Venta.cs" />
   </ItemGroup>

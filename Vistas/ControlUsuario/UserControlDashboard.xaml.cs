@@ -13,15 +13,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Vistas.ControlUsuario
-{
+namespace Vistas.ControlUsuario {
     /// <summary>
     /// Lógica de interacción para UserControlDashboard.xaml
     /// </summary>
-    public partial class UserControlDashboard : UserControl
-    {
-        public UserControlDashboard()
-        {
+    public partial class UserControlDashboard : UserControl {
+        public UserControlDashboard() {
             InitializeComponent();
         }
     }

@@ -42,7 +42,7 @@
                     <TextBox  Name="txtProy_CodPel" Width="300" materialDesign:HintAssist.Hint="Codigo de Pelicula" materialDesign:HintAssist.IsFloating="True" CaretBrush="#FFF99118" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
-                    
+
                     <StackPanel.Resources>
                         <XmlDataProvider x:Key="tipo_Sala" Source="/TipoSala.xml" XPath="/numeroSala"/>
                     </StackPanel.Resources>
@@ -50,7 +50,7 @@
                     <ComboBox Name="cmbNroSala" Width="300" ItemsSource="{Binding Source={StaticResource tipo_Sala},XPath=tipo/@name}"/>
 
                 </StackPanel>
-                
+
 
             </StackPanel>
             <StackPanel Margin="40,351,10.2,0.4" Height="87" Orientation="Horizontal">
