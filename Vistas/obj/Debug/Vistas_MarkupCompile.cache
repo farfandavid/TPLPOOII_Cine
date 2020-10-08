@@ -10,19 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\App.xaml
-<<<<<<< Updated upstream
-101744887511
+111190978305
 
-15-1606301264
+16896955982
 161331501464
-ControlUsuario\UserControlABMClientes.xaml;ControlUsuario\UserControlABMProyecciones.xaml;ControlUsuario\UserControlButacas.xaml;ControlUsuario\UserControlLogin.xaml;PlantillaDicc\ButtonChange.xaml;UserControlABMPeliculas.xaml;ControlUsuario\UserControlDashboard.xaml;UserControlMenuItem.xaml;MainWindow.xaml;WinMenuAdmin.xaml;
-=======
-111650115120
-
-15-1606301264
-161331501464
-ControlUsuario\UserControlABMClientes.xaml;ControlUsuario\UserControlABMProyecciones.xaml;ControlUsuario\UserControlButacas.xaml;ControlUsuario\UserControlLogin.xaml;PlantillaDicc\ButtonChange.xaml;PlantillaDicc\TextBoxStyle.xaml;UserControlABMPeliculas.xaml;ControlUsuario\UserControlDashboard.xaml;UserControlMenuItem.xaml;MainWindow.xaml;WinMenuAdmin.xaml;
->>>>>>> Stashed changes
+ControlUsuario\UserControlABMClientes.xaml;ControlUsuario\UserControlABMProyecciones.xaml;ControlUsuario\UserControlButacas.xaml;ControlUsuario\UserControlLogin.xaml;ControlUsuario\UserControlValidarCliente.xaml;PlantillaDicc\ButtonChange.xaml;UserControlABMPeliculas.xaml;ControlUsuario\UserControlDashboard.xaml;UserControlMenuItem.xaml;MainWindow.xaml;WinMenuAdmin.xaml;
 
 False
 

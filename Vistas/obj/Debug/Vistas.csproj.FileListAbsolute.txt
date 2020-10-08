@@ -119,3 +119,5 @@ C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\WinMenuAdmin.baml
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.g.resources
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.Properties.Resources.resources
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.csproj.GenerateResource.Cache
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlValidarCliente.g.cs
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlValidarCliente.baml
