@@ -8,6 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+<<<<<<< HEAD
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("listaxml/clasificaciones.xml")]
+=======
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("imagenes/validar_cliente.png")]
+>>>>>>> Tp-versionMili
 
 

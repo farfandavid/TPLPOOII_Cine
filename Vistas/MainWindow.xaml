@@ -13,6 +13,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:control="clr-namespace:Vistas.ControlUsuario"
         xmlns:local="clr-namespace:Vistas"
+        xmlns:control="clr-namespace:Vistas.ControlUsuario"
         mc:Ignorable="d"
         Title="MainWindow" Height="470" Width="425" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen">
     <Grid>
@@ -45,5 +46,10 @@
             <control:UserControlLogin x:Name="login"/>
         </Grid>
 
+<<<<<<< HEAD
+=======
+        
+
+>>>>>>> Tp-versionMili
     </Grid>
 </Window>

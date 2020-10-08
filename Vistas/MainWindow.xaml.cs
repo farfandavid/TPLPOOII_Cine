@@ -28,6 +28,13 @@ namespace Vistas
         }
 
 
+<<<<<<< HEAD
+=======
+        
+
+        
+
+>>>>>>> Tp-versionMili
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();

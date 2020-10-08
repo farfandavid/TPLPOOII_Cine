@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<generos>
+  <tipo name="Aventura"/>
+  <tipo name="Comedia"/>
+  <tipo name="Drama"/>
+  <tipo name="Terror"/>
+  <tipo name="Ciencia Ficcion"/>
+  <tipo name="Guerra"/>
+</generos>

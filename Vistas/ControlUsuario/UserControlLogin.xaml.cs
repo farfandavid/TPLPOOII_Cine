@@ -13,11 +13,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+<<<<<<< HEAD
 namespace Vistas.ControlUsuario {
     /// <summary>
     /// Lógica de interacción para UserControlLogin.xaml
     /// </summary>
     public partial class UserControlLogin : UserControl {
+=======
+namespace Vistas.ControlUsuario
+{
+    /// <summary>
+    /// Lógica de interacción para UserControlLogin.xaml
+    /// </summary>
+    public partial class UserControlLogin : UserControl
+    {
+>>>>>>> Tp-versionMili
         public UserControlLogin()
         {
             InitializeComponent();

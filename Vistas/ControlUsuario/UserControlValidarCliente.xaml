@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="Vistas.ControlUsuario.UserControlValidarCliente"
+             
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+            Background="{DynamicResource MaterialDesignPaper}"
+            TextElement.FontWeight="Medium"
+            TextElement.FontSize="14"
+            FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Vistas.ControlUsuario"
+             mc:Ignorable="d" 
+             d:DesignHeight="558" d:DesignWidth="831" >
+    <Grid>
+        <Grid Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="120"/>
+                <RowDefinition Height="370"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Background="#65b3f6" Margin="0,0,0.2,0">
+                <Image Source="/imagenes/Validar_Cliente.png" HorizontalAlignment="Stretch" Margin="38,10,0,1"/>
+                <Image Source="/imagenes/pollito.png" HorizontalAlignment="Left" Margin="10,11,0,0"/>
+            </Grid>
+            <Grid Grid.Row="1" Margin="0,0,0.2,0.4" Grid.RowSpan="2">
+
+                <StackPanel Orientation="Vertical" Margin="40 20 450 50" Background="White">
+                    <StackPanel Orientation="Horizontal" >
+                        <materialDesign:PackIcon Kind="Movie" Foreground="{Binding ElementName=txtCli_Dni, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                        <TextBox  Name="txtCli_Dni" Width="300" materialDesign:HintAssist.Hint="DNI" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
+                        <materialDesign:PackIcon Kind="LocalMovies" Foreground="{Binding ElementName=txtCli_Nombre, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                        <TextBox  Name="txtCli_Nombre" Width="300" materialDesign:HintAssist.Hint="Nombre" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
+                        <materialDesign:PackIcon Kind="AccessTime" Foreground="{Binding ElementName=txtCli_Apellido, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                        <TextBox  Name="txtCli_Apellido" Width="300" materialDesign:HintAssist.Hint="Apellido" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
+                        <materialDesign:PackIcon Kind="Stars" Foreground="{Binding ElementName=txtCli_Telefono, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                        <TextBox  Name="txtCli_Telefono" Width="300" materialDesign:HintAssist.Hint="Telefono" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
+                        <materialDesign:PackIcon Kind="ImageFilterVintage" Foreground="{Binding ElementName=txtCli_Email, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                        <TextBox  Name="txtCli_Email" Width="300" materialDesign:HintAssist.Hint="Email" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" />
+                    </StackPanel>
+
+                </StackPanel>
+                <Grid Grid.Row="2" >
+                    <StackPanel Margin="18,363,32.2,-11.6" Height="87" Orientation="Horizontal">
+                        <!--
+                        <Button Background="#65b3f6" Content="Agregar" HorizontalAlignment="Left"  Name="btnAgregarCli" Click="btnAgregarCli_Click" />
+                        <Button Background="#65b3f6" Content="Eliminar" Height="28" Width="85"  HorizontalAlignment="Right"  x:Name="btnEliminarCli" Margin="230 0"  Click="btnEliminarCli_Click"/>
+                        <Button Background="#65b3f6" Content="Modificar" Height="28" Width="85"  HorizontalAlignment="Center"  x:Name="btnModificalCli" />
+                    -->
+                        </StackPanel>
+                    <DataGrid x:Name="dgListadoClientes" HorizontalAlignment="Left" Height="288" Margin="442,35,0,0" VerticalAlignment="Top" Width="357">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                </Grid>
+            </Grid>
+
+        </Grid>
+    </Grid>
+</UserControl>
