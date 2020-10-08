@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿
 FC:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\App.xaml;;
 FC:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\ControlUsuario\UserControlABMClientes.xaml;;
@@ -13,4 +14,21 @@ FC:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\ControlUsuario\UserControl
 FC:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\UserControlMenuItem.xaml;;
 FC:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\MainWindow.xaml;;
 FC:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\WinMenuAdmin.xaml;;
+=======
+﻿C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\GeneratedInternalTypeHelper.g.cs
+FC:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\App.xaml;;
+FC:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\ControlUsuario\UserControlABMClientes.xaml;;
+FC:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\ControlUsuario\UserControlABMProyecciones.xaml;;
+FC:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\ControlUsuario\UserControlButacas.xaml;;
+FC:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\ControlUsuario\UserControlLogin.xaml;;
+FC:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\ControlUsuario\UserControlValidarCliente.xaml;;
+FC:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\PlantillaDicc\ButtonChange.xaml;;
+FC:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\PlantillaDicc\TextBoxStyle.xaml;;
+FC:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\Prueba.xaml;;
+FC:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\UserControlABMPeliculas.xaml;;
+FC:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\ControlUsuario\UserControlDashboard.xaml;;
+FC:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\UserControlMenuItem.xaml;;
+FC:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\MainWindow.xaml;;
+FC:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\WinMenuAdmin.xaml;;
+>>>>>>> 807de35222bdc0ef847e7ce510555197afa5dfe3
 

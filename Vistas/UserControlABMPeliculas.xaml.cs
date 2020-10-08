@@ -12,8 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Reflection;
 using ClasesBase;
 using ClasesBase.TrabajarABM;
+using System.Data;
 
 namespace Vistas {
     /// <summary>
@@ -42,8 +44,7 @@ namespace Vistas {
             oPelicula.Peli_Clase = cmbClases.SelectedValue.ToString();
 
             ABMPelicula.agregar_Pelicula(oPelicula);
-            dgPeliculas.ItemsSource = listPeliculas;
-            dgPeliculas.Items.Refresh();
+            dgPeliculas.ItemsSource = ABMPelicula.traerPelicula().AsDataView();
 
             MessageBox.Show("Los datos fueron guardados con exito \nCodigo=" + txtCod_Pel.Text + "\nTitulo=" + txtTitulo_Pel.Text + "\nDuracion="
                 + txtDuracion_Pel.Text + "\nGenero=" + cmbGeneros.SelectedValue.ToString() + "\nClase=" + cmbClases.SelectedValue.ToString(), "Acccion realizada con exito", MessageBoxButton.OK, MessageBoxImage.Information);

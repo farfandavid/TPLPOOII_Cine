@@ -10,7 +10,7 @@ namespace ClasesBase.TrabajarABM
 {
     public class ABMPelicula
     {
-        public DataTable traerPelicula()
+        public static DataTable traerPelicula()
         {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.conexion);
 
@@ -38,10 +38,10 @@ namespace ClasesBase.TrabajarABM
             cmd.Connection = cnn;
 
             
-            cmd.Parameters.AddWithValue("@apeCli", pel.Peli_Titulo);
-            cmd.Parameters.AddWithValue("@nomCli", pel.Peli_Duracion);
-            cmd.Parameters.AddWithValue("@emailCli", pel.Peli_Clase);
-            cmd.Parameters.AddWithValue("@telCli", pel.Peli_Genero);
+            cmd.Parameters.AddWithValue("@titulo", pel.Peli_Titulo);
+            cmd.Parameters.AddWithValue("@genero", pel.Peli_Duracion);
+            cmd.Parameters.AddWithValue("@clase", pel.Peli_Clase);
+            cmd.Parameters.AddWithValue("@duracion", pel.Peli_Genero);
 
             cnn.Open();
             cmd.ExecuteNonQuery();
