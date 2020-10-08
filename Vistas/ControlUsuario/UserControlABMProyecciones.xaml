@@ -38,20 +38,17 @@
                     <TextBox  Name="txtProy_Hora" Width="300" materialDesign:HintAssist.Hint="Hora" materialDesign:HintAssist.IsFloating="True" CaretBrush="#FFF99118" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
-                    <materialDesign:PackIcon Kind="Stars" Foreground="{Binding ElementName=txtProy_NroSala, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <ComboBox Name="cmbNroSala" Width="300" SelectionChanged="cmbSalas_SelectionChanged">
-                        <ComboBox.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding Proy_NroSala}" FontSize="16"/>
-                                </StackPanel>
-                            </DataTemplate>
-                        </ComboBox.ItemTemplate>
-                    </ComboBox>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
                     <materialDesign:PackIcon Kind="ImageFilterVintage" Foreground="{Binding ElementName=txtProy_PelCod, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                     <TextBox  Name="txtProy_CodPel" Width="300" materialDesign:HintAssist.Hint="Codigo de Pelicula" materialDesign:HintAssist.IsFloating="True" CaretBrush="#FFF99118" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
+                    
+                    <StackPanel.Resources>
+                        <XmlDataProvider x:Key="tipo_Sala" Source="/TipoSala.xml" XPath="/numeroSala"/>
+                    </StackPanel.Resources>
+                    <materialDesign:PackIcon Kind="Stars" Foreground="{Binding ElementName=txtProy_NroSala, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                    <ComboBox Name="cmbNroSala" Width="300" ItemsSource="{Binding Source={StaticResource tipo_Sala},XPath=tipo/@name}"/>
+
                 </StackPanel>
                 
 

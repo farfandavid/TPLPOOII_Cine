@@ -71,6 +71,13 @@ C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.g.resour
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.Properties.Resources.resources
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.csproj.GenerateResource.Cache
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\PlantillaDicc\ButtonChange.baml
+<<<<<<< Updated upstream
+=======
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\PlantillaDicc\TextBoxStyle.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlLogin.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlLogin.baml
+>>>>>>> Stashed changes
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\bin\Debug\Vistas.exe.config
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.exe
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.pdb
@@ -103,6 +110,7 @@ C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\Us
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlButacas.baml
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlLogin.baml
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\PlantillaDicc\ButtonChange.baml
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\PlantillaDicc\TextBoxStyle.baml
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\UserControlABMPeliculas.baml
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlDashboard.baml
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\UserControlMenuItem.baml

@@ -39,28 +39,19 @@
                     <TextBox  Name="txtDuracion_Pel" Width="300" materialDesign:HintAssist.Hint="Duracion de la Pelicula" materialDesign:HintAssist.IsFloating="True" CaretBrush="#FFF99118" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
+                    <StackPanel.Resources>
+                        <XmlDataProvider x:Key="tipo_Clasificacion" Source="TipoClasificacion.xml" XPath="/clasificaciones"/>
+                    </StackPanel.Resources>
                     <materialDesign:PackIcon Kind="Stars" Foreground="{Binding ElementName=txtGenero_Pel, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <ComboBox Name="Generos" Width="300" SelectionChanged="cmbGenero_SelectionChanged">
-                        <ComboBox.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding Peli_Genero}" FontSize="16"/>
-                                </StackPanel>
-                            </DataTemplate>
-                        </ComboBox.ItemTemplate>
-                    </ComboBox>
+                    <ComboBox Name="cmbClases" Width="300" ItemsSource="{Binding Source={StaticResource tipo_Clasificacion},XPath=tipo/@name}" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
+                    <StackPanel.Resources>
+                        <XmlDataProvider x:Key="tipo_Generos" Source="TipoGenero.xml" XPath="/generos"/>
+                    </StackPanel.Resources>
                     <materialDesign:PackIcon Kind="ImageFilterVintage" Foreground="{Binding ElementName=txtClase_Pel, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <ComboBox Name="Clases" Width="300" SelectionChanged="cmbClases_SelectionChanged">
-                        <ComboBox.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding Peli_Clase}" FontSize="16"/>
-                                </StackPanel>
-                            </DataTemplate>
-                        </ComboBox.ItemTemplate>
-                    </ComboBox>
+                    <ComboBox Name="cmbGeneros" Width="300" ItemsSource="{Binding Source={StaticResource tipo_Generos},XPath=tipo/@name}"/>
+
                 </StackPanel>
                 
                

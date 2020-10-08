@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\App.xaml
-101744887511
+111190978305
 
-19891833135
+20-899876915
 161331501464
-ControlUsuario\UserControlABMClientes.xaml;ControlUsuario\UserControlABMProyecciones.xaml;ControlUsuario\UserControlButacas.xaml;ControlUsuario\UserControlLogin.xaml;PlantillaDicc\ButtonChange.xaml;UserControlABMPeliculas.xaml;ControlUsuario\UserControlDashboard.xaml;UserControlMenuItem.xaml;MainWindow.xaml;WinMenuAdmin.xaml;
+ControlUsuario\UserControlABMClientes.xaml;ControlUsuario\UserControlABMProyecciones.xaml;ControlUsuario\UserControlButacas.xaml;ControlUsuario\UserControlLogin.xaml;ControlUsuario\UserControlValidarCliente.xaml;PlantillaDicc\ButtonChange.xaml;UserControlABMPeliculas.xaml;ControlUsuario\UserControlDashboard.xaml;UserControlMenuItem.xaml;MainWindow.xaml;WinMenuAdmin.xaml;
 
 True
 

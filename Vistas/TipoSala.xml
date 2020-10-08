@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<numeroSala>
+  <tipo name="Sala 1"/>
+  <tipo name="Sala 2"/>
+  <tipo name="Sala 3"/>
+  <tipo name="Sala 4"/>
+  <tipo name="Sala 5"/>
+</numeroSala>
