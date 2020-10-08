@@ -150,7 +150,7 @@
 
             </Grid>
         </Grid>
-        <materialDesign:DialogHost  x:Name="CamposIncompletos" Grid.RowSpan="3" Margin="-1,0,1.2,68.4">
+        <materialDesign:DialogHost  x:Name="CamposIncompletos" Grid.RowSpan="3"  Margin="-1,0,1.2,68.4" >
             <materialDesign:DialogHost.DialogContent>
                 <StackPanel Margin="15" Orientation="Vertical">
                     <Image Source="/imagenes/Fall_Guys_Enojado.png" Width="178" Height="92" Margin="20 30"/>

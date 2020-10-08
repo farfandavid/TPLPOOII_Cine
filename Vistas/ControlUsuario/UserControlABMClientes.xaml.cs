@@ -36,7 +36,7 @@ namespace Vistas.ControlUsuario {
         }
 
         private void btnAgregarCli_Click(object sender, RoutedEventArgs e) {
-            if (txtCli_Dni.Equals(null)&&txtCli_Nombre.Equals(null) && txtCli_Apellido.Equals(null) && txtCli_Telefono.Equals(null) && txtCli_Email.Equals(null))
+            if (txtCli_Dni.Text==""&&txtCli_Nombre.Text == "" && txtCli_Apellido.Text == "" && txtCli_Telefono.Text == "" && txtCli_Email.Text == "")
             {
                 CamposIncompletos.IsOpen = true;
             }
