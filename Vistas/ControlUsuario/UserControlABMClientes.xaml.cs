@@ -53,22 +53,30 @@ namespace Vistas.ControlUsuario {
             ocliente.Cli_Telefono = txtCli_Telefono.Text;
             ocliente.Cli_Email = txtCli_Email.Text;
 
-            ABMCliente.agregar_cliente(ocliente);
-            //Array.Resize(ref clientes, clientes.Length+1);
-            //clientes[clientes.Length - 1] = ocliente;
+                try {
+                    ABMCliente.agregar_cliente(ocliente);
+                    MessageBox.Show("Los datos fueron guardados con exito \nDNI=" + txtCli_Dni.Text + "\nNombre=" + txtCli_Nombre.Text + "\nApellido="
+                        + txtCli_Apellido.Text + "\nTelefono=" + txtCli_Telefono.Text + "\nEmail=" + txtCli_Email.Text, "Acccion realizada con exito", MessageBoxButton.OK, MessageBoxImage.Information);
 
-            //dgListadoClientes.ItemsSource = clientes;
+                    txtCli_Dni.Clear();
+                    txtCli_Nombre.Clear();
+                    txtCli_Apellido.Clear();
+                    txtCli_Telefono.Clear();
+                    txtCli_Email.Clear();
 
-            //falta actualizar ;
-            
-            MessageBox.Show("Los datos fueron guardados con exito \nDNI=" + txtCli_Dni.Text + "\nNombre=" + txtCli_Nombre.Text + "\nApellido="
-                + txtCli_Apellido.Text + "\nTelefono=" + txtCli_Telefono.Text + "\nEmail=" + txtCli_Email.Text, "Acccion realizada con exito", MessageBoxButton.OK, MessageBoxImage.Information);
+                    dgClientes.ItemsSource = ABMCliente.traerCliente().AsDataView();
+                    cliente = null;
 
-            txtCli_Dni.Clear();
-            txtCli_Nombre.Clear();
-            txtCli_Apellido.Clear();
-            txtCli_Telefono.Clear();
-            txtCli_Email.Clear();
+                } catch {
+                    MessageBox.Show("DNI Repetido");
+                }
+                
+                //Array.Resize(ref clientes, clientes.Length+1);
+                //clientes[clientes.Length - 1] = ocliente;
+
+                //dgListadoClientes.ItemsSource = clientes;
+
+                //falta actualizar ;
 
             }
 
@@ -92,10 +100,15 @@ namespace Vistas.ControlUsuario {
                 //ocliente.Cli_Telefono = txtCli_Telefono.Text;
                 //ocliente.Cli_Email = txtCli_Email.Text;
                 //ABMCliente.eliminar_cliente(ocliente);
-
-                ABMCliente.eliminar_cliente(cliente);
-                principal.UpdateLayout();
-           }
+                try {
+                    ABMCliente.eliminar_cliente(cliente);
+                    dgClientes.ItemsSource = ABMCliente.traerCliente().AsDataView();
+                    cliente = null;
+                }catch{
+                    MessageBox.Show("Id incorrecta");
+                }
+                
+            }
 
             
             
@@ -104,21 +117,27 @@ namespace Vistas.ControlUsuario {
         private void btnBuscarCli_Click(object sender, RoutedEventArgs e)
         {
             DataTable dt = new DataTable();
-            dt=ABMCliente.buscarCli_DNI(txtCli_Dni.Text.ToString());
-            DataRow row = dt.Rows[0];
+            try {
+                dt = ABMCliente.buscarCli_DNI(txtCli_Dni.Text.ToString());
+                DataRow row = dt.Rows[0];
 
-            txtCli_Dni.Text = row[3].ToString();
-            txtCli_Nombre.Text = row[2].ToString();
-            txtCli_Apellido.Text = row[1].ToString();
-            txtCli_Telefono.Text = row[4].ToString();
-            txtCli_Email.Text = row[5].ToString();
+                txtCli_Dni.Text = row[3].ToString();
+                txtCli_Nombre.Text = row[2].ToString();
+                txtCli_Apellido.Text = row[1].ToString();
+                txtCli_Telefono.Text = row[4].ToString();
+                txtCli_Email.Text = row[5].ToString();
+            } catch {
+                
+                MessageBox.Show("No existe DNI");
+            }
+            
 
 
         }
 
         private void dgClientes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            cliente = new Cliente();
             DataRowView row_selected = dgClientes.SelectedItem as DataRowView;
             if (row_selected != null)
             {
@@ -133,7 +152,7 @@ namespace Vistas.ControlUsuario {
                 this.cliente.Cli_Apellido = row_selected[3].ToString();
                 this.cliente.Cli_Telefono = row_selected[4].ToString();
                 this.cliente.Cli_Email = row_selected[5].ToString();
-                MessageBox.Show(cliente.Cli_ID.ToString());
+                //MessageBox.Show(cliente.Cli_ID.ToString());
             }
         }
         private static List<T> ConvertDataTable<T>(DataTable dt) {
@@ -173,7 +192,7 @@ namespace Vistas.ControlUsuario {
                 this.cliente.Cli_Email = txtCli_Email.Text;
                 ABMCliente.modificar_Cliente(cliente);
                 vaciarCampos();
-                dgClientes.SelectedItem = null;
+                dgClientes.ItemsSource = ABMCliente.traerCliente().AsDataView();
                 cliente = null;
             }
         }
