@@ -116,6 +116,22 @@ namespace Vistas {
         #line default
         #line hidden
         
+        
+        #line 88 "..\..\UserControlABMPeliculas.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal MaterialDesignThemes.Wpf.DialogHost EliminarPel;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 101 "..\..\UserControlABMPeliculas.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal MaterialDesignThemes.Wpf.DialogHost CodInexistente;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -196,6 +212,12 @@ namespace Vistas {
             
             #line default
             #line hidden
+            return;
+            case 10:
+            this.EliminarPel = ((MaterialDesignThemes.Wpf.DialogHost)(target));
+            return;
+            case 11:
+            this.CodInexistente = ((MaterialDesignThemes.Wpf.DialogHost)(target));
             return;
             }
             this._contentLoaded = true;

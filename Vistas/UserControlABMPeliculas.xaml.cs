@@ -58,7 +58,7 @@ namespace Vistas {
         private void btnEliminarPel_Click(object sender, RoutedEventArgs e) {
 
             if (dgPeliculas.SelectedItem == null) {
-                MessageBox.Show("Seleccione");
+                EliminarPel.IsOpen=true;
                 return;
             } else {
                 //int numero;
@@ -72,9 +72,10 @@ namespace Vistas {
                 try {
                     ABMPelicula.eliminarPelicula(pelicula);
                     dgPeliculas.ItemsSource = ABMPelicula.traerPelicula().AsDataView();
+                    vaciarCampos();
                     pelicula = null;
                 } catch {
-                    MessageBox.Show("Incorrecto");
+                    CodInexistente.IsOpen=true;
                 }
 
             }
@@ -82,7 +83,7 @@ namespace Vistas {
 
         private void btnModificalPel_Click(object sender, RoutedEventArgs e) {
             if (dgPeliculas.SelectedItem == null) {
-                MessageBox.Show("Seleccione");
+                EliminarPel.IsOpen = true;
             } else {
                 try {
                     pelicula.Peli_Titulo = txtTitulo_Pel.Text;
@@ -95,7 +96,7 @@ namespace Vistas {
                     vaciarCampos();
                     pelicula = null;
                 } catch {
-                    MessageBox.Show("Id incorrecta");
+                    CodInexistente.IsOpen = true;
                 }
                 
             }

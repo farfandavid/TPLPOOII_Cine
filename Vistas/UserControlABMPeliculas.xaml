@@ -85,6 +85,30 @@
 
             </Grid>
         </Grid>
+        <materialDesign:DialogHost  x:Name="EliminarPel" Grid.RowSpan="3" Margin="0,0,0.2,68.4">
+            <materialDesign:DialogHost.DialogContent>
+                <StackPanel Margin="15" Orientation="Vertical">
+                    <Image Source="imagenes/Fall_Guys_Enojado.png" Width="178" Height="92" Margin="20 30"/>
+                    <TextBlock Text="Seleccione una pelicula antes de realizar la accion" HorizontalAlignment="Center"/>
+                    <DockPanel>
+                        <Button DockPanel.Dock="Right" Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" CommandTarget="{Binding ElementName=EliminarPel}"
+                            Style="{DynamicResource MaterialDesignFlatButton}" Content="Aceptar" Margin="5 10 0 0"/>
+                    </DockPanel>
+                </StackPanel>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
 
+        <materialDesign:DialogHost  x:Name="CodInexistente" Grid.RowSpan="3" Margin="0,0,0.2,68.4">
+            <materialDesign:DialogHost.DialogContent>
+                <StackPanel Margin="15" Orientation="Vertical">
+                    <Image Source="imagenes/Fall_Guys_Enojado.png" Width="178" Height="92" Margin="20 30"/>
+                    <TextBlock Text="El codigo ingresado no existe" HorizontalAlignment="Center"/>
+                    <DockPanel>
+                        <Button DockPanel.Dock="Right" Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" CommandTarget="{Binding ElementName=CodInexistente}"
+                            Style="{DynamicResource MaterialDesignFlatButton}" Content="Aceptar" Margin="5 10 0 0"/>
+                    </DockPanel>
+                </StackPanel>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
     </Grid>
 </UserControl>
