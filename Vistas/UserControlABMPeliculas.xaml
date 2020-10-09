@@ -67,9 +67,9 @@
                 <StackPanel Margin="18,367,32.2,-84.4" Height="87" Orientation="Horizontal">
                     <Button Style="{StaticResource FormButton}" Background="#f99118" Content="Agregar" Height="28" Width="85"  HorizontalAlignment="Left"  Name="btnAgregarPel" Click="btnAgregarPel_Click"/>
                     <Button Style="{StaticResource FormButton}" Background="#f99118" Content="Eliminar" Height="28" Width="85"  HorizontalAlignment="Right"  x:Name="btnEliminarPel" Margin="230 0"  Click="btnEliminarPel_Click"/>
-                    <Button Style="{StaticResource FormButton}" Background="#f99118" Content="Modificar" Height="28" Width="85"  HorizontalAlignment="Center"  x:Name="btnModificalPel" />
+                    <Button Style="{StaticResource FormButton}" Background="#f99118" Content="Modificar" Height="28" Width="85"  HorizontalAlignment="Center"  x:Name="btnModificalPel" Click="btnModificalPel_Click" />
                 </StackPanel>
-                <ListView Name="dgPeliculas" Height="288" Width="357" ItemsSource="{Binding Source={StaticResource lista_Pelicula}}" Margin="408,49,66.2,101.4" >
+                <ListView Name="dgPeliculas" Height="288" ItemsSource="{Binding Source={StaticResource lista_Pelicula}}" Margin="408,49,20,33" SelectionChanged="dgPeliculas_SelectionChanged" >
                     <ListView.View>
                         <GridView>
 

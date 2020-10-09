@@ -23,7 +23,7 @@ namespace Vistas {
     /// </summary>
     public partial class UserControlABMPeliculas : UserControl {
         List<Pelicula> listPeliculas = new List<Pelicula>();
-
+        Pelicula pelicula = new Pelicula();
         
         public UserControlABMPeliculas() {
             InitializeComponent();
@@ -57,9 +57,73 @@ namespace Vistas {
 
         private void btnEliminarPel_Click(object sender, RoutedEventArgs e) {
 
+            if (dgPeliculas.SelectedItem == null) {
+                MessageBox.Show("Seleccione");
+                return;
+            } else {
+                //int numero;
+                //Int32.TryParse(txtCli_Dni.Text, out numero);
+                //ocliente.Cli_DNI = numero.ToString();
+                //ocliente.Cli_Nombre = txtCli_Nombre.Text;
+                //ocliente.Cli_Apellido = txtCli_Apellido.Text;
+                //ocliente.Cli_Telefono = txtCli_Telefono.Text;
+                //ocliente.Cli_Email = txtCli_Email.Text;
+                //ABMCliente.eliminar_cliente(ocliente);
+                try {
+                    ABMPelicula.eliminarPelicula(pelicula);
+                    dgPeliculas.ItemsSource = ABMPelicula.traerPelicula().AsDataView();
+                    pelicula = null;
+                } catch {
+                    MessageBox.Show("Incorrecto");
+                }
+
+            }
         }
 
+        private void btnModificalPel_Click(object sender, RoutedEventArgs e) {
+            if (dgPeliculas.SelectedItem == null) {
+                MessageBox.Show("Seleccione");
+            } else {
+                try {
+                    pelicula.Peli_Titulo = txtTitulo_Pel.Text;
+                    pelicula.Peli_Duracion = txtDuracion_Pel.Text;
+                    pelicula.Peli_Clase = cmbClases.SelectedValue.ToString();
+                    pelicula.Peli_Genero = cmbGeneros.SelectedValue.ToString();
 
+                    ABMPelicula.editarPelicula(pelicula);
+                    dgPeliculas.ItemsSource = ABMPelicula.traerPelicula().AsDataView();
+                    vaciarCampos();
+                    pelicula = null;
+                } catch {
+                    MessageBox.Show("Id incorrecta");
+                }
+                
+            }
+        }
+
+        private void dgPeliculas_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+            pelicula = new Pelicula();
+            DataRowView row_selected = dgPeliculas.SelectedItem as DataRowView;
+            if (row_selected != null) {
+                txtTitulo_Pel.Text = row_selected[1].ToString();
+                txtDuracion_Pel.Text = row_selected[4].ToString();
+                cmbClases.SelectedValue = row_selected[3].ToString();
+                cmbGeneros.SelectedValue = row_selected[2].ToString();
+                pelicula.Peli_Codigo = int.Parse(row_selected[0].ToString());
+                pelicula.Peli_Titulo = row_selected[1].ToString();
+                pelicula.Peli_Duracion = row_selected[4].ToString();
+                pelicula.Peli_Clase = row_selected[3].ToString();
+                pelicula.Peli_Genero = row_selected[2].ToString();
+                //MessageBox.Show(pelicula.Peli_Codigo.ToString());
+            }
+        }
+
+        private void vaciarCampos() {
+            txtTitulo_Pel.Text = "";
+            txtDuracion_Pel.Text = "";
+            cmbClases.SelectedValue = "";
+            cmbGeneros.SelectedValue = "";
+        }
     }
 }
 
