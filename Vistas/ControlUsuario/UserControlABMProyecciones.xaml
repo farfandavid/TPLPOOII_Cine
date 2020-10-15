@@ -47,7 +47,7 @@
                         <XmlDataProvider x:Key="tipo_Sala" Source="/TipoSala.xml" XPath="/numeroSala"/>
                     </StackPanel.Resources>
                     <materialDesign:PackIcon Kind="Stars" Foreground="{Binding ElementName=txtProy_NroSala, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <ComboBox Name="cmbNroSala" Width="300" ItemsSource="{Binding Source={StaticResource tipo_Sala},XPath=tipo/@name}"/>
+                    <ComboBox Name="cmbNroSala" Width="300" ItemsSource="{Binding Source={StaticResource tipo_Sala},XPath=tipo/@name}" materialDesign:HintAssist.Hint="N° Sala" materialDesign:HintAssist.HintOpacity=".26"/>
 
                 </StackPanel>
 

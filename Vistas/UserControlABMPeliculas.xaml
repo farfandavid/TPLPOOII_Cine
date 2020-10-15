@@ -49,14 +49,14 @@
                         <XmlDataProvider x:Key="tipo_Clasificacion" Source="TipoClasificacion.xml" XPath="/clasificaciones"/>
                     </StackPanel.Resources>
                     <materialDesign:PackIcon Kind="Stars" Foreground="{Binding ElementName=txtGenero_Pel, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <ComboBox Name="cmbClases" Width="300" ItemsSource="{Binding Source={StaticResource tipo_Clasificacion},XPath=tipo/@name}" />
+                    <ComboBox Name="cmbClases" Width="300" ItemsSource="{Binding Source={StaticResource tipo_Clasificacion},XPath=tipo/@name}" materialDesign:HintAssist.Hint="Clase" materialDesign:HintAssist.HintOpacity=".26"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
                     <StackPanel.Resources>
                         <XmlDataProvider x:Key="tipo_Generos" Source="TipoGenero.xml" XPath="/generos"/>
                     </StackPanel.Resources>
                     <materialDesign:PackIcon Kind="ImageFilterVintage" Foreground="{Binding ElementName=txtClase_Pel, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <ComboBox Name="cmbGeneros" Width="300" ItemsSource="{Binding Source={StaticResource tipo_Generos},XPath=tipo/@name}"/>
+                    <ComboBox Name="cmbGeneros" Width="300" ItemsSource="{Binding Source={StaticResource tipo_Generos},XPath=tipo/@name}" materialDesign:HintAssist.Hint="Genero" materialDesign:HintAssist.HintOpacity=".26"/>
 
                 </StackPanel>
 
