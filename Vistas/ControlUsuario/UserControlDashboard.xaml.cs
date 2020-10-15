@@ -21,5 +21,50 @@ namespace Vistas.ControlUsuario {
         public UserControlDashboard() {
             InitializeComponent();
         }
+
+        private void btnNuevoUsu_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnEliminarUsu_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnCancelarUsu_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnGuardarUsu_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnIrPrimero_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnIrAtras_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnIrSiguiente_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnIrUltimo_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnActualizarUsu_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -32,8 +32,8 @@ namespace Vistas
             if (rolUser == "admin")
             {
                 var menuUsuarios = new List<SubItem>();
-                menuUsuarios.Add(new SubItem("ejemplo prueba", new UserControlDashboard()));
-                menuUsuarios.Add(new SubItem("algo 2"));
+                menuUsuarios.Add(new SubItem("ABM Usuarios", new UserControlDashboard()));
+                menuUsuarios.Add(new SubItem("Listado de Usuarios", new UserControlListadoUsuarios()));
                 menuUsuarios.Add(new SubItem("algo 3"));
                 menuUsuarios.Add(new SubItem("algo 4"));
                 var item0 = new ItemMenu("Gestionar Usuarios", menuUsuarios, PackIconKind.Face);
