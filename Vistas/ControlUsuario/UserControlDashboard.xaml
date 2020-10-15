@@ -42,27 +42,27 @@
                         </StackPanel>
                         <StackPanel Margin="0 10">
                             <StackPanel Orientation="Horizontal" Margin="40 0 0 0">
-                                <materialDesign:PackIcon Kind="Movie" Foreground="{Binding ElementName=txtCod_Usu, Path=CaretBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                                <materialDesign:PackIcon Kind="AccountCircle" Foreground="{Binding ElementName=txtCod_Usu, Path=CaretBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                                 <TextBox  Name="txtCod_Usu" Width="300" materialDesign:HintAssist.Hint="Codigo del Usuario" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="40 5 0 0">
-                                <materialDesign:PackIcon Kind="Movie" Foreground="{Binding ElementName=txtApellido_Usu, Path=CaretBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                                <materialDesign:PackIcon Kind="Person" Foreground="{Binding ElementName=txtApellido_Usu, Path=CaretBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                                 <TextBox  Name="txtApellido_Usu" Width="300" materialDesign:HintAssist.Hint="Apellido" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="40 5 0 0">
-                                <materialDesign:PackIcon Kind="Movie" Foreground="{Binding ElementName=txtNombre_Usu, Path=CaretBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                                <materialDesign:PackIcon Kind="PersonOutline" Foreground="{Binding ElementName=txtNombre_Usu, Path=CaretBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                                 <TextBox  Name="txtNombre_Usu" Width="300" materialDesign:HintAssist.Hint="Nombre" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="40 5 0 0">
-                                <materialDesign:PackIcon Kind="Movie" Foreground="{Binding ElementName=txtUserName_Usu, Path=CaretBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                                <materialDesign:PackIcon Kind="Face" Foreground="{Binding ElementName=txtUserName_Usu, Path=CaretBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                                 <TextBox  Name="txtUserName_Usu" Width="300" materialDesign:HintAssist.Hint="UserName" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="40 5 0 0">
-                                <materialDesign:PackIcon Kind="Movie" Foreground="{Binding ElementName=txtPassword_Usu, Path=CaretBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                                <materialDesign:PackIcon Kind="Key" Foreground="{Binding ElementName=txtPassword_Usu, Path=CaretBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                                 <TextBox  Name="txtPassword_Usu" Width="300" materialDesign:HintAssist.Hint="Password" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="40 5 0 0">
-                                <materialDesign:PackIcon Kind="Movie" Foreground="{Binding ElementName=txtRol_Usu, Path=CaretBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                                <materialDesign:PackIcon Kind="AccountSupervisorOutline" Foreground="{Binding ElementName=txtRol_Usu, Path=CaretBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                                 <TextBox  Name="txtRol_Usu" Width="300" materialDesign:HintAssist.Hint="Rol" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6" />
                             </StackPanel>
                         </StackPanel>
