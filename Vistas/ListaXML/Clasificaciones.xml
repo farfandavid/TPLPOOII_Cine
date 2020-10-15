@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <clasificacion>
-  <clase name="ATP" />
+  <clase name="ATP"/>
   <clase name="ATP c/R" />
   <clase name="SAM 13" />
   <clase name="SAM 13 c/r" />

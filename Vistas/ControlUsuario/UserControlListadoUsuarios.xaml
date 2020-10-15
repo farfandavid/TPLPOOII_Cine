@@ -13,23 +13,23 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Vistas.ControlUsuario"
              xmlns:svc="clr-namespace:ClasesBase.TrabajarABM;assembly=ClasesBase"
-             xmlns:componentModel="clr-namespace:System.ComponentModel;assembly=System"
+             xmlns:componentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
              mc:Ignorable="d" 
              d:DesignHeight="558" d:DesignWidth="831">
-    <!--
+    
     <UserControl.Resources>
-        <ObjectDataProvider ObjectType="{x:Type svc:}"
-                            MethodName=""
+        <ObjectDataProvider ObjectType="{x:Type svc:ABMUsuario}"
+                            MethodName="traer_usuario"
                             x:Key="LIST_USER"/>
         
         <CollectionViewSource x:Key="VISTA_USER"
                               Source="{StaticResource ResourceKey=LIST_USER}"
-                              Filter="">
+                              Filter="eventVistaUsuario_Filter">
             <CollectionViewSource.SortDescriptions>
-                <componentModel:SortDescription PropertyName=""  Direction="Descending"/>
+                <componentModel:SortDescription PropertyName="Usu_NombreUsuario"  Direction="Ascending"/>
             </CollectionViewSource.SortDescriptions>
         </CollectionViewSource>
-    </UserControl.Resources> -->
+    </UserControl.Resources> 
     <Grid>
         <Grid Background="White">
             <Grid.RowDefinitions>
@@ -47,17 +47,18 @@
                 <StackPanel Orientation="Vertical" Margin="40 20 0 0" Background="White">
                     <StackPanel Orientation="Horizontal" Margin="235 0 0 0">
                         <materialDesign:PackIcon Kind="AccountSupervisorCircle" Foreground="{Binding ElementName=txtRol, Path=CaretBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                        <TextBox  Name="txtRol" Width="300" materialDesign:HintAssist.Hint="Buscar por Rol" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6" />
+                        <TextBox  Name="txtRol" Width="300" materialDesign:HintAssist.Hint="Buscar Nombre de Usuario" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6"
+                                  TextChanged="txtRol_TextChanged"/>
                     </StackPanel>
                     <ListView Name="listUsuarios" ItemsSource="{Binding Source={StaticResource VISTA_USER}}" Margin="50 50">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Codigo" Width="115" DisplayMemberBinding="{Binding}"/>
-                                <GridViewColumn Header="Apellido" Width="115" DisplayMemberBinding="{Binding}"/>
-                                <GridViewColumn Header="Nombre" Width="115" DisplayMemberBinding="{Binding}"/>
-                                <GridViewColumn Header="UserName" Width="115" DisplayMemberBinding="{Binding}"/>
-                                <GridViewColumn Header="Password" Width="115" DisplayMemberBinding="{Binding}"/>
-                                <GridViewColumn Header="Rol" Width="115" DisplayMemberBinding="{Binding}"/>
+                                <GridViewColumn Header="Codigo" Width="115" DisplayMemberBinding="{Binding Usu_Id}"/>
+                                <GridViewColumn Header="Apellido" Width="115" DisplayMemberBinding="{Binding Usu_ApellidoNombre}"/>
+                                <!--<GridViewColumn Header="Nombre" Width="115" DisplayMemberBinding="{Binding}"/>-->
+                                <GridViewColumn Header="UserName" Width="115" DisplayMemberBinding="{Binding Usu_NombreUsuario}"/>
+                                <GridViewColumn Header="Password" Width="115" DisplayMemberBinding="{Binding Usu_Contraseña}"/>
+                                <GridViewColumn Header="Rol" Width="115" DisplayMemberBinding="{Binding Rol_Codigo}"/>
                             </GridView>
                         </ListView.View>
                     </ListView>

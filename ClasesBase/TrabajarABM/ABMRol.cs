@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 namespace ClasesBase.TrabajarABM {
     public class ABMRol {
 
-        public DataTable cargar_rol() {
+        public static DataTable cargar_rol() {
             SqlConnection c = new SqlConnection(ClasesBase.Properties.Settings.Default.conexion);
 
             SqlCommand cmd = new SqlCommand();

@@ -5,9 +5,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Collections.ObjectModel;
 
 namespace ClasesBase.TrabajarABM {
     public class ABMUsuario {
+
+        public ObservableCollection<Usuario> traer_usuario() {
+            ObservableCollection<Usuario> lista_usuario = new ObservableCollection<Usuario>();
+            DataTable dt = new DataTable();
+            dt = cargar_usuario();
+
+            for (int i = 0; i < dt.Rows.Count; i++) {
+                Usuario oUser = new Usuario();
+                oUser.Usu_Id = Convert.ToInt32(dt.Rows[i]["usu_ID"]);
+                oUser.Usu_NombreUsuario = dt.Rows[i]["usu_NombreUsuario"].ToString();
+                oUser.Usu_Contraseña = dt.Rows[i]["usu_contraseña"].ToString();
+                oUser.Usu_ApellidoNombre = dt.Rows[i]["usu_ApellidoNombre"].ToString();
+                oUser.Rol_Codigo = Convert.ToInt32(dt.Rows[i]["rol_Codigo"]);
+                lista_usuario.Add(oUser);
+            }
+            return lista_usuario;
+        }
+
         public DataTable cargar_usuario() {
             SqlConnection c = new SqlConnection(ClasesBase.Properties.Settings.Default.conexion);
 

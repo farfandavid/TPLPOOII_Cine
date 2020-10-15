@@ -14,13 +14,13 @@
              xmlns:local="clr-namespace:Vistas.ControlUsuario"
              xmlns:svc="clr-namespace:ClasesBase.TrabajarABM;assembly=ClasesBase"
              mc:Ignorable="d" 
-             d:DesignHeight="558" d:DesignWidth="831">
+             d:DesignHeight="558" d:DesignWidth="831" Loaded="UserControl_Loaded">
     <UserControl.Resources>
-        <ObjectDataProvider ObjectType="{x:Type svc:ABMPelicula}"
-                            MethodName="traerPelicula"
+        <ObjectDataProvider ObjectType="{x:Type svc:ABMUsuario}"
+                            MethodName="traer_usuario"
                             x:Key="lista_Usuarios"/>
     </UserControl.Resources>
-    
+
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="120"/>
@@ -31,126 +31,136 @@
             <Image Source="/imagenes/Fall_Guys_Peabody.png" HorizontalAlignment="Left" Margin="32,1,0,10"/>
         </Grid>
         <Grid Grid.Row="1">
-            <StackPanel Orientation="Vertical" Margin="40 20 0 0" Background="White">
+            <StackPanel Orientation="Vertical" Margin="10,10,30,10" Background="White">
                 <StackPanel Orientation="Horizontal">
                     <StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="0 18">
-                            <Button Background="#65b3f6" Content="Nuevo" Height="28" Width="85"   Name="btnNuevoUsu" Margin="0 0 20 0"  Click="btnNuevoUsu_Click"/>
-                            <Button Background="#65b3f6" Content="Eliminar" Height="28" Width="85"  x:Name="btnEliminarUsu" Margin="0 0 20 0" Click="btnEliminarUsu_Click"/>
-                            <Button Background="#65b3f6" Content="Cancelar" Height="28" Width="85"  x:Name="btnCancelarUsu" Margin="0 0 20 0" Click="btnCancelarUsu_Click"/>
-                            <Button Background="#65b3f6" Content="Guardar" Height="28" Width="85"  x:Name="btnGuardarUsu" Margin="0 0 40 0" Click="btnGuardarUsu_Click"/>
+                        <StackPanel Orientation="Horizontal" Margin="0 18" Width="502">
+                            <Button Background="#65b3f6" Content="Nuevo" Height="28" Width="75"   x:Name="btnNuevoUsu" Margin="0 0 10 0"  Click="btnNuevoUsu_Click"/>
+                            <Button Background="#65b3f6" Content="Modificar" Height="28" Width="93"   x:Name="btnModifUsu" Margin="0 0 10 0"  Click="btnModifUsu_Click"/>
+                            <Button Background="#65b3f6" Content="Eliminar" Height="28" Width="84"  x:Name="btnEliminarUsu" Margin="0 0 10 0" Click="btnEliminarUsu_Click"/>
+                            <Button Background="#65b3f6" Content="Cancelar" Height="28" Width="85"  x:Name="btnCancelarUsu" Margin="0 0 10 0" Click="btnCancelarUsu_Click" Visibility="Hidden"/>
+                            <Button Background="#65b3f6" Content="Guardar" Height="28" Width="85"  x:Name="btnGuardarUsu" Margin="0 0 20 0" Click="btnGuardarUsu_Click" Visibility="Hidden"/>
                         </StackPanel>
                         <StackPanel Margin="0 10">
                             <StackPanel Orientation="Horizontal" Margin="40 0 0 0">
-                                <materialDesign:PackIcon Kind="AccountCircle" Foreground="{Binding ElementName=txtCod_Usu, Path=CaretBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                                <TextBox  Name="txtCod_Usu" Width="300" materialDesign:HintAssist.Hint="Codigo del Usuario" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6" />
+                                <materialDesign:PackIcon Kind="AccountCircle" Foreground="{Binding CaretBrush, ElementName=txtCod_Usu}" VerticalAlignment="Bottom" Margin="0 4"/>
+                                <TextBox  x:Name="txtCod_Usu" Width="300" materialDesign:HintAssist.Hint="Codigo del Usuario" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6" IsEnabled="False" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="40 5 0 0">
-                                <materialDesign:PackIcon Kind="Person" Foreground="{Binding ElementName=txtApellido_Usu, Path=CaretBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                                <TextBox  Name="txtApellido_Usu" Width="300" materialDesign:HintAssist.Hint="Apellido" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6" />
+                                <materialDesign:PackIcon Kind="Person" Foreground="{Binding CaretBrush, ElementName=txtApellido_Usu}" VerticalAlignment="Bottom" Margin="0 4"/>
+                                <TextBox  x:Name="txtApellido_Usu" Width="300" materialDesign:HintAssist.Hint="Apellido" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6" />
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal" Margin="40 5 0 0">
+                            <!--<StackPanel Orientation="Horizontal" Margin="40 5 0 0">
                                 <materialDesign:PackIcon Kind="PersonOutline" Foreground="{Binding ElementName=txtNombre_Usu, Path=CaretBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                                 <TextBox  Name="txtNombre_Usu" Width="300" materialDesign:HintAssist.Hint="Nombre" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6" />
+                            </StackPanel>-->
+                            <StackPanel Orientation="Horizontal" Margin="40 5 0 0">
+                                <materialDesign:PackIcon Kind="Face" Foreground="{Binding CaretBrush, ElementName=txtUserName_Usu}" VerticalAlignment="Bottom" Margin="0 4"/>
+                                <TextBox  x:Name="txtUserName_Usu" Width="300" materialDesign:HintAssist.Hint="UserName" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="40 5 0 0">
-                                <materialDesign:PackIcon Kind="Face" Foreground="{Binding ElementName=txtUserName_Usu, Path=CaretBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                                <TextBox  Name="txtUserName_Usu" Width="300" materialDesign:HintAssist.Hint="UserName" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6" />
+                                <materialDesign:PackIcon Kind="Key" Foreground="{Binding CaretBrush, ElementName=txtPassword_Usu}" VerticalAlignment="Bottom" Margin="0 4"/>
+                                <TextBox  x:Name="txtPassword_Usu" Width="300" materialDesign:HintAssist.Hint="Password" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6" />
                             </StackPanel>
+                            
                             <StackPanel Orientation="Horizontal" Margin="40 5 0 0">
-                                <materialDesign:PackIcon Kind="Key" Foreground="{Binding ElementName=txtPassword_Usu, Path=CaretBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                                <TextBox  Name="txtPassword_Usu" Width="300" materialDesign:HintAssist.Hint="Password" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6" />
+                                <materialDesign:PackIcon Kind="AccountSupervisorOutline" Foreground="{Binding CaretBrush, ElementName=txtPassword_Usu}" VerticalAlignment="Bottom" Margin="0 4"/>
+                                <ComboBox Name="cmbRol" Width="300"/>
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal" Margin="40 5 0 0">
-                                <materialDesign:PackIcon Kind="AccountSupervisorOutline" Foreground="{Binding ElementName=txtRol_Usu, Path=CaretBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                                <TextBox  Name="txtRol_Usu" Width="300" materialDesign:HintAssist.Hint="Rol" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6" />
+                            <StackPanel Orientation="Horizontal" Margin="40 5 0 0" Visibility="Collapsed">
+                                <materialDesign:PackIcon Kind="AccountSupervisorOutline" Foreground="{Binding CaretBrush, ElementName=txtRol_Usu}" VerticalAlignment="Bottom" Margin="0 4"/>
+                                <TextBox  x:Name="txtRol_Usu" Width="300" materialDesign:HintAssist.Hint="Rol" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6"/>
                             </StackPanel>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel>
                         <Canvas Name="canvas_content" DataContext="{Binding Source={StaticResource ResourceKey=lista_Usuarios}}">
-                    <StackPanel>
-                        <StackPanel Orientation="Horizontal">
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal">
                                     <Button Name="btn_Ir_Primero" Background="#65b3f6" Margin="0 0 30 0" BorderBrush="#db439c" Click="btnIrPrimero_Click"
                                 Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
                                 ToolTip="MaterialDesignFloatingActionAccentButton">
-                                <materialDesign:PackIcon
+                                        <materialDesign:PackIcon
                                     Kind="FastRewind"
                                     Height="24"
                                     Width="24" />
-                            </Button>
+                                    </Button>
                                     <Button Name="btn_Ir_Atras" Background="#65b3f6" Margin="0 0 30 0" BorderBrush="#db439c" Click="btnIrAtras_Click"
                                 Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
                                 ToolTip="MaterialDesignFloatingActionAccentButton">
-                                <materialDesign:PackIcon
+                                        <materialDesign:PackIcon
                                     Kind="ArrowLeftBold"
                                     Height="24"
                                     Width="24" />
-                            </Button>
+                                    </Button>
                                     <Button Name="btn_Ir_Siguiente" Background="#65b3f6" Margin="0 0 30 0" BorderBrush="#db439c" Click="btnIrSiguiente_Click"
                                 Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
                                 ToolTip="MaterialDesignFloatingActionAccentButton">
-                                <materialDesign:PackIcon
+                                        <materialDesign:PackIcon
                                     Kind="ArrowRightBold"
                                     Height="24"
                                     Width="24" />
-                            </Button>
+                                    </Button>
                                     <Button Name="btn_Ir_Ultimo" Background="#65b3f6" BorderBrush="#db439c" Click="btnIrUltimo_Click"
                                 Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
                                 ToolTip="MaterialDesignFloatingActionAccentButton">
-                                <materialDesign:PackIcon
+                                        <materialDesign:PackIcon
                                     Kind="FastForward"
                                     Height="24"
                                     Width="24" />
-                            </Button>
-                        </StackPanel>
-                        <StackPanel Margin="0 20 0 0">
-                            <StackPanel Height="50">
-                                        <TextBox Name="txtCod_Usu_Canvas" Text="{Binding}"
+                                    </Button>
+                                </StackPanel>
+                                <StackPanel Margin="0 20 0 0">
+                                    <StackPanel Height="50">
+                                        <TextBox Name="txtCod_Usu_Canvas" Text="{Binding Usu_Id}"
                                     Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
                                     VerticalAlignment="Stretch"
                                     Width="300"
-                                    materialDesign:HintAssist.Hint="Codigo"/>
-                            </StackPanel>
-                            <StackPanel Height="50">
-                                        <TextBox Name="txtApellido_Usu_Canvas" Text="{Binding}"
+                                    materialDesign:HintAssist.Hint="Codigo" IsEnabled="False"/>
+                                    </StackPanel>
+                                    <StackPanel Height="50">
+                                        <TextBox Name="txtApellido_Usu_Canvas" Text="{Binding Usu_ApellidoNombre}"
                                     Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
                                     VerticalAlignment="Stretch"
                                     Width="300"
-                                    materialDesign:HintAssist.Hint="Apellido"/>
-                            </StackPanel>
-                            <StackPanel Height="50">
+                                    materialDesign:HintAssist.Hint="Apellido" IsEnabled="False"/>
+                                    </StackPanel>
+                                    <!--<StackPanel Height="50">
                                         <TextBox Name="txtNombre_Usu_Canvas" Text="{Binding}"
                                     Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
                                     VerticalAlignment="Stretch"
                                     Width="300"
                                     materialDesign:HintAssist.Hint="Nombre"/>
-                            </StackPanel>
-                            <StackPanel Height="50">
-                                        <TextBox Name="txtUserName_Usu_Canvas" Text="{Binding}"
+                            </StackPanel>-->
+                                    <StackPanel Height="50">
+                                        <TextBox Name="txtUserName_Usu_Canvas" Text="{Binding Usu_NombreUsuario}"
                                     Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
                                     VerticalAlignment="Stretch"
                                     Width="300"
-                                    materialDesign:HintAssist.Hint="UserName"/>
-                            </StackPanel>
-                            <StackPanel Height="50">
-                                        <TextBox Name="txtPassword_Usu_Canvas" Text="{Binding}"
+                                    materialDesign:HintAssist.Hint="UserName" IsEnabled="False"/>
+                                    </StackPanel>
+                                    <StackPanel Height="50">
+                                        <TextBox Name="txtPassword_Usu_Canvas" Text="{Binding Usu_Contraseña}"
                                     Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
                                     VerticalAlignment="Top"
                                     Width="300"
-                                    materialDesign:HintAssist.Hint="Password"/>
-                            </StackPanel>
-                            <StackPanel Height="50">
-                                        <TextBox Name="txtRol_Usu_Canvas" Text="{Binding}"
+                                    materialDesign:HintAssist.Hint="Password" IsEnabled="False"/>
+                                    </StackPanel>
+                                    
+                                    <StackPanel Height="50">
+                                        <ComboBox Name="cmbRolCanvas" SelectedValue="{Binding Rol_Codigo}" IsEnabled="False" Width="293"/>
+                                    </StackPanel>
+                                    <StackPanel Height="50" Visibility="Collapsed">
+                                        <TextBox Name="txtRol_Usu_Canvas" Text="{Binding Rol_Codigo}"
                                     Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
                                     VerticalAlignment="Top"
                                     Width="300"
-                                    materialDesign:HintAssist.Hint="Rol"/>
+                                    materialDesign:HintAssist.Hint="Rol" IsEnabled="False"/>
+                                    </StackPanel>
+                                    <Button Background="#65b3f6" Content="Actualizar" Height="28" Width="95"   Name="btnActualizarUsu" Margin="0 6 0 0"  HorizontalAlignment="Center" Click="btnActualizarUsu_Click" Visibility="Hidden"/>
+                                </StackPanel>
                             </StackPanel>
-                                    <Button Background="#65b3f6" Content="Actualizar" Height="28" Width="95"   Name="btnActualizarUsu" Margin="0 6 0 0"  HorizontalAlignment="Center" Click="btnActualizarUsu_Click"/>
-                        </StackPanel>
-                    </StackPanel>
-                </Canvas>
+                        </Canvas>
                     </StackPanel>
                 </StackPanel>
             </StackPanel>

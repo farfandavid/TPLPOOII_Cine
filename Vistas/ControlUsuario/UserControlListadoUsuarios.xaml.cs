@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ClasesBase;
 
 namespace Vistas.ControlUsuario
 {
@@ -20,9 +21,29 @@ namespace Vistas.ControlUsuario
     /// </summary>
     public partial class UserControlListadoUsuarios : UserControl
     {
+        CollectionViewSource vistaColeccionFiltrada;
         public UserControlListadoUsuarios()
         {
             InitializeComponent();
+            vistaColeccionFiltrada = Resources["VISTA_USER"] as CollectionViewSource;
+        }
+
+        private void eventVistaUsuario_Filter(object sender, FilterEventArgs e) {
+            Usuario usuario = e.Item as Usuario;
+
+            if (usuario.Usu_NombreUsuario.StartsWith(txtRol.Text, StringComparison.CurrentCultureIgnoreCase)) {
+                e.Accepted = true;
+            } else {
+                e.Accepted = false;
+            }
+        }
+
+        private void txtRol_TextChanged(object sender, TextChangedEventArgs e) {
+            if (vistaColeccionFiltrada != null) {
+                vistaColeccionFiltrada.Filter += eventVistaUsuario_Filter;
+            }
         }
     }
+
+
 }
