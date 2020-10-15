@@ -77,7 +77,7 @@
                         <Canvas Name="canvas_content" DataContext="{Binding Source={StaticResource ResourceKey=lista_Usuarios}}">
                             <StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Name="btn_Ir_Primero" Background="#65b3f6" Margin="0 0 30 0" BorderBrush="#db439c" Click="btnIrPrimero_Click"
+                                    <Button Name="btn_Ir_Primero" Background="#65b3f6" Margin="0 0 15 0" BorderBrush="#db439c" Click="btnIrPrimero_Click"
                                 Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
                                 ToolTip="MaterialDesignFloatingActionAccentButton">
                                         <materialDesign:PackIcon
@@ -85,7 +85,7 @@
                                     Height="24"
                                     Width="24" />
                                     </Button>
-                                    <Button Name="btn_Ir_Atras" Background="#65b3f6" Margin="0 0 30 0" BorderBrush="#db439c" Click="btnIrAtras_Click"
+                                    <Button x:Name="btn_Ir_Atras" Background="#65b3f6" Margin="0 0 15 0" BorderBrush="#db439c" Click="btnIrAtras_Click"
                                 Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
                                 ToolTip="MaterialDesignFloatingActionAccentButton">
                                         <materialDesign:PackIcon
@@ -93,7 +93,7 @@
                                     Height="24"
                                     Width="24" />
                                     </Button>
-                                    <Button Name="btn_Ir_Siguiente" Background="#65b3f6" Margin="0 0 30 0" BorderBrush="#db439c" Click="btnIrSiguiente_Click"
+                                    <Button x:Name="btn_Ir_Siguiente" Background="#65b3f6" Margin="0 0 15 0" BorderBrush="#db439c" Click="btnIrSiguiente_Click"
                                 Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
                                 ToolTip="MaterialDesignFloatingActionAccentButton">
                                         <materialDesign:PackIcon
@@ -101,7 +101,7 @@
                                     Height="24"
                                     Width="24" />
                                     </Button>
-                                    <Button Name="btn_Ir_Ultimo" Background="#65b3f6" BorderBrush="#db439c" Click="btnIrUltimo_Click"
+                                    <Button x:Name="btn_Ir_Ultimo" Background="#65b3f6" BorderBrush="#db439c" Click="btnIrUltimo_Click"
                                 Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
                                 ToolTip="MaterialDesignFloatingActionAccentButton">
                                         <materialDesign:PackIcon

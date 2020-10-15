@@ -27,11 +27,49 @@ namespace ClasesBase.TrabajarABM {
             return lista_usuario;
         }
 
+        public ObservableCollection<Usuario> traer_usuarioYrol() {
+            ObservableCollection<Usuario> lista_usuario = new ObservableCollection<Usuario>();
+            DataTable dt = new DataTable();
+            dt = cargar_usuarioYrol();
+
+            for (int i = 0; i < dt.Rows.Count; i++) {
+                Usuario oUser = new Usuario();
+                Rol oRol = new Rol();
+                oUser.Usu_Id = Convert.ToInt32(dt.Rows[i]["usu_ID"]);
+                oUser.Usu_NombreUsuario = dt.Rows[i]["usu_NombreUsuario"].ToString();
+                oUser.Usu_Contraseña = dt.Rows[i]["usu_contraseña"].ToString();
+                oUser.Usu_ApellidoNombre = dt.Rows[i]["usu_ApellidoNombre"].ToString();
+                oUser.Rol_Codigo = Convert.ToInt32(dt.Rows[i]["rol_Codigo"]);
+                oRol.Rol_Codigo = Convert.ToInt32(dt.Rows[i]["rol_Codigo"]);
+                oRol.Rol_Descripcion = dt.Rows[i]["rol_descripcion"].ToString();
+                oUser.Rol = oRol;
+                lista_usuario.Add(oUser);
+            }
+            return lista_usuario;
+        }
+
         public DataTable cargar_usuario() {
             SqlConnection c = new SqlConnection(ClasesBase.Properties.Settings.Default.conexion);
 
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "SELECT * FROM Usuario";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = c;
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            da.Fill(dt);
+
+            return dt;
+
+        }
+
+        public DataTable cargar_usuarioYrol() {
+            SqlConnection c = new SqlConnection(ClasesBase.Properties.Settings.Default.conexion);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT * FROM ViewUsuario";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = c;
 

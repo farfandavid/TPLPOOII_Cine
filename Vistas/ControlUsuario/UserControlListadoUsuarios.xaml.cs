@@ -31,7 +31,7 @@ namespace Vistas.ControlUsuario
         private void eventVistaUsuario_Filter(object sender, FilterEventArgs e) {
             Usuario usuario = e.Item as Usuario;
 
-            if (usuario.Usu_NombreUsuario.StartsWith(txtRol.Text, StringComparison.CurrentCultureIgnoreCase)) {
+            if (usuario.Usu_NombreUsuario.StartsWith(txtUserName.Text, StringComparison.CurrentCultureIgnoreCase)) {
                 e.Accepted = true;
             } else {
                 e.Accepted = false;

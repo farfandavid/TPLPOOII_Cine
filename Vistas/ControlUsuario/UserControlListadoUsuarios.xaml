@@ -19,7 +19,7 @@
     
     <UserControl.Resources>
         <ObjectDataProvider ObjectType="{x:Type svc:ABMUsuario}"
-                            MethodName="traer_usuario"
+                            MethodName="traer_usuarioYrol"
                             x:Key="LIST_USER"/>
         
         <CollectionViewSource x:Key="VISTA_USER"
@@ -47,7 +47,7 @@
                 <StackPanel Orientation="Vertical" Margin="40 20 0 0" Background="White">
                     <StackPanel Orientation="Horizontal" Margin="235 0 0 0">
                         <materialDesign:PackIcon Kind="AccountSupervisorCircle" Foreground="{Binding ElementName=txtRol, Path=CaretBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                        <TextBox  Name="txtRol" Width="300" materialDesign:HintAssist.Hint="Buscar Nombre de Usuario" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6"
+                        <TextBox  Name="txtUserName" Width="300" materialDesign:HintAssist.Hint="Buscar Nombre de Usuario" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6"
                                   TextChanged="txtRol_TextChanged"/>
                     </StackPanel>
                     <ListView Name="listUsuarios" ItemsSource="{Binding Source={StaticResource VISTA_USER}}" Margin="50 50">
@@ -58,7 +58,7 @@
                                 <!--<GridViewColumn Header="Nombre" Width="115" DisplayMemberBinding="{Binding}"/>-->
                                 <GridViewColumn Header="UserName" Width="115" DisplayMemberBinding="{Binding Usu_NombreUsuario}"/>
                                 <GridViewColumn Header="Password" Width="115" DisplayMemberBinding="{Binding Usu_Contraseña}"/>
-                                <GridViewColumn Header="Rol" Width="115" DisplayMemberBinding="{Binding Rol_Codigo}"/>
+                                <GridViewColumn Header="Rol" Width="115" DisplayMemberBinding="{Binding Rol.Rol_Descripcion}"/>
                             </GridView>
                         </ListView.View>
                     </ListView>

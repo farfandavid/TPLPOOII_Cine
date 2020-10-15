@@ -44,6 +44,18 @@ namespace ClasesBase
                 Notificador(usu_ApellidoNombre);
             }
         }
+
+        private Rol rol;
+        public Rol Rol {
+            get {
+                return rol;
+            }
+
+            set {
+                rol = value;
+            }
+        }
+
         private int rol_Codigo;
 
 
@@ -55,6 +67,9 @@ namespace ClasesBase
                 Notificador(rol_Codigo.ToString());
             }
         }
+
+       
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void Notificador(string prop) {
