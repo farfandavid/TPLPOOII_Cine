@@ -38,8 +38,8 @@
                             <Button Background="#65b3f6" Content="Nuevo" Height="28" Width="75"   x:Name="btnNuevoUsu" Margin="0 0 10 0"  Click="btnNuevoUsu_Click"/>
                             <Button Background="#65b3f6" Content="Modificar" Height="28" Width="93"   x:Name="btnModifUsu" Margin="0 0 10 0"  Click="btnModifUsu_Click"/>
                             <Button Background="#65b3f6" Content="Eliminar" Height="28" Width="84"  x:Name="btnEliminarUsu" Margin="0 0 10 0" Click="btnEliminarUsu_Click"/>
-                            <Button Background="#65b3f6" Content="Cancelar" Height="28" Width="85"  x:Name="btnCancelarUsu" Margin="0 0 10 0" Click="btnCancelarUsu_Click" Visibility="Hidden"/>
-                            <Button Background="#65b3f6" Content="Guardar" Height="28" Width="85"  x:Name="btnGuardarUsu" Margin="0 0 20 0" Click="btnGuardarUsu_Click" Visibility="Hidden"/>
+                            <Button Background="#65b3f6" Content="Cancelar" Height="28" Width="85"  x:Name="btnCancelarUsu" Margin="0 0 10 0" Click="btnCancelarUsu_Click" IsEnabled="False"/>
+                            <Button Background="#65b3f6" Content="Guardar" Height="28" Width="85"  x:Name="btnGuardarUsu" Margin="0 0 20 0" Click="btnGuardarUsu_Click" IsEnabled="False"/>
                         </StackPanel>
                         <StackPanel Margin="0 10">
                             <StackPanel Orientation="Horizontal" Margin="40 0 0 0">
@@ -48,7 +48,7 @@
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="40 5 0 0">
                                 <materialDesign:PackIcon Kind="Person" Foreground="{Binding CaretBrush, ElementName=txtApellido_Usu}" VerticalAlignment="Bottom" Margin="0 4"/>
-                                <TextBox  x:Name="txtApellido_Usu" Width="300" materialDesign:HintAssist.Hint="Apellido" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6" />
+                                <TextBox  x:Name="txtApellido_Usu" Width="300" materialDesign:HintAssist.Hint="Apellido" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6" IsEnabled="False"/>
                             </StackPanel>
                             <!--<StackPanel Orientation="Horizontal" Margin="40 5 0 0">
                                 <materialDesign:PackIcon Kind="PersonOutline" Foreground="{Binding ElementName=txtNombre_Usu, Path=CaretBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
@@ -56,21 +56,18 @@
                             </StackPanel>-->
                             <StackPanel Orientation="Horizontal" Margin="40 5 0 0">
                                 <materialDesign:PackIcon Kind="Face" Foreground="{Binding CaretBrush, ElementName=txtUserName_Usu}" VerticalAlignment="Bottom" Margin="0 4"/>
-                                <TextBox  x:Name="txtUserName_Usu" Width="300" materialDesign:HintAssist.Hint="UserName" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6" />
+                                <TextBox  x:Name="txtUserName_Usu" Width="300" materialDesign:HintAssist.Hint="UserName" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6" IsEnabled="False"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="40 5 0 0">
                                 <materialDesign:PackIcon Kind="Key" Foreground="{Binding CaretBrush, ElementName=txtPassword_Usu}" VerticalAlignment="Bottom" Margin="0 4"/>
-                                <TextBox  x:Name="txtPassword_Usu" Width="300" materialDesign:HintAssist.Hint="Password" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6" />
+                                <TextBox  x:Name="txtPassword_Usu" Width="300" materialDesign:HintAssist.Hint="Password" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6" IsEnabled="False"/>
                             </StackPanel>
                             
-                            <StackPanel Orientation="Horizontal" Margin="40 5 0 0">
+                            <StackPanel Orientation="Horizontal" Margin="40 13 0 0">
                                 <materialDesign:PackIcon Kind="AccountSupervisorOutline" Foreground="{Binding CaretBrush, ElementName=txtPassword_Usu}" VerticalAlignment="Bottom" Margin="0 4"/>
-                                <ComboBox Name="cmbRol" Width="300" materialDesign:HintAssist.Hint="Rol" materialDesign:HintAssist.HintOpacity=".26"/>
+                                <ComboBox Name="cmbRol" Width="300" materialDesign:HintAssist.Hint="Rol" materialDesign:HintAssist.HintOpacity=".26" IsEnabled="False"/>
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal" Margin="40 5 0 0" Visibility="Collapsed">
-                                <materialDesign:PackIcon Kind="AccountSupervisorOutline" Foreground="{Binding CaretBrush, ElementName=txtRol_Usu}" VerticalAlignment="Bottom" Margin="0 4"/>
-                                <TextBox  x:Name="txtRol_Usu" Width="300" materialDesign:HintAssist.Hint="Rol" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6"/>
-                            </StackPanel>
+                            
                         </StackPanel>
                     </StackPanel>
                     <StackPanel>
@@ -157,7 +154,7 @@
                                     Width="300"
                                     materialDesign:HintAssist.Hint="Rol" IsEnabled="False"/>
                                     </StackPanel>
-                                    <Button Background="#65b3f6" Content="Actualizar" Height="28" Width="95"   Name="btnActualizarUsu" Margin="0 6 0 0"  HorizontalAlignment="Center" Click="btnActualizarUsu_Click" Visibility="Hidden"/>
+                                    
                                 </StackPanel>
                             </StackPanel>
                         </Canvas>

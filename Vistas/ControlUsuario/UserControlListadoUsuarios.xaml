@@ -46,7 +46,7 @@
 
                 <StackPanel Orientation="Vertical" Margin="40 20 0 0" Background="White">
                     <StackPanel Orientation="Horizontal" Margin="235 0 0 0">
-                        <materialDesign:PackIcon Kind="AccountSupervisorCircle" Foreground="{Binding ElementName=txtRol, Path=CaretBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                        <materialDesign:PackIcon Kind="AccountSupervisorCircle" Foreground="{Binding ElementName=txtUserName, Path=CaretBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                         <TextBox  Name="txtUserName" Width="300" materialDesign:HintAssist.Hint="Buscar Nombre de Usuario" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6"
                                   TextChanged="txtRol_TextChanged"/>
                     </StackPanel>

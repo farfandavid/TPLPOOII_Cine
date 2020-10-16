@@ -37,9 +37,10 @@ namespace Vistas.ControlUsuario {
             habilitar_tetxbox();
             nuevo = true;
             habilitar_botones();
-
+            deshabilitar_botonesCanvas();
             btnModifUsu.IsEnabled = false;
             btnEliminarUsu.IsEnabled = false;
+
         }
         private void btnModifUsu_Click(object sender, RoutedEventArgs e) {
             nuevo = false;
@@ -47,10 +48,10 @@ namespace Vistas.ControlUsuario {
             txtUserName_Usu.Text = txtUserName_Usu_Canvas.Text;
             txtPassword_Usu.Text = txtPassword_Usu_Canvas.Text;
             txtApellido_Usu.Text = txtApellido_Usu_Canvas.Text;
-            txtRol_Usu.Text = txtRol_Usu_Canvas.Text;
+            cmbRol.SelectedValue = txtRol_Usu_Canvas.Text;
             habilitar_tetxbox();
             habilitar_botones();
-
+            deshabilitar_botonesCanvas();
             btnNuevoUsu.IsEnabled = false;
             btnEliminarUsu.IsEnabled = false;
         }
@@ -64,8 +65,9 @@ namespace Vistas.ControlUsuario {
                 oUser.Usu_Id = Convert.ToInt32(txtCod_Usu_Canvas.Text);
                 listaUsuario.Remove(Vista.CurrentItem as Usuario);
                 ABMUsuario.eliminar_usuario(oUser);
+                limpiarCampos();
                 MessageBox.Show("Usuario Eliminado");
-
+                
             }
         }
 
@@ -77,6 +79,8 @@ namespace Vistas.ControlUsuario {
             btnNuevoUsu.IsEnabled = true;
             btnModifUsu.IsEnabled = true;
             btnEliminarUsu.IsEnabled = true;
+            limpiarCampos();
+            habilitar_botonesCanvas();
         }
 
         private void btnGuardarUsu_Click(object sender, RoutedEventArgs e)
@@ -92,7 +96,7 @@ namespace Vistas.ControlUsuario {
             btnNuevoUsu.IsEnabled = true;
             btnModifUsu.IsEnabled = true;
             btnEliminarUsu.IsEnabled = true;
-            
+            habilitar_botonesCanvas();
         }
 
         private void btnIrPrimero_Click(object sender, RoutedEventArgs e)
@@ -121,10 +125,7 @@ namespace Vistas.ControlUsuario {
             Vista.MoveCurrentToLast();
         }
 
-        private void btnActualizarUsu_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
 
         private void llenar_vista() {
             ObjectDataProvider odp = (ObjectDataProvider)this.Resources["lista_Usuarios"];
@@ -140,39 +141,29 @@ namespace Vistas.ControlUsuario {
 
         private void habilitar_botones()
         {
-            btnGuardarUsu.Visibility = Visibility.Visible;
-            btnCancelarUsu.Visibility = Visibility.Visible; 
+            btnGuardarUsu.IsEnabled = true;
+            btnCancelarUsu.IsEnabled = true; 
         }
         private void deshabilitar_botones()
         {
-            btnGuardarUsu.Visibility = Visibility.Hidden;
-            btnCancelarUsu.Visibility = Visibility.Hidden;
+            btnGuardarUsu.IsEnabled = false;
+            btnCancelarUsu.IsEnabled = false;
         }
 
         private void deshabilitar_textbox()
         {
-            //txtUserName_Usu.Visibility = Visibility.Hidden;
-            //txtPassword_Usu.Visibility = Visibility.Hidden;
-            //txtApellido_Usu.Visibility = Visibility.Hidden;
-            //txtRol_Usu.Visibility = Visibility.Hidden;
-
-            //txtPassword_Usu_Canvas.Visibility = Visibility.Visible;
-            //txtPassword_Usu_Canvas.Visibility = Visibility.Visible;
-            //txtApellido_Usu_Canvas.Visibility = Visibility.Visible;
-            //txtRol_Usu_Canvas.Visibility = Visibility.Visible;
+            txtUserName_Usu.IsEnabled = false;
+            txtPassword_Usu.IsEnabled = false;
+            txtApellido_Usu.IsEnabled = false;
+            cmbRol.IsEnabled = false;
         }
 
         private void habilitar_tetxbox()
         {
-            //txtUserName_Usu.Visibility = Visibility.Visible;
-            //txtPassword_Usu.Visibility = Visibility.Visible;
-            //txtApellido_Usu.Visibility = Visibility.Visible;
-            //txtRol_Usu.Visibility = Visibility.Visible;
-
-            //txtPassword_Usu_Canvas.Visibility = Visibility.Hidden;
-            //txtPassword_Usu_Canvas.Visibility = Visibility.Hidden;
-            //txtApellido_Usu_Canvas.Visibility = Visibility.Hidden;
-            //txtRol_Usu_Canvas.Visibility = Visibility.Hidden;
+            txtUserName_Usu.IsEnabled = true;
+            txtPassword_Usu.IsEnabled = true;
+            txtApellido_Usu.IsEnabled = true;
+            cmbRol.IsEnabled = true;
         }
 
         private void nuevo_usuario() {
@@ -206,7 +197,7 @@ namespace Vistas.ControlUsuario {
                 oUser.Usu_NombreUsuario = txtUserName_Usu.Text;
                 oUser.Usu_Contraseña = txtPassword_Usu.Text;
                 oUser.Usu_ApellidoNombre = txtApellido_Usu.Text;
-                oUser.Rol_Codigo = Convert.ToInt32(txtRol_Usu.Text);
+                oUser.Rol_Codigo = Convert.ToInt32(cmbRol.SelectedValue.ToString());
                 
                 ABMUsuario.modificar_usuario(oUser);
 
@@ -229,7 +220,7 @@ namespace Vistas.ControlUsuario {
             txtApellido_Usu.Text = "";
             txtUserName_Usu.Text = "";
             txtPassword_Usu.Text = "";
-            txtRol_Usu.Text = "";
+            cmbRol.SelectedIndex= -1;
         }
 
         private void cargar_Combo() {
@@ -240,6 +231,22 @@ namespace Vistas.ControlUsuario {
             cmbRolCanvas.DisplayMemberPath = "rol_Descripcion";
             cmbRolCanvas.SelectedValuePath = "rol_Codigo";
             cmbRolCanvas.ItemsSource = ABMRol.cargar_rol().DefaultView;
+        }
+
+        private void deshabilitar_botonesCanvas()
+        {
+            btn_Ir_Primero.IsEnabled = false;
+            btn_Ir_Atras.IsEnabled = false;
+            btn_Ir_Siguiente.IsEnabled = false;
+            btn_Ir_Ultimo.IsEnabled = false;
+        }
+
+        private void habilitar_botonesCanvas()
+        {
+            btn_Ir_Primero.IsEnabled = true;
+            btn_Ir_Atras.IsEnabled = true;
+            btn_Ir_Siguiente.IsEnabled = true;
+            btn_Ir_Ultimo.IsEnabled = true;
         }
     }
 }
