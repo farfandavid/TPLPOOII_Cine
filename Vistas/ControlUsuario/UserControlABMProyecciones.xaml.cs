@@ -32,7 +32,7 @@ namespace Vistas.ControlUsuario {
         private void btnAgregarProy_Click(object sender, RoutedEventArgs e) {
             Proyeccion oProyeccion = new Proyeccion();
             oProyeccion.Proy_Codigo = cont;
-            oProyeccion.Proy_Fecha = new DateTime();
+            oProyeccion.Proy_Fecha = txtProy_Fecha.SelectedDate.Value;
             oProyeccion.Proy_Hora = txtProy_Hora.Text;
             oProyeccion.Sala_ID = 1;
             oProyeccion.Peli_Codigo = int.Parse(txtProy_CodPel.Text);
@@ -45,11 +45,15 @@ namespace Vistas.ControlUsuario {
                 + txtProy_Hora.Text + "\nNumero Sala=" + cmbNroSala.SelectedValue.ToString() + "\nCodigo Pelicula=" + txtProy_CodPel.Text, "Acccion realizada con exito", MessageBoxButton.OK, MessageBoxImage.Information);
 
             cont = cont + 1;
-            txtProy_Codigo.Text = cont.ToString();
-            txtProy_Fecha.Clear();
-            txtProy_Hora.Clear();
-            txtProy_CodPel.Clear();
+            vaciarCampos();
         }
 
+        private void vaciarCampos()
+        {
+            txtProy_Codigo.Text = cont.ToString();
+            txtProy_Fecha.SelectedDate = null;
+            txtProy_Hora.SelectedTime = null;
+            txtProy_CodPel.Clear();
+        }
     }
 }

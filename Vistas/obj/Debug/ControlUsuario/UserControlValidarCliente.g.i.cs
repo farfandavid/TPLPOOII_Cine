@@ -84,7 +84,7 @@ namespace Vistas.ControlUsuario {
         #line hidden
         
         
-        #line 62 "..\..\..\ControlUsuario\UserControlValidarCliente.xaml"
+        #line 63 "..\..\..\ControlUsuario\UserControlValidarCliente.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGrid dgListadoClientes;
         

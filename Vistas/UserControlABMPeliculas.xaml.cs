@@ -49,9 +49,8 @@ namespace Vistas {
             MessageBox.Show("Los datos fueron guardados con exito \nCodigo=" + txtCod_Pel.Text + "\nTitulo=" + txtTitulo_Pel.Text + "\nDuracion="
                 + txtDuracion_Pel.Text + "\nGenero=" + cmbGeneros.SelectedValue.ToString() + "\nClase=" + cmbClases.SelectedValue.ToString(), "Acccion realizada con exito", MessageBoxButton.OK, MessageBoxImage.Information);
 
-            
-            txtDuracion_Pel.Clear();
-            txtTitulo_Pel.Clear();
+
+            vaciarCampos();
 
         }
 
@@ -120,6 +119,7 @@ namespace Vistas {
         }
 
         private void vaciarCampos() {
+            txtDuracion_Pel.SelectedTime = null;
             txtTitulo_Pel.Text = "";
             txtDuracion_Pel.Text = "";
             cmbClases.SelectedValue = "";
