@@ -1,3 +1,185 @@
+<<<<<<< Updated upstream
+=======
+c:\users\cathy\documents\visual studio 2015\Projects\lpooII-Grupo8\Vistas\bin\Debug\Vistas.exe.config
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\obj\Debug\Vistas.csprojResolveAssemblyReference.cache
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\obj\Debug\MainWindow.g.cs
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\obj\Debug\App.g.cs
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\obj\Debug\Vistas_MarkupCompile.cache
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\obj\Debug\Vistas_MarkupCompile.lref
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\bin\Debug\Vistas.exe
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\bin\Debug\Vistas.pdb
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\bin\Debug\ClasesBase.dll
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\bin\Debug\MaterialDesignColors.dll
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\bin\Debug\ClasesBase.pdb
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\obj\Debug\WinMenuAdmin.g.cs
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\obj\Debug\App.baml
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\obj\Debug\MainWindow.baml
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\obj\Debug\WinMenuAdmin.baml
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\obj\Debug\Vistas.g.resources
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\obj\Debug\Vistas.Properties.Resources.resources
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\obj\Debug\Vistas.csproj.GenerateResource.Cache
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\obj\Debug\Vistas.exe
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\obj\Debug\Vistas.pdb
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\obj\Debug\UserControlMenuItem.g.cs
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\obj\Debug\UserControlMenuItem.baml
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\obj\Debug\UserControlABMPeliculas.g.cs
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\obj\Debug\UserControlABMPeliculas.baml
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\obj\Debug\ControlUsuario\UserControlDashboard.g.cs
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\obj\Debug\ControlUsuario\UserControlDashboard.baml
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\obj\Debug\ControlUsuario\UserControlABMClientes.g.cs
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\obj\Debug\ControlUsuario\UserControlABMClientes.baml
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\obj\Debug\ControlUsuario\UserControlABMProyecciones.g.cs
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\obj\Debug\ControlUsuario\UserControlButacas.g.cs
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\obj\Debug\ControlUsuario\UserControlABMProyecciones.baml
+C:\Users\Cathy\Documents\Visual Studio 2015\Projects\lpooII-Grupo8\Vistas\obj\Debug\ControlUsuario\UserControlButacas.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\bin\Debug\Vistas.exe.config
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\Vistas.exe
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\Vistas.pdb
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\bin\Debug\Vistas.exe
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\bin\Debug\Vistas.pdb
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\bin\Debug\ClasesBase.dll
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\bin\Debug\MaterialDesignColors.dll
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\bin\Debug\ClasesBase.pdb
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\Vistas.csprojResolveAssemblyReference.cache
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\ControlUsuario\UserControlABMClientes.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\ControlUsuario\UserControlABMProyecciones.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\ControlUsuario\UserControlButacas.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\ControlUsuario\UserControlLogin.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\Prueba.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\UserControlABMPeliculas.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\ControlUsuario\UserControlDashboard.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\UserControlMenuItem.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\MainWindow.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\WinMenuAdmin.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\App.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\Vistas_MarkupCompile.cache
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\Vistas_MarkupCompile.lref
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\App.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\ControlUsuario\UserControlABMClientes.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\ControlUsuario\UserControlABMProyecciones.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\ControlUsuario\UserControlButacas.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\ControlUsuario\UserControlLogin.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\PlantillaDicc\ButtonChange.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\PlantillaDicc\TextBoxStyle.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\Prueba.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\UserControlABMPeliculas.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\ControlUsuario\UserControlDashboard.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\UserControlMenuItem.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\MainWindow.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\WinMenuAdmin.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\Vistas.g.resources
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\Vistas.Properties.Resources.resources
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\Vistas.csproj.GenerateResource.Cache
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\ControlUsuario\UserControlValidarCliente.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine-TP_VersionDavid\Vistas\obj\Debug\ControlUsuario\UserControlValidarCliente.baml
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\bin\Debug\Vistas.exe.config
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.exe
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.pdb
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\bin\Debug\Vistas.exe
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\bin\Debug\Vistas.pdb
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\bin\Debug\ClasesBase.dll
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\bin\Debug\MaterialDesignColors.dll
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\bin\Debug\ClasesBase.pdb
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.csprojResolveAssemblyReference.cache
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlABMClientes.g.cs
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlABMProyecciones.g.cs
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlButacas.g.cs
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlLogin.g.cs
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlValidarCliente.g.cs
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Prueba.g.cs
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\UserControlABMPeliculas.g.cs
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlDashboard.g.cs
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\UserControlMenuItem.g.cs
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\MainWindow.g.cs
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\WinMenuAdmin.g.cs
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\App.g.cs
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas_MarkupCompile.cache
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas_MarkupCompile.lref
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\App.baml
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlABMClientes.baml
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlABMProyecciones.baml
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlButacas.baml
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlLogin.baml
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlValidarCliente.baml
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\PlantillaDicc\ButtonChange.baml
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\PlantillaDicc\TextBoxStyle.baml
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Prueba.baml
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\UserControlABMPeliculas.baml
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlDashboard.baml
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\UserControlMenuItem.baml
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\MainWindow.baml
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\WinMenuAdmin.baml
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.g.resources
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.Properties.Resources.resources
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.csproj.GenerateResource.Cache
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\bin\Debug\Vistas.exe.config
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\bin\Debug\Vistas.exe
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\bin\Debug\Vistas.pdb
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\bin\Debug\ClasesBase.dll
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\bin\Debug\MaterialDesignColors.dll
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\bin\Debug\ClasesBase.pdb
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.csprojResolveAssemblyReference.cache
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlABMClientes.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlABMProyecciones.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlButacas.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlListadoUsuarios.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlLogin.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlValidarCliente.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Prueba.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\UserControlABMPeliculas.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlDashboard.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\UserControlMenuItem.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\MainWindow.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\WinMenuAdmin.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\App.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas_MarkupCompile.cache
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas_MarkupCompile.lref
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\App.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlABMClientes.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlABMProyecciones.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlButacas.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlListadoUsuarios.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlLogin.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlValidarCliente.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\PlantillaDicc\ButtonChange.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\PlantillaDicc\TextBoxStyle.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Prueba.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\UserControlABMPeliculas.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlDashboard.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\UserControlMenuItem.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\MainWindow.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\WinMenuAdmin.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.g.resources
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.Properties.Resources.resources
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.csproj.GenerateResource.Cache
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.exe
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.pdb
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Page1.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Page1.baml
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlListadoUsuarios.g.cs
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Page1.g.cs
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlListadoUsuarios.baml
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Page1.baml
+>>>>>>> Stashed changes
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\bin\Debug\Vistas.exe.config
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\bin\Debug\Vistas.exe
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\bin\Debug\Vistas.pdb
@@ -12,8 +194,16 @@ C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.csproj
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlABMClientes.g.cs
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlABMProyecciones.g.cs
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlButacas.g.cs
+<<<<<<< Updated upstream
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlLogin.g.cs
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\SplashScreen.g.cs
+=======
+C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlListadoUsuarios.g.cs
+C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlLogin.g.cs
+C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlValidarCliente.g.cs
+C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Page1.g.cs
+C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Prueba.g.cs
+>>>>>>> Stashed changes
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\UserControlABMPeliculas.g.cs
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlDashboard.g.cs
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\UserControlMenuItem.g.cs
@@ -27,10 +217,20 @@ C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\App.baml
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlABMClientes.baml
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlABMProyecciones.baml
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlButacas.baml
+<<<<<<< Updated upstream
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlLogin.baml
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\PlantillaDicc\ButtonChange.baml
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\PlantillaDicc\TextBoxStyle.baml
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\SplashScreen.baml
+=======
+C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlListadoUsuarios.baml
+C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlLogin.baml
+C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlValidarCliente.baml
+C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Page1.baml
+C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\PlantillaDicc\ButtonChange.baml
+C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\PlantillaDicc\TextBoxStyle.baml
+C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Prueba.baml
+>>>>>>> Stashed changes
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\UserControlABMPeliculas.baml
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlDashboard.baml
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\UserControlMenuItem.baml

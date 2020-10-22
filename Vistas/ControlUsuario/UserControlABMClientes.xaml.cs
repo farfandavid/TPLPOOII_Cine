@@ -35,8 +35,18 @@ namespace Vistas.ControlUsuario
                             
         }
 
+<<<<<<< Updated upstream
         private void btnAgregarCli_Click(object sender, RoutedEventArgs e)
         {
+=======
+        private void btnAgregarCli_Click(object sender, RoutedEventArgs e) {
+            if (txtCli_Dni.Text==""||txtCli_Nombre.Text == "" || txtCli_Apellido.Text == "" || txtCli_Telefono.Text == "" || txtCli_Email.Text == "")
+            {
+                CamposIncompletos.IsOpen = true;
+            }
+            else
+            {
+>>>>>>> Stashed changes
             Cliente ocliente = new Cliente();
             int numero;
             Int32.TryParse(txtCli_Dni.Text, out numero);

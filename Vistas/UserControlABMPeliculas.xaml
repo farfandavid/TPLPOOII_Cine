@@ -5,16 +5,66 @@
             TextElement.FontWeight="Medium"
             TextElement.FontSize="14"
             FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
-            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             
+            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"          
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Vistas"
+<<<<<<< Updated upstream
              mc:Ignorable="d" 
              d:DesignHeight="558" d:DesignWidth="831">
     <Grid Background="White">
+=======
+             xmlns:svc="clr-namespace:ClasesBase.TrabajarABM;assembly=ClasesBase"
+             xmlns:componentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+             mc:Ignorable="d" 
+             d:DesignHeight="558" d:DesignWidth="831">
+    <UserControl.Resources>
+        <ObjectDataProvider ObjectType="{x:Type svc:ABMPelicula}"
+                            MethodName="traerPelicula"
+                            x:Key="lista_Pelicula"/>
+        <ObjectDataProvider ObjectType="{x:Type svc:ABMPelicula}"
+                            MethodName="validarPelicula"
+                            x:Key="DATA_PELICULA"/>
+        <!--<CollectionViewSource x:Key="filtro_peli"
+                              Source="{StaticResource ResourceKey=lista_Pelicula}"
+                              Filter="eventVistaPelicula">
+            <CollectionViewSource.SortDescriptions>
+                <componentModel:SortDescription PropertyName="Peli_Titulo" Direction="Ascending"/>
+            </CollectionViewSource.SortDescriptions>
+        </CollectionViewSource> -->
+        <ControlTemplate x:Key="TextBoxErroTemplate">
+            <DockPanel>
+                <Ellipse DockPanel.Dock="Right" Margin="2,0" Width="10" Height="10">
+                    <Ellipse.Fill>
+                        <LinearGradientBrush>
+                            <GradientStop Color="#FFFFD4ED" Offset="0"/>
+                            <GradientStop Color="#db439c" Offset="1"/>
+                        </LinearGradientBrush>
+
+                    </Ellipse.Fill>
+                </Ellipse>
+                <AdornedElementPlaceholder/>
+            </DockPanel>
+        </ControlTemplate>
+        <Style x:Key="EstiloError" TargetType="TextBox">
+            <Setter Property="Margin" Value="4 4 10 4"/>
+            <Setter Property="Validation.ErrorTemplate" Value="{StaticResource TextBoxErroTemplate}"/>
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="ToolTip">
+                        <Setter.Value>
+                            <Binding Path="(Validation.Errors)[0].ErrorContent"
+                                     RelativeSource="{x:Static RelativeSource.Self}"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="White" Margin="0,0,0,-32" Height="590" VerticalAlignment="Top">
+>>>>>>> Stashed changes
         <Grid.RowDefinitions>
             <RowDefinition Height="120"/>
             <RowDefinition Height="370"/>
@@ -25,6 +75,7 @@
             <Image Source="imagenes/freeman.png" HorizontalAlignment="Right" Margin="0,0,40.2,11"/>
         </Grid>
         <Grid Grid.Row="1">
+<<<<<<< Updated upstream
             <StackPanel Orientation="Vertical" Margin="40,20,450.2,-0.4" Background="White">
                 <DockPanel>
                     <Label Content="Codigo de la Pelicula" DockPanel.Dock="Top" Margin="25 0 0 0"/>
@@ -51,6 +102,33 @@
                     <materialDesign:PackIcon Kind="AccessTime" Foreground="{Binding ElementName=txtDuracion_Pel, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                     <TextBox  Name="txtDuracion_Pel" Width="300" materialDesign:HintAssist.Hint="Duracion de la Pelicula" materialDesign:HintAssist.IsFloating="True" CaretBrush="#FFF99118" />
                 </StackPanel>-->
+=======
+            <StackPanel Orientation="Vertical" Margin="40,20,464,0" Background="White">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Titulo" Foreground="Black" Width="300" HorizontalAlignment="Left" Margin="20 30 0 0" FontWeight="Bold" />
+                    <StackPanel Orientation="Horizontal"  Margin="0,0,-0.4,0">
+                        <materialDesign:PackIcon Kind="LocalMovies" Foreground="{Binding ElementName=txtTitulo_Pel, Path=SelectionBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                        <TextBox  Name="txtTitulo_Pel" Width="300"  CaretBrush="Black" 
+                              Style="{StaticResource EstiloError}" DataContext="{StaticResource DATA_PELICULA}" Margin="4,10,10,3.8">
+                            <TextBox.Text>
+                                <Binding Path="Peli_Titulo" UpdateSourceTrigger="PropertyChanged" ValidatesOnExceptions="True" ValidatesOnDataErrors="True"/>
+                            </TextBox.Text>
+                        </TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Duracion" Foreground="Black" Width="300" HorizontalAlignment="Left" Margin="20 30 0 0" FontWeight="Bold" />
+                    <StackPanel Orientation="Horizontal"  Margin="0,0,-0.4,0">
+                        <materialDesign:PackIcon Kind="AccessTime" Foreground="{Binding ElementName=txtDuracion_Pel, Path=SelectionBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                        <TextBox  Name="txtDuracion_Pel" Width="300"  CaretBrush="#65b3f6" 
+                              Style="{StaticResource EstiloError}" DataContext="{StaticResource DATA_PELICULA}" Margin="4,10,10,3.8">
+                            <TextBox.Text>
+                                <Binding Path="Peli_Duracion" UpdateSourceTrigger="PropertyChanged" ValidatesOnExceptions="True" ValidatesOnDataErrors="True"/>
+                            </TextBox.Text>
+                        </TextBox>
+                    </StackPanel>
+                </StackPanel>
+>>>>>>> Stashed changes
                 <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
                     <materialDesign:PackIcon Kind="Stars" Foreground="{Binding ElementName=txtGenero_Pel, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                     <ComboBox Name="Generos" Width="300" SelectionChanged="cmbGenero_SelectionChanged">
@@ -65,6 +143,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
                     <materialDesign:PackIcon Kind="ImageFilterVintage" Foreground="{Binding ElementName=txtClase_Pel, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+<<<<<<< Updated upstream
                     <ComboBox Name="Clases" Width="300" SelectionChanged="cmbClases_SelectionChanged">
                         <ComboBox.ItemTemplate>
                             <DataTemplate>
@@ -94,5 +173,83 @@
             </Grid>
         </Grid>
 
+=======
+                    <ComboBox Name="cmbGeneros" Width="300" ItemsSource="{Binding Source={StaticResource tipo_Generos},XPath=tipo/@name}" materialDesign:HintAssist.Hint="Genero" materialDesign:HintAssist.HintOpacity=".26"/>
+                </StackPanel>
+            </StackPanel>
+
+            <Grid Grid.Row="2" >
+                <ListView Name="dgPeliculas" Height="265" ItemsSource="{Binding Source={StaticResource lista_Pelicula}}" Margin="396,70,10,0" SelectionChanged="dgPeliculas_SelectionChanged" VerticalAlignment="Top" >
+                    <ListView.View>
+                        <GridView>
+
+                            <GridViewColumn Width="80" Header="Codigo" DisplayMemberBinding="{Binding Path=peli_Codigo}"/>
+                            <GridViewColumn Width="80" Header="Titulo" DisplayMemberBinding="{Binding Path=peli_Titulo}"/>
+                            <GridViewColumn Width="80" Header="Duracion" DisplayMemberBinding="{Binding Path=peli_Duracion}"/>
+                            <GridViewColumn Width="80" Header="Clase" DisplayMemberBinding="{Binding Path=peli_Clase}"/>
+                            <GridViewColumn Width="80" Header="Genero" DisplayMemberBinding="{Binding Path=peli_Genero}"/>
+
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <StackPanel Margin="54,368,51,-84" Orientation="Horizontal">
+                    <Button Style="{StaticResource FormButton}" Background="#f99118" Content="Agregar" Height="28" Width="85"  HorizontalAlignment="Left"  x:Name="btnAgregarPel" Click="btnAgregarPel_Click" Margin="0,30,0,28"/>
+                    <Button Style="{StaticResource FormButton}" Background="#f99118" Content="Eliminar" Height="28" Width="85"  HorizontalAlignment="Right"  x:Name="btnEliminarPel" Margin="230 0"  Click="btnEliminarPel_Click"/>
+                    <Button Style="{StaticResource FormButton}" Background="#f99118" Content="Modificar" Height="28" Width="85"  HorizontalAlignment="Center"  x:Name="btnModificalPel" Click="btnModificalPel_Click" />
+                </StackPanel>
+
+            </Grid>
+        </Grid>
+        <materialDesign:DialogHost  x:Name="CamposIncompletos" Grid.RowSpan="3"  Margin="-1,0,1.2,68.4" >
+            <materialDesign:DialogHost.DialogContent>
+                <StackPanel Margin="15" Orientation="Vertical">
+                    <Image Source="/imagenes/Fall_Guys_Enojado.png" Width="178" Height="92" Margin="20 30"/>
+                    <TextBlock Text="Todos los campos deben estar completados" HorizontalAlignment="Center"/>
+                    <DockPanel>
+                        <Button DockPanel.Dock="Right" Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" CommandTarget="{Binding ElementName=CamposIncompletos}"
+                            Style="{DynamicResource MaterialDesignFlatButton}" Content="Aceptar" Margin="5 10 0 0"/>
+                    </DockPanel>
+                </StackPanel>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
+        <materialDesign:DialogHost  x:Name="PeliRepetida" Grid.RowSpan="3" Margin="0,0,0.2,68.4">
+            <materialDesign:DialogHost.DialogContent>
+                <StackPanel Margin="15" Orientation="Vertical">
+                    <Image Source="/imagenes/Fall_Guys_Enojado.png" Width="178" Height="92" Margin="20 30"/>
+                    <TextBlock Text="La pelicula ingresado ya se encuentra registrada" HorizontalAlignment="Center"/>
+                    <DockPanel>
+                        <Button DockPanel.Dock="Right" Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" CommandTarget="{Binding ElementName=PeliRepetida}"
+                            Style="{DynamicResource MaterialDesignFlatButton}" Content="Aceptar" Margin="5 10 0 0"/>
+                    </DockPanel>
+                </StackPanel>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
+        <materialDesign:DialogHost  x:Name="EliminarPel" Grid.RowSpan="3" Margin="0,0,0.2,68.4">
+            <materialDesign:DialogHost.DialogContent>
+                <StackPanel Margin="15" Orientation="Vertical">
+                    <Image Source="imagenes/Fall_Guys_Enojado.png" Width="178" Height="92" Margin="20 30"/>
+                    <TextBlock Text="Seleccione una pelicula antes de realizar la accion" HorizontalAlignment="Center"/>
+                    <DockPanel>
+                        <Button DockPanel.Dock="Right" Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" CommandTarget="{Binding ElementName=EliminarPel}"
+                            Style="{DynamicResource MaterialDesignFlatButton}" Content="Aceptar" Margin="5 10 0 0"/>
+                    </DockPanel>
+                </StackPanel>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
+        <materialDesign:DialogHost  x:Name="CodInexistente" Grid.RowSpan="2">
+            <materialDesign:DialogHost.DialogContent>
+                <StackPanel Margin="15" Orientation="Vertical">
+                    <Image Source="imagenes/Fall_Guys_Enojado.png" Width="178" Height="92" Margin="20 30"/>
+                    <TextBlock Text="El codigo ingresado no existe" HorizontalAlignment="Center"/>
+                    <DockPanel>
+                        <Button DockPanel.Dock="Right" Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" CommandTarget="{Binding ElementName=CodInexistente}"
+                            Style="{DynamicResource MaterialDesignFlatButton}" Content="Aceptar" Margin="5 10 0 0"/>
+                    </DockPanel>
+                </StackPanel>
+            </materialDesign:DialogHost.DialogContent>
+            <TextBox  x:Name="txtNamePelicula" materialDesign:HintAssist.Hint="     Nombre Pelicula" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6"
+                 Margin="464,140,90,0" TextChanged="txtNamePelicula_TextChanged" Height="45" VerticalAlignment="Top" />
+        </materialDesign:DialogHost>
+>>>>>>> Stashed changes
     </Grid>
 </UserControl>

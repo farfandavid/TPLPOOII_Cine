@@ -48,6 +48,15 @@
     <Compile Include="Proyeccion.cs" />
     <Compile Include="Rol.cs" />
     <Compile Include="Ticket.cs" />
+<<<<<<< Updated upstream
+=======
+    <Compile Include="TrabajarABM\ABMCliente.cs" />
+    <Compile Include="TrabajarABM\ABMPelicula.cs" />
+    <Compile Include="TrabajarABM\ABMProyecciones.cs" />
+    <Compile Include="TrabajarABM\ABMRol.cs" />
+    <Compile Include="TrabajarABM\ABMSala.cs" />
+    <Compile Include="TrabajarABM\ABMUsuario.cs" />
+>>>>>>> Stashed changes
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>

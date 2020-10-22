@@ -77,5 +77,49 @@ namespace ClasesBase
                 peli_Clase = value;
             }
         }
+
+        public string Error
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string this[string columnName]
+        {
+            get
+            {
+                string msg_Error = null;
+
+                switch (columnName)
+                {
+                    case "Peli_Titulo": msg_Error = validar_Titulo(); break;
+                    //case "Peli_Genero": msg_Error = validar_Genero(); break;
+                    //case "Peli_Clase": msg_Error = validar_Clase(); break;
+                    case "Peli_Duracion": msg_Error = validar_Duracion(); break;
+                }
+
+                return msg_Error;
+            }
+        }
+
+        private string validar_Duracion()
+        {
+            if (String.IsNullOrEmpty(Peli_Duracion))
+            {
+                return "El valor de Campo es Obligatorio";
+            }
+            return null;
+        }
+
+        private string validar_Titulo()
+        {
+            if (String.IsNullOrEmpty(Peli_Titulo))
+            {
+                return "El valor de Campo es Obligatorio";
+            }
+            return null;
+        }
     }
 }
