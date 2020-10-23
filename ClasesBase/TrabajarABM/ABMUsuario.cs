@@ -134,5 +134,18 @@ namespace ClasesBase.TrabajarABM {
             cmd.ExecuteNonQuery();
             conexion.Close();
         }
+
+        public Usuario valUsuario() {
+
+            Usuario oUsuario = new Usuario();
+
+
+            oUsuario.Usu_NombreUsuario = "";
+            oUsuario.Usu_ApellidoNombre = "";
+            oUsuario.Usu_Contraseña = "";
+            oUsuario.Rol = null;
+
+            return oUsuario;
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.ComponentModel;
 
 namespace ClasesBase
 {
-    public class Usuario: INotifyPropertyChanged
+    public class Usuario: INotifyPropertyChanged, IDataErrorInfo
     {
         private int usu_Id;
 
@@ -68,7 +68,52 @@ namespace ClasesBase
             }
         }
 
-       
+        public string Error {
+            get {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string this[string columnName] {
+            get {
+                string msg_Error = null;
+                switch (columnName) {
+                    case "Usu_NombreUsuario": msg_Error = validar_NombreUsuario(); break;
+                    case "Usu_Contraseña": msg_Error = validar_Contraseña(); break;
+                    case "Usu_ApellidoNombre": msg_Error = validar_ApellidoNombre(); break;
+                    case "Rol": msg_Error = validar_Rol(); break;
+                }
+                return msg_Error;
+            }
+        }
+
+        public string validar_NombreUsuario() {
+            if (String.IsNullOrEmpty(Usu_NombreUsuario)) {
+                return "El valor de Campo es Obligatorio";
+            }
+            return null;
+        }
+
+        public string validar_Contraseña() {
+            if (String.IsNullOrEmpty(Usu_Contraseña)) {
+                return "El valor de Campo es Obligatorio";
+            }
+            return null;
+        }
+
+        public string validar_ApellidoNombre() {
+            if (String.IsNullOrEmpty(usu_ApellidoNombre)) {
+                return "El valor de Campo es Obligatorio";
+            }
+            return null;
+        }
+
+        public string validar_Rol() {
+            if (String.IsNullOrEmpty(Usu_NombreUsuario)) {
+                return "El valor de Campo es Obligatorio";
+            }
+            return null;
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

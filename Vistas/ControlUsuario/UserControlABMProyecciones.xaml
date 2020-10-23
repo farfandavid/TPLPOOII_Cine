@@ -64,7 +64,7 @@
                 <Button Background="#db439c" Content="Eliminar" Height="28" Width="85"  HorizontalAlignment="Right"  x:Name="btnEliminarProy" Margin="230 0" Click="btnEliminarProy_Click"/>
                 <Button Background="#db439c" Content="Modificar" Height="28" Width="85"  HorizontalAlignment="Center"  x:Name="btnModificalProy" Click="btnModificarProy_Click"/>
             </StackPanel>
-            <ListView Name="dgListadoProyecciones" Height="288" ItemsSource="{Binding Source={StaticResource lista_Pelicula}}" Margin="386,58,42.2,92.4" SelectionChanged="dgPeliculas_SelectionChanged" >
+            <ListView Name="dgListadoProyecciones" Height="288" ItemsSource="{Binding Source={StaticResource lista_Proyeccion}}" Margin="386,58,42.2,92.4" SelectionChanged="dgListadoProyecciones_SelectionChanged" >
                 <ListView.View>
                     <GridView>
 

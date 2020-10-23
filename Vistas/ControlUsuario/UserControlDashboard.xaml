@@ -19,6 +19,23 @@
         <ObjectDataProvider ObjectType="{x:Type svc:ABMUsuario}"
                             MethodName="traer_usuario"
                             x:Key="lista_Usuarios"/>
+        <ObjectDataProvider ObjectType="{x:Type svc:ABMUsuario}"
+                            MethodName="valUsuario"
+                            x:Key="DATA_USU"/>
+        <ControlTemplate x:Key="TextBoxErroTemplate">
+            <DockPanel>
+                <Ellipse DockPanel.Dock="Right" Margin="2,0" Width="10" Height="10">
+                    <Ellipse.Fill>
+                        <LinearGradientBrush>
+                            <GradientStop Color="#FFFFD4ED" Offset="0"/>
+                            <GradientStop Color="#db439c" Offset="1"/>
+                        </LinearGradientBrush>
+
+                    </Ellipse.Fill>
+                </Ellipse>
+                <AdornedElementPlaceholder/>
+            </DockPanel>
+        </ControlTemplate>
     </UserControl.Resources>
 
     <Grid Background="White">
@@ -48,7 +65,12 @@
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="40 5 0 0">
                                 <materialDesign:PackIcon Kind="Person" Foreground="{Binding CaretBrush, ElementName=txtApellido_Usu}" VerticalAlignment="Bottom" Margin="0 4"/>
-                                <TextBox  x:Name="txtApellido_Usu" Width="300" materialDesign:HintAssist.Hint="Apellido" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6" IsEnabled="False"/>
+                                <TextBox  x:Name="txtApellido_Usu" Width="300" materialDesign:HintAssist.Hint="Apellido" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6" IsEnabled="False"
+                                          DataContext="{StaticResource DATA_USU}">
+                                    <TextBox.Text>
+                                        <Binding Path="Usu_ApellidoNombre" UpdateSourceTrigger="PropertyChanged" ValidatesOnExceptions="True" ValidatesOnDataErrors="True"/>
+                                    </TextBox.Text>
+                                </TextBox>
                             </StackPanel>
                             <!--<StackPanel Orientation="Horizontal" Margin="40 5 0 0">
                                 <materialDesign:PackIcon Kind="PersonOutline" Foreground="{Binding ElementName=txtNombre_Usu, Path=CaretBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
@@ -56,11 +78,21 @@
                             </StackPanel>-->
                             <StackPanel Orientation="Horizontal" Margin="40 5 0 0">
                                 <materialDesign:PackIcon Kind="Face" Foreground="{Binding CaretBrush, ElementName=txtUserName_Usu}" VerticalAlignment="Bottom" Margin="0 4"/>
-                                <TextBox  x:Name="txtUserName_Usu" Width="300" materialDesign:HintAssist.Hint="UserName" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6" IsEnabled="False"/>
+                                <TextBox  x:Name="txtUserName_Usu" Width="300" materialDesign:HintAssist.Hint="UserName" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6" IsEnabled="False"
+                                          DataContext="{StaticResource DATA_USU}">
+                                    <TextBox.Text>
+                                        <Binding Path="Usu_NombreUsuario" UpdateSourceTrigger="PropertyChanged" ValidatesOnExceptions="True" ValidatesOnDataErrors="True"/>
+                                    </TextBox.Text>
+                                </TextBox>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="40 5 0 0">
                                 <materialDesign:PackIcon Kind="Key" Foreground="{Binding CaretBrush, ElementName=txtPassword_Usu}" VerticalAlignment="Bottom" Margin="0 4"/>
-                                <TextBox  x:Name="txtPassword_Usu" Width="300" materialDesign:HintAssist.Hint="Password" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6" IsEnabled="False"/>
+                                <TextBox  x:Name="txtPassword_Usu" Width="300" materialDesign:HintAssist.Hint="Password" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6" IsEnabled="False"
+                                          DataContext="{StaticResource DATA_USU}">
+                                    <TextBox.Text>
+                                        <Binding Path="Usu_Contraseña" UpdateSourceTrigger="PropertyChanged" ValidatesOnExceptions="True" ValidatesOnDataErrors="True"/>
+                                    </TextBox.Text>
+                                </TextBox>
                             </StackPanel>
                             
                             <StackPanel Orientation="Horizontal" Margin="40 13 0 0">

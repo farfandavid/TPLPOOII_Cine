@@ -65,5 +65,9 @@ namespace Vistas.ControlUsuario {
         {
 
         }
+
+        private void dgListadoProyecciones_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+
+        }
     }
 }
