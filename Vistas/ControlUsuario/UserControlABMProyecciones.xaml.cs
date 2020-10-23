@@ -55,5 +55,15 @@ namespace Vistas.ControlUsuario {
             txtProy_Hora.SelectedTime = null;
             txtProy_CodPel.Clear();
         }
+
+        private void btnEliminarProy_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnModificarProy_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

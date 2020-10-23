@@ -17,8 +17,8 @@
              d:DesignHeight="558" d:DesignWidth="831">
     <UserControl.Resources>
         <ObjectDataProvider ObjectType="{x:Type svc:ABMPelicula}"
-                            MethodName="traerPelicula"
-                            x:Key="lista_Pelicula"/>
+                            MethodName="traerProyeccion"
+                            x:Key="lista_Proyeccion"/>
     </UserControl.Resources>
     <Grid Background="White">
         <Grid.RowDefinitions>
@@ -61,8 +61,8 @@
             </StackPanel>
             <StackPanel Margin="40,351,10.2,0.4" Height="87" Orientation="Horizontal">
                 <Button Background="#db439c" Content="Agregar" Height="28" Width="85"  HorizontalAlignment="Left"  Name="btnAgregarProy" Click="btnAgregarProy_Click" />
-                <Button Background="#db439c" Content="Eliminar" Height="28" Width="85"  HorizontalAlignment="Right"  x:Name="btnEliminarProy" Margin="230 0" />
-                <Button Background="#db439c" Content="Modificar" Height="28" Width="85"  HorizontalAlignment="Center"  x:Name="btnModificalProy" />
+                <Button Background="#db439c" Content="Eliminar" Height="28" Width="85"  HorizontalAlignment="Right"  x:Name="btnEliminarProy" Margin="230 0" Click="btnEliminarProy_Click"/>
+                <Button Background="#db439c" Content="Modificar" Height="28" Width="85"  HorizontalAlignment="Center"  x:Name="btnModificalProy" Click="btnModificarProy_Click"/>
             </StackPanel>
             <ListView Name="dgListadoProyecciones" Height="288" ItemsSource="{Binding Source={StaticResource lista_Pelicula}}" Margin="386,58,42.2,92.4" SelectionChanged="dgPeliculas_SelectionChanged" >
                 <ListView.View>
