@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.ComponentModel;
+using System.Text.RegularExpressions;
 
 namespace ClasesBase
 {
@@ -88,22 +89,34 @@ namespace ClasesBase
         }
 
         public string validar_NombreUsuario() {
-            if (String.IsNullOrEmpty(Usu_NombreUsuario)) {
-                return "El valor de Campo es Obligatorio";
+            Regex patron = new Regex("^[a-zA-Z0-9ñÑ]{4,12}$");
+            if(!patron.IsMatch(Usu_NombreUsuario))
+            {
+                return "El nombre de usuario debe ser entre 8 y 12 letras y/o numeros";
             }
             return null;
         }
 
         public string validar_Contraseña() {
-            if (String.IsNullOrEmpty(Usu_Contraseña)) {
-                return "El valor de Campo es Obligatorio";
+            Regex patronMinus = new Regex("[a-zñ]+");
+            Regex patronMayus = new Regex("[A-ZÑ]+");
+            Regex patronDig = new Regex("[0-9]+");
+
+            if (!(patronMinus.IsMatch(Usu_Contraseña) & patronMayus.IsMatch(Usu_Contraseña)
+                & patronDig.IsMatch(Usu_Contraseña))) {
+                return "La contraseña debe Contener al menos 1 mayuscula, minuscula y un numero";
+            } else if (Usu_Contraseña.Length < 9) {
+                return "La contraseña debe Contener al menos 8 caracteres";
             }
             return null;
         }
 
         public string validar_ApellidoNombre() {
-            if (String.IsNullOrEmpty(usu_ApellidoNombre)) {
-                return "El valor de Campo es Obligatorio";
+            Regex patron = new Regex("[a-zA-Z]+ ?");
+            Regex patronDig = new Regex("[0-9]+");
+
+            if (!(patron.IsMatch(Usu_ApellidoNombre) & !patronDig.IsMatch(Usu_ApellidoNombre))) {
+                return "Ingresar Apellido y Nombres Completo";
             }
             return null;
         }
