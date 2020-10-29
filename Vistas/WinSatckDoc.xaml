@@ -1,0 +1,72 @@
+﻿<Window x:Class="Vistas.WinSatckDoc"
+        
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+            Background="{DynamicResource MaterialDesignPaper}"
+            TextElement.FontWeight="Medium"
+            TextElement.FontSize="14"
+            FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Vistas"
+        mc:Ignorable="d"
+        Title="WinSatckDoc" Height="470" Width="700" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <!--<FixedDocument>
+        <PageContent>
+            <FixedPage>-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="130"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="Transparent" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+            <Grid>
+                <materialDesign:ColorZone Background="#f99118">
+                    <StackPanel HorizontalAlignment="Right">
+                        <Button Width="30" Height="30" materialDesign:ShadowAssist.ShadowDepth="Depth3" Padding="0" Click="btnClose_Click" Name="btnClose" Background="#FFC37112">
+                            <materialDesign:PackIcon Kind="WindowClose"/>
+                        </Button>
+                    </StackPanel>
+                </materialDesign:ColorZone>
+            </Grid>
+
+        </Border>
+        <Grid Grid.Row="1" >
+
+            <Image Source="/imagenes/Titulo.png" HorizontalAlignment="Center"  Stretch="Fill"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Width="300">
+                    <Image Source="/imagenes/Ticket.png" HorizontalAlignment="Center" Height="49"/>
+                    <TextBlock Name="txbIdTicket" Text="Id Ticket: " HorizontalAlignment="Left" Margin="40 10 0 0" FontSize="15"/>
+                    <TextBlock Name="txbFecha" Text="Fecha: " HorizontalAlignment="Left" Margin="40 10 0 0" FontSize="15"/>
+                    <TextBlock Name="txbHora" Text="Hora: " HorizontalAlignment="Left" Margin="40 10 0 0" FontSize="15"/>
+                    <Image Source="/imagenes/Proyeccion.png" HorizontalAlignment="Center" Height="46"/>
+                    <TextBlock Name="txbPelicula" Text="Pelicula: " HorizontalAlignment="Left" Margin="40 10 0 0" FontSize="15"/>
+                    <TextBlock Name="txbHoraProy" Text="Hora: " HorizontalAlignment="Left" Margin="40 10 0 0" FontSize="15"/>
+                    <TextBlock Name="txbFechaProy" Text="Fecha: " HorizontalAlignment="Left" Margin="40 10 0 0" FontSize="15"/>
+                    <TextBlock Name="txbButaca" Text="Ubicacion: Butaca " HorizontalAlignment="Left" Margin="40 10 0 0" FontSize="15"/>
+                </StackPanel>
+                <StackPanel Width="300" Margin="80 0">
+                    <TextBlock Name="txbDirreccion" Text="Direccion: Av.Exodo 345" HorizontalAlignment="Right" FontSize="20"/>
+                    <TextBlock Name="txbDirreccion2" Text="San Salvador de Jujuy" HorizontalAlignment="Right" FontSize="20"/>
+                    <TextBlock Name="txbCuil" Text="Cuil: 30-23213-22" HorizontalAlignment="Right" FontSize="20"/>
+                    <TextBlock Name="txbVendedor" Text="Vendedor: " HorizontalAlignment="Right" FontSize="20"/>
+                    <Image Source="/imagenes/Cliente.png" HorizontalAlignment="Center" Height="47" Margin="0 41 0 0"/>
+                    <TextBlock Name="txbNombre" Text="Nombre: " HorizontalAlignment="Left" Margin="40 10 0 0" FontSize="15"/>
+                    <TextBlock Name="txbApellido" Text="Apellido: " HorizontalAlignment="Left" Margin="40 10 0 0" FontSize="15"/>
+                    <TextBlock Name="txbDNI" Text="DNI: " HorizontalAlignment="Left" Margin="40 10 0 0" FontSize="15"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+    <!--</FixedPage>
+        </PageContent>
+    </FixedDocument>-->
+
+</Window>

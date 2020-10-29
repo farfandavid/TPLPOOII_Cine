@@ -68,7 +68,7 @@ namespace Vistas
             else
             {
                 var menuTickets = new List<SubItem>();
-                menuTickets.Add(new SubItem("algo 1"));
+                menuTickets.Add(new SubItem("Venta de Tickets", new UserControlVentaTicket()));
                 menuTickets.Add(new SubItem("algo 2"));
                 menuTickets.Add(new SubItem("algo 3"));
                 menuTickets.Add(new SubItem("algo 4"));

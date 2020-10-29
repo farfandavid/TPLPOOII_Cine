@@ -44,7 +44,7 @@
                     <materialDesign:TimePicker Name="txtProy_Hora" Width="300" Style="{StaticResource MaterialDesignFloatingHintTimePicker}" materialDesign:HintAssist.Hint="Hora" BorderBrush="#db439c" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
-                    <materialDesign:PackIcon Kind="ImageFilterVintage" Foreground="{Binding ElementName=txtProy_PelCod, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                    <materialDesign:PackIcon Kind="ImageFilterVintage" Foreground="{Binding ElementName=txtProy_CodPel, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                     <TextBox  Name="txtProy_CodPel" Width="300" materialDesign:HintAssist.Hint="Codigo de Pelicula" materialDesign:HintAssist.IsFloating="True" CaretBrush="#db439c" BorderBrush="#db439c"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
@@ -52,7 +52,7 @@
                     <StackPanel.Resources>
                         <XmlDataProvider x:Key="tipo_Sala" Source="/TipoSala.xml" XPath="/numeroSala"/>
                     </StackPanel.Resources>
-                    <materialDesign:PackIcon Kind="Stars" Foreground="{Binding ElementName=txtProy_NroSala, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                    <materialDesign:PackIcon Kind="Stars" Foreground="{Binding ElementName=cmbNroSala, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                     <ComboBox Name="cmbNroSala" Width="300" ItemsSource="{Binding Source={StaticResource tipo_Sala},XPath=tipo/@name}" materialDesign:HintAssist.Hint="N° Sala" materialDesign:HintAssist.HintOpacity=".26" BorderBrush="#db439c"/>
 
                 </StackPanel>

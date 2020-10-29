@@ -125,6 +125,11 @@ namespace Vistas {
             cmbClases.SelectedValue = "";
             cmbGeneros.SelectedValue = "";
         }
+
+        private void btnAgregarFoto_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
 

@@ -43,7 +43,14 @@ namespace Vistas.ControlUsuario
                 vistaColeccionFiltrada.Filter += eventVistaUsuario_Filter;
             }
         }
-    }
 
+        private void btnVistaPrevia_Click(object sender, RoutedEventArgs e)
+        {
+            flowdoc doc = new flowdoc();
+            doc.Show();
+        }
+
+        
+    }
 
 }
