@@ -24,9 +24,13 @@ namespace Vistas
     public partial class WinMenuAdmin : Window
     {
         string rolUser = "";
-        public WinMenuAdmin(string rol)
+        string aynUser = "";
+        string idUser = "";
+        public WinMenuAdmin(string rol, string ayn, string usuID)
         {
             rolUser = rol;
+            aynUser = ayn;
+            idUser = usuID;
             InitializeComponent();
 
             if (rolUser == "admin")
@@ -68,7 +72,7 @@ namespace Vistas
             else
             {
                 var menuTickets = new List<SubItem>();
-                menuTickets.Add(new SubItem("Venta de Tickets", new UserControlVentaTicket()));
+                menuTickets.Add(new SubItem("Venta de Tickets", new UserControlVentaTicket(aynUser, idUser)));
                 menuTickets.Add(new SubItem("algo 2"));
                 menuTickets.Add(new SubItem("algo 3"));
                 menuTickets.Add(new SubItem("algo 4"));

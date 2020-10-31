@@ -104,6 +104,9 @@
     <Compile Include="flowdoc.xaml.cs">
       <DependentUpon>flowdoc.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ImprimirTicket.xaml.cs">
+      <DependentUpon>ImprimirTicket.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Page1.xaml.cs">
       <DependentUpon>Page1.xaml</DependentUpon>
     </Compile>
@@ -156,6 +159,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="flowdoc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImprimirTicket.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

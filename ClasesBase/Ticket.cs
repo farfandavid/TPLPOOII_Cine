@@ -7,7 +7,10 @@ namespace ClasesBase
 {
     public class Ticket {
         private int tick_ID;
+
         private int proy_ID;
+        private Proyeccion proyeccion;
+
         private int but_ID;
         private string tick_Estado;
         private int tick_precio;
@@ -68,6 +71,16 @@ namespace ClasesBase
 
             set {
                 tick_precio = value;
+            }
+        }
+
+        public Proyeccion Proyeccion {
+            get {
+                return proyeccion;
+            }
+
+            set {
+                proyeccion = value;
             }
         }
     }

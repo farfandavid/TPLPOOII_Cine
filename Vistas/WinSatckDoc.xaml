@@ -14,7 +14,9 @@
         xmlns:local="clr-namespace:Vistas"
         mc:Ignorable="d"
         Title="WinSatckDoc" Height="485.902" Width="700" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
-
+    <FixedDocument>
+            <PageContent>
+                <FixedPage>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -37,9 +39,7 @@
 
             <Image Source="/imagenes/Titulo.png" HorizontalAlignment="Center"  Stretch="Fill"/>
         </Grid>
-        <!--<FixedDoument>
-            <PageContent>
-                <FixedPage>-->
+        
         
 
             
@@ -71,10 +71,10 @@
 
         </Grid>
         
-                <!--</FixedPage>
-            </PageContent>
-        </FixedDoument>-->
-        <Button Margin="175,98,175,0" Content="Imprimir" Width="350" Click="Button_Click" Grid.Row="1"/>
+                
     </Grid>
+    </FixedPage>
+            </PageContent>
+        </FixedDocument>
 
 </Window>

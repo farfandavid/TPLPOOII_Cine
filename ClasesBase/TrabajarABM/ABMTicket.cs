@@ -56,5 +56,37 @@ namespace ClasesBase.TrabajarABM {
 
             return dt;
         }
+
+        public static void modificar_ticket(Ticket ticket) {
+            SqlConnection conexion = new SqlConnection(ClasesBase.Properties.Settings.Default.conexion);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SPTicketModificar";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = conexion;
+            
+            cmd.Parameters.AddWithValue("@proyID", ticket.Proyeccion.Proy_Codigo);
+            cmd.Parameters.AddWithValue("@butID", ticket.But_ID);
+
+            conexion.Open();
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+        }
+
+        public static DataTable obtener_ticket(int proyID, int butID) {
+
+            SqlConnection c = new SqlConnection(ClasesBase.Properties.Settings.Default.conexion);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT * FROM Ticket WHERE proy_ID = " + proyID + " AND but_ID = " + butID;
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = c;
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            da.Fill(dt);
+
+            return dt;
+        }
     }
 }

@@ -19,19 +19,21 @@ namespace Vistas
     /// </summary>
     public partial class WinSatckDoc : Window
     {
-        public WinSatckDoc()
+        int codi = 0;
+        public WinSatckDoc(int num)
         {
             InitializeComponent();
+            this.codi = num;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             //Ticket
-            txbIdTicket.Text += "";
+            txbIdTicket.Text += codi.ToString();
             txbFecha.Text += "";
             txbHora.Text += "";
             //Proyeccion
-            txbPelicula.Text += "";
+            txbPelicula.Text += codi.ToString();
             txbFechaProy.Text += "";
             txbHoraProy.Text += "";
             txbButaca.Text += "";

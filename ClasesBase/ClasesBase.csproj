@@ -67,6 +67,7 @@
     <Compile Include="TrabajarABM\ABMSala.cs" />
     <Compile Include="TrabajarABM\ABMTicket.cs" />
     <Compile Include="TrabajarABM\ABMUsuario.cs" />
+    <Compile Include="TrabajarABM\ABMVenta.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Venta.cs" />
   </ItemGroup>
