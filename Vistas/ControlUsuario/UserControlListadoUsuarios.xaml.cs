@@ -50,7 +50,56 @@ namespace Vistas.ControlUsuario
             doc.Show();
         }
 
-        
+        //    <Grid>
+        //    <Grid.RowDefinitions>
+        //        <RowDefinition Height = "30" />
+        //        < RowDefinition Height="80"/>
+        //        <RowDefinition Height = "*" />
+        //    </ Grid.RowDefinitions >
+        //    < Border Grid.Row="0" Background="Transparent" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+        //        <Grid>
+        //            <materialDesign:ColorZone Background = "#65b3f6" >
+        //                < StackPanel HorizontalAlignment="Right">
+        //                    <Button Width = "30" Height="30" materialDesign:ShadowAssist.ShadowDepth="Depth3" Padding="0" Click="btnClose_Click" Name="btnClose" Background="#FF4192D7">
+        //                        <materialDesign:PackIcon Kind = "WindowClose" />
+        //                    </ Button >
+        //                </ StackPanel >
+        //            </ materialDesign:ColorZone>
+        //        </Grid>
+
+        //    </Border>
+        //    <Grid Grid.Row="1" >
+
+        //        <Image Source = "/imagenes/Listado_Usuarios_xd.png" HorizontalAlignment= "Center" Margin= "46,0,105,0" />
+        //        < Image Source= "/imagenes/Caballero_PNG.png" HorizontalAlignment= "Right" Margin= "0,0,15,0" />
+
+        //    </ Grid >
+        //    < Grid Grid.Row= "2" >
+        //        < StackPanel Margin= "15" >
+        //< FlowDocumentReader Height = "290" Width= "600" Name= "flowDoc" >
+        //    < FlowDocument Name = "DocMain" >
+        //        < !--< Paragraph FontFamily= "Impact" TextDecorations= "Underline" > Listado de Usuarios</Paragraph>-->
+        //        <BlockUIContainer>
+        //                        <ListView Name = "listUsuariosImprime" ItemsSource= "{Binding Source={StaticResource VISTA_USER}}" Margin= "10 0" >
+        //                            < ListView.View >
+        //                                < GridView >
+        //                                    < GridViewColumn Header= "Codigo" Width= "115" DisplayMemberBinding= "{Binding Usu_Id}" />
+        //                                    < GridViewColumn Header= "Apellido" Width= "115" DisplayMemberBinding= "{Binding Usu_ApellidoNombre}" />
+
+        //                                    < GridViewColumn Header= "UserName" Width= "115" DisplayMemberBinding= "{Binding Usu_NombreUsuario}" />
+        //                                    < GridViewColumn Header= "Password" Width= "115" DisplayMemberBinding= "{Binding Usu_Contraseña}" />
+        //                                    < GridViewColumn Header= "Rol" Width= "115" DisplayMemberBinding= "{Binding Rol.Rol_Descripcion}" />
+        //                                </ GridView >
+        //                            </ ListView.View >
+        //                        </ ListView >
+        //        </ BlockUIContainer >
+        //    </ FlowDocument >
+        //</ FlowDocumentReader >
+
+                    //< Button x:Name= "btnImprimir"  Style= "{DynamicResource MaterialDesignFlatButton}" Content= "Imprimir"  Click= "btnImprimir_Click" HorizontalAlignment= "Center" />
+        //        </ StackPanel >
+        //    </ Grid >
+        //</ Grid >
     }
 
 }

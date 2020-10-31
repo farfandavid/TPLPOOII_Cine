@@ -150,6 +150,7 @@ C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlValidarCliente.g.cs
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlVentaTicket.g.cs
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\flowdoc.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ImprimirTicket.g.cs
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Page1.g.cs
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Prueba.g.cs
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\UserControlABMPeliculas.g.cs
@@ -171,6 +172,7 @@ C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlValidarCliente.baml
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlVentaTicket.baml
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\flowdoc.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ImprimirTicket.baml
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Page1.baml
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\PlantillaDicc\ButtonChange.baml
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\PlantillaDicc\TextBoxStyle.baml
@@ -186,5 +188,3 @@ C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.Properti
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.csproj.GenerateResource.Cache
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.exe
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.pdb
-C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ImprimirTicket.g.cs
-C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ImprimirTicket.baml

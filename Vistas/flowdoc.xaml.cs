@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ClasesBase;
 
 namespace Vistas
 {
@@ -19,16 +20,18 @@ namespace Vistas
     /// </summary>
     public partial class flowdoc : Window
     {
+
+        CollectionViewSource vistaColeccionFiltrada;
         public flowdoc()
         {
             InitializeComponent();
+            vistaColeccionFiltrada = Resources["VISTA_USER"] as CollectionViewSource;
         }
 
         private void btnImprimir_Click(object sender, RoutedEventArgs e)
         {
             PrintDialog print = new PrintDialog();
-            if(print.ShowDialog()== true)
-            {
+            if (print.ShowDialog() == true) {
                 print.PrintDocument(((IDocumentPaginatorSource)DocMain).DocumentPaginator, "Imprimir");
             }
         }
@@ -44,9 +47,29 @@ namespace Vistas
         }
 
         private void eventVistaUsuario_Filter(object sender, FilterEventArgs e) {
+            Usuario usuario = e.Item as Usuario;
+
+            if (usuario.Usu_NombreUsuario.StartsWith(txtUserName.Text, StringComparison.CurrentCultureIgnoreCase)) {
+                e.Accepted = true;
+            } else {
+                e.Accepted = false;
+            }
 
         }
-        
+
+        private void txtUserName_TextChanged(object sender, TextChangedEventArgs e) {
+            if (vistaColeccionFiltrada != null) {
+                vistaColeccionFiltrada.Filter += eventVistaUsuario_Filter;
+            }
+        }
+
+        private void CollectionViewSource_Filter(object sender, FilterEventArgs e) {
+
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e) {
+            this.Close();
+        }
     }
 
     
