@@ -1,6 +1,6 @@
 ﻿<UserControl x:Class="Vistas.ControlUsuario.UserControlABMProyecciones"
              
-             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+            TextElement.Foreground="{DynamicResource MaterialDesignBody}"
             Background="{DynamicResource MaterialDesignPaper}"
             TextElement.FontWeight="Medium"
             TextElement.FontSize="14"
@@ -14,10 +14,10 @@
              xmlns:local="clr-namespace:Vistas.ControlUsuario"
              xmlns:svc="clr-namespace:ClasesBase.TrabajarABM;assembly=ClasesBase"
              mc:Ignorable="d" 
-             d:DesignHeight="558" d:DesignWidth="831">
+             d:DesignHeight="558" d:DesignWidth="831" Loaded="UserControl_Loaded">
     <UserControl.Resources>
-        <ObjectDataProvider ObjectType="{x:Type svc:ABMPelicula}"
-                            MethodName="traerProyeccion"
+        <ObjectDataProvider ObjectType="{x:Type svc:ABMProyeccion}"
+                            MethodName="traer_viewProy"
                             x:Key="lista_Proyeccion"/>
     </UserControl.Resources>
     <Grid Background="White">
@@ -44,16 +44,17 @@
                     <materialDesign:TimePicker Name="txtProy_Hora" Width="300" Style="{StaticResource MaterialDesignFloatingHintTimePicker}" materialDesign:HintAssist.Hint="Hora" BorderBrush="#db439c" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
-                    <materialDesign:PackIcon Kind="ImageFilterVintage" Foreground="{Binding ElementName=txtProy_CodPel, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <TextBox  Name="txtProy_CodPel" Width="300" materialDesign:HintAssist.Hint="Codigo de Pelicula" materialDesign:HintAssist.IsFloating="True" CaretBrush="#db439c" BorderBrush="#db439c"/>
+                    <materialDesign:PackIcon Kind="ImageFilterVintage" Foreground="{Binding ElementName=cmbPeli, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                    <!--<TextBox  Name="txtProy_CodPel" Width="300" materialDesign:HintAssist.Hint="Codigo de Pelicula" materialDesign:HintAssist.IsFloating="True" CaretBrush="#db439c" BorderBrush="#db439c"/>-->
+                    <ComboBox Name="cmbPeli" Width="300" materialDesign:HintAssist.Hint="Pelicula" materialDesign:HintAssist.HintOpacity=".26"  BorderBrush="#db439c"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
 
-                    <StackPanel.Resources>
+                    <!--<StackPanel.Resources>
                         <XmlDataProvider x:Key="tipo_Sala" Source="/TipoSala.xml" XPath="/numeroSala"/>
-                    </StackPanel.Resources>
+                    </StackPanel.Resources>-->
                     <materialDesign:PackIcon Kind="Stars" Foreground="{Binding ElementName=cmbNroSala, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <ComboBox Name="cmbNroSala" Width="300" ItemsSource="{Binding Source={StaticResource tipo_Sala},XPath=tipo/@name}" materialDesign:HintAssist.Hint="N° Sala" materialDesign:HintAssist.HintOpacity=".26" BorderBrush="#db439c"/>
+                    <ComboBox Name="cmbNroSala" Width="300" materialDesign:HintAssist.Hint="N° Sala" materialDesign:HintAssist.HintOpacity=".26" BorderBrush="#db439c"/>
 
                 </StackPanel>
 
@@ -64,16 +65,14 @@
                 <Button Background="#db439c" Content="Eliminar" Height="28" Width="85"  HorizontalAlignment="Right"  x:Name="btnEliminarProy" Margin="230 0" Click="btnEliminarProy_Click"/>
                 <Button Background="#db439c" Content="Modificar" Height="28" Width="85"  HorizontalAlignment="Center"  x:Name="btnModificalProy" Click="btnModificarProy_Click"/>
             </StackPanel>
-            <ListView Name="dgListadoProyecciones" Height="288" ItemsSource="{Binding Source={StaticResource lista_Proyeccion}}" Margin="386,58,42.2,92.4" SelectionChanged="dgListadoProyecciones_SelectionChanged" >
+            <ListView Name="dgListadoProyecciones" Height="288" ItemsSource="{Binding Source={StaticResource lista_Proyeccion}}" Margin="386,58,23,92" SelectionChanged="dgListadoProyecciones_SelectionChanged" >
                 <ListView.View>
                     <GridView>
-
-                        <GridViewColumn Width="80" Header="Codigo" DisplayMemberBinding="{Binding Path=proy_Cod}"/>
-                        <GridViewColumn Width="80" Header="Fecha" DisplayMemberBinding="{Binding Path=proy_Fecha}"/>
-                        <GridViewColumn Width="80" Header="Hora" DisplayMemberBinding="{Binding Path=proy_Hora}"/>
-                        <GridViewColumn Width="123" Header="Codigo Pelicula" DisplayMemberBinding="{Binding Path=peli_Codigo}"/>
-                        <GridViewColumn Width="90" Header="N° Sala" DisplayMemberBinding="{Binding Path=sala_ID}"/>
-
+                        <GridViewColumn Width="80" Header="Codigo" DisplayMemberBinding="{Binding Path=Proy_Codigo}"/>
+                        <GridViewColumn Width="123" Header="Pelicula" DisplayMemberBinding="{Binding Path=Pelicula.Peli_Titulo}"/>
+                        <GridViewColumn Width="90" Header="Sala" DisplayMemberBinding="{Binding Path=Sala.Sala_Descripcion}"/>
+                        <GridViewColumn Width="80" Header="Fecha" DisplayMemberBinding="{Binding Path=Proy_Fecha}"/>
+                        <GridViewColumn Width="80" Header="Hora" DisplayMemberBinding="{Binding Path=Proy_Hora}"/>
                     </GridView>
                 </ListView.View>
             </ListView>

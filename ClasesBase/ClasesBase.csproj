@@ -59,10 +59,13 @@
     <Compile Include="Rol.cs" />
     <Compile Include="Sala.cs" />
     <Compile Include="Ticket.cs" />
+    <Compile Include="TrabajarABM\ABMButaca.cs" />
     <Compile Include="TrabajarABM\ABMCliente.cs" />
     <Compile Include="TrabajarABM\ABMPelicula.cs" />
+    <Compile Include="TrabajarABM\ABMProyeccion.cs" />
     <Compile Include="TrabajarABM\ABMRol.cs" />
     <Compile Include="TrabajarABM\ABMSala.cs" />
+    <Compile Include="TrabajarABM\ABMTicket.cs" />
     <Compile Include="TrabajarABM\ABMUsuario.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Venta.cs" />

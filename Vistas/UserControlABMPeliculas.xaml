@@ -84,10 +84,11 @@
 
                             <GridViewColumn Width="80" Header="Codigo" DisplayMemberBinding="{Binding Path=peli_Codigo}"/>
                             <GridViewColumn Width="80" Header="Titulo" DisplayMemberBinding="{Binding Path=peli_Titulo}"/>
-                            <GridViewColumn Width="100" Header="Imagen" DisplayMemberBinding="{Binding Path=peli_Titulo}"/><!--aqui hay que cambiar por el nombre de la fila de la tabla que contengas la imagen xd -->
+                            <!--aqui hay que cambiar por el nombre de la fila de la tabla que contengas la imagen xd -->
                             <GridViewColumn Width="80" Header="Duracion" DisplayMemberBinding="{Binding Path=peli_Duracion}"/>
                             <GridViewColumn Width="80" Header="Clase" DisplayMemberBinding="{Binding Path=peli_Clase}"/>
                             <GridViewColumn Width="80" Header="Genero" DisplayMemberBinding="{Binding Path=peli_Genero}"/>
+                            <GridViewColumn Width="100" Header="Imagen" DisplayMemberBinding="{Binding Path=peli_Titulo}"/>
 
                         </GridView>
                     </ListView.View>

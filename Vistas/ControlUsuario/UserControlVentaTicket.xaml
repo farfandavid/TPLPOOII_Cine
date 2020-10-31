@@ -13,69 +13,63 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Vistas.ControlUsuario"
              mc:Ignorable="d" 
-             d:DesignHeight="558" d:DesignWidth="831">
+             d:DesignHeight="558" d:DesignWidth="831" Loaded="UserControl_Loaded">
     <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="120"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="63"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Background="#f99118">
             <Image Source="/imagenes/Venta_Tickets.png" HorizontalAlignment="Stretch" Margin="-2,10,122.2,11"/>
             <Image Source="/imagenes/Vikingo_PNG.png" HorizontalAlignment="Right" Margin="0,0,27.2,0" Width="135"/>
         </Grid>
         <Grid Grid.Row="1">
-            <StackPanel Orientation="Horizontal">
-                <StackPanel Orientation="Vertical" Margin="40,20,70,65" Background="White">
-                    <Image Source="/imagenes/Ticket.png" Margin="0 0 0 10" Height="34" Width="322"/>
+            <StackPanel Orientation="Horizontal" Margin="0,-15,0,15">
+                <StackPanel Orientation="Vertical" Margin="40,20,70,25" Background="White" Width="332">
+                    <Image Source="/imagenes/Ticket.png" Margin="5,0,5,10" Height="20" Width="322"/>
                     <StackPanel Orientation="Horizontal" >
-                        <materialDesign:PackIcon Kind="Movie" Foreground="{Binding ElementName=cmbPelicula, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                        <ComboBox Name="cmbPelicula" Width="300" ItemsSource="{Binding Source={StaticResource tipo_Sala},XPath=tipo/@name}" materialDesign:HintAssist.Hint="Pelicula" materialDesign:HintAssist.HintOpacity=".26" BorderBrush="#f99118"/>
+                        <materialDesign:PackIcon Kind="Movie" Foreground="{Binding ElementName=cmbProy, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                        <!--ItemsSource="{Binding Source={StaticResource tipo_Sala},XPath=tipo/@name}"-->
+                        <ComboBox Name="cmbProy" Width="300"  materialDesign:HintAssist.Hint="Proyeccion" materialDesign:HintAssist.HintOpacity=".26" BorderBrush="#f99118" SelectionChanged="cmbProy_SelectionChanged"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
                         <materialDesign:PackIcon Kind="LocalMovies" Foreground="{Binding ElementName=txtProy_Fecha, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                        <DatePicker Name="txtProy_Fecha" Width="300" materialDesign:HintAssist.Hint="Fecha"  Style="{StaticResource MaterialDesignFloatingHintDatePicker}"  BorderBrush="#f99118" />
+                        <DatePicker Name="txtProy_Fecha" Width="300" materialDesign:HintAssist.Hint="Fecha"  Style="{StaticResource MaterialDesignFloatingHintDatePicker}"  BorderBrush="#f99118" IsEnabled="False"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
                         <materialDesign:PackIcon Kind="AccessTime" Foreground="{Binding ElementName=txtProy_Hora, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                        <materialDesign:TimePicker Name="txtProy_Hora" Width="300" Style="{StaticResource MaterialDesignFloatingHintTimePicker}" materialDesign:HintAssist.Hint="Hora" BorderBrush="#f99118" />
+                        <materialDesign:TimePicker Name="txtProy_Hora" Width="300" Style="{StaticResource MaterialDesignFloatingHintTimePicker}" materialDesign:HintAssist.Hint="Hora" BorderBrush="#f99118" IsEnabled="False"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
-                        <materialDesign:PackIcon Kind="EventSeat" Foreground="{Binding ElementName=cmbButaca, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                        <ComboBox Name="cmbButaca" Width="300" ItemsSource="{Binding Source={StaticResource tipo_Sala},XPath=tipo/@name}" materialDesign:HintAssist.Hint="N° Butaca" materialDesign:HintAssist.HintOpacity=".26" BorderBrush="#f99118"/>
-
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
-
-                        <StackPanel.Resources>
-                            <XmlDataProvider x:Key="tipo_Sala" Source="/TipoSala.xml" XPath="/numeroSala"/>
-                        </StackPanel.Resources>
-                        <materialDesign:PackIcon Kind="Stars" Foreground="{Binding ElementName=cmbNroSala, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                        <ComboBox Name="cmbNroSala" Width="300" ItemsSource="{Binding Source={StaticResource tipo_Sala},XPath=tipo/@name}" materialDesign:HintAssist.Hint="N° Sala" materialDesign:HintAssist.HintOpacity=".26" BorderBrush="#f99118"/>
-
-                    </StackPanel>
-
-                </StackPanel>
-                <StackPanel Margin="40,20,70,65" Orientation="Vertical">
-                    <Image Source="/imagenes/Cliente.png" Margin="0 0 0 10" Height="34" Width="322"/>
                     <StackPanel Orientation="Horizontal" >
                         <materialDesign:PackIcon Kind="AccountCircle" Foreground="{Binding BorderBrush, ElementName=txtDNI}" VerticalAlignment="Bottom" Margin="0 4"/>
-                        <TextBox  x:Name="txtDNI" Width="300" materialDesign:HintAssist.Hint="DNI" materialDesign:HintAssist.IsFloating="True" CaretBrush="#f99118" SelectionBrush="#f99118" BorderBrush="#f99118"/>
+                        <TextBox  x:Name="txtDNI" Width="270" materialDesign:HintAssist.Hint="DNI" materialDesign:HintAssist.IsFloating="True" CaretBrush="#f99118" SelectionBrush="#f99118" BorderBrush="#f99118"/>
+                        <Button Margin="5 5 5 5" Background="#f99118" Width="39" BorderThickness="0" Padding="0" Click="Button_Click">
+                            <materialDesign:PackIcon Kind="Eye"/>
+                        </Button>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
                         <materialDesign:PackIcon Kind="Person" Foreground="{Binding BorderBrush, ElementName=txtNombre}" VerticalAlignment="Bottom" Margin="0 4"/>
-                        <TextBox  x:Name="txtNombre" Width="300" materialDesign:HintAssist.Hint="Nombre" materialDesign:HintAssist.IsFloating="True" CaretBrush="#f99118" SelectionBrush="#f99118" BorderBrush="#f99118"/>
+                        <TextBox  x:Name="txtNombre" Width="300" materialDesign:HintAssist.Hint="Nombre" materialDesign:HintAssist.IsFloating="True" CaretBrush="#f99118" SelectionBrush="#f99118" BorderBrush="#f99118" IsEnabled="False"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
                         <materialDesign:PackIcon Kind="PersonOutline" Foreground="{Binding BorderBrush, ElementName=txtApellido}" VerticalAlignment="Bottom" Margin="0 4"/>
-                        <TextBox  x:Name="txtApellido" Width="300" materialDesign:HintAssist.Hint="Apellido" materialDesign:HintAssist.IsFloating="True" CaretBrush="#f99118" SelectionBrush="#f99118" BorderBrush="#f99118"/>
-                    </StackPanel>
+                        <TextBox  x:Name="txtApellido" Width="300" materialDesign:HintAssist.Hint="Apellido" materialDesign:HintAssist.IsFloating="True" CaretBrush="#f99118" SelectionBrush="#f99118" BorderBrush="#f99118" IsEnabled="False"/>
+                    </StackPanel >
                 </StackPanel>
+                <StackPanel Margin="0,20,70,113" Orientation="Vertical" Width="376">
+                    <Grid Name="GridCentral"  Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="243*"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </StackPanel>
+
             </StackPanel>
-            <StackPanel Margin="40,351,425.2,0.4" Height="87" Orientation="Horizontal">
-                <Button Background="#f99118" Content="Confirmar Venta" Height="28" Width="136"  HorizontalAlignment="Left"  Name="btnConfirmarVenta" Click="btnConfirmarVenta_Click" />
+            <StackPanel Margin="393,379,10,15" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Background="#f99118" Content="Confirmar Venta" Height="28" Width="231"  HorizontalAlignment="Right"  x:Name="btnConfirmarVenta" Click="btnConfirmarVenta_Click" Margin="0,37,0,36" />
             </StackPanel>
         </Grid>
     </Grid>
 </UserControl>
-    <!--
+<!--
 --> 

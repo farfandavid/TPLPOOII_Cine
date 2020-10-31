@@ -37,9 +37,9 @@
         </Grid.RowDefinitions>
         <Border Grid.Row="0" Background="Transparent" MouseLeftButtonDown="Border_MouseLeftButtonDown">
             <Grid>
-                <materialDesign:ColorZone Background="#65b3f6">
+                <materialDesign:ColorZone Background="#FFE556FB">
                     <StackPanel HorizontalAlignment="Right">
-                        <Button Width="30" Height="30" materialDesign:ShadowAssist.ShadowDepth="Depth3" Padding="0" Click="btnClose_Click" Name="btnClose" Background="#FF4C98D9">
+                        <Button Width="30" Height="30" materialDesign:ShadowAssist.ShadowDepth="Depth3" Padding="0" Click="btnClose_Click" Name="btnClose" Background="#FFC065FF">
                             <materialDesign:PackIcon Kind="WindowClose"/>
                         </Button>
                     </StackPanel>

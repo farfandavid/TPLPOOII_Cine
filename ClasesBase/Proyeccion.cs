@@ -11,7 +11,10 @@ namespace ClasesBase
         private DateTime proy_Fecha;
         private String proy_Hora;
         private int sala_ID;
+        private Sala sala;
         private int peli_Codigo;
+        private Pelicula pelicula;
+        
 
         public int Proy_Codigo
         {
@@ -75,6 +78,26 @@ namespace ClasesBase
             set
             {
                 peli_Codigo = value;
+            }
+        }
+
+        public Sala Sala {
+            get {
+                return sala;
+            }
+
+            set {
+                sala = value;
+            }
+        }
+
+        public Pelicula Pelicula {
+            get {
+                return pelicula;
+            }
+
+            set {
+                pelicula = value;
             }
         }
     }

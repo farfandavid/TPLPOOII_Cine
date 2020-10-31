@@ -75,7 +75,7 @@
                     <StackPanel Orientation="Horizontal" >
                         <materialDesign:PackIcon Kind="AccountCircle" Foreground="{Binding ElementName=txtCli_Dni, Path=SelectionBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                         <TextBox  Name="txtCli_Dni" Width="300"  CaretBrush="#65b3f6" SelectionBrush="#65b3f6" 
-                              Style="{StaticResource EstiloError}" DataContext="{StaticResource DATA_CLIENTE}" Margin="0 0 0 0">
+                              DataContext="{StaticResource DATA_CLIENTE}" Margin="0 0 0 0">
                             <TextBox.Text>
                                 <Binding Path="Cli_DNI" UpdateSourceTrigger="PropertyChanged" ValidatesOnExceptions="True" ValidatesOnDataErrors="True"/>
                             </TextBox.Text>
@@ -87,7 +87,7 @@
                     <StackPanel Orientation="Horizontal"  Margin="0,0,-0.4,0">
                         <materialDesign:PackIcon Kind="Person" Foreground="{Binding ElementName=txtCli_Nombre, Path=SelectionBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                         <TextBox  Name="txtCli_Nombre" Width="300"  CaretBrush="#65b3f6" 
-                              Style="{StaticResource EstiloError}" DataContext="{StaticResource DATA_CLIENTE}" Margin="4,10,10,3.8">
+                               DataContext="{StaticResource DATA_CLIENTE}" Margin="4,10,10,3.8">
                             <TextBox.Text>
                                 <Binding Path="Cli_Nombre" UpdateSourceTrigger="PropertyChanged" ValidatesOnExceptions="True" ValidatesOnDataErrors="True"/>
                             </TextBox.Text>
@@ -98,14 +98,14 @@
                     <TextBlock Text="Apellido" Foreground="#65b3f6" Width="300" HorizontalAlignment="Left" Margin="20 30 0 0" FontWeight="Bold" />
                     <StackPanel Orientation="Horizontal" Margin="0 0 0 0">
                         <materialDesign:PackIcon Kind="PersonOutline" Foreground="{Binding SelectionBrush, ElementName=txtCli_Apellido}" VerticalAlignment="Bottom" Margin="0 4"/>
-                        <TextBox  x:Name="txtCli_Apellido" Width="300" Style="{StaticResource EstiloError}" DataContext="{StaticResource DATA_CLIENTE}" CaretBrush="#65b3f6" Text="{Binding Cli_Apellido, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, ValidatesOnExceptions=True}" />
+                        <TextBox  x:Name="txtCli_Apellido" Width="300" DataContext="{StaticResource DATA_CLIENTE}" CaretBrush="#65b3f6" Text="{Binding Cli_Apellido, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, ValidatesOnExceptions=True}" />
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Orientation="Vertical">
                     <TextBlock Text="Telefono" Foreground="#65b3f6" Width="300" HorizontalAlignment="Left" Margin="20 30 0 0" FontWeight="Bold" />
                     <StackPanel Orientation="Horizontal" Margin="0 0 0 0">
                         <materialDesign:PackIcon Kind="LocalPhone" Foreground="{Binding ElementName=txtCli_Telefono, Path=SelectionBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                        <TextBox  Name="txtCli_Telefono" Width="300" Style="{StaticResource EstiloError}" DataContext="{StaticResource DATA_CLIENTE}" CaretBrush="#65b3f6" >
+                        <TextBox  Name="txtCli_Telefono" Width="300" DataContext="{StaticResource DATA_CLIENTE}" CaretBrush="#65b3f6" >
                             <TextBox.Text>
                                 <Binding Path="Cli_Telefono" UpdateSourceTrigger="PropertyChanged" ValidatesOnExceptions="True" ValidatesOnDataErrors="True"/>
                             </TextBox.Text>
@@ -116,7 +116,7 @@
                     <TextBlock Text="Email" Foreground="#65b3f6" Width="300" HorizontalAlignment="Left" Margin="20 30 0 0" FontWeight="Bold" />
                     <StackPanel Orientation="Horizontal" Margin="0 0 0 0">
                         <materialDesign:PackIcon Kind="Email" Foreground="{Binding ElementName=txtCli_Email, Path=SelectionBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                        <TextBox  Name="txtCli_Email" Width="300" Style="{StaticResource EstiloError}" DataContext="{StaticResource DATA_CLIENTE}" CaretBrush="#65b3f6" >
+                        <TextBox  Name="txtCli_Email" Width="300" DataContext="{StaticResource DATA_CLIENTE}" CaretBrush="#65b3f6" >
                             <TextBox.Text>
                                 <Binding Path="Cli_Email" UpdateSourceTrigger="PropertyChanged" ValidatesOnExceptions="True" ValidatesOnDataErrors="True"/>
                             </TextBox.Text>

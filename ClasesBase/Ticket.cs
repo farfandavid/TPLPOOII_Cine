@@ -9,7 +9,8 @@ namespace ClasesBase
         private int tick_ID;
         private int proy_ID;
         private int but_ID;
-        private bool tick_Estado;
+        private string tick_Estado;
+        private int tick_precio;
 
         public int Tick_ID
         {
@@ -50,16 +51,23 @@ namespace ClasesBase
             }
         }
 
-        public bool Tick_Estado
-        {
-            get
-            {
+        public string Tick_Estado {
+            get {
                 return tick_Estado;
             }
 
-            set
-            {
+            set {
                 tick_Estado = value;
+            }
+        }
+
+        public int Tick_precio {
+            get {
+                return tick_precio;
+            }
+
+            set {
+                tick_precio = value;
             }
         }
     }

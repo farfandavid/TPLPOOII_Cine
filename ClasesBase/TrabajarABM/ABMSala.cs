@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace ClasesBase.TrabajarABM {
     public class ABMSala {
-        public DataTable cargar_salas() {
+        public static DataTable cargar_salas() {
             SqlConnection c = new SqlConnection(ClasesBase.Properties.Settings.Default.conexion);
 
             SqlCommand cmd = new SqlCommand();
@@ -34,7 +34,8 @@ namespace ClasesBase.TrabajarABM {
             cmd.Connection = cnn;
 
             cmd.Parameters.AddWithValue("@desS", sala.Sala_Descripcion);
-            cmd.Parameters.AddWithValue("@capS", sala.Sala_Capacidad);
+            cmd.Parameters.AddWithValue("@filS", sala.Sala_DimensionFil);
+            cmd.Parameters.AddWithValue("@colS", sala.Sala_DimensionCol);
 
             cnn.Open();
             cmd.ExecuteNonQuery();
@@ -52,7 +53,8 @@ namespace ClasesBase.TrabajarABM {
 
             cmd.Parameters.AddWithValue("@idS", sala.Sala_ID);
             cmd.Parameters.AddWithValue("@desS", sala.Sala_Descripcion);
-            cmd.Parameters.AddWithValue("@capS", sala.Sala_Capacidad);
+            cmd.Parameters.AddWithValue("@filS", sala.Sala_DimensionFil);
+            cmd.Parameters.AddWithValue("@colS", sala.Sala_DimensionCol);
 
             conexion.Open();
             cmd.ExecuteNonQuery();

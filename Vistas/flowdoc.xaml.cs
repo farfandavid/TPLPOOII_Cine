@@ -42,6 +42,11 @@ namespace Vistas
         {
             DragMove();
         }
+
+        private void eventVistaUsuario_Filter(object sender, FilterEventArgs e) {
+
+        }
+        
     }
 
     

@@ -13,61 +13,142 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ClasesBase;
+using ClasesBase.TrabajarABM;
+using System.Data;
+using System.Collections.ObjectModel;
 
 namespace Vistas.ControlUsuario {
     /// <summary>
     /// Lógica de interacción para UserControlABMProyecciones.xaml
     /// </summary>
     public partial class UserControlABMProyecciones : UserControl {
-        List<Proyeccion> listaProyecciones = new List<Proyeccion>();
-        int cont = 1;
+
+        ObservableCollection<Proyeccion> lista_proyeccion = new ObservableCollection<ClasesBase.Proyeccion>();
+        Proyeccion proyec = new Proyeccion();
+
         public UserControlABMProyecciones() {
             InitializeComponent();
 
-            txtProy_Codigo.Text = cont.ToString();
-
-
         }
 
-        private void btnAgregarProy_Click(object sender, RoutedEventArgs e) {
-            Proyeccion oProyeccion = new Proyeccion();
-            oProyeccion.Proy_Codigo = cont;
-            oProyeccion.Proy_Fecha = txtProy_Fecha.SelectedDate.Value;
-            oProyeccion.Proy_Hora = txtProy_Hora.Text;
-            oProyeccion.Sala_ID = 1;
-            oProyeccion.Peli_Codigo = int.Parse(txtProy_CodPel.Text);
+        private async void btnAgregarProy_Click(object sender, RoutedEventArgs e) {
+            if (txtProy_Fecha.SelectedDate != null && txtProy_Hora.SelectedTime.ToString() != "") {
+                proyec.Proy_Fecha = DateTime.Parse(txtProy_Fecha.ToString());
+                proyec.Proy_Hora = txtProy_Hora.Text;
+                proyec.Peli_Codigo = int.Parse(cmbPeli.SelectedValue.ToString());
+                proyec.Sala_ID = int.Parse(cmbNroSala.SelectedValue.ToString());
 
-            listaProyecciones.Add(oProyeccion);
-            dgListadoProyecciones.ItemsSource = listaProyecciones;
-            dgListadoProyecciones.Items.Refresh();
+                //ABMProyeccion.agregarProyecciones(proyec);
+                await Task.Run(async () => {
 
-            MessageBox.Show("Los datos fueron guardados con exito \nCodigo=" + cont + "\nFecha=" + txtProy_Fecha.Text + "\nHora="
-                + txtProy_Hora.Text + "\nNumero Sala=" + cmbNroSala.SelectedValue.ToString() + "\nCodigo Pelicula=" + txtProy_CodPel.Text, "Acccion realizada con exito", MessageBoxButton.OK, MessageBoxImage.Information);
+                    Task<int> result = ABMProyeccion.agregarProyecciones(proyec);
+                    int aasd = await result;
 
-            cont = cont + 1;
-            vaciarCampos();
+                }).ContinueWith((mostrar) => {
+
+                    Ticket oTicket = new Ticket();
+                    int pCount = ABMProyeccion.traerProyeccion().Rows.Count;
+                    int cantidad = ABMButaca.obtener_butaca(proyec.Sala_ID.ToString()).Rows.Count;
+
+                    oTicket.Proy_ID = int.Parse(ABMProyeccion.traerProyeccion().Rows[pCount - 1]["proy_Codigo"].ToString());
+                    oTicket.But_ID = int.Parse(ABMButaca.obtener_butaca(proyec.Sala_ID.ToString()).Rows[0]["but_ID"].ToString());
+
+                    ABMTicket.nuevo_ticket(oTicket, cantidad);
+                    //MessageBox.Show(ABMSala.cargar_salas().Rows[ABMSala.cargar_salas().Rows.Count - 1]["sala_iD"].ToString());
+                });
+
+                cargar_listView();
+                vaciarCampos();
+            } else {
+                MessageBox.Show("Llenar Campos");
+            }
+            
+
+
         }
 
         private void vaciarCampos()
         {
-            txtProy_Codigo.Text = cont.ToString();
+            txtProy_Codigo.Text = null;
             txtProy_Fecha.SelectedDate = null;
             txtProy_Hora.SelectedTime = null;
-            txtProy_CodPel.Clear();
+            cmbNroSala.SelectedValue = null;
+            cmbPeli.SelectedValue = null;
+            
+            
+        }
+        
+        private void cargar_comboBox() {
+            cmbPeli.DisplayMemberPath = "peli_Titulo";
+            cmbPeli.SelectedValuePath = "peli_Codigo";
+            cmbPeli.ItemsSource = ABMPelicula.traerPelicula().DefaultView;
+
+            cmbNroSala.DisplayMemberPath = "sala_Descripcion";
+            cmbNroSala.SelectedValuePath = "sala_ID";
+            cmbNroSala.ItemsSource = ABMSala.cargar_salas().DefaultView;
+        }
+
+        private void cargar_listView() {
+            dgListadoProyecciones.ItemsSource = ABMProyeccion.traer_viewProy();
         }
 
         private void btnEliminarProy_Click(object sender, RoutedEventArgs e)
         {
+            if (dgListadoProyecciones.SelectedItem != null) {
+                try {
 
+                    ABMProyeccion.eliminarProyeccion(proyec);
+                    ABMTicket.eliminarTicket(proyec);
+                    MessageBox.Show("Eliminado");
+                    cargar_listView();
+                } catch {
+                    MessageBox.Show("error");
+                }
+            } else {
+                MessageBox.Show("Selecciones una fila");
+            }
+            
         }
 
         private void btnModificarProy_Click(object sender, RoutedEventArgs e)
         {
+            if (dgListadoProyecciones.SelectedItem != null) {
+                try {
+                    proyec.Proy_Fecha = DateTime.Parse(txtProy_Fecha.ToString());
+                    proyec.Proy_Hora = txtProy_Hora.Text;
+                    proyec.Peli_Codigo = int.Parse(cmbPeli.SelectedValue.ToString());
+                    proyec.Sala_ID = int.Parse(cmbNroSala.SelectedValue.ToString());
+ 
+                    ABMProyeccion.editarProyeccion(proyec);
 
+                    MessageBox.Show("Modificado");
+                    cargar_listView();
+                } catch {
+                    MessageBox.Show("error");
+                }
+            }else {
+                MessageBox.Show("Selecciones una fila");
+            }
         }
 
         private void dgListadoProyecciones_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+            proyec = new Proyeccion();
+            
+            //MessageBox.Show(proyec.Proy_Codigo.ToString() +" "+ proyec.Proy_Fecha +"peli" + proyec.Peli_Codigo+ "sala"+proyec.Sala_ID);
+            
+            if (dgListadoProyecciones.SelectedItem != null) {
+                proyec = dgListadoProyecciones.SelectedItem as Proyeccion;
 
+                txtProy_Codigo.Text = proyec.Proy_Codigo.ToString();
+                txtProy_Fecha.Text = proyec.Proy_Fecha.ToString();
+                txtProy_Hora.Text = proyec.Proy_Hora;
+                cmbPeli.SelectedValue = proyec.Peli_Codigo;
+                cmbNroSala.SelectedValue = proyec.Sala_ID;
+            }
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e) {
+            cargar_comboBox();
         }
     }
 }

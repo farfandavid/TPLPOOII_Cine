@@ -7,7 +7,8 @@ namespace ClasesBase {
     public class Sala {
         private int sala_ID;
         private string sala_Descripcion;
-        private int sala_Capacidad;
+        private int sala_DimensionFil;
+        private int sala_DimensionCol;
 
         public int Sala_ID
         {
@@ -35,16 +36,24 @@ namespace ClasesBase {
             }
         }
 
-        public int Sala_Capacidad
-        {
-            get
-            {
-                return sala_Capacidad;
+
+        public int Sala_DimensionFil {
+            get {
+                return sala_DimensionFil;
             }
 
-            set
-            {
-                sala_Capacidad = value;
+            set {
+                sala_DimensionFil = value;
+            }
+        }
+
+        public int Sala_DimensionCol {
+            get {
+                return sala_DimensionCol;
+            }
+
+            set {
+                sala_DimensionCol = value;
             }
         }
     }

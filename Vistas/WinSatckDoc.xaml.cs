@@ -42,5 +42,20 @@ namespace Vistas
             //vendedor
             txbVendedor.Text += "";
         }
+
+        private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
+
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e) {
+            this.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e) {
+            PrintDialog print = new PrintDialog();
+            if (print.ShowDialog() == true) {
+                //print.PrintDocument(((IDocumentPaginatorSource)DocMain).DocumentPaginator, "Imprimir");
+            }
+        }
     }
 }

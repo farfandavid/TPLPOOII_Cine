@@ -13,10 +13,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Vistas"
         mc:Ignorable="d"
-        Title="WinSatckDoc" Height="470" Width="700" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
-    <!--<FixedDocument>
-        <PageContent>
-            <FixedPage>-->
+        Title="WinSatckDoc" Height="485.902" Width="700" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -39,20 +37,26 @@
 
             <Image Source="/imagenes/Titulo.png" HorizontalAlignment="Center"  Stretch="Fill"/>
         </Grid>
+        <!--<FixedDoument>
+            <PageContent>
+                <FixedPage>-->
+        
+
+            
         <Grid Grid.Row="2">
             <StackPanel Orientation="Horizontal">
                 <StackPanel Width="300">
                     <Image Source="/imagenes/Ticket.png" HorizontalAlignment="Center" Height="49"/>
-                    <TextBlock Name="txbIdTicket" Text="Id Ticket: " HorizontalAlignment="Left" Margin="40 10 0 0" FontSize="15"/>
+                    <TextBlock Name="txbIdTicket" Text="N°: " HorizontalAlignment="Left" Margin="40 10 0 0" FontSize="15"/>
                     <TextBlock Name="txbFecha" Text="Fecha: " HorizontalAlignment="Left" Margin="40 10 0 0" FontSize="15"/>
                     <TextBlock Name="txbHora" Text="Hora: " HorizontalAlignment="Left" Margin="40 10 0 0" FontSize="15"/>
                     <Image Source="/imagenes/Proyeccion.png" HorizontalAlignment="Center" Height="46"/>
                     <TextBlock Name="txbPelicula" Text="Pelicula: " HorizontalAlignment="Left" Margin="40 10 0 0" FontSize="15"/>
                     <TextBlock Name="txbHoraProy" Text="Hora: " HorizontalAlignment="Left" Margin="40 10 0 0" FontSize="15"/>
                     <TextBlock Name="txbFechaProy" Text="Fecha: " HorizontalAlignment="Left" Margin="40 10 0 0" FontSize="15"/>
-                    <TextBlock Name="txbButaca" Text="Ubicacion: Butaca " HorizontalAlignment="Left" Margin="40 10 0 0" FontSize="15"/>
+                    <TextBlock Name="txbButaca" Text="Butaca:" HorizontalAlignment="Left" Margin="40 10 0 0" FontSize="15"/>
                 </StackPanel>
-                <StackPanel Width="300" Margin="80 0">
+                <StackPanel Width="300" Margin="80,0,80,10">
                     <TextBlock Name="txbDirreccion" Text="Direccion: Av.Exodo 345" HorizontalAlignment="Right" FontSize="20"/>
                     <TextBlock Name="txbDirreccion2" Text="San Salvador de Jujuy" HorizontalAlignment="Right" FontSize="20"/>
                     <TextBlock Name="txbCuil" Text="Cuil: 30-23213-22" HorizontalAlignment="Right" FontSize="20"/>
@@ -63,10 +67,14 @@
                     <TextBlock Name="txbDNI" Text="DNI: " HorizontalAlignment="Left" Margin="40 10 0 0" FontSize="15"/>
                 </StackPanel>
             </StackPanel>
+
+
         </Grid>
+        
+                <!--</FixedPage>
+            </PageContent>
+        </FixedDoument>-->
+        <Button Margin="175,98,175,0" Content="Imprimir" Width="350" Click="Button_Click" Grid.Row="1"/>
     </Grid>
-    <!--</FixedPage>
-        </PageContent>
-    </FixedDocument>-->
 
 </Window>

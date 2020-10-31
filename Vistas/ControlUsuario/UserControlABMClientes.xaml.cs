@@ -17,6 +17,7 @@ using ClasesBase;
 using ClasesBase.TrabajarABM;
 using System.Data;
 
+
 namespace Vistas.ControlUsuario {
     /// <summary>
     /// Lógica de interacción para UserControlABMClientes.xaml
