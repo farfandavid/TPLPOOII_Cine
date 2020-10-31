@@ -14,9 +14,9 @@
         xmlns:local="clr-namespace:Vistas"
         mc:Ignorable="d"
         Title="WinSatckDoc" Height="485.902" Width="700" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
-    <FixedDocument>
+   <!-- <FixedDocument>
             <PageContent>
-                <FixedPage>
+                <FixedPage>-->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -73,8 +73,9 @@
         
                 
     </Grid>
+    <!--
     </FixedPage>
             </PageContent>
         </FixedDocument>
-
+-->
 </Window>

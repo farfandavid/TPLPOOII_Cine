@@ -15,7 +15,7 @@
         xmlns:svc="clr-namespace:ClasesBase.TrabajarABM;assembly=ClasesBase"
         xmlns:componentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
         mc:Ignorable="d"
-        Title="flowdoc" Height="609.5" Width="700" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen">
+        Title="flowdoc" Height="530" Width="700" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <ObjectDataProvider ObjectType="{x:Type svc:ABMUsuario}"
                             MethodName="traer_usuarioYrol"
@@ -29,36 +29,46 @@
             </CollectionViewSource.SortDescriptions>
         </CollectionViewSource>
     </Window.Resources>
-    <Grid Margin="0,0,0,-62">
+    <Grid >
         <Grid Background="White">
             <Grid.RowDefinitions>
-                <RowDefinition Height="120"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="130"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
+            <Border Grid.Row="0" Background="Transparent" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+                <Grid>
+                    <materialDesign:ColorZone Background="#65b3f6">
+                        <StackPanel HorizontalAlignment="Right">
+                            <Button Width="30" Height="30" materialDesign:ShadowAssist.ShadowDepth="Depth3" Padding="0" Click="button_Click" Name="btnClose" Background="#FF3B8DD4">
+                                <materialDesign:PackIcon Kind="WindowClose"/>
+                            </Button>
+                        </StackPanel>
+                    </materialDesign:ColorZone>
+                </Grid>
 
-            <Grid Grid.Row="0" Background="#65b3f6" Margin="0,0,0.2,0">
-                <Image Source="/imagenes/Listado_Usuarios.png" HorizontalAlignment="Stretch" Margin="110,10,30,1"/>
-                <Image Source="/imagenes/Dragon_PNG.png" HorizontalAlignment="Left" Margin="10,11,0,0"/>
-                <Button x:Name="button" Content="X" HorizontalAlignment="Left" Margin="645,0,0,0" VerticalAlignment="Top" Width="45" Click="button_Click"/>
+            </Border>
+            <Grid Grid.Row="1" Background="White" >
+                <Image Source="/imagenes/Listado_Usuarios_xd.png" HorizontalAlignment="Stretch" Margin="31,11,109,-0.4"/>
+                <Image Source="/imagenes/Caballero_PNG.png" HorizontalAlignment="Right" Margin="10,11,0,0"/>
             </Grid>
-            <Grid Grid.Row="1" Margin="0,0,0.2,0.4" Grid.RowSpan="2">
+            <Grid Grid.Row="2" Margin="0,0,0.2,0.4" Grid.RowSpan="2">
 
-                <StackPanel Orientation="Vertical" Margin="10,10,-0.2,44.6" Background="White">
+                <StackPanel Orientation="Vertical" Margin="10,10,-0.2,5" Background="White">
                     <StackPanel Orientation="Horizontal" Margin="180 0 0 0">
                         <materialDesign:PackIcon Kind="AccountSupervisorCircle" Foreground="{Binding ElementName=txtUserName, Path=CaretBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                         <TextBox  Name="txtUserName" Width="300" materialDesign:HintAssist.Hint="Buscar Nombre de Usuario" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6"
                                   TextChanged="txtUserName_TextChanged"/>
 
                     </StackPanel>
-                    <FlowDocumentReader Height = "290" Width= "600" Name= "flowDoc" >
+                    <FlowDocumentReader Height = "250" Width= "600" Name= "flowDoc" >
                         <FlowDocument Name = "DocMain" >
-                            <!--< Paragraph FontFamily= "Impact" TextDecorations= "Underline" >Listado de Usuarios
-                                </Paragraph> -->
+                            <Paragraph FontSize="20" FontFamily="roboto">Listado de Usuarios</Paragraph>
                             <BlockUIContainer>
                                 <ListView Name="listUsuarios" ItemsSource="{Binding Source={StaticResource VISTA_USER}}" Height="208">
                                     <ListView.View>
                                         <GridView>
-                                            <GridViewColumn Header="Codigo" Width="115" DisplayMemberBinding="{Binding Usu_Id}"/>
+                                            <GridViewColumn Header="Codigo" Width="73" DisplayMemberBinding="{Binding Usu_Id}"/>
                                             <GridViewColumn Header="Apellido" Width="115" DisplayMemberBinding="{Binding Usu_ApellidoNombre}"/>
                                             <!--<GridViewColumn Header="Nombre" Width="115" DisplayMemberBinding="{Binding}"/>-->
                                             <GridViewColumn Header="UserName" Width="115" DisplayMemberBinding="{Binding Usu_NombreUsuario}"/>
@@ -70,12 +80,12 @@
                             </BlockUIContainer >
                         </FlowDocument >
                     </FlowDocumentReader >
+                    <Button x:Name= "btnImprimir"  Style= "{DynamicResource MaterialDesignFlatButton}" Content= "Imprimir"  Click= "btnImprimir_Click" HorizontalAlignment= "Center" Margin="0,10,0,0" Height="44" Width="118" Grid.Row="1" />
 
                 </StackPanel>
-
+                
             </Grid>
-            <Button x:Name= "btnImprimir"  Style= "{DynamicResource MaterialDesignFlatButton}" Content= "Imprimir"  Click= "btnImprimir_Click" HorizontalAlignment= "Center" Margin="276,364,306,144" Height="44" Width="118" Grid.Row="1" />
-
+            
 
         </Grid>
 
