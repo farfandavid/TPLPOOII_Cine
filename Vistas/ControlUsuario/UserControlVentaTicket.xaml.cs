@@ -68,33 +68,35 @@ namespace Vistas.ControlUsuario
 
             var pageSize = new Size(7.26 * 96, 4.69 * 96); // A4 page, at 96 dpi
             var document = new FixedDocument();
+            if (vender_ticket()) {
+                for (int i = 0; i < listButaca.Count; i++) {
+                    string butaca = listBtn[listButaca[i]].Content.ToString();
+                    oTicket.But_ID = int.Parse(ABMButaca.obtener_butaca(oProyeccion.Sala_ID.ToString()).Rows[listButaca[i]]["but_ID"].ToString());
+                    oTicket.Tick_ID = int.Parse(ABMTicket.obtener_ticket(oProyeccion.Proy_Codigo, oTicket.But_ID).Rows[0]["tick_ID"].ToString());
+                    MessageBox.Show(butaca);
+                    // Create FixedPage
+                    var fixedPage = new FixedPage();
+                    fixedPage.Width = pageSize.Width;
+                    fixedPage.Height = pageSize.Height;
+                    ImprimirTicket miTicket = new ImprimirTicket(butaca, usuarioV, oProyeccion, oPelicula, oCliente, oTicket);
 
+                    // Add visual, measure/arrange page.
+                    fixedPage.Children.Add((UIElement)miTicket);
+                    fixedPage.Measure(pageSize);
+                    fixedPage.Arrange(new Rect(new Point(), pageSize));
+                    fixedPage.UpdateLayout();
 
-            for (int i = 0; i < listButaca.Count; i++) {
-                string butaca = listBtn[listButaca[i]].Content.ToString();
-                oTicket.But_ID = int.Parse(ABMButaca.obtener_butaca(oProyeccion.Sala_ID.ToString()).Rows[listButaca[i]]["but_ID"].ToString());
-                oTicket.Tick_ID = int.Parse(ABMTicket.obtener_ticket(oProyeccion.Proy_Codigo, oTicket.But_ID).Rows[0]["tick_ID"].ToString());
-                MessageBox.Show(butaca);
-                // Create FixedPage
-                var fixedPage = new FixedPage();
-                fixedPage.Width = pageSize.Width;
-                fixedPage.Height = pageSize.Height;
-                ImprimirTicket miTicket = new ImprimirTicket(butaca, usuarioV, oProyeccion, oPelicula, oCliente, oTicket);
+                    // Add page to document
+                    var pageContent = new PageContent();
+                    ((IAddChild)pageContent).AddChild(fixedPage);
+                    document.Pages.Add(pageContent);
+                }
 
-                // Add visual, measure/arrange page.
-                fixedPage.Children.Add((UIElement)miTicket);
-                fixedPage.Measure(pageSize);
-                fixedPage.Arrange(new Rect(new Point(), pageSize));
-                fixedPage.UpdateLayout();
-
-                // Add page to document
-                var pageContent = new PageContent();
-                ((IAddChild)pageContent).AddChild(fixedPage);
-                document.Pages.Add(pageContent);
+                printTicket.PrintDocument(document.DocumentPaginator, "Mi Ticket");
+                listButaca.Clear();
             }
 
-            printTicket.PrintDocument(document.DocumentPaginator, "Mi Ticket");
-            listButaca.Clear();
+            
         }
         
         
@@ -215,7 +217,8 @@ namespace Vistas.ControlUsuario
                 }
         }
         
-        private void vender_ticket() {
+        private bool vender_ticket() {
+            bool vendido = false;
             if (txtApellido.Text != "") {
                 for (int i = 0; i < listButaca.Count; i++) {
                     //MessageBox.Show(ABMButaca.obtener_butaca(oProyeccion.Sala_ID.ToString()).Rows[listButaca[i]]["but_ID"].ToString());
@@ -235,10 +238,11 @@ namespace Vistas.ControlUsuario
                     generar_Butacas();
 
                     ocuparButaca();
+                    vendido = true;
                 }
                 //listButaca.Clear();
             }
-            
+            return vendido;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e) {
