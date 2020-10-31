@@ -74,7 +74,6 @@
                 <!--</FixedPage>
             </PageContent>
         </FixedDoument>-->
-        <Button Margin="175,98,175,0" Content="Imprimir" Width="350" Click="Button_Click" Grid.Row="1"/>
     </Grid>
 
 </Window>

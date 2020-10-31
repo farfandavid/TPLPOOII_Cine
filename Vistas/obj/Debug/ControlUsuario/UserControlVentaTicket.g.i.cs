@@ -92,17 +92,17 @@ namespace Vistas.ControlUsuario {
         #line hidden
         
         
-        #line 60 "..\..\..\ControlUsuario\UserControlVentaTicket.xaml"
+        #line 59 "..\..\..\ControlUsuario\UserControlVentaTicket.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Grid GridCentral;
+        internal System.Windows.Controls.Button btnConfirmarVenta;
         
         #line default
         #line hidden
         
         
-        #line 69 "..\..\..\ControlUsuario\UserControlVentaTicket.xaml"
+        #line 63 "..\..\..\ControlUsuario\UserControlVentaTicket.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button btnConfirmarVenta;
+        internal System.Windows.Controls.Grid GridCentral;
         
         #line default
         #line hidden
@@ -178,16 +178,16 @@ namespace Vistas.ControlUsuario {
             this.txtApellido = ((System.Windows.Controls.TextBox)(target));
             return;
             case 9:
-            this.GridCentral = ((System.Windows.Controls.Grid)(target));
-            return;
-            case 10:
             this.btnConfirmarVenta = ((System.Windows.Controls.Button)(target));
             
-            #line 69 "..\..\..\ControlUsuario\UserControlVentaTicket.xaml"
+            #line 59 "..\..\..\ControlUsuario\UserControlVentaTicket.xaml"
             this.btnConfirmarVenta.Click += new System.Windows.RoutedEventHandler(this.btnConfirmarVenta_Click);
             
             #line default
             #line hidden
+            return;
+            case 10:
+            this.GridCentral = ((System.Windows.Controls.Grid)(target));
             return;
             }
             this._contentLoaded = true;

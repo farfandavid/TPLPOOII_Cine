@@ -260,14 +260,6 @@ namespace Vistas {
             case 17:
             this.txbDNI = ((System.Windows.Controls.TextBlock)(target));
             return;
-            case 18:
-            
-            #line 77 "..\..\WinSatckDoc.xaml"
-            ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Button_Click);
-            
-            #line default
-            #line hidden
-            return;
             }
             this._contentLoaded = true;
         }

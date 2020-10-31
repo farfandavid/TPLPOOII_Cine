@@ -44,7 +44,7 @@ namespace Vistas
         }
 
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
-
+            DragMove();
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e) {
