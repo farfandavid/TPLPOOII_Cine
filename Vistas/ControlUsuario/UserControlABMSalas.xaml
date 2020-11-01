@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="Vistas.ControlUsuario.UserControlABMSalas"
+             
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+            Background="{DynamicResource MaterialDesignPaper}"
+            TextElement.FontWeight="Medium"
+            TextElement.FontSize="14"
+            FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Vistas.ControlUsuario"
+             mc:Ignorable="d" 
+             d:DesignHeight="558" d:DesignWidth="831">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#01ec6b" Margin="10,0,-9.8,0">
+            <Image Source="/imagenes/Abm_Sala.png" HorizontalAlignment="Center" Margin="211,0,144,0" />
+            <Image Source="/imagenes/Unicornio.png" HorizontalAlignment="Left" Margin="60,0,27.2,0" Width="135"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <StackPanel Orientation="Vertical" Margin="40,20,450.2,64.4" Background="White">
+                <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
+
+                    <!--<StackPanel.Resources>
+                        <XmlDataProvider x:Key="tipo_Sala" Source="/TipoSala.xml" XPath="/numeroSala"/>
+                    </StackPanel.Resources>-->
+                    <materialDesign:PackIcon Kind="Stars" Foreground="{Binding ElementName=cmbVisualizarSala, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                    <ComboBox Name="cmbVisualizarSala" Width="300" materialDesign:HintAssist.Hint="Visualizar Salas" materialDesign:HintAssist.HintOpacity=".26" BorderBrush="#01ec6b"/>
+
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 50 0 0">
+                    <materialDesign:PackIcon Kind="Movie" Foreground="{Binding ElementName=txtSala_Definicion, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                    <TextBox  Name="txtSala_Definicion" Width="300" materialDesign:HintAssist.Hint="Definicion" materialDesign:HintAssist.IsFloating="True" CaretBrush="#01ec6b" SelectionBrush="#01ec6b" BorderBrush="#01ec6b"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 16 0 0">
+                    <materialDesign:PackIcon Kind="EventSeatOutline" Foreground="{Binding ElementName=txtSala_Filas, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                    <TextBox  Name="txtSala_Filas" Width="300" materialDesign:HintAssist.Hint="Ingrese cant. de Filas" materialDesign:HintAssist.IsFloating="True" CaretBrush="#01ec6b" SelectionBrush="#01ec6b" BorderBrush="#01ec6b"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 16 0 0">
+                    <materialDesign:PackIcon Kind="EventSeat" Foreground="{Binding ElementName=txtSala_Columnas, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                    <TextBox  Name="txtSala_Columnas" Width="300" materialDesign:HintAssist.Hint="Ingrese cant. de Columnas" materialDesign:HintAssist.IsFloating="True" CaretBrush="#01ec6b" SelectionBrush="#01ec6b" BorderBrush="#01ec6b"/>
+                </StackPanel>
+                
+
+
+            </StackPanel>
+            <StackPanel Margin="40,351,10.2,0.4" Height="87" Orientation="Horizontal">
+                <Button Background="#01ec6b" Content="Agregar" Height="28" Width="85"  HorizontalAlignment="Left"  Name="btnAgregarProy" Click="btnAgregarProy_Click" Margin="120 0 0 0"/>
+                <!--
+                <Button Background="#db439c" Content="Eliminar" Height="28" Width="85"  HorizontalAlignment="Right"  x:Name="btnEliminarProy" Margin="230 0" Click="btnEliminarProy_Click"/>
+                <Button Background="#db439c" Content="Modificar" Height="28" Width="85"  HorizontalAlignment="Center"  x:Name="btnModificalProy" Click="btnModificarProy_Click"/>
+            -->
+                </StackPanel>
+            <StackPanel Margin="350,40,0,73" Orientation="Vertical" Width="376">
+                <Grid Name="GridCentral"  Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="243*"/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</UserControl>

@@ -36,22 +36,22 @@
                     <materialDesign:PackIcon Kind="Movie" Foreground="{Binding ElementName=txtCod_Pel, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                     <TextBox  Name="txtCod_Pel" Width="300" materialDesign:HintAssist.Hint="Codigo de la Pelicula" materialDesign:HintAssist.IsFloating="True" CaretBrush="#FFF99118" SelectionBrush="#FFF99118" BorderBrush="#FFF99118" IsEnabled="False"/>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
                     <materialDesign:PackIcon Kind="LocalMovies" Foreground="{Binding ElementName=txtTitulo_Pel, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                     <TextBox  Name="txtTitulo_Pel" Width="300" materialDesign:HintAssist.Hint="Titulo de la Pelicula" materialDesign:HintAssist.IsFloating="True" CaretBrush="#FFF99118" BorderBrush="#FFF99118"/>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0 28 0 0">
+                <StackPanel Orientation="Horizontal" Margin="0 15 0 0">
                     <materialDesign:PackIcon Kind="AccessTime" Foreground="{Binding ElementName=txtDuracion_Pel, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                     <materialDesign:TimePicker Is24Hours="True" Name="txtDuracion_Pel"  Style="{StaticResource MaterialDesignFloatingHintTimePicker}" Width="300"  materialDesign:HintAssist.Hint="Duracion de la Pelicula" BorderBrush="#FFF99118"/>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0 28 0 0">
+                <StackPanel Orientation="Horizontal" Margin="0 15 0 0">
                     <StackPanel.Resources>
                         <XmlDataProvider x:Key="tipo_Clasificacion" Source="TipoClasificacion.xml" XPath="/clasificaciones"/>
                     </StackPanel.Resources>
                     <materialDesign:PackIcon Kind="Stars" Foreground="{Binding ElementName=cmbClases, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                     <ComboBox Name="cmbClases" Width="300" ItemsSource="{Binding Source={StaticResource tipo_Clasificacion},XPath=tipo/@name}" materialDesign:HintAssist.Hint="Clase" materialDesign:HintAssist.HintOpacity=".26" BorderBrush="#FFF99118"/>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0 28 0 0">
+                <StackPanel Orientation="Horizontal" Margin="0 15 0 0">
                     <StackPanel.Resources>
                         <XmlDataProvider x:Key="tipo_Generos" Source="TipoGenero.xml" XPath="/generos"/>
                     </StackPanel.Resources>
@@ -59,10 +59,16 @@
                     <ComboBox Name="cmbGeneros" Width="300" ItemsSource="{Binding Source={StaticResource tipo_Generos},XPath=tipo/@name}" materialDesign:HintAssist.Hint="Genero" materialDesign:HintAssist.HintOpacity=".26" BorderBrush="#FFF99118"/>
 
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
-                    <materialDesign:PackIcon Kind="AddToPhotos" Foreground="{Binding ElementName=btnAgregarFoto, Path=Background}" VerticalAlignment="Bottom" Margin="0 4"/>
+                <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                    <materialDesign:PackIcon Kind="AddCircleOutline" Foreground="{Binding ElementName=btnAgregarFoto, Path=Background}" VerticalAlignment="Bottom" Margin="0 4"/>
                     <materialDesign:Badged Badge="{materialDesign:PackIcon Kind=InsertPhoto}" BadgeBackground="#db439c" BadgeForeground="White">
                         <Button  Name="btnAgregarFoto" Background="#f99118" Content="Agregar Foto" Height="28" Width="150" Margin="75 0 0 0" Click="btnAgregarFoto_Click"/>
+                    </materialDesign:Badged>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 15 0 0">
+                    <materialDesign:PackIcon Kind="AddCircle" Foreground="{Binding ElementName=btnAgregarFoto, Path=Background}" VerticalAlignment="Bottom" Margin="0 4"/>
+                    <materialDesign:Badged Badge="{materialDesign:PackIcon Kind=VideoAdd}" BadgeBackground="#db439c" BadgeForeground="White">
+                        <Button  Name="btnAgregarVideo" Background="#f99118" Content="Agregar Trailer" Height="28" Width="150" Margin="75 0 0 0" Click="btnAgregarFoto_Click"/>
                     </materialDesign:Badged>
                 </StackPanel>
 
@@ -84,12 +90,13 @@
 
                             <GridViewColumn Width="80" Header="Codigo" DisplayMemberBinding="{Binding Path=peli_Codigo}"/>
                             <GridViewColumn Width="80" Header="Titulo" DisplayMemberBinding="{Binding Path=peli_Titulo}"/>
-                            <!--aqui hay que cambiar por el nombre de la fila de la tabla que contengas la imagen xd -->
+                            
                             <GridViewColumn Width="80" Header="Duracion" DisplayMemberBinding="{Binding Path=peli_Duracion}"/>
                             <GridViewColumn Width="80" Header="Clase" DisplayMemberBinding="{Binding Path=peli_Clase}"/>
                             <GridViewColumn Width="80" Header="Genero" DisplayMemberBinding="{Binding Path=peli_Genero}"/>
-                            <GridViewColumn Width="100" Header="Imagen" DisplayMemberBinding="{Binding Path=peli_Titulo}"/>
-
+                            <!--aqui hay que cambiar por el nombre de la fila de la tabla que contenga la imagen xd -->
+                            <GridViewColumn Width="100" Header="Imagen" DisplayMemberBinding="{Binding Path=peli_Titulo}"/> <!--aqui en ambos campos hay que relacionerlos con la bd-->
+                            <GridViewColumn Width="100" Header="Trailer" DisplayMemberBinding="{Binding Path=peli_Titulo}"/>
                         </GridView>
                     </ListView.View>
                 </ListView>
@@ -110,7 +117,7 @@
             </materialDesign:DialogHost.DialogContent>
         </materialDesign:DialogHost>
 
-        <materialDesign:DialogHost  x:Name="CodInexistente" Grid.RowSpan="3" Margin="-10,0,10.2,68.4">
+        <materialDesign:DialogHost  x:Name="CodInexistente" Grid.RowSpan="3" Margin="-10,0,0.2,0.4" >
             <materialDesign:DialogHost.DialogContent>
                 <StackPanel Margin="15" Orientation="Vertical">
                     <Image Source="imagenes/Fall_Guys_Enojado.png" Width="178" Height="92" Margin="20 30"/>

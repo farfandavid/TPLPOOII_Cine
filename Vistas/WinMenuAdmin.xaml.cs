@@ -51,14 +51,14 @@ namespace Vistas
 
                 var menuButacas = new List<SubItem>();
                 menuButacas.Add(new SubItem("Asignacion de Butacas", new UserControlButacas()));
-                menuButacas.Add(new SubItem("algo 2"));
+                menuButacas.Add(new SubItem("ABM Salas", new UserControlABMSalas()));
                 menuButacas.Add(new SubItem("algo 3"));
                 menuButacas.Add(new SubItem("algo 4"));
-                var item2 = new ItemMenu("Gestionar Butacas", menuButacas, PackIconKind.EventSeat);
+                var item2 = new ItemMenu("Gestionar Salas", menuButacas, PackIconKind.EventSeat);
 
                 var menuProyecciones = new List<SubItem>();
                 menuProyecciones.Add(new SubItem("ABM Proyecciones", new UserControlABMProyecciones()));
-                menuProyecciones.Add(new SubItem("algo 2"));
+                menuProyecciones.Add(new SubItem("Listado Proyecciones", new UserControlListadoProyeccion()));
                 menuProyecciones.Add(new SubItem("algo 3"));
                 menuProyecciones.Add(new SubItem("algo 4"));
                 var item3 = new ItemMenu("Gest. Proyecciones", menuProyecciones, PackIconKind.CameraRoll);

@@ -18,7 +18,7 @@
              d:DesignHeight="558" d:DesignWidth="831">
 
     <UserControl.Resources>
-        <ObjectDataProvider ObjectType="{x:Type svc:ABMUsuario}"
+        <ObjectDataProvider ObjectType="{x:Type svc:ABMSala}"
                             MethodName="traer_usuarioYrol"
                             x:Key="LIST_USER"/>
 
@@ -51,7 +51,7 @@
                         <Button Background="#65b3f6" Content="VistaPrevia" Height="28" Width="106"   x:Name="btnVistaPrevia" Margin="20 0 0 0"  Click="btnVistaPrevia_Click"/>
                     </StackPanel>
 
-                    <ListView Name="listUsuarios" ItemsSource="{Binding Source={StaticResource VISTA_USER}}" Margin="50 50">
+                    <ListView Name="listUsuarios" ItemsSource="{Binding Source={StaticResource VISTA_USER}}" Margin="50 50" Height="300">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Codigo" Width="115" DisplayMemberBinding="{Binding Usu_Id}"/>
@@ -64,6 +64,7 @@
                         </ListView.View>
                     </ListView>
                 </StackPanel>
+                
             </Grid>
 
 

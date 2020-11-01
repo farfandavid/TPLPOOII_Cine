@@ -31,7 +31,7 @@
             <materialDesign:ColorZone Mode="PrimaryMid"  HorizontalAlignment="Stretch">
                 <Grid >
                     <Button Width="30" Height="30" materialDesign:ShadowAssist.ShadowDepth="Depth3" Padding="0" Click="btnMenuClose_Click" Name="btnCloseMenu" HorizontalAlignment="Right" Margin="10">
-                        <materialDesign:PackIcon Kind="PowerSettingsNew"/>
+                        <materialDesign:PackIcon Kind="SettingsPower"/>
                     </Button>
                 </Grid>
             </materialDesign:ColorZone>

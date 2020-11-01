@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\App.xaml
-19-704736462
+21-509949611
 
-27-1099516870
+29-1070467106
 161331501464
-ControlUsuario\UserControlABMClientes.xaml;ControlUsuario\UserControlABMProyecciones.xaml;ControlUsuario\UserControlButacas.xaml;ControlUsuario\UserControlListadoUsuarios.xaml;ControlUsuario\UserControlLogin.xaml;ControlUsuario\UserControlValidarCliente.xaml;ControlUsuario\UserControlVentaTicket.xaml;flowdoc.xaml;ImprimirTicket.xaml;Page1.xaml;PlantillaDicc\ButtonChange.xaml;PlantillaDicc\TextBoxStyle.xaml;Prueba.xaml;UserControlABMPeliculas.xaml;ControlUsuario\UserControlDashboard.xaml;UserControlMenuItem.xaml;MainWindow.xaml;WinMenuAdmin.xaml;WinSatckDoc.xaml;
+ControlUsuario\UserControlABMClientes.xaml;ControlUsuario\UserControlABMProyecciones.xaml;ControlUsuario\UserControlABMSalas.xaml;ControlUsuario\UserControlButacas.xaml;ControlUsuario\UserControlListadoProyeccion.xaml;ControlUsuario\UserControlListadoUsuarios.xaml;ControlUsuario\UserControlLogin.xaml;ControlUsuario\UserControlValidarCliente.xaml;ControlUsuario\UserControlVentaTicket.xaml;flowdoc.xaml;ImprimirTicket.xaml;Page1.xaml;PlantillaDicc\ButtonChange.xaml;PlantillaDicc\TextBoxStyle.xaml;Prueba.xaml;UserControlABMPeliculas.xaml;ControlUsuario\UserControlDashboard.xaml;UserControlMenuItem.xaml;MainWindow.xaml;WinMenuAdmin.xaml;WinSatckDoc.xaml;
 
 True
 

@@ -63,7 +63,6 @@
                     </StackPanel>
                     <FlowDocumentReader Height = "250" Width= "600" Name= "flowDoc" >
                         <FlowDocument Name = "DocMain" >
-                            <Paragraph FontSize="20" FontFamily="roboto">Listado de Usuarios</Paragraph>
                             <BlockUIContainer>
                                 <ListView Name="listUsuarios" ItemsSource="{Binding Source={StaticResource VISTA_USER}}" Height="208">
                                     <ListView.View>
@@ -80,7 +79,7 @@
                             </BlockUIContainer >
                         </FlowDocument >
                     </FlowDocumentReader >
-                    <Button x:Name= "btnImprimir"  Style= "{DynamicResource MaterialDesignFlatButton}" Content= "Imprimir"  Click= "btnImprimir_Click" HorizontalAlignment= "Center" Margin="0,10,0,0" Height="44" Width="118" Grid.Row="1" />
+                    <Button x:Name= "btnImprimir"  Style= "{DynamicResource MaterialDesignFlatButton}" Content= "Imprimir"  Click= "btnImprimir_Click" HorizontalAlignment= "Center" Margin="0,10,0,0" Height="44" Width="118" Grid.Row="1" Foreground="#FF3B8DD4"/>
 
                 </StackPanel>
                 
