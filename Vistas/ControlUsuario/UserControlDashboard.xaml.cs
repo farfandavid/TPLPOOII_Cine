@@ -24,6 +24,7 @@ namespace Vistas.ControlUsuario {
 
     
         bool nuevo = true;
+        string _usuario = "";
 
         public UserControlDashboard() {
             InitializeComponent();
@@ -54,6 +55,7 @@ namespace Vistas.ControlUsuario {
             deshabilitar_botonesCanvas();
             btnNuevoUsu.IsEnabled = false;
             btnEliminarUsu.IsEnabled = false;
+            _usuario = txtUserName_Usu.Text;
         }
 
         private void btnEliminarUsu_Click(object sender, RoutedEventArgs e)
@@ -61,12 +63,20 @@ namespace Vistas.ControlUsuario {
             if (MessageBox.Show("Desea eliminar el Usuario?", "Eliminar", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No) {
 
             } else {
+               
                 Usuario oUser = new Usuario();
                 oUser.Usu_Id = Convert.ToInt32(txtCod_Usu_Canvas.Text);
-                listaUsuario.Remove(Vista.CurrentItem as Usuario);
-                ABMUsuario.eliminar_usuario(oUser);
-                limpiarCampos();
-                MessageBox.Show("Usuario Eliminado");
+                if (ABMUsuario.usuario_venta(oUser.Usu_Id) == 0)
+                {
+                    listaUsuario.Remove(Vista.CurrentItem as Usuario);
+                    ABMUsuario.eliminar_usuario(oUser);
+                    limpiarCampos();
+                    MessageBox.Show("Usuario Eliminado");
+                }else
+                {
+                    MessageBox.Show("El usuario posee ventas, no se puede eliminar");
+                }
+                
                 
             }
         }
@@ -83,15 +93,25 @@ namespace Vistas.ControlUsuario {
             habilitar_botonesCanvas();
         }
 
-        private void btnGuardarUsu_Click(object sender, RoutedEventArgs e)
+        private void btnGuardarUsu_Click()
         {
-            if (nuevo == true) {
+            if (ABMUsuario.usuario_existente(txtUserName_Usu.Text) == 0 && nuevo == true)
+            {
                 nuevo_usuario();
-            } else {
-                modificar_usuario();
             }
+            else
+            {
+                if (nuevo == false &&
+                    (ABMUsuario.usuario_existente(txtUserName_Usu.Text) == 0 || _usuario == txtUserName_Usu.Text))
+                {
+                    modificar_usuario();
+                }
+                else
+                {
+                    MessageBox.Show("Nombre de usuario Existente");
+                }
 
-            
+            }
 
             btnNuevoUsu.IsEnabled = true;
             btnModifUsu.IsEnabled = true;
@@ -248,5 +268,32 @@ namespace Vistas.ControlUsuario {
             btn_Ir_Siguiente.IsEnabled = true;
             btn_Ir_Ultimo.IsEnabled = true;
         }
+
+        /// <summary>
+        /// VALIDAR ERRORES AL GUARDAR
+        /// </summary>
+        private int _noOfErrorsOnScreen = 0;
+        private void Validation_Error(object sender, ValidationErrorEventArgs e)
+        {
+            if (e.Action == ValidationErrorEventAction.Added)
+                _noOfErrorsOnScreen++;
+            else
+                _noOfErrorsOnScreen--;
+        }
+
+        private void AddUser_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = _noOfErrorsOnScreen == 0;
+            e.Handled = true;
+        }
+
+        private void AddUser_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            btnGuardarUsu_Click();
+            e.Handled = true;
+
+        }
+
+     
     }
 }

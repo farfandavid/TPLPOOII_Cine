@@ -24,5 +24,10 @@ namespace Vistas.ControlUsuario
         {
             InitializeComponent();
         }
+
+        private void btnAgregarProy_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

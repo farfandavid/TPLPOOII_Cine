@@ -23,10 +23,13 @@
 
         <CollectionViewSource x:Key="VISTA_PROY"
                               Source="{StaticResource ResourceKey=LIST_PROY}"
-                              Filter="eventVistaUsuario_Filter">
+                              >
+          <!--  //// EL FILTER VA ACA ARRIBA DENTRO DEL COLLECTIONVIEWSOURCE
+            Filter="eventVistaUsuario_Filter"
+            EL RESTO NORMAL ACA ABAJO
             <CollectionViewSource.SortDescriptions>
-                <componentModel:SortDescription PropertyName="Usu_Nombre"  Direction="Ascending"/>
-            </CollectionViewSource.SortDescriptions> 
+                <componentModel:SortDescription PropertyName="Usu_NombreUsuario"  Direction="Ascending"/>
+            </CollectionViewSource.SortDescriptions> -->
         </CollectionViewSource>
     </UserControl.Resources>
     <Grid>

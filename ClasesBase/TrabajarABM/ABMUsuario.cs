@@ -166,5 +166,55 @@ namespace ClasesBase.TrabajarABM {
 
             return dt;
         }
+
+        public static int usuario_existente(string user)
+        {
+            int cantidad = 0;
+
+            SqlConnection conexion = new SqlConnection(ClasesBase.Properties.Settings.Default.conexion);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SPusuarioExistente";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = conexion;
+
+            cmd.Parameters.AddWithValue("@user", user);
+
+            cmd.Parameters.AddWithValue("@count_user", SqlDbType.Int);
+            cmd.Parameters["@count_user"].Direction = ParameterDirection.Output;
+
+            conexion.Open();
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+
+            cantidad = (int)cmd.Parameters["@count_user"].Value;
+
+            return cantidad;
+        }
+
+        public static int usuario_venta(int user)
+        {
+            int cantidad = 0;
+
+            SqlConnection conexion = new SqlConnection(ClasesBase.Properties.Settings.Default.conexion);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SPUsuarioVentas";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = conexion;
+
+            cmd.Parameters.AddWithValue("@user", user);
+
+            cmd.Parameters.AddWithValue("@count_user", SqlDbType.Int);
+            cmd.Parameters["@count_user"].Direction = ParameterDirection.Output;
+
+            conexion.Open();
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+
+            cantidad = (int)cmd.Parameters["@count_user"].Value;
+
+            return cantidad;
+        }
     }
 }

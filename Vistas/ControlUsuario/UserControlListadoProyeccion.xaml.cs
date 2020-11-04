@@ -24,5 +24,13 @@ namespace Vistas.ControlUsuario
         {
             InitializeComponent();
         }
+        private void eventVistaUsuario_Filter(object sender, FilterEventArgs e)
+        {
+
+        }
+        private void txtRol_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
