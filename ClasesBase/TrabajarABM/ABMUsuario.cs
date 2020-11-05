@@ -81,13 +81,53 @@ namespace ClasesBase.TrabajarABM {
             return dt;
 
         }
+        public static DataTable cargar_usuario_filtrado(string user)
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.conexion);
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "SPUsuarioFiltro";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@user", user);
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            da.Fill(dt);
+
+            return dt;
+
+        }
+        public static ObservableCollection<Usuario> traer_usuario_filtrado(string user)
+        {
+            ObservableCollection<Usuario> lista_usuario = new ObservableCollection<Usuario>();
+            DataTable dt = new DataTable();
+            dt = cargar_usuario_filtrado(user);
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                Usuario oUser = new Usuario();
+                Rol oRol = new Rol();
+                oUser.Usu_Id = Convert.ToInt32(dt.Rows[i]["usu_ID"]);
+                oUser.Usu_NombreUsuario = dt.Rows[i]["usu_NombreUsuario"].ToString();
+                oUser.Usu_Contraseña = dt.Rows[i]["usu_contraseña"].ToString();
+                oUser.Usu_ApellidoNombre = dt.Rows[i]["usu_ApellidoNombre"].ToString();
+                oUser.Rol_Codigo = Convert.ToInt32(dt.Rows[i]["rol_Codigo"]);
+                oRol.Rol_Codigo = Convert.ToInt32(dt.Rows[i]["rol_Codigo"]);
+                oRol.Rol_Descripcion = dt.Rows[i]["rol_descripcion"].ToString();
+                oUser.Rol = oRol;
+                lista_usuario.Add(oUser);
+            }
+            return lista_usuario;
+        }
 
         public static void nuevo_usuario(Usuario usuario) {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.conexion);
 
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "SPUsuarioAgregar";
-            // cmd.CommandType = CommandType.Text;
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
 

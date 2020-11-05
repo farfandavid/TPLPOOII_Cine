@@ -18,7 +18,7 @@
              d:DesignHeight="558" d:DesignWidth="831">
 
     <UserControl.Resources>
-        <ObjectDataProvider ObjectType="{x:Type svc:ABMSala}"
+        <ObjectDataProvider ObjectType="{x:Type svc:ABMUsuario}"
                             MethodName="traer_usuarioYrol"
                             x:Key="LIST_USER"/>
 

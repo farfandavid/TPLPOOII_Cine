@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ClasesBase;
+using ClasesBase.TrabajarABM;
 
 namespace Vistas
 {
@@ -22,10 +23,11 @@ namespace Vistas
     {
 
         CollectionViewSource vistaColeccionFiltrada;
-        public flowdoc()
+        public flowdoc( string user)
         {
             InitializeComponent();
-            vistaColeccionFiltrada = Resources["VISTA_USER"] as CollectionViewSource;
+            listUsuarios.ItemsSource = ABMUsuario.traer_usuario_filtrado(user);
+                vistaColeccionFiltrada = Resources["VISTA_USER"] as CollectionViewSource;
         }
 
         private void btnImprimir_Click(object sender, RoutedEventArgs e)
@@ -46,7 +48,7 @@ namespace Vistas
             DragMove();
         }
 
-        private void eventVistaUsuario_Filter(object sender, FilterEventArgs e) {
+       /* private void eventVistaUsuario_Filter(object sender, FilterEventArgs e) {
             Usuario usuario = e.Item as Usuario;
 
             if (usuario.Usu_NombreUsuario.StartsWith(txtUserName.Text, StringComparison.CurrentCultureIgnoreCase)) {
@@ -55,9 +57,9 @@ namespace Vistas
                 e.Accepted = false;
             }
 
-        }
+        }*/
 
-        private void txtUserName_TextChanged(object sender, TextChangedEventArgs e) {
+      /*  private void txtUserName_TextChanged(object sender, TextChangedEventArgs e) {
             if (vistaColeccionFiltrada != null) {
                 vistaColeccionFiltrada.Filter += eventVistaUsuario_Filter;
             }
@@ -65,7 +67,7 @@ namespace Vistas
 
         private void CollectionViewSource_Filter(object sender, FilterEventArgs e) {
 
-        }
+        }*/
 
         private void button_Click(object sender, RoutedEventArgs e) {
             this.Close();

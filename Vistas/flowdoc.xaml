@@ -17,17 +17,17 @@
         mc:Ignorable="d"
         Title="flowdoc" Height="530" Width="700" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen">
     <Window.Resources>
-        <ObjectDataProvider ObjectType="{x:Type svc:ABMUsuario}"
-                            MethodName="traer_usuarioYrol"
+   <!--    <ObjectDataProvider ObjectType="{x:Type svc:ABMUsuario}"
+                            MethodName="traer_usuario_filtrado(admin)"
                             x:Key="LIST_USER"/>
 
         <CollectionViewSource x:Key="VISTA_USER"
                               Source="{StaticResource ResourceKey=LIST_USER}"
-                              Filter="CollectionViewSource_Filter">
+                              >
             <CollectionViewSource.SortDescriptions>
                 <componentModel:SortDescription PropertyName="Usu_NombreUsuario"  Direction="Ascending"/>
             </CollectionViewSource.SortDescriptions>
-        </CollectionViewSource>
+        </CollectionViewSource>--> 
     </Window.Resources>
     <Grid >
         <Grid Background="White">
@@ -54,17 +54,18 @@
             </Grid>
             <Grid Grid.Row="2" Margin="0,0,0.2,0.4" Grid.RowSpan="2">
 
-                <StackPanel Orientation="Vertical" Margin="10,10,-0.2,5" Background="White">
-                    <StackPanel Orientation="Horizontal" Margin="180 0 0 0">
+               <StackPanel Orientation="Vertical" Margin="10,10,-0.2,5" Background="White">
+                   <!--  <StackPanel Orientation="Horizontal" Margin="180 0 0 0">
                         <materialDesign:PackIcon Kind="AccountSupervisorCircle" Foreground="{Binding ElementName=txtUserName, Path=CaretBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                         <TextBox  Name="txtUserName" Width="300" materialDesign:HintAssist.Hint="Buscar Nombre de Usuario" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6"
                                   TextChanged="txtUserName_TextChanged"/>
 
-                    </StackPanel>
+                    </StackPanel>-->
                     <FlowDocumentReader Height = "250" Width= "600" Name= "flowDoc" >
                         <FlowDocument Name = "DocMain" >
                             <BlockUIContainer>
-                                <ListView Name="listUsuarios" ItemsSource="{Binding Source={StaticResource VISTA_USER}}" Height="208">
+                                <ListView Name="listUsuarios"  Height="208">
+                                    <!--ItemsSource="{Binding Source={StaticResource VISTA_USER}}"-->
                                     <ListView.View>
                                         <GridView>
                                             <GridViewColumn Header="Codigo" Width="73" DisplayMemberBinding="{Binding Usu_Id}"/>

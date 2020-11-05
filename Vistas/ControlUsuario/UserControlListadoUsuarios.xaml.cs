@@ -46,18 +46,18 @@ namespace Vistas.ControlUsuario
 
         private void btnVistaPrevia_Click(object sender, RoutedEventArgs e)
         {
-            flowdoc doc = new flowdoc();
+            flowdoc doc = new flowdoc(txtUserName.Text);
             doc.Show();
         }
 
-        //    <Grid>
-        //    <Grid.RowDefinitions>
-        //        <RowDefinition Height = "30" />
-        //        < RowDefinition Height="80"/>
-        //        <RowDefinition Height = "*" />
-        //    </ Grid.RowDefinitions >
-        //    < Border Grid.Row="0" Background="Transparent" MouseLeftButtonDown="Border_MouseLeftButtonDown">
-        //        <Grid>
+          //  <Grid>
+          //  <Grid.RowDefinitions>
+          //      <RowDefinition Height = "30" />
+          //      < RowDefinition Height="80"/>
+          //      <RowDefinition Height = "*" />
+          //  </ Grid.RowDefinitions >
+         //   < Border Grid.Row="0" Background="Transparent" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+         //       <Grid>
         //            <materialDesign:ColorZone Background = "#65b3f6" >
         //                < StackPanel HorizontalAlignment="Right">
         //                    <Button Width = "30" Height="30" materialDesign:ShadowAssist.ShadowDepth="Depth3" Padding="0" Click="btnClose_Click" Name="btnClose" Background="#FF4192D7">
