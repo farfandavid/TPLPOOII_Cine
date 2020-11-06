@@ -24,6 +24,12 @@ namespace Vistas.ControlUsuario
         {
             InitializeComponent();
         }
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            trailer.LoadedBehavior = MediaState.Manual;
+            //agregar los source de los videos xd
+            trailer.Source = new Uri(@"", UriKind.Relative);
+        }
         private void eventVistaUsuario_Filter(object sender, FilterEventArgs e)
         {
 
@@ -32,5 +38,37 @@ namespace Vistas.ControlUsuario
         {
 
         }
+
+        private void btnIrPrimero_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnIrAtras_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnIrSiguiente_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnIrUltimo_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnPlay_Click(object sender, RoutedEventArgs e)
+        {
+            trailer.Play();
+        }
+
+        private void btn_Pause_Click(object sender, RoutedEventArgs e)
+        {
+            trailer.Stop();
+        }
+
+        
     }
 }
