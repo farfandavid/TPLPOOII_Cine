@@ -130,6 +130,11 @@ namespace Vistas {
         {
 
         }
+
+        private void btnAgregarVideo_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
 

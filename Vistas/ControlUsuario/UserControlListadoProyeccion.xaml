@@ -20,11 +20,14 @@
         <ObjectDataProvider ObjectType="{x:Type svc:ABMProyeccion}"
                             MethodName="traerProyeccion"
                             x:Key="LIST_PROY"/>
-
-        <CollectionViewSource x:Key="VISTA_PROY"
+        <!--aqui van los datos del canvas para el mas info-->
+        <ObjectDataProvider ObjectType="{x:Type svc:ABMUsuario}"
+                            MethodName="traer_usuario"
+                            x:Key="lista_Usuarios"/>
+            <CollectionViewSource x:Key="VISTA_PROY"
                               Source="{StaticResource ResourceKey=LIST_PROY}"
                               >
-          <!--  //// EL FILTER VA ACA ARRIBA DENTRO DEL COLLECTIONVIEWSOURCE
+            <!--  //// EL FILTER VA ACA ARRIBA DENTRO DEL COLLECTIONVIEWSOURCE
             Filter="eventVistaUsuario_Filter"
             EL RESTO NORMAL ACA ABAJO
             <CollectionViewSource.SortDescriptions>
@@ -55,9 +58,9 @@
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="53 10 0 0">
                         <TextBlock Text="Mas Info" VerticalAlignment="Center" FontWeight="Bold" Foreground="#DD656565"/>
-                        <Button
+                        <Button Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}" CommandTarget="{Binding ElementName=Mas_Info}"
                             Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
-                            ToolTip="MaterialDesignFloatingActionAccentButton" Width="25" Height="25" Background="#db439c" Margin="7 0 0 0" BorderBrush="#65b3f6"> 
+                            ToolTip="MaterialDesignFloatingActionAccentButton" Width="25" Height="25" Background="#db439c" Margin="7 0 0 0" BorderBrush="#65b3f6">
                             <materialDesign:PackIcon Kind="AddCircleOutline" Height="16" Width="16" Foreground="White" />
                         </Button>
                     </StackPanel>
@@ -79,6 +82,115 @@
 
 
         </Grid>
+        <materialDesign:DialogHost  x:Name="Mas_Info" Grid.RowSpan="1" Margin="0,0,0.2,0.4">
+            <materialDesign:DialogHost.DialogContent >
+                <StackPanel Margin="15" Orientation="Vertical" Height="480" Width="600">
+                    <StackPanel Orientation="Horizontal" Height="75">
+                        
+                        <Image Source="/imagenes/Pirata_Mirando_Atras.png"  Height="70" Margin="40 0 0 0"/>
+                        <Image Source="/imagenes/Mas_Info.png" Width="300"  Margin="40 0 0 0"/>
+                    </StackPanel>
+                    <!--camviar el nombre del canvaaas en resourcekey-->
+                    <Canvas Name="canvas_content" DataContext="{Binding Source={StaticResource ResourceKey=lista_Usuarios}}">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="170 10 0 0">
+                                <Button Name="btn_Ir_Primero" Background="#db439c" Margin="0 0 15 0" BorderBrush="#65b3f6" Click="btnIrPrimero_Click"
+                                Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
+                                ToolTip="MaterialDesignFloatingActionAccentButton">
+                                    <materialDesign:PackIcon Foreground="White" BorderBrush="White" 
+                                    Kind="FastRewind"
+                                    Height="24"
+                                    Width="24" />
+                                </Button>
+                                <Button x:Name="btn_Ir_Atras" Background="#db439c" Margin="0 0 15 0" BorderBrush="#65b3f6" Click="btnIrAtras_Click"
+                                Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
+                                ToolTip="MaterialDesignFloatingActionAccentButton">
+                                    <materialDesign:PackIcon Foreground="White"
+                                    Kind="ArrowLeftBold"
+                                    Height="24"
+                                    Width="24" />
+                                </Button>
+                                <Button x:Name="btn_Ir_Siguiente" Background="#db439c" Margin="0 0 15 0" BorderBrush="#65b3f6" Click="btnIrSiguiente_Click"
+                                Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
+                                ToolTip="MaterialDesignFloatingActionAccentButton">
+                                    <materialDesign:PackIcon Foreground="White"
+                                    Kind="ArrowRightBold"
+                                    Height="24"
+                                    Width="24" />
+                                </Button>
+                                <Button x:Name="btn_Ir_Ultimo" Background="#db439c" BorderBrush="#65b3f6" Click="btnIrUltimo_Click"
+                                Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
+                                ToolTip="MaterialDesignFloatingActionAccentButton">
+                                    <materialDesign:PackIcon Foreground="White"
+                                    Kind="FastForward"
+                                    Height="24"
+                                    Width="24" />
+                                </Button>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
 
+                                <StackPanel Margin="0 20 0 0">
+                                <StackPanel Height="50">
+                                    <TextBox Name="txtCod_Proy_Canvas" Text="{Binding Proy_Codigo}"
+                                    Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
+                                    VerticalAlignment="Stretch"
+                                    Width="300"
+                                    materialDesign:HintAssist.Hint="Codigo Proyeccion" IsEnabled="False"/>
+                                </StackPanel>
+                                    <StackPanel Height="50">
+                                        <TextBox Name="txtCodigo_Pel_Canvas" Text="{Binding Peli_Codigo}"
+                                    Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
+                                    VerticalAlignment="Stretch"
+                                    Width="300"
+                                    materialDesign:HintAssist.Hint="Codigo Pelicula" IsEnabled="False"/>
+                                    </StackPanel>
+                                    <StackPanel Height="50">
+                                        <TextBox Name="txtFecha_Proy_Canvas" Text="{Binding Proy_Fecha}"
+                                    Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
+                                    VerticalAlignment="Stretch"
+                                    Width="300"
+                                    materialDesign:HintAssist.Hint="Fecha" IsEnabled="False"/>
+                                </StackPanel>
+                                <StackPanel Height="50">
+                                        <TextBox Name="txtHora_Proy_Canvas" Text="{Binding Proy_Hora}"
+                                    Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
+                                    VerticalAlignment="Top"
+                                    Width="300"
+                                    materialDesign:HintAssist.Hint="Hora" IsEnabled="False"/>
+                                </StackPanel>
+                                    <StackPanel Height="50">
+                                        <TextBox Name="txtId_Sala_Canvas" Text="{Binding Sala_Id}"
+                                    Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
+                                    VerticalAlignment="Top"
+                                    Width="300"
+                                    materialDesign:HintAssist.Hint="N° Sala" IsEnabled="False"/>
+                                    </StackPanel>
+                                    
+                            </StackPanel>
+                                <StackPanel Margin="0 20 0 0">
+                                    <Canvas>
+                                        <StackPanel Margin="30 0 0 0">
+                                            <MediaElement Name="trailer" Height="130" Width="260"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Canvas.Top="140" Canvas.Left="110">
+                                            <Button x:Name="btn_Play"  Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="2 0 20 0" ToolTip="MaterialDesignFloatingActionMiniAccentButton" Background="#FFFF54B8" BorderBrush="#65b3f6">
+                                                <materialDesign:PackIcon Kind="PlayCircleOutline" Height="28" Width="28"  Foreground="White"/>
+                                            </Button>
+                                            <Button x:Name="btn_Pause"   Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" ToolTip="MaterialDesignFloatingActionMiniAccentButton" Background="#FFFF54B8" BorderBrush="#65b3f6">
+                                                <materialDesign:PackIcon Kind="PauseCircleOutline" Height="28" Width="28"  Foreground="White"/>
+                                            </Button>
+                                        </StackPanel>
+                                    </Canvas>
+                                    <Image  Source="/imagenes/Sonic.jpg" Width="120" Height="140" Margin="110 190 0 0"/>
+                                </StackPanel>
+                           </StackPanel>
+                        </StackPanel>
+                    </Canvas>
+                    
+                    <Button  Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" CommandTarget="{Binding ElementName=Mas_Info}"
+                            Style="{DynamicResource MaterialDesignFlatButton}" Content="Cerrar" Margin="130 370 0 0" HorizontalAlignment="Left" Foreground="#db439c"/>
+                </StackPanel>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
     </Grid>
 </UserControl>
