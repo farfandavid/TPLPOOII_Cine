@@ -16,6 +16,8 @@ using System.Reflection;
 using ClasesBase;
 using ClasesBase.TrabajarABM;
 using System.Data;
+using Microsoft.Win32;
+using System.IO;
 
 namespace Vistas {
     /// <summary>
@@ -28,11 +30,6 @@ namespace Vistas {
         public UserControlABMPeliculas() {
             InitializeComponent();
             
-             
-
-
-
-
 
         }
 
@@ -42,13 +39,15 @@ namespace Vistas {
             oPelicula.Peli_Duracion = txtDuracion_Pel.Text;
             oPelicula.Peli_Genero = cmbGeneros.SelectedValue.ToString();
             oPelicula.Peli_Clase = cmbClases.SelectedValue.ToString();
+            oPelicula.Peli_Imagen = txtPel_Img.Text;
+            oPelicula.Peli_Trailer = txtPel_Vid.Text;
 
             ABMPelicula.agregar_Pelicula(oPelicula);
             dgPeliculas.ItemsSource = ABMPelicula.traerPelicula().AsDataView();
 
             MessageBox.Show("Los datos fueron guardados con exito \nCodigo=" + txtCod_Pel.Text + "\nTitulo=" + txtTitulo_Pel.Text + "\nDuracion="
                 + txtDuracion_Pel.Text + "\nGenero=" + cmbGeneros.SelectedValue.ToString() + "\nClase=" + cmbClases.SelectedValue.ToString(), "Acccion realizada con exito", MessageBoxButton.OK, MessageBoxImage.Information);
-
+            
 
             vaciarCampos();
 
@@ -60,14 +59,6 @@ namespace Vistas {
                 EliminarPel.IsOpen=true;
                 return;
             } else {
-                //int numero;
-                //Int32.TryParse(txtCli_Dni.Text, out numero);
-                //ocliente.Cli_DNI = numero.ToString();
-                //ocliente.Cli_Nombre = txtCli_Nombre.Text;
-                //ocliente.Cli_Apellido = txtCli_Apellido.Text;
-                //ocliente.Cli_Telefono = txtCli_Telefono.Text;
-                //ocliente.Cli_Email = txtCli_Email.Text;
-                //ABMCliente.eliminar_cliente(ocliente);
                 try {
                     ABMPelicula.eliminarPelicula(pelicula);
                     dgPeliculas.ItemsSource = ABMPelicula.traerPelicula().AsDataView();
@@ -89,6 +80,8 @@ namespace Vistas {
                     pelicula.Peli_Duracion = txtDuracion_Pel.Text;
                     pelicula.Peli_Clase = cmbClases.SelectedValue.ToString();
                     pelicula.Peli_Genero = cmbGeneros.SelectedValue.ToString();
+                    pelicula.Peli_Imagen = txtPel_Img.Text;
+                    pelicula.Peli_Trailer = txtPel_Vid.Text;
 
                     ABMPelicula.editarPelicula(pelicula);
                     dgPeliculas.ItemsSource = ABMPelicula.traerPelicula().AsDataView();
@@ -103,6 +96,10 @@ namespace Vistas {
 
         private void dgPeliculas_SelectionChanged(object sender, SelectionChangedEventArgs e) {
             pelicula = new Pelicula();
+            BitmapImage bi3 = new BitmapImage();
+            //MediaElement me3 = new MediaElement();
+            //string videoPath = "";
+
             DataRowView row_selected = dgPeliculas.SelectedItem as DataRowView;
             if (row_selected != null) {
                 txtTitulo_Pel.Text = row_selected[1].ToString();
@@ -114,7 +111,21 @@ namespace Vistas {
                 pelicula.Peli_Duracion = row_selected[4].ToString();
                 pelicula.Peli_Clase = row_selected[3].ToString();
                 pelicula.Peli_Genero = row_selected[2].ToString();
-                //MessageBox.Show(pelicula.Peli_Codigo.ToString());
+                pelicula.Peli_Imagen = row_selected[5].ToString();
+                pelicula.Peli_Trailer = row_selected[6].ToString();
+
+                ////Imagen
+                //bi3.BeginInit();
+                //bi3.StreamSource = System.IO.File.OpenRead(row_selected[5].ToString());
+                //bi3.EndInit();
+
+                ////Trailer
+                //videoPath = System.IO.File.OpenRead(row_selected[6].ToString()).Name.ToString();
+                //videoPeli.Source = new Uri(videoPath);
+
+                //imagePeli.Stretch = Stretch.Fill;
+                //imagePeli.Source = bi3;
+                //MessageBox.Show(row_selected[5].ToString());
             }
         }
 
@@ -128,12 +139,55 @@ namespace Vistas {
 
         private void btnAgregarFoto_Click(object sender, RoutedEventArgs e)
         {
-
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "(*.jpg; *.bmp; *.png; *.jpeg) | *.jpg; *.bmp; *.png; *.jpeg";
+            string pathImg = "../../Pelicula/Imagen/";
+            if (open.ShowDialog() == true) {
+                
+                MessageBox.Show(open.SafeFileName);
+                try {
+                    System.IO.File.Copy(open.FileName, pathImg + open.SafeFileName);
+                    txtPel_Img.Text = pathImg + open.SafeFileName;
+                } catch {
+                    System.IO.File.Copy(open.FileName, pathImg +"Copia "+ open.SafeFileName);
+                    txtPel_Img.Text = pathImg +"Copia "+ open.SafeFileName;
+                }
+                
+            }
+            //BitmapDecoder bitdecoder;
+            //OpenFileDialog open = new OpenFileDialog();
+            //open.InitialDirectory = @"C:\";
+            //open.Filter = "(*.jpg; *.bmp; *.png; *.jpeg) | *.jpg; *.bmp; *.png; *.jpeg";
+            //if (open.ShowDialog() == true) {
+            //    using (Stream stream = open.OpenFile()) {
+            //        bitdecoder = BitmapDecoder.Create(stream, BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.OnLoad);
+            //        txtPel_Img.Text = open.FileName.ToString().Trim();
+            //    }
+            //}
         }
 
         private void btnAgregarVideo_Click(object sender, RoutedEventArgs e)
         {
 
+            OpenFileDialog open = new OpenFileDialog();
+            //open.InitialDirectory = @"C:\";
+            open.Filter = "(*.mp4; *.avi; *.wmv; *.mpeg) | *.mp4; *.avi; *.wmv; *.mpeg";
+            string pathVid = "../../Pelicula/Trailer/";
+            if (open.ShowDialog() == true) {
+
+                MessageBox.Show(open.SafeFileName);
+                try {
+                    System.IO.File.Copy(open.FileName, pathVid + open.SafeFileName);
+                    txtPel_Vid.Text = pathVid + open.SafeFileName;
+                } catch {
+                    System.IO.File.Copy(open.FileName, pathVid + "Copia " + open.SafeFileName);
+                    txtPel_Vid.Text = pathVid + "Copia " + open.SafeFileName;
+                }
+
+            }
+            //if (open.ShowDialog() == true) {
+            //    this.txtPel_Vid.Text = open.FileName;
+            //}
         }
     }
 }

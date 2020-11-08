@@ -17,13 +17,6 @@ C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\ClasesBase.Pr
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\ClasesBase.csproj.GenerateResource.Cache
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\ClasesBase.dll
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\ClasesBase.pdb
-C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\ClasesBase\bin\Debug\ClasesBase.dll.config
-C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\ClasesBase\bin\Debug\ClasesBase.dll
-C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\ClasesBase\bin\Debug\ClasesBase.pdb
-C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\ClasesBase.Properties.Resources.resources
-C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\ClasesBase.csproj.GenerateResource.Cache
-C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\ClasesBase.dll
-C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\ClasesBase.pdb
 C:\Users\Ma Ry Youkai\Documents\GitHub\TPLPOOII_Cine\ClasesBase\bin\Debug\ClasesBase.dll.config
 C:\Users\Ma Ry Youkai\Documents\GitHub\TPLPOOII_Cine\ClasesBase\bin\Debug\ClasesBase.dll
 C:\Users\Ma Ry Youkai\Documents\GitHub\TPLPOOII_Cine\ClasesBase\bin\Debug\ClasesBase.pdb
@@ -32,3 +25,10 @@ C:\Users\Ma Ry Youkai\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\Clases
 C:\Users\Ma Ry Youkai\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\ClasesBase.csproj.GenerateResource.Cache
 C:\Users\Ma Ry Youkai\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\ClasesBase.dll
 C:\Users\Ma Ry Youkai\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\ClasesBase.pdb
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\ClasesBase\bin\Debug\ClasesBase.dll.config
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\ClasesBase\bin\Debug\ClasesBase.dll
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\ClasesBase\bin\Debug\ClasesBase.pdb
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\ClasesBase.Properties.Resources.resources
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\ClasesBase.csproj.GenerateResource.Cache
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\ClasesBase.dll
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\ClasesBase.pdb

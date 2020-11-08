@@ -18,12 +18,10 @@
              d:DesignHeight="558" d:DesignWidth="831" Loaded="UserControl_Loaded">
     <UserControl.Resources>
         <ObjectDataProvider ObjectType="{x:Type svc:ABMProyeccion}"
-                            MethodName="traerProyeccion"
-                            x:Key="LIST_PROY"/>
+                            MethodName="traer_viewProy"
+                            x:Key="LIST_PROY"
+            />
         <!--aqui van los datos del canvas para el mas info-->
-        <ObjectDataProvider ObjectType="{x:Type svc:ABMUsuario}"
-                            MethodName="traer_usuario"
-                            x:Key="lista_Usuarios"/>
             <CollectionViewSource x:Key="VISTA_PROY"
                               Source="{StaticResource ResourceKey=LIST_PROY}"
                               >
@@ -64,15 +62,16 @@
                             <materialDesign:PackIcon Kind="AddCircleOutline" Height="16" Width="16" Foreground="White" />
                         </Button>
                     </StackPanel>
-                    <ListView Name="listUsuarios" ItemsSource="{Binding Source={StaticResource VISTA_PROY}}" Margin="50 10 50 24" Height="300">
+                    <ListView Name="listProyecion" ItemsSource="{Binding Source={StaticResource VISTA_PROY}}" Margin="50 10 50 24" Height="300" SelectionChanged="listUsuarios_SelectionChanged">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Codigo" Width="115" DisplayMemberBinding="{Binding proy_Codigo}"/>
-                                <GridViewColumn Header="Cod. Pelicula" Width="115" DisplayMemberBinding="{Binding peli_Codigo}"/>
+                                <GridViewColumn Header="Proyeccion N°" Width="115" DisplayMemberBinding="{Binding Proy_Codigo}"/>
+                                <GridViewColumn Header="Cod. Pelicula" Width="115" DisplayMemberBinding="{Binding Peli_Codigo}"/>
+                                <GridViewColumn Header="Cod. Pelicula" Width="115" DisplayMemberBinding="{Binding Pelicula.Peli_Titulo}"/>
                                 <!--<GridViewColumn Header="Nombre" Width="115" DisplayMemberBinding="{Binding}"/>-->
-                                <GridViewColumn Header="Fecha" Width="115" DisplayMemberBinding="{Binding proy_Fecha}"/>
-                                <GridViewColumn Header="Hora" Width="115" DisplayMemberBinding="{Binding proy_Hora}"/>
-                                <GridViewColumn Header="Sala Id" Width="115" DisplayMemberBinding="{Binding sala_ID}"/>
+                                <GridViewColumn Header="Fecha" Width="115" DisplayMemberBinding="{Binding Proy_Fecha}"/>
+                                <GridViewColumn Header="Hora" Width="115" DisplayMemberBinding="{Binding Proy_Hora}"/>
+                                <GridViewColumn Header="Sala Id" Width="115" DisplayMemberBinding="{Binding Sala_ID}"/>
                             </GridView>
                         </ListView.View>
                     </ListView>
@@ -91,7 +90,7 @@
                         <Image Source="/imagenes/Mas_Info.png" Width="300"  Margin="40 0 0 0"/>
                     </StackPanel>
                     <!--camviar el nombre del canvaaas en resourcekey-->
-                    <Canvas Name="canvas_content" DataContext="{Binding Source={StaticResource ResourceKey=lista_Usuarios}}">
+                    <Canvas Name="canvas_content" DataContext="{Binding Source={StaticResource LIST_PROY}}">
                         <StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="170 10 0 0">
                                 <Button Name="btn_Ir_Primero" Background="#db439c" Margin="0 0 15 0" BorderBrush="#65b3f6" Click="btnIrPrimero_Click"
@@ -138,7 +137,7 @@
                                     materialDesign:HintAssist.Hint="Codigo Proyeccion" IsEnabled="False"/>
                                 </StackPanel>
                                     <StackPanel Height="50">
-                                        <TextBox Name="txtCodigo_Pel_Canvas" Text="{Binding Peli_Codigo}"
+                                        <TextBox Name="txtCodigo_Pel_Canvas" Text="{Binding Pelicula.Peli_Titulo}"
                                     Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
                                     VerticalAlignment="Stretch"
                                     Width="300"
@@ -159,7 +158,7 @@
                                     materialDesign:HintAssist.Hint="Hora" IsEnabled="False"/>
                                 </StackPanel>
                                     <StackPanel Height="50">
-                                        <TextBox Name="txtId_Sala_Canvas" Text="{Binding Sala_Id}"
+                                        <TextBox Name="txtId_Sala_Canvas" Text="{Binding Sala_ID}"
                                     Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
                                     VerticalAlignment="Top"
                                     Width="300"
@@ -181,7 +180,7 @@
                                             </Button>
                                         </StackPanel>
                                     </Canvas>
-                                    <Image  Source="/imagenes/Sonic.jpg" Width="120" Height="140" Margin="110 190 0 0"/>
+                                    <Image  x:Name="PeliImg" Width="120" Height="140" Margin="110 190 0 0" />
                                 </StackPanel>
                            </StackPanel>
                         </StackPanel>

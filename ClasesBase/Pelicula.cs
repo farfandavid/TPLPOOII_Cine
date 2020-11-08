@@ -12,6 +12,7 @@ namespace ClasesBase
         private String peli_Genero;
         private String peli_Clase;
         private String peli_Imagen;
+        private String peli_Trailer;
 
         public int Peli_Codigo
         {
@@ -85,6 +86,16 @@ namespace ClasesBase
 
             set {
                 peli_Imagen = value;
+            }
+        }
+
+        public string Peli_Trailer {
+            get {
+                return peli_Trailer;
+            }
+
+            set {
+                peli_Trailer = value;
             }
         }
     }

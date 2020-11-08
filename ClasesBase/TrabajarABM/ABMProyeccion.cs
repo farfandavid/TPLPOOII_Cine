@@ -27,6 +27,8 @@ namespace ClasesBase.TrabajarABM {
 
                 oProy.Peli_Codigo = Convert.ToInt32(dt.Rows[i]["peli_Codigo"].ToString());
                 oPelicula.Peli_Titulo = dt.Rows[i]["peli_Titulo"].ToString();
+                oPelicula.Peli_Imagen = dt.Rows[i]["peli_Imagen"].ToString();
+                oPelicula.Peli_Trailer = dt.Rows[i]["peli_Trailer"].ToString();
 
                 oProy.Sala_ID = Convert.ToInt32(dt.Rows[i]["sala_ID"].ToString());
                 oSala.Sala_Descripcion = dt.Rows[i]["sala_Descripcion"].ToString();

@@ -24,7 +24,6 @@ namespace Vistas {
         }
 
         private void Buscar_Click(object sender, RoutedEventArgs e) {
-            ABMCliente.buscarCli_DNI(dnicliente.Text);
         }
     }
 }

@@ -42,6 +42,8 @@ namespace ClasesBase.TrabajarABM
             cmd.Parameters.AddWithValue("@duracion", pel.Peli_Duracion);
             cmd.Parameters.AddWithValue("@clase", pel.Peli_Clase);
             cmd.Parameters.AddWithValue("@genero", pel.Peli_Genero);
+            cmd.Parameters.AddWithValue("@imagen", pel.Peli_Imagen);
+            cmd.Parameters.AddWithValue("@trailer", pel.Peli_Trailer);
 
             cnn.Open();
             cmd.ExecuteNonQuery();
@@ -60,6 +62,8 @@ namespace ClasesBase.TrabajarABM
             cmd.Parameters.AddWithValue("@genero", pelicula.Peli_Genero);
             cmd.Parameters.AddWithValue("@clase", pelicula.Peli_Clase);
             cmd.Parameters.AddWithValue("@duracion", pelicula.Peli_Duracion);
+            cmd.Parameters.AddWithValue("@imagen", pelicula.Peli_Imagen);
+            cmd.Parameters.AddWithValue("@trailer", pelicula.Peli_Trailer);
 
             conexion.Open();
             cmd.ExecuteNonQuery();

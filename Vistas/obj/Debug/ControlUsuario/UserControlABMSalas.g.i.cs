@@ -44,7 +44,7 @@ namespace Vistas.ControlUsuario {
     public partial class UserControlABMSalas : System.Windows.Controls.UserControl, System.Windows.Markup.IComponentConnector {
         
         
-        #line 34 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
+        #line 33 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbVisualizarSala;
         
@@ -52,7 +52,7 @@ namespace Vistas.ControlUsuario {
         #line hidden
         
         
-        #line 39 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
+        #line 38 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox txtSala_Definicion;
         
@@ -60,7 +60,7 @@ namespace Vistas.ControlUsuario {
         #line hidden
         
         
-        #line 43 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
+        #line 42 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox txtSala_Filas;
         
@@ -68,7 +68,7 @@ namespace Vistas.ControlUsuario {
         #line hidden
         
         
-        #line 47 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
+        #line 46 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox txtSala_Columnas;
         
@@ -76,7 +76,7 @@ namespace Vistas.ControlUsuario {
         #line hidden
         
         
-        #line 54 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
+        #line 53 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnAgregarProy;
         
@@ -84,7 +84,7 @@ namespace Vistas.ControlUsuario {
         #line hidden
         
         
-        #line 61 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
+        #line 60 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid GridCentral;
         
@@ -136,7 +136,7 @@ namespace Vistas.ControlUsuario {
             case 5:
             this.btnAgregarProy = ((System.Windows.Controls.Button)(target));
             
-            #line 54 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
+            #line 53 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
             this.btnAgregarProy.Click += new System.Windows.RoutedEventHandler(this.btnAgregarProy_Click);
             
             #line default
