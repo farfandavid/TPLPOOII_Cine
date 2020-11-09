@@ -13,13 +13,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Vistas.ControlUsuario"
              mc:Ignorable="d" 
-             d:DesignHeight="558" d:DesignWidth="831">
+             d:DesignHeight="558" d:DesignWidth="831" Loaded="UserControl_Loaded">
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="120"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" Background="#01ec6b" Margin="10,0,-9.8,0">
+        <Grid Grid.Row="0" Background="#01ec6b">
             <Image Source="/imagenes/Abm_Sala.png" HorizontalAlignment="Center" Margin="211,0,144,0" />
             <Image Source="/imagenes/Unicornio.png" HorizontalAlignment="Left" Margin="60,0,27.2,0" Width="135"/>
         </Grid>
@@ -31,7 +31,8 @@
                         <XmlDataProvider x:Key="tipo_Sala" Source="/TipoSala.xml" XPath="/numeroSala"/>
                     </StackPanel.Resources>-->
                     <materialDesign:PackIcon Kind="Stars" Foreground="{Binding ElementName=cmbVisualizarSala, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <ComboBox Name="cmbVisualizarSala" Width="300" materialDesign:HintAssist.Hint="Visualizar Salas" materialDesign:HintAssist.HintOpacity=".26" BorderBrush="#01ec6b"/>
+                    <ComboBox Name="cmbVisualizarSala" Width="300" materialDesign:HintAssist.Hint="Visualizar Salas" materialDesign:HintAssist.HintOpacity=".26" BorderBrush="#01ec6b"
+                              SelectionChanged="cmbVisualizarSala_SelectionChanged"/>
 
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 50 0 0">
@@ -39,16 +40,22 @@
                     <TextBox  Name="txtSala_Definicion" Width="300" materialDesign:HintAssist.Hint="Definicion" materialDesign:HintAssist.IsFloating="True" CaretBrush="#01ec6b" SelectionBrush="#01ec6b" BorderBrush="#01ec6b"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 16 0 0">
+                    <StackPanel.Resources>
+                        <XmlDataProvider x:Key="TipoCine" Source="../ListaXML/TipoCine.xml" XPath="/tipoCine"/>
+                    </StackPanel.Resources>
+                    <materialDesign:PackIcon Kind="Cinema" Foreground="{Binding ElementName=cmbTipo, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                    <ComboBox Name="cmbTipo" Width="300"  BorderBrush="#01ec6b" ItemsSource="{Binding Source={StaticResource TipoCine}, XPath=tipo/@name}" SelectionChanged="cmbTipo_SelectionChanged"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 16 0 0">
                     <materialDesign:PackIcon Kind="EventSeatOutline" Foreground="{Binding ElementName=txtSala_Filas, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <TextBox  Name="txtSala_Filas" Width="300" materialDesign:HintAssist.Hint="Ingrese cant. de Filas" materialDesign:HintAssist.IsFloating="True" CaretBrush="#01ec6b" SelectionBrush="#01ec6b" BorderBrush="#01ec6b"/>
+                    <TextBox  Name="txtSala_Filas" Width="300" materialDesign:HintAssist.Hint="Ingrese cant. de Filas Max:12" materialDesign:HintAssist.IsFloating="True" CaretBrush="#01ec6b" SelectionBrush="#01ec6b" BorderBrush="#01ec6b"
+                              TextChanged="txtSala_Filas_TextChanged" PreviewTextInput="txtSala_Filas_PreviewTextInput"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 16 0 0">
                     <materialDesign:PackIcon Kind="EventSeat" Foreground="{Binding ElementName=txtSala_Columnas, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <TextBox  Name="txtSala_Columnas" Width="300" materialDesign:HintAssist.Hint="Ingrese cant. de Columnas" materialDesign:HintAssist.IsFloating="True" CaretBrush="#01ec6b" SelectionBrush="#01ec6b" BorderBrush="#01ec6b"/>
+                    <TextBox  Name="txtSala_Columnas" Width="300" materialDesign:HintAssist.Hint="Ingrese cant. de Columnas Max:12" materialDesign:HintAssist.IsFloating="True" CaretBrush="#01ec6b" SelectionBrush="#01ec6b" BorderBrush="#01ec6b"
+                              TextChanged="txtSala_Columnas_TextChanged" PreviewTextInput="txtSala_Filas_PreviewTextInput"/>
                 </StackPanel>
-                
-
-
             </StackPanel>
             <StackPanel Margin="40,351,10.2,0.4" Height="87" Orientation="Horizontal">
                 <Button Background="#01ec6b" Content="Agregar" Height="28" Width="85"  HorizontalAlignment="Left"  Name="btnAgregarProy" Click="btnAgregarProy_Click" Margin="120 0 0 0"/>

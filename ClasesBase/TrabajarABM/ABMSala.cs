@@ -25,7 +25,7 @@ namespace ClasesBase.TrabajarABM {
 
         }
 
-        public static void nueva_sala(Sala sala) {
+        public async static Task<int> nueva_sala(Sala sala) {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.conexion);
 
             SqlCommand cmd = new SqlCommand();
@@ -38,7 +38,7 @@ namespace ClasesBase.TrabajarABM {
             cmd.Parameters.AddWithValue("@colS", sala.Sala_DimensionCol);
 
             cnn.Open();
-            cmd.ExecuteNonQuery();
+            return await cmd.ExecuteNonQueryAsync();
             cnn.Close();
         }
 
