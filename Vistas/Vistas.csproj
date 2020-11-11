@@ -133,8 +133,8 @@
     <Compile Include="WinMenuAdmin.xaml.cs">
       <DependentUpon>WinMenuAdmin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WinSatckDoc.xaml.cs">
-      <DependentUpon>WinSatckDoc.xaml</DependentUpon>
+    <Compile Include="WinStackDoc.xaml.cs">
+      <DependentUpon>WinStackDoc.xaml</DependentUpon>
     </Compile>
     <Page Include="ControlUsuario\UserControlABMClientes.xaml">
       <SubType>Designer</SubType>
@@ -224,7 +224,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WinSatckDoc.xaml">
+    <Page Include="WinStackDoc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

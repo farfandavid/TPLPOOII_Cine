@@ -22,15 +22,12 @@
                             x:Key="LIST_PROY"
             />
         <!--aqui van los datos del canvas para el mas info-->
-            <CollectionViewSource x:Key="VISTA_PROY"
+        <CollectionViewSource x:Key="VISTA_PROY"
                               Source="{StaticResource ResourceKey=LIST_PROY}"
-                              >
-            <!--  //// EL FILTER VA ACA ARRIBA DENTRO DEL COLLECTIONVIEWSOURCE
-            Filter="eventVistaUsuario_Filter"
-            EL RESTO NORMAL ACA ABAJO
+                              Filter="eventVistaPelicula_Filter">
             <CollectionViewSource.SortDescriptions>
-                <componentModel:SortDescription PropertyName="Usu_NombreUsuario"  Direction="Ascending"/>
-            </CollectionViewSource.SortDescriptions> -->
+                <componentModel:SortDescription PropertyName="Proy_Codigo"/>
+            </CollectionViewSource.SortDescriptions>
         </CollectionViewSource>
     </UserControl.Resources>
     <Grid>
@@ -50,9 +47,10 @@
                     <StackPanel Orientation="Horizontal" Margin="50 0 0 0">
                         <materialDesign:PackIcon Kind="MovieFilter" Foreground="{Binding ElementName=txtBuscar, Path=CaretBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                         <TextBox  Name="txtBuscar" Width="300" materialDesign:HintAssist.Hint="Buscar por Nombre de Pelicula" materialDesign:HintAssist.IsFloating="True" CaretBrush="#db439c" SelectionBrush="#db439c"
-                                  TextChanged="txtRol_TextChanged"/>
+                                  TextChanged="txtBuscar_TextChanged"/>
                         <materialDesign:PackIcon Kind="Search" Foreground="{Binding ElementName=txtProy_Fecha, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="40 4 0 0"/>
-                        <DatePicker Name="txtProy_Fecha" Width="300" materialDesign:HintAssist.Hint="Buscar por Fecha" Style="{StaticResource MaterialDesignFloatingHintDatePicker}"  BorderBrush="#db439c"/>
+                        <DatePicker Name="txtProy_Fecha" Width="300" materialDesign:HintAssist.Hint="Buscar por Fecha" Style="{StaticResource MaterialDesignFloatingHintDatePicker}"  BorderBrush="#db439c"
+                                    SelectedDateChanged="txtProy_Fecha_SelectedDateChanged"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="53 10 0 0">
                         <TextBlock Text="Mas Info" VerticalAlignment="Center" FontWeight="Bold" Foreground="#DD656565"/>
@@ -90,7 +88,7 @@
                         <Image Source="/imagenes/Mas_Info.png" Width="300"  Margin="40 0 0 0"/>
                     </StackPanel>
                     <!--camviar el nombre del canvaaas en resourcekey-->
-                    <Canvas Name="canvas_content" DataContext="{Binding Source={StaticResource LIST_PROY}}">
+                    <Canvas Name="canvas_content" DataContext="{Binding Source={StaticResource VISTA_PROY}}">
                         <StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="170 10 0 0">
                                 <Button Name="btn_Ir_Primero" Background="#db439c" Margin="0 0 15 0" BorderBrush="#65b3f6" Click="btnIrPrimero_Click"

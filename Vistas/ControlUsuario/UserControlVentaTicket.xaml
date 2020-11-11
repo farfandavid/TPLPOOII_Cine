@@ -32,13 +32,17 @@
                         <!--ItemsSource="{Binding Source={StaticResource tipo_Sala},XPath=tipo/@name}"-->
                         <ComboBox Name="cmbProy" Width="300"  materialDesign:HintAssist.Hint="Proyeccion" materialDesign:HintAssist.HintOpacity=".26" BorderBrush="#f99118" SelectionChanged="cmbProy_SelectionChanged"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
+                    <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
                         <materialDesign:PackIcon Kind="LocalMovies" Foreground="{Binding ElementName=txtProy_Fecha, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                         <DatePicker Name="txtProy_Fecha" Width="300" materialDesign:HintAssist.Hint="Fecha"  Style="{StaticResource MaterialDesignFloatingHintDatePicker}"  BorderBrush="#f99118" IsEnabled="False"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
+                    <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
                         <materialDesign:PackIcon Kind="AccessTime" Foreground="{Binding ElementName=txtProy_Hora, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                         <materialDesign:TimePicker Name="txtProy_Hora" Width="300" Style="{StaticResource MaterialDesignFloatingHintTimePicker}" materialDesign:HintAssist.Hint="Hora" BorderBrush="#f99118" IsEnabled="False"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                        <materialDesign:PackIcon Kind="AttachMoney" Foreground="{Binding ElementName=txtProy_Hora, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                        <TextBox Name="txtPrecioTicket" Width="300" materialDesign:HintAssist.Hint="Precio" BorderBrush="#f99118" IsEnabled="False"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" >
                         <materialDesign:PackIcon Kind="Account" Foreground="{Binding BorderBrush, ElementName=txtDNI}" VerticalAlignment="Bottom" Margin="0 4"/>
@@ -66,9 +70,24 @@
 
             </StackPanel>
             <StackPanel Margin="393,347,100,5" Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Background="#f99118" Content="Confirmar Venta" Height="28" Width="231"  HorizontalAlignment="Right"  x:Name="btnConfirmarVenta" Click="btnConfirmarVenta_Click"  />
+                <Button Background="#f99118" Content="Confirmar Venta" Height="28" Width="231"  HorizontalAlignment="Right"  x:Name="btnConfirmar" Click="btnImprimir_Click"  />
             </StackPanel>
         </Grid>
+        <materialDesign:DialogHost  x:Name="vistaImpresion" Grid.RowSpan="2" Grid.ColumnSpan="2">
+            <materialDesign:DialogHost.DialogContent>
+                <StackPanel Margin="15" Orientation="Vertical">
+                    <Frame Source="..\\WinStackDoc.xaml" IsEnabled="False"/>
+
+                    <DockPanel>
+                        <Button DockPanel.Dock="Left" Name="btnImprimir" Click="btnConfirmarVenta_Click" Foreground="White"
+                            Style="{DynamicResource MaterialDesignFlatButton}" Content="Imprimir" Margin="5 10 0 0" Width="500" Background="#f99118"/>
+                        <Button DockPanel.Dock="Left" Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" CommandTarget="{Binding ElementName=cerrarSesion}" Foreground="White"
+                            Style="{DynamicResource MaterialDesignFlatButton}" Content="Cancelar" Margin="5 10 0 0" Width="200" Background="#FFF9B463"/>
+                    </DockPanel>
+
+                </StackPanel>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
     </Grid>
 </UserControl>
 <!--

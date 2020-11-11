@@ -17,13 +17,11 @@ using ClasesBase.TrabajarABM;
 using System.Data;
 using System.Windows.Markup;
 
-namespace Vistas.ControlUsuario
-{
+namespace Vistas.ControlUsuario {
     /// <summary>
     /// Lógica de interacción para UserControlVentaTicket.xaml
     /// </summary>
-    public partial class UserControlVentaTicket : UserControl
-    {
+    public partial class UserControlVentaTicket : UserControl {
 
         string usuarioV = "";
         string idVende = "";
@@ -45,8 +43,7 @@ namespace Vistas.ControlUsuario
 
 
 
-        public UserControlVentaTicket(string vendedor, string idVendedor)
-        {
+        public UserControlVentaTicket(string vendedor, string idVendedor) {
             InitializeComponent();
             Ticket oTicket = new Ticket();
             Venta oVenta = new Venta();
@@ -57,22 +54,25 @@ namespace Vistas.ControlUsuario
             usuarioV = vendedor;
             idVende = idVendedor;
             generar_Butacas();
-            
+
         }
 
-        private void btnConfirmarVenta_Click(object sender, RoutedEventArgs e)
-        {
-            
-            vender_ticket();
+        private void btnConfirmarVenta_Click(object sender, RoutedEventArgs e) {
+
+            //vender_ticket();
             PrintDialog printTicket = new PrintDialog();
 
+            printTicket.ShowDialog();
             var pageSize = new Size(7.26 * 96, 4.69 * 96); // A4 page, at 96 dpi
             var document = new FixedDocument();
+           
             if (vender_ticket()) {
+                oTicket.Tick_precio = int.Parse(txtPrecioTicket.Text.ToString());
                 for (int i = 0; i < listButaca.Count; i++) {
                     string butaca = listBtn[listButaca[i]].Content.ToString();
                     oTicket.But_ID = int.Parse(ABMButaca.obtener_butaca(oProyeccion.Sala_ID.ToString()).Rows[listButaca[i]]["but_ID"].ToString());
                     oTicket.Tick_ID = int.Parse(ABMTicket.obtener_ticket(oProyeccion.Proy_Codigo, oTicket.But_ID).Rows[0]["tick_ID"].ToString());
+                    
                     MessageBox.Show(butaca);
                     // Create FixedPage
                     var fixedPage = new FixedPage();
@@ -91,15 +91,15 @@ namespace Vistas.ControlUsuario
                     ((IAddChild)pageContent).AddChild(fixedPage);
                     document.Pages.Add(pageContent);
                 }
-
+                
                 printTicket.PrintDocument(document.DocumentPaginator, "Mi Ticket");
                 listButaca.Clear();
             }
 
-            
+
         }
-        
-        
+
+
 
         private void generar_Butacas() {
             Grid DynamicGrid = new Grid();
@@ -165,61 +165,67 @@ namespace Vistas.ControlUsuario
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e) {
             cargarComboBox();
+            GridCentral.Children.Clear();
+            
         }
 
         private void cmbProy_SelectionChanged(object sender, SelectionChangedEventArgs e) {
             DataTable dt = ABMProyeccion.traerProyeccion();
+            if (cmbProy.SelectedIndex != -1) {
+                oProyeccion = new Proyeccion();
+                oProyeccion.Proy_Codigo = Int32.Parse(dt.Rows[cmbProy.SelectedIndex]["proy_Codigo"].ToString());
+                oProyeccion.Proy_Fecha = Convert.ToDateTime(dt.Rows[cmbProy.SelectedIndex]["proy_Fecha"].ToString());
+                oProyeccion.Proy_Hora = dt.Rows[cmbProy.SelectedIndex]["proy_Hora"].ToString();
+                oProyeccion.Sala_ID = Int32.Parse(dt.Rows[cmbProy.SelectedIndex]["sala_ID"].ToString());
 
-            oProyeccion = new Proyeccion();
-            oProyeccion.Proy_Codigo = Int32.Parse(dt.Rows[cmbProy.SelectedIndex]["proy_Codigo"].ToString());
-            oProyeccion.Proy_Fecha = Convert.ToDateTime(dt.Rows[cmbProy.SelectedIndex]["proy_Fecha"].ToString());
-            oProyeccion.Proy_Hora = dt.Rows[cmbProy.SelectedIndex]["proy_Hora"].ToString();
-            oProyeccion.Sala_ID = Int32.Parse(dt.Rows[cmbProy.SelectedIndex]["sala_ID"].ToString());
+                oPelicula = new Pelicula();
+                oPelicula.Peli_Titulo = dt.Rows[cmbProy.SelectedIndex]["peli_Titulo"].ToString();
 
-            oPelicula = new Pelicula();
-            oPelicula.Peli_Titulo = dt.Rows[cmbProy.SelectedIndex]["peli_Titulo"].ToString();
+                oProyeccion.Pelicula = oPelicula;
 
-            oProyeccion.Pelicula = oPelicula;
+                oTicket = new Ticket();
+                oTicket.Proyeccion = oProyeccion;
 
-            oTicket = new Ticket();
-            oTicket.Proyeccion = oProyeccion;
+                oVenta.Ticket = oTicket;
 
-            oVenta.Ticket = oTicket;
-
-            this.filas = Int32.Parse(dt.Rows[cmbProy.SelectedIndex]["sala_DimensionFil"].ToString());
-            this.columnas = Int32.Parse(dt.Rows[cmbProy.SelectedIndex]["sala_DimensionCol"].ToString());
+                this.filas = Int32.Parse(dt.Rows[cmbProy.SelectedIndex]["sala_DimensionFil"].ToString());
+                this.columnas = Int32.Parse(dt.Rows[cmbProy.SelectedIndex]["sala_DimensionCol"].ToString());
 
 
 
-            txtProy_Fecha.SelectedDate = DateTime.Parse(dt.Rows[cmbProy.SelectedIndex]["proy_Fecha"].ToString());
-            txtProy_Hora.SelectedTime = DateTime.Parse(dt.Rows[cmbProy.SelectedIndex]["proy_Hora"].ToString());
+                txtProy_Fecha.SelectedDate = DateTime.Parse(dt.Rows[cmbProy.SelectedIndex]["proy_Fecha"].ToString());
+                txtProy_Hora.SelectedTime = DateTime.Parse(dt.Rows[cmbProy.SelectedIndex]["proy_Hora"].ToString());
 
-            GridCentral.Children.Clear();
-            listBtn.Clear();
 
-            generar_Butacas();
+                GridCentral.Children.Clear();
+                listBtn.Clear();
 
-            ocuparButaca();
+                generar_Butacas();
+
+                ocuparButaca();
+            }
+
         }
 
         private void ocuparButaca() {
-                DataTable dtp = ABMProyeccion.traerProyeccion();
-                DataTable dt = ABMTicket.cargar_ticket(dtp.Rows[cmbProy.SelectedIndex]["proy_Codigo"].ToString());
-                int capacidad = filas * columnas;
-                if (dt.Rows.Count >= 1) {
-                        for (int i = 1; i <= capacidad; i++) {
-                            if (dt.Rows[i - 1]["tick_Estado"].ToString() == "VENDIDO") {
-                                    listBtn[i - 1].Background = new SolidColorBrush(Colors.Red);
+            DataTable dtp = ABMProyeccion.traerProyeccion();
+            DataTable dt = ABMTicket.cargar_ticket(dtp.Rows[cmbProy.SelectedIndex]["proy_Codigo"].ToString());
+            txtPrecioTicket.Text = dt.Rows[0]["tick_Precio"].ToString();
+            int capacidad = filas * columnas;
+            if (dt.Rows.Count >= 1) {
+                for (int i = 1; i <= capacidad; i++) {
+                    if (dt.Rows[i - 1]["tick_Estado"].ToString() == "VENDIDO") {
+                        listBtn[i - 1].Background = new SolidColorBrush(Colors.Red);
 
-                            }
-                        }
-
+                    }
                 }
+
+            }
         }
-        
+
         private bool vender_ticket() {
             bool vendido = false;
-            if (txtApellido.Text != "") {
+            if (txtApellido.Text != "" && cmbProy.SelectedIndex != -1) {
                 for (int i = 0; i < listButaca.Count; i++) {
                     //MessageBox.Show(ABMButaca.obtener_butaca(oProyeccion.Sala_ID.ToString()).Rows[listButaca[i]]["but_ID"].ToString());
                     int NbutID = int.Parse(ABMButaca.obtener_butaca(oProyeccion.Sala_ID.ToString()).Rows[listButaca[i]]["but_ID"].ToString());
@@ -241,6 +247,8 @@ namespace Vistas.ControlUsuario
                     vendido = true;
                 }
                 //listButaca.Clear();
+            }else {
+                MessageBox.Show("Complete los Campos");
             }
             return vendido;
         }
@@ -265,5 +273,10 @@ namespace Vistas.ControlUsuario
                 MessageBox.Show("Cliente no Registrado");
             }
         }
+
+        private void btnImprimir_Click(object sender, RoutedEventArgs e) {
+            vistaImpresion.IsOpen = true;
+        }
+        
     }
 }

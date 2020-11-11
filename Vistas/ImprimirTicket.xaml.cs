@@ -28,6 +28,7 @@ namespace Vistas {
             txbIdTicket.Text += ticket.Tick_ID;
             txbFecha.Text += DateTime.Now.Date;
             txbHora.Text += DateTime.Now.TimeOfDay;
+            txbPrecio.Text += ticket.Tick_precio;
             //Proyeccion
             txbPelicula.Text += pel.Peli_Titulo;
             txbFechaProy.Text += proyec.Proy_Fecha.ToString();

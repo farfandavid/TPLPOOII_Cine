@@ -99,16 +99,15 @@ namespace Vistas
         }
 
 
-        internal void SwitchScreen(object sender)
-        {
+        internal void SwitchScreen(object sender) {
             var screen = ((UserControl)sender);
 
-            if (screen != null)
-            {
+            if (screen != null) {
                 StackPanelMain.Children.Clear();
                 StackPanelMain.Children.Add(screen);
             }
         }
+
 
         private void btnMenuClose_Click(object sender, RoutedEventArgs e)
         {

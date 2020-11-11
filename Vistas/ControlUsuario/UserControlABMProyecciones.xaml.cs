@@ -52,6 +52,7 @@ namespace Vistas.ControlUsuario {
 
                     oTicket.Proy_ID = int.Parse(ABMProyeccion.traerProyeccion().Rows[pCount - 1]["proy_Codigo"].ToString());
                     oTicket.But_ID = int.Parse(ABMButaca.obtener_butaca(proyec.Sala_ID.ToString()).Rows[0]["but_ID"].ToString());
+                    oTicket.Tick_precio = int.Parse(txtPrecioTicket.Text);
 
                     ABMTicket.nuevo_ticket(oTicket, cantidad);
                     //MessageBox.Show(ABMSala.cargar_salas().Rows[ABMSala.cargar_salas().Rows.Count - 1]["sala_iD"].ToString());
