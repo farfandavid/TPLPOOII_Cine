@@ -64,8 +64,13 @@ namespace Vistas {
                     dgPeliculas.ItemsSource = ABMPelicula.traerPelicula().AsDataView();
                     vaciarCampos();
                     pelicula = null;
-                } catch {
-                    CodInexistente.IsOpen=true;
+                } catch(Exception ex) {
+                    if (ex.HResult==-2146232060) {
+                        MessageBox.Show("Pelicula asociada a una Proyeccion");
+                    }else {
+                        CodInexistente.IsOpen = true;
+                    }
+                    
                 }
 
             }
