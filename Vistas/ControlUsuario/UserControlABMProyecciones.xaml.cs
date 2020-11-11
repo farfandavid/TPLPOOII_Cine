@@ -32,12 +32,14 @@ namespace Vistas.ControlUsuario {
         }
 
         private async void btnAgregarProy_Click(object sender, RoutedEventArgs e) {
-            if (txtProy_Fecha.SelectedDate != null && txtProy_Hora.SelectedTime.ToString() != "") {
+            if (txtProy_Fecha.SelectedDate != null && txtProy_Hora.SelectedTime.ToString() != "" && txtPrecioTicket.Text != ""
+                && cmbNroSala.SelectedIndex != -1) {
                 proyec.Proy_Fecha = DateTime.Parse(txtProy_Fecha.ToString());
                 proyec.Proy_Hora = txtProy_Hora.Text;
                 proyec.Peli_Codigo = int.Parse(cmbPeli.SelectedValue.ToString());
                 proyec.Sala_ID = int.Parse(cmbNroSala.SelectedValue.ToString());
-
+                Ticket oTicket = new Ticket();
+                oTicket.Tick_precio = int.Parse(txtPrecioTicket.Text);
                 //ABMProyeccion.agregarProyecciones(proyec);
                 await Task.Run(async () => {
 
@@ -46,13 +48,13 @@ namespace Vistas.ControlUsuario {
 
                 }).ContinueWith((mostrar) => {
 
-                    Ticket oTicket = new Ticket();
+                    
                     int pCount = ABMProyeccion.traerProyeccion().Rows.Count;
                     int cantidad = ABMButaca.obtener_butaca(proyec.Sala_ID.ToString()).Rows.Count;
 
                     oTicket.Proy_ID = int.Parse(ABMProyeccion.traerProyeccion().Rows[pCount - 1]["proy_Codigo"].ToString());
                     oTicket.But_ID = int.Parse(ABMButaca.obtener_butaca(proyec.Sala_ID.ToString()).Rows[0]["but_ID"].ToString());
-                    oTicket.Tick_precio = int.Parse(txtPrecioTicket.Text);
+                    
 
                     ABMTicket.nuevo_ticket(oTicket, cantidad);
                     //MessageBox.Show(ABMSala.cargar_salas().Rows[ABMSala.cargar_salas().Rows.Count - 1]["sala_iD"].ToString());

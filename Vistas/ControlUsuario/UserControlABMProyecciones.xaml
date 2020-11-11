@@ -62,7 +62,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" >
                     <materialDesign:PackIcon Kind="AttachMoney" Foreground="{Binding ElementName=txtProy_Codigo, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <TextBox  Name="txtPrecioTicket" Width="300" materialDesign:HintAssist.Hint="Precio Ticket" materialDesign:HintAssist.IsFloating="True" CaretBrush="#db439c" SelectionBrush="#db439c" BorderBrush="#db439c" IsEnabled="False"/>
+                    <TextBox  Name="txtPrecioTicket" Width="300" materialDesign:HintAssist.Hint="Precio Ticket" materialDesign:HintAssist.IsFloating="True" CaretBrush="#db439c" SelectionBrush="#db439c" BorderBrush="#db439c" />
                 </StackPanel>
 
             </StackPanel>

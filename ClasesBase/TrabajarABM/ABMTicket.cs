@@ -20,6 +20,7 @@ namespace ClasesBase.TrabajarABM {
             cmd.Parameters.AddWithValue("@proyID", ticket.Proy_ID);
             cmd.Parameters.AddWithValue("@butID", ticket.But_ID);
             cmd.Parameters.AddWithValue("@cantidad", cantidad);
+            cmd.Parameters.AddWithValue("@precio", ticket.Tick_precio);
 
             cnn.Open();
             cmd.ExecuteNonQuery();
