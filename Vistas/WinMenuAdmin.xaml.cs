@@ -38,29 +38,24 @@ namespace Vistas
                 var menuUsuarios = new List<SubItem>();
                 menuUsuarios.Add(new SubItem("ABM Usuarios", new UserControlDashboard()));
                 menuUsuarios.Add(new SubItem("Listado de Usuarios", new UserControlListadoUsuarios()));
-                menuUsuarios.Add(new SubItem("algo 3"));
-                menuUsuarios.Add(new SubItem("algo 4"));
+                
                 var item0 = new ItemMenu("Gestionar Usuarios", menuUsuarios, PackIconKind.Face);
 
                 var menuPeliculas = new List<SubItem>();
                 menuPeliculas.Add(new SubItem("ABM Peliculas", new UserControlABMPeliculas()));
-                menuPeliculas.Add(new SubItem("algo 2"));
-                menuPeliculas.Add(new SubItem("algo 3"));
-                menuPeliculas.Add(new SubItem("algo 4"));
+                
                 var item1 = new ItemMenu("Gestionar Peliculas", menuPeliculas, PackIconKind.MovieFilter);
 
                 var menuButacas = new List<SubItem>();
                 menuButacas.Add(new SubItem("Asignacion de Butacas", new UserControlButacas()));
                 menuButacas.Add(new SubItem("ABM Salas", new UserControlABMSalas()));
-                menuButacas.Add(new SubItem("algo 3"));
-                menuButacas.Add(new SubItem("algo 4"));
+                
                 var item2 = new ItemMenu("Gestionar Salas", menuButacas, PackIconKind.EventSeat);
 
                 var menuProyecciones = new List<SubItem>();
                 menuProyecciones.Add(new SubItem("ABM Proyecciones", new UserControlABMProyecciones()));
                 menuProyecciones.Add(new SubItem("Listado Proyecciones", new UserControlListadoProyeccion()));
-                menuProyecciones.Add(new SubItem("algo 3"));
-                menuProyecciones.Add(new SubItem("algo 4"));
+                
                 var item3 = new ItemMenu("Gest. Proyecciones", menuProyecciones, PackIconKind.CameraRoll);
 
                 Menu.Children.Add(new UserControlMenuItem(item0, this));
@@ -73,16 +68,13 @@ namespace Vistas
             {
                 var menuTickets = new List<SubItem>();
                 menuTickets.Add(new SubItem("Venta de Tickets", new UserControlVentaTicket(aynUser, idUser)));
-                menuTickets.Add(new SubItem("algo 2"));
-                menuTickets.Add(new SubItem("algo 3"));
-                menuTickets.Add(new SubItem("algo 4"));
+                
                 var item4 = new ItemMenu("Gestionar Tickets", menuTickets, PackIconKind.LocalActivity);
 
                 var menuClientes = new List<SubItem>();
                 menuClientes.Add(new SubItem("ABM Clientes", new UserControlABMClientes()));
                 menuClientes.Add(new SubItem("Validar Clientes", new UserControlValidarCliente()));
-                menuClientes.Add(new SubItem("algo 3"));
-                menuClientes.Add(new SubItem("algo 4"));
+                
                 var item5 = new ItemMenu("Gestionar Clientes", menuClientes, PackIconKind.Group);
 
 
