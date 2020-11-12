@@ -59,6 +59,13 @@
                             ToolTip="MaterialDesignFloatingActionAccentButton" Width="25" Height="25" Background="#db439c" Margin="7 0 0 0" BorderBrush="#65b3f6">
                             <materialDesign:PackIcon Kind="AddCircleOutline" Height="16" Width="16" Foreground="White" />
                         </Button>
+
+                        <Button Name="btnActualizar" Click="btnActualizar_Click"
+                            Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                            ToolTip="MaterialDesignFloatingActionAccentButton" Width="25" Height="25" Background="#db439c" Margin="450 0 0 0" BorderBrush="#65b3f6">
+                            <materialDesign:PackIcon Kind="Refresh" Height="16" Width="16" Foreground="White" />
+                        </Button>
+                        <Button Background="#db439c" Content="7 Dias" Height="28" Width="85"  HorizontalAlignment="Left"  Name="btnDias" Click="btnDias_Click" Margin="10 0 0 0"/>
                     </StackPanel>
                     <ListView Name="listProyecion" ItemsSource="{Binding Source={StaticResource VISTA_PROY}}" Margin="50 10 50 24" Height="300" SelectionChanged="listUsuarios_SelectionChanged">
                         <ListView.View>

@@ -172,5 +172,15 @@ namespace Vistas.ControlUsuario
                 vistaColeccionFiltrada.Filter += eventVistaPelicula_Filter;
             }
         }
+
+        private void btnDias_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnActualizar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
