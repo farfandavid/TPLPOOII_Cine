@@ -28,6 +28,10 @@ namespace Vistas.ControlUsuario {
 
         public UserControlDashboard() {
             InitializeComponent();
+            
+           
+            btnEliminarUsu.IsEnabled = false;
+            _usuario = txtUserName_Usu.Text;
         }
 
         CollectionView Vista;

@@ -43,6 +43,7 @@
             </Grid.RowDefinitions>
             <Grid Grid.Row="0" Background="GhostWhite">
                 <Image  Source="imagenes/FondoMenu.jpg" Stretch="Fill" />
+                
             </Grid>
             <ScrollViewer HorizontalAlignment="Stretch" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Row="1">
                 <StackPanel x:Name="Menu" Margin="10"/>

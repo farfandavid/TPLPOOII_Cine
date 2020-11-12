@@ -100,12 +100,18 @@ namespace Vistas.ControlUsuario {
             if (dgListadoProyecciones.SelectedItem != null) {
                 try {
 
-                    ABMProyeccion.eliminarProyeccion(proyec);
+                    
                     ABMTicket.eliminarTicket(proyec);
+                    ABMProyeccion.eliminarProyeccion(proyec);
                     MessageBox.Show("Eliminado");
                     cargar_listView();
-                } catch {
-                    MessageBox.Show("error");
+                } catch(Exception ex) {
+
+                    if (ex.HResult == -2146232060) {
+                        MessageBox.Show("Error: Ticket de la Proyeccion ha sido vendido");
+                    } else {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
             } else {
                 MessageBox.Show("Selecciones una fila");
