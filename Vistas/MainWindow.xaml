@@ -14,7 +14,7 @@
         xmlns:local="clr-namespace:Vistas"
         xmlns:control="clr-namespace:Vistas.ControlUsuario"
         mc:Ignorable="d"
-        Title="MainWindow" Height="470" Width="425" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen">
+        Title="MainWindow" Height="470" Width="425" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -43,7 +43,14 @@
 
         <Grid Grid.Row="2">
             <control:UserControlLogin x:Name="login"/>
+            <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="30 0 0 30">
+                <MediaElement x:Name="musica" Visibility="Hidden" />
+                <Button Style="{StaticResource MaterialDesignFloatingActionLightButton}" ToolTip="MaterialDesignFloatingActionLightButton" Name="btnParar" Click="btnParar_Click" >
+                    <materialDesign:PackIcon Kind="MusicOff" Height="24" Width="24" Foreground="White"/>
+                </Button>
+            </StackPanel>
         </Grid>
+        
 
 
 

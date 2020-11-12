@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("listaxml/tipocine.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("cancion/everybody_falls_fall_guys_theme.mp3")]
 
 

@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MaterialDesignColors;
 using MaterialDesignThemes.Wpf;
+using Microsoft.Win32;
 
 namespace Vistas
 {
@@ -25,6 +26,8 @@ namespace Vistas
         public MainWindow()
         {
             InitializeComponent();
+            musica.LoadedBehavior = MediaState.Manual;
+            musica.Source = new Uri(@"C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\cancion\Everybody_Falls_Fall_Guys_Theme.mp3");
         }
 
 
@@ -38,5 +41,14 @@ namespace Vistas
             Application.Current.Shutdown();
         }
 
+        private void btnParar_Click(object sender, RoutedEventArgs e)
+        {
+            musica.Pause();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            musica.Play();
+        }
     }
 }
