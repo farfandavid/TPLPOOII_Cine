@@ -25,13 +25,6 @@ C:\Users\Ma Ry Youkai\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\Clases
 C:\Users\Ma Ry Youkai\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\ClasesBase.csproj.GenerateResource.Cache
 C:\Users\Ma Ry Youkai\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\ClasesBase.dll
 C:\Users\Ma Ry Youkai\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\ClasesBase.pdb
-C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\ClasesBase\bin\Debug\ClasesBase.dll.config
-C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\ClasesBase\bin\Debug\ClasesBase.dll
-C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\ClasesBase\bin\Debug\ClasesBase.pdb
-C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\ClasesBase.Properties.Resources.resources
-C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\ClasesBase.csproj.GenerateResource.Cache
-C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\ClasesBase.dll
-C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\ClasesBase.pdb
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\ClasesBase\bin\Debug\ClasesBase.dll.config
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\ClasesBase\bin\Debug\ClasesBase.dll
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\ClasesBase\bin\Debug\ClasesBase.pdb
@@ -39,4 +32,11 @@ C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\ClasesBas
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\ClasesBase.csproj.GenerateResource.Cache
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\ClasesBase.dll
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\ClasesBase.pdb
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\ClasesBase\bin\Debug\ClasesBase.dll.config
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\ClasesBase\bin\Debug\ClasesBase.dll
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\ClasesBase\bin\Debug\ClasesBase.pdb
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\ClasesBase.csprojResolveAssemblyReference.cache
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\ClasesBase.Properties.Resources.resources
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\ClasesBase.csproj.GenerateResource.Cache
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\ClasesBase.dll
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\ClasesBase\obj\Debug\ClasesBase.pdb

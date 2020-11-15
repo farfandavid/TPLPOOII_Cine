@@ -7,6 +7,8 @@
             FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -15,9 +17,14 @@
              xmlns:svc="clr-namespace:ClasesBase.TrabajarABM;assembly=ClasesBase"
              xmlns:componentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
              mc:Ignorable="d" 
-             d:DesignHeight="558" d:DesignWidth="831">
+             d:DesignHeight="558" d:DesignWidth="831"
+             d:DataContext="{RelativeSource Self}">
     <UserControl.Resources>
-        
+        <local:ZoomingModeCoverter x:Key="ZoomingAndPanning">
+        </local:ZoomingModeCoverter>
+        <ObjectDataProvider ObjectType="{x:Type svc:ABMVenta}"
+                            MethodName="traer_venta"
+                            x:Key="lista_venta"/>
     </UserControl.Resources>
     <Grid>
         <Grid Background="White">
@@ -33,36 +40,105 @@
             <Grid Grid.Row="1" Margin="0,0,0.2,0.4" Grid.RowSpan="2">
 
                 <StackPanel Orientation="Vertical" Margin="40 20 0 0" Background="White">
-                    <StackPanel Orientation="Horizontal" Margin="0 0 0 0">
+                    <!--<StackPanel Orientation="Horizontal" Margin="0 0 0 0">
                         <StackPanel.Resources>
                             <XmlDataProvider x:Key="tipo_opciones" Source="/opciones.xml" XPath="/opciones"/>
                         </StackPanel.Resources>
-                        <materialDesign:PackIcon Kind="MovieFilter" Foreground="{Binding ElementName=cmb_proyecciones, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                        <materialDesign:PackIcon Kind="MovieFilter" Foreground="{Binding ElementName=Query, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                         <ComboBox Name="cmb_proyecciones" Width="220" materialDesign:HintAssist.Hint="Proyeccion" materialDesign:HintAssist.HintOpacity=".60" BorderBrush="#65b3f6"/>
+                        <TextBox Name="Query" VerticalContentAlignment="Center" Width="220" Height="30" TextChanged="TextBoxBase_OnTextChanged" materialDesign:HintAssist.Hint="Buscar Pelicula" BorderBrush="#65b3f6"/>
                         <materialDesign:PackIcon Kind="AccountCircle" Foreground="{Binding ElementName=cmb_usuarios, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="10 4"/>
                         <ComboBox Name="cmb_usuarios" Width="220" materialDesign:HintAssist.Hint="Usuario" materialDesign:HintAssist.HintOpacity=".60" BorderBrush=" #65b3f6"/>
                         <materialDesign:PackIcon Kind="CalendarToday" Foreground="{Binding ElementName=cmb_opciones, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="10 4"/>
                         <ComboBox Name="cmb_opciones" ItemsSource="{Binding Source={StaticResource tipo_opciones},XPath=tipo/@name}" Width="220" materialDesign:HintAssist.Hint="Periodo de Tiempo" materialDesign:HintAssist.HintOpacity=".60" BorderBrush=" #65b3f6"/>
 
-                    </StackPanel>
-                    <StackPanel>
+                    </StackPanel>-->
+                    <!--<StackPanel>
                         <Button Margin="20 10 0 0" Background="#65b3f6" Content="Imprimir" Height="28" Width="94"  HorizontalAlignment="Left"  Name="btnImprimir" Click="btnImprimir_Click" />
-                    </StackPanel>
+                    </StackPanel>-->
                     <StackPanel>
                         <!--aqui va graficos sjhdsjhd avisame que va aqui y lo agrego xd-->
-                    </StackPanel>
-                    <ListView Name="listUsuarios" Margin="50 159" Height="200" >
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn Header="Codigo" Width="115" DisplayMemberBinding="{Binding Usu_Id}"/>
-                                <GridViewColumn Header="Apellido" Width="115" DisplayMemberBinding="{Binding Usu_ApellidoNombre}"/>
+                        <StackPanel>
+                            <TabControl Height="200">
+                                <TabItem Header="Fecha">
+                                    <!--Cartesiano-->
+                                    <Grid Height="180" Width="500">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <StackPanel Grid.Row="1">
+                                            <Button Click="ToogleZoomingMode" Visibility="Collapsed">
+                                                <TextBlock>Toggle zoming mode, current is: 
+                    <TextBlock Text="{Binding ZoommingMode, Converter={StaticResource ZoomingAndPanning}}"/>
+                </TextBlock>
+                                            </Button>
+                                            <Button Click="ResetZoomOnClick" Visibility="Collapsed">Reset Zoom</Button>
+                                        </StackPanel>
+                                        <lvc:CartesianChart Grid.Row="2" Series="{Binding SeriesCollection}" Zoom="{Binding ZoomingMode}" Padding="1">
+                                            <lvc:CartesianChart.AxisX>
+                                                <lvc:Axis Name="X" LabelFormatter="{Binding XFormatter}" 
+                          Separator="{x:Static lvc:DefaultAxes.CleanSeparator}"/>
+                                            </lvc:CartesianChart.AxisX>
+                                            <lvc:CartesianChart.AxisY>
+                                                <lvc:Axis Name="Y" LabelFormatter="{Binding YFormatter}"/>
+                                            </lvc:CartesianChart.AxisY>
+                                        </lvc:CartesianChart>
+                                    </Grid>
+                                </TabItem>
+                                <TabItem Header="Pelicula">
+                                    <!--Columnas-->
+                                    <Grid Height="160">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <StackPanel Grid.Row="0" Orientation="Horizontal">
+                                            <!--<TextBlock VerticalAlignment="Center" Margin="10 0">Search</TextBlock>
+                                            <TextBox Name="Query" VerticalContentAlignment="Center" Width="100" Height="30" 
+                     TextChanged="TextBoxBase_OnTextChanged"></TextBox>-->
+                                            <materialDesign:PackIcon Kind="MovieFilter" Foreground="{Binding ElementName=Query, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
+                                            <TextBox Name="Query" VerticalContentAlignment="Center" Width="220" Height="30" TextChanged="TextBoxBase_OnTextChanged" materialDesign:HintAssist.Hint="Buscar Pelicula" BorderBrush="#65b3f6"/>
+                                        </StackPanel>
+                                        <lvc:CartesianChart Grid.Row="1" >
+                                            <lvc:CartesianChart.Series>
+                                                <lvc:ColumnSeries Title="Recaudacion" 
+                                  Values="{Binding Results}"
+                                  Configuration="{Binding Mapper}"/>
+                                            </lvc:CartesianChart.Series>
+                                            <lvc:CartesianChart.AxisX>
+                                                <lvc:Axis LabelsRotation="-20" Labels="{Binding Labels}" DisableAnimations="True">
+                                                    <lvc:Axis.Separator>
+                                                        <lvc:Separator Step="1"></lvc:Separator>
+                                                    </lvc:Axis.Separator>
+                                                </lvc:Axis>
+                                            </lvc:CartesianChart.AxisX>
+                                            <lvc:CartesianChart.AxisY>
+                                                <lvc:Axis LabelFormatter="{Binding MillionFormatter}"></lvc:Axis>
+                                            </lvc:CartesianChart.AxisY>
+                                        </lvc:CartesianChart>
+                                    </Grid>
+                                </TabItem>
 
-                                <GridViewColumn Header="UserName" Width="115" DisplayMemberBinding="{Binding Usu_NombreUsuario}"/>
-                                <GridViewColumn Header="Password" Width="115" DisplayMemberBinding="{Binding Usu_Contraseña}"/>
-                                <GridViewColumn Header="Rol" Width="115" DisplayMemberBinding="{Binding Rol.Rol_Descripcion}"/>
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
+                            </TabControl>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel>
+                        <ListView Name="listUsuarios" Margin="50" Height="160" ItemsSource="{Binding Source={StaticResource lista_venta}}" >
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="Codigo" Width="115" DisplayMemberBinding="{Binding vent_ID}"/>
+                                    <GridViewColumn Header="Fecha Venta" Width="115" DisplayMemberBinding="{Binding vent_Fecha}"/>
+
+                                    <GridViewColumn Header="Proyeccion" Width="115" DisplayMemberBinding="{Binding proy_ID}"/>
+                                    <GridViewColumn Header="Titulo" Width="115" DisplayMemberBinding="{Binding peli_Titulo}"/>
+                                    <GridViewColumn Header="Precio $" Width="115" DisplayMemberBinding="{Binding tick_Precio}"/>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </StackPanel>
+                    
                 </StackPanel>
 
             </Grid>

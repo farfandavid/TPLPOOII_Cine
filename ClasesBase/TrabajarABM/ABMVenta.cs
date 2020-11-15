@@ -26,5 +26,52 @@ namespace ClasesBase.TrabajarABM {
             cmd.ExecuteNonQuery();
             cnn.Close();
         }
+        public static DataTable traer_venta() {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.conexion);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT * FROM ViewVenta";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            DataTable dt = new DataTable();
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+
+            return dt;
+        }
+
+        public static DataTable traer_ventaFecha() {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.conexion);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SPVentaFecha";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            DataTable dt = new DataTable();
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+
+            return dt;
+        }
+
+        public static DataTable traer_ventaPelicula() {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.conexion);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SPVentaPeli";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            DataTable dt = new DataTable();
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+
+            return dt;
+        }
     }
 }

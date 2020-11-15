@@ -15,24 +15,28 @@ using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using ClasesBase.TrabajarABM;
 using ClasesBase;
+using System.ComponentModel;
+using System.Collections.Specialized;
 
 namespace Vistas.ControlUsuario
 {
     /// <summary>
     /// Lógica de interacción para UserControlListadoProyeccion.xaml
     /// </summary>
-    public partial class UserControlListadoProyeccion : UserControl
-    {
+    public partial class UserControlListadoProyeccion : UserControl, INotifyCollectionChanged, INotifyPropertyChanged {
         CollectionView vista;
         ObservableCollection<Proyeccion> listaProy;
         CollectionViewSource vistaColeccionFiltrada;
         Proyeccion proyeccion;
         List<Proyeccion> listaP = new List<Proyeccion>();
+
+        public event NotifyCollectionChangedEventHandler CollectionChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public UserControlListadoProyeccion()
         {
             InitializeComponent();
             vistaColeccionFiltrada = Resources["VISTA_PROY"] as CollectionViewSource;
-            
         }
 
        
