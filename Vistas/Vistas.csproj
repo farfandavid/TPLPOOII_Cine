@@ -122,7 +122,7 @@
     <Compile Include="Prueba.xaml.cs">
       <DependentUpon>Prueba.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlABMPeliculas.xaml.cs">
+    <Compile Include="ControlUsuario\UserControlABMPeliculas.xaml.cs">
       <DependentUpon>UserControlABMPeliculas.xaml</DependentUpon>
     </Compile>
     <Compile Include="ControlUsuario\UserControlDashboard.xaml.cs">
@@ -203,7 +203,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControlABMPeliculas.xaml">
+    <Page Include="ControlUsuario\UserControlABMPeliculas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

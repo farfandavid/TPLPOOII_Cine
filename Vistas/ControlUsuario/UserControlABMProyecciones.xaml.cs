@@ -77,8 +77,6 @@ namespace Vistas.ControlUsuario {
             txtProy_Hora.SelectedTime = null;
             cmbNroSala.SelectedValue = null;
             cmbPeli.SelectedValue = null;
-            
-            
         }
         
         private void cargar_comboBox() {
@@ -99,12 +97,13 @@ namespace Vistas.ControlUsuario {
         {
             if (dgListadoProyecciones.SelectedItem != null) {
                 try {
-
-                    
-                    ABMTicket.eliminarTicket(proyec);
-                    ABMProyeccion.eliminarProyeccion(proyec);
-                    MessageBox.Show("Eliminado");
-                    cargar_listView();
+                    if (MessageBox.Show("Seguro quiere eliminarlo", "Importante!!", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                    {
+                        ABMTicket.eliminarTicket(proyec);
+                        ABMProyeccion.eliminarProyeccion(proyec);
+                        MessageBox.Show("Eliminado");
+                        cargar_listView();
+                    }
                 } catch(Exception ex) {
 
                     if (ex.HResult == -2146232060) {
@@ -127,11 +126,12 @@ namespace Vistas.ControlUsuario {
                     proyec.Proy_Hora = txtProy_Hora.Text;
                     proyec.Peli_Codigo = int.Parse(cmbPeli.SelectedValue.ToString());
                     proyec.Sala_ID = int.Parse(cmbNroSala.SelectedValue.ToString());
- 
-                    ABMProyeccion.editarProyeccion(proyec);
-
-                    MessageBox.Show("Modificado");
-                    cargar_listView();
+                    if (MessageBox.Show("Seguro quiere eliminarlo", "Importante!!", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                    {
+                        ABMProyeccion.editarProyeccion(proyec);
+                        MessageBox.Show("Modificado");
+                        cargar_listView();
+                    }
                 } catch {
                     MessageBox.Show("error");
                 }
@@ -141,10 +141,7 @@ namespace Vistas.ControlUsuario {
         }
 
         private void dgListadoProyecciones_SelectionChanged(object sender, SelectionChangedEventArgs e) {
-            proyec = new Proyeccion();
-            
-            //MessageBox.Show(proyec.Proy_Codigo.ToString() +" "+ proyec.Proy_Fecha +"peli" + proyec.Peli_Codigo+ "sala"+proyec.Sala_ID);
-            
+            proyec = new Proyeccion(); 
             if (dgListadoProyecciones.SelectedItem != null) {
                 proyec = dgListadoProyecciones.SelectedItem as Proyeccion;
 
