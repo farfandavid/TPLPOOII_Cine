@@ -44,7 +44,7 @@ namespace Vistas.ControlUsuario {
     public partial class UserControlABMSalas : System.Windows.Controls.UserControl, System.Windows.Markup.IComponentConnector {
         
         
-        #line 33 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
+        #line 34 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbVisualizarSala;
         
@@ -52,7 +52,7 @@ namespace Vistas.ControlUsuario {
         #line hidden
         
         
-        #line 39 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
+        #line 40 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox txtSala_Definicion;
         
@@ -60,7 +60,7 @@ namespace Vistas.ControlUsuario {
         #line hidden
         
         
-        #line 46 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
+        #line 47 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox cmbTipo;
         
@@ -68,7 +68,7 @@ namespace Vistas.ControlUsuario {
         #line hidden
         
         
-        #line 50 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
+        #line 51 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox txtSala_Filas;
         
@@ -76,7 +76,7 @@ namespace Vistas.ControlUsuario {
         #line hidden
         
         
-        #line 55 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
+        #line 56 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox txtSala_Columnas;
         
@@ -84,7 +84,7 @@ namespace Vistas.ControlUsuario {
         #line hidden
         
         
-        #line 60 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
+        #line 61 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button btnAgregarProy;
         
@@ -92,7 +92,7 @@ namespace Vistas.ControlUsuario {
         #line hidden
         
         
-        #line 67 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
+        #line 68 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid GridCentral;
         
@@ -131,7 +131,7 @@ namespace Vistas.ControlUsuario {
             {
             case 1:
             
-            #line 15 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
+            #line 16 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
             ((Vistas.ControlUsuario.UserControlABMSalas)(target)).Loaded += new System.Windows.RoutedEventHandler(this.UserControl_Loaded);
             
             #line default
@@ -140,7 +140,7 @@ namespace Vistas.ControlUsuario {
             case 2:
             this.cmbVisualizarSala = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 34 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
+            #line 35 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
             this.cmbVisualizarSala.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbVisualizarSala_SelectionChanged);
             
             #line default
@@ -152,7 +152,7 @@ namespace Vistas.ControlUsuario {
             case 4:
             this.cmbTipo = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 46 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
+            #line 47 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
             this.cmbTipo.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.cmbTipo_SelectionChanged);
             
             #line default
@@ -161,13 +161,13 @@ namespace Vistas.ControlUsuario {
             case 5:
             this.txtSala_Filas = ((System.Windows.Controls.TextBox)(target));
             
-            #line 51 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
+            #line 52 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
             this.txtSala_Filas.TextChanged += new System.Windows.Controls.TextChangedEventHandler(this.txtSala_Filas_TextChanged);
             
             #line default
             #line hidden
             
-            #line 51 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
+            #line 52 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
             this.txtSala_Filas.PreviewTextInput += new System.Windows.Input.TextCompositionEventHandler(this.txtSala_Filas_PreviewTextInput);
             
             #line default
@@ -176,13 +176,13 @@ namespace Vistas.ControlUsuario {
             case 6:
             this.txtSala_Columnas = ((System.Windows.Controls.TextBox)(target));
             
-            #line 56 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
+            #line 57 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
             this.txtSala_Columnas.TextChanged += new System.Windows.Controls.TextChangedEventHandler(this.txtSala_Columnas_TextChanged);
             
             #line default
             #line hidden
             
-            #line 56 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
+            #line 57 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
             this.txtSala_Columnas.PreviewTextInput += new System.Windows.Input.TextCompositionEventHandler(this.txtSala_Filas_PreviewTextInput);
             
             #line default
@@ -191,7 +191,7 @@ namespace Vistas.ControlUsuario {
             case 7:
             this.btnAgregarProy = ((System.Windows.Controls.Button)(target));
             
-            #line 60 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
+            #line 61 "..\..\..\ControlUsuario\UserControlABMSalas.xaml"
             this.btnAgregarProy.Click += new System.Windows.RoutedEventHandler(this.btnAgregarProy_Click);
             
             #line default
