@@ -194,16 +194,12 @@ C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.csproj
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlABMClientes.g.cs
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlABMProyecciones.g.cs
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlButacas.g.cs
-<<<<<<< Updated upstream
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlLogin.g.cs
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\SplashScreen.g.cs
-=======
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlListadoUsuarios.g.cs
-C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlLogin.g.cs
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlValidarCliente.g.cs
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Page1.g.cs
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Prueba.g.cs
->>>>>>> Stashed changes
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\UserControlABMPeliculas.g.cs
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlDashboard.g.cs
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\UserControlMenuItem.g.cs
@@ -217,20 +213,14 @@ C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\App.baml
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlABMClientes.baml
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlABMProyecciones.baml
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlButacas.baml
-<<<<<<< Updated upstream
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlLogin.baml
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\PlantillaDicc\ButtonChange.baml
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\PlantillaDicc\TextBoxStyle.baml
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\SplashScreen.baml
-=======
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlListadoUsuarios.baml
-C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlLogin.baml
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlValidarCliente.baml
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Page1.baml
-C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\PlantillaDicc\ButtonChange.baml
-C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\PlantillaDicc\TextBoxStyle.baml
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Prueba.baml
->>>>>>> Stashed changes
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\UserControlABMPeliculas.baml
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlDashboard.baml
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\UserControlMenuItem.baml
