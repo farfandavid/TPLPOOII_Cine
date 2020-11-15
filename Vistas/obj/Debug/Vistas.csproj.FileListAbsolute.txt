@@ -263,3 +263,5 @@ C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\WinStackDoc.g.cs
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas_Content.g.cs
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlABMSalas.baml
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\WinStackDoc.baml
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlVentas.g.cs
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlVentas.baml

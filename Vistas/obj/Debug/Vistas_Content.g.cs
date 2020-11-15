@@ -9,5 +9,8 @@
 //------------------------------------------------------------------------------
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("cancion/everybody_falls_fall_guys_theme.mp3")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pelicula/trailer/trailer_endgame.mp4")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pelicula/trailer/trailer_hitman.mp4")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pelicula/trailer/trailer_spoderman.mp4")]
 
 

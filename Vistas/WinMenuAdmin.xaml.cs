@@ -32,6 +32,8 @@ namespace Vistas
             aynUser = ayn;
             idUser = usuID;
             InitializeComponent();
+            musica.LoadedBehavior = MediaState.Manual;
+            musica.Source = new Uri(@"C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\cancion\Everybody_Falls_Fall_Guys_Theme.mp3");
 
             if (rolUser == "admin")
             {
@@ -58,10 +60,16 @@ namespace Vistas
                 
                 var item3 = new ItemMenu("Gest. Proyecciones", menuProyecciones, PackIconKind.CameraRoll);
 
+                var menuVentas = new List<SubItem>();
+                menuVentas.Add(new SubItem("Control de Ventas", new UserControlVentas()));
+
+                var item4 = new ItemMenu("Gestionar Ventas", menuVentas, PackIconKind.PointOfSale);
+
                 Menu.Children.Add(new UserControlMenuItem(item0, this));
                 Menu.Children.Add(new UserControlMenuItem(item1, this));
                 Menu.Children.Add(new UserControlMenuItem(item2, this));
                 Menu.Children.Add(new UserControlMenuItem(item3, this));
+                Menu.Children.Add(new UserControlMenuItem(item4, this));
 
             }
             else
@@ -119,6 +127,15 @@ namespace Vistas
             }
             //Application.Current.Shutdown();
         }
-        
+
+        private void btnParar_Click(object sender, RoutedEventArgs e)
+        {
+            musica.Pause();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            musica.Play();
+        }
     }
 }

@@ -16,7 +16,7 @@
         xmlns:control="clr-namespace:Vistas.ControlUsuario" 
         mc:Ignorable="d"
         
-        Title="WinMenuAdmin" Height="600" Width="1080" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" >
+        Title="WinMenuAdmin" Height="600" Width="1080" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Loaded="Window_Loaded" >
 
     <Grid>
         <Grid.RowDefinitions>
@@ -30,6 +30,11 @@
         <Border Grid.ColumnSpan="2" Background="Transparent" MouseLeftButtonDown="borde_MouseLeftButtonDown">
             <materialDesign:ColorZone Mode="PrimaryMid"  HorizontalAlignment="Stretch">
                 <Grid >
+
+                    <MediaElement x:Name="musica" Visibility="Hidden" />
+                    <Button Width="30" Height="30" materialDesign:ShadowAssist.ShadowDepth="Depth3" Padding="0" Click="btnParar_Click" Name="btnParar" HorizontalAlignment="Right" Margin="0 0 60 0">
+                        <materialDesign:PackIcon Kind="MusicOff"  Foreground="White"/>
+                    </Button>
                     <Button Width="30" Height="30" materialDesign:ShadowAssist.ShadowDepth="Depth3" Padding="0" Click="btnMenuClose_Click" Name="btnCloseMenu" HorizontalAlignment="Right" Margin="10">
                         <materialDesign:PackIcon Kind="SettingsPower"/>
                     </Button>
@@ -51,7 +56,7 @@
         </Grid>
         <StackPanel Grid.Row="1" Grid.Column="1" >
             <Image Source="imagenes/Fondo.jpg" Stretch="Fill" Height="558" Margin="0,0,0.4,0"/>
-
+   
         </StackPanel>
 
         <StackPanel x:Name="StackPanelMain" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch"/>

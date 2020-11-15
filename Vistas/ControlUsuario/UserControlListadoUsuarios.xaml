@@ -47,7 +47,7 @@
                     <StackPanel Orientation="Horizontal" Margin="180 0 0 0">
                         <materialDesign:PackIcon Kind="AccountSupervisorCircle" Foreground="{Binding ElementName=txtUserName, Path=CaretBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                         <TextBox  Name="txtUserName" Width="300" materialDesign:HintAssist.Hint="Buscar Nombre de Usuario" materialDesign:HintAssist.IsFloating="True" CaretBrush="#65b3f6" SelectionBrush="#65b3f6"
-                                  TextChanged="txtRol_TextChanged"/>
+                                  TextChanged="txtRol_TextChanged"/> 
                         <Button Background="#65b3f6" Content="VistaPrevia" Height="28" Width="106"   x:Name="btnVistaPrevia" Margin="20 0 0 0"  Click="btnVistaPrevia_Click"/>
                     </StackPanel>
 
@@ -56,13 +56,13 @@
                             <GridView>
                                 <GridViewColumn Header="Codigo" Width="115" DisplayMemberBinding="{Binding Usu_Id}"/>
                                 <GridViewColumn Header="Apellido" Width="115" DisplayMemberBinding="{Binding Usu_ApellidoNombre}"/>
-                                <!--<GridViewColumn Header="Nombre" Width="115" DisplayMemberBinding="{Binding}"/>-->
+                                
                                 <GridViewColumn Header="UserName" Width="115" DisplayMemberBinding="{Binding Usu_NombreUsuario}"/>
                                 <GridViewColumn Header="Password" Width="115" DisplayMemberBinding="{Binding Usu_Contraseña}"/>
                                 <GridViewColumn Header="Rol" Width="115" DisplayMemberBinding="{Binding Rol.Rol_Descripcion}"/>
                             </GridView>
                         </ListView.View>
-                    </ListView>
+                    </ListView> 
                 </StackPanel>
                 
             </Grid>

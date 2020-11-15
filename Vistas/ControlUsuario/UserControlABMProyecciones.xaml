@@ -33,43 +33,41 @@
             <StackPanel Orientation="Vertical" Margin="40,20,450.2,64.4" Background="White">
                 <StackPanel Orientation="Horizontal" >
                     <materialDesign:PackIcon Kind="Movie" Foreground="{Binding ElementName=txtProy_Codigo, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <TextBox  Name="txtProy_Codigo" Width="300" materialDesign:HintAssist.Hint="Codigo de la Proyeccion" materialDesign:HintAssist.IsFloating="True" CaretBrush="#db439c" SelectionBrush="#db439c" BorderBrush="#db439c" IsEnabled="False"/>
+                    <TextBox  Name="txtProy_Codigo" Width="300" materialDesign:HintAssist.Hint="Codigo de la Proyeccion" materialDesign:HintAssist.HintOpacity=".99"  materialDesign:HintAssist.IsFloating="True" CaretBrush="#db439c" SelectionBrush="#db439c" BorderBrush="#db439c" IsEnabled="False" />
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
+                <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
                     <materialDesign:PackIcon Kind="LocalMovies" Foreground="{Binding ElementName=txtProy_Fecha, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <DatePicker Name="txtProy_Fecha" Width="300" materialDesign:HintAssist.Hint="Fecha" Style="{StaticResource MaterialDesignFloatingHintDatePicker}"  BorderBrush="#db439c"/>
+                    <DatePicker Name="txtProy_Fecha" Width="300" materialDesign:HintAssist.Hint="Fecha" Style="{StaticResource MaterialDesignFloatingHintDatePicker}"  BorderBrush="#db439c" />
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
+                <StackPanel Orientation="Horizontal" Margin="0 24 0 0">
                     <materialDesign:PackIcon Kind="AccessTime" Foreground="{Binding ElementName=txtProy_Hora, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                     <materialDesign:TimePicker Name="txtProy_Hora" Width="300" Style="{StaticResource MaterialDesignFloatingHintTimePicker}" materialDesign:HintAssist.Hint="Hora" BorderBrush="#db439c" />
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
+                <StackPanel Orientation="Horizontal" Margin="0 24 0 0">
                     <materialDesign:PackIcon Kind="ImageFilterVintage" Foreground="{Binding ElementName=cmbPeli, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                     <!--<TextBox  Name="txtProy_CodPel" Width="300" materialDesign:HintAssist.Hint="Codigo de Pelicula" materialDesign:HintAssist.IsFloating="True" CaretBrush="#db439c" BorderBrush="#db439c"/>-->
-                    <ComboBox Name="cmbPeli" Width="300" materialDesign:HintAssist.Hint="Pelicula" materialDesign:HintAssist.HintOpacity=".26"  BorderBrush="#db439c"/>
+                    <ComboBox Name="cmbPeli" Width="300" materialDesign:HintAssist.Hint="Pelicula" materialDesign:HintAssist.HintOpacity=".60"  BorderBrush="#db439c"/>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
+                <StackPanel Orientation="Horizontal" Margin="0 24 0 0">
 
                     <!--<StackPanel.Resources>
                         <XmlDataProvider x:Key="tipo_Sala" Source="/TipoSala.xml" XPath="/numeroSala"/>
                     </StackPanel.Resources>-->
                     <materialDesign:PackIcon Kind="Stars" Foreground="{Binding ElementName=cmbNroSala, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
-                    <ComboBox Name="cmbNroSala" Width="300" materialDesign:HintAssist.Hint="N° Sala" materialDesign:HintAssist.HintOpacity=".26" BorderBrush="#db439c"/>
+                    <ComboBox Name="cmbNroSala" Width="300" materialDesign:HintAssist.Hint="N° Sala" materialDesign:HintAssist.HintOpacity=".60" BorderBrush="#db439c"/>
 
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" >
-                    <Separator Width="330" />
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" >
+
+                <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
                     <materialDesign:PackIcon Kind="AttachMoney" Foreground="{Binding ElementName=txtProy_Codigo, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                     <TextBox  Name="txtPrecioTicket" Width="300" materialDesign:HintAssist.Hint="Precio Ticket" materialDesign:HintAssist.IsFloating="True" CaretBrush="#db439c" SelectionBrush="#db439c" BorderBrush="#db439c" />
                 </StackPanel>
 
             </StackPanel>
             <StackPanel Margin="40,351,10.2,0.4" Height="87" Orientation="Horizontal">
-                <Button Background="#db439c" Content="Agregar" Height="28" Width="85"  HorizontalAlignment="Left"  Name="btnAgregarProy" Click="btnAgregarProy_Click" />
-                <Button Background="#db439c" Content="Eliminar" Height="28" Width="85"  HorizontalAlignment="Right"  x:Name="btnEliminarProy" Margin="230 0" Click="btnEliminarProy_Click"/>
-                <Button Background="#db439c" Content="Modificar" Height="28" Width="85"  HorizontalAlignment="Center"  x:Name="btnModificalProy" Click="btnModificarProy_Click"/>
+                <Button Background="#db439c" Content="Agregar" Height="28" Width="94"  HorizontalAlignment="Left"  Name="btnAgregarProy" Click="btnAgregarProy_Click" />
+                <Button Background="#db439c" Content="Eliminar" Height="28" Width="94"  HorizontalAlignment="Right"  x:Name="btnEliminarProy" Margin="230 0" Click="btnEliminarProy_Click"/>
+                <Button Background="#db439c" Content="Modificar" Height="28" Width="94"  HorizontalAlignment="Center"  x:Name="btnModificalProy" Click="btnModificarProy_Click"/>
             </StackPanel>
             <ListView Name="dgListadoProyecciones" Height="288" ItemsSource="{Binding Source={StaticResource lista_Proyeccion}}" Margin="386,58,23,92" SelectionChanged="dgListadoProyecciones_SelectionChanged" >
                 <ListView.View>

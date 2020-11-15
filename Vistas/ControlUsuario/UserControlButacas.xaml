@@ -27,7 +27,7 @@
 
             </Grid>
             <Grid Grid.Row="1" Background="White">
-                <StackPanel  HorizontalAlignment="Center" Loaded="StackPanel_Loaded">
+                <StackPanel  HorizontalAlignment="Center" Loaded="StackPanel_Loaded" Width="700" Height="400" VerticalAlignment="Top" Margin="0 30 0 0">
                     <Grid Name="gridButacas" HorizontalAlignment="Center">
                         <ItemsControl ItemsSource="{Binding Butaca}">
                             <ItemsControl.ItemTemplate>
@@ -51,8 +51,17 @@
                             </ItemsControl.ItemsPanel>
                         </ItemsControl>
                     </Grid>
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="0 30 0 0">
+                        <TextBlock Text="Disponible:" FontSize="20" Margin="10 0 0 0"/>
+                        <materialDesign:PackIcon Kind="EventSeat" Foreground="LightGray" Width="30" Height="30"/>
+                        <TextBlock Text="Su eleccion:" FontSize="20" Margin="50 0 0 0"/>
+                        <materialDesign:PackIcon Kind="EventSeat" Foreground="Lime" Width="30" Height="30"/>
+                        <TextBlock Text="Ocupado:" FontSize="20" Margin="50 0 0 0"/>
+                        <materialDesign:PackIcon Kind="EventSeat" Foreground="Red" Width="30" Height="30"/>
+                    </StackPanel>
                 </StackPanel>
                 
+
             </Grid>
 
         </Grid>

@@ -40,27 +40,27 @@
                         <materialDesign:PackIcon Kind="AccessTime" Foreground="{Binding ElementName=txtProy_Hora, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                         <materialDesign:TimePicker Name="txtProy_Hora" Width="300" Style="{StaticResource MaterialDesignFloatingHintTimePicker}" materialDesign:HintAssist.Hint="Hora" BorderBrush="#f99118" IsEnabled="False"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                    <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
                         <materialDesign:PackIcon Kind="AttachMoney" Foreground="{Binding ElementName=txtProy_Hora, Path=BorderBrush}" VerticalAlignment="Bottom" Margin="0 4"/>
                         <TextBox Name="txtPrecioTicket" Width="300" materialDesign:HintAssist.Hint="Precio" BorderBrush="#f99118" IsEnabled="False"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" >
+                    <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
                         <materialDesign:PackIcon Kind="Account" Foreground="{Binding BorderBrush, ElementName=txtDNI}" VerticalAlignment="Bottom" Margin="0 4"/>
                         <TextBox  x:Name="txtDNI" Width="270" materialDesign:HintAssist.Hint="DNI" materialDesign:HintAssist.IsFloating="True" CaretBrush="#f99118" SelectionBrush="#f99118" BorderBrush="#f99118"/>
                         <Button Margin="5 5 5 5" Background="#f99118" Width="39" BorderThickness="0" Padding="0" Click="Button_Click">
                             <materialDesign:PackIcon Kind="PersonSearch"/>
                         </Button>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                    <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
                         <materialDesign:PackIcon Kind="Person" Foreground="{Binding BorderBrush, ElementName=txtNombre}" VerticalAlignment="Bottom" Margin="0 4"/>
                         <TextBox  x:Name="txtNombre" Width="300" materialDesign:HintAssist.Hint="Nombre" materialDesign:HintAssist.IsFloating="True" CaretBrush="#f99118" SelectionBrush="#f99118" BorderBrush="#f99118" IsEnabled="False"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                    <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
                         <materialDesign:PackIcon Kind="PersonOutline" Foreground="{Binding BorderBrush, ElementName=txtApellido}" VerticalAlignment="Bottom" Margin="0 4"/>
                         <TextBox  x:Name="txtApellido" Width="300" materialDesign:HintAssist.Hint="Apellido" materialDesign:HintAssist.IsFloating="True" CaretBrush="#f99118" SelectionBrush="#f99118" BorderBrush="#f99118" IsEnabled="False"/>
                     </StackPanel >
                 </StackPanel>
-                <StackPanel Margin="0,40,70,73" Orientation="Vertical" Width="376">
+                <StackPanel Margin="0,77,70,73" Orientation="Vertical" Width="376">
                     <Grid Name="GridCentral"  Grid.Row="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="243*"/>
@@ -72,6 +72,7 @@
             <StackPanel Margin="393,347,100,5" Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button Background="#f99118" Content="Confirmar Venta" Height="28" Width="231"  HorizontalAlignment="Right"  x:Name="btnConfirmar" Click="btnImprimir_Click"  />
             </StackPanel>
+            <Image Source="/imagenes/Rectangulo_Blanco.jpg" Height="10" Margin="-10,426,10.2,10.4"/>
         </Grid>
         <materialDesign:DialogHost  x:Name="vistaImpresion" Grid.RowSpan="2" Grid.ColumnSpan="2">
             <materialDesign:DialogHost.DialogContent>
