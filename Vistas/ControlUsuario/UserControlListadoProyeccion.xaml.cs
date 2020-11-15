@@ -32,6 +32,7 @@ namespace Vistas.ControlUsuario
         {
             InitializeComponent();
             vistaColeccionFiltrada = Resources["VISTA_PROY"] as CollectionViewSource;
+            
         }
 
        
@@ -56,42 +57,59 @@ namespace Vistas.ControlUsuario
             vista = (CollectionView)CollectionViewSource.GetDefaultView(canvas_content.DataContext);
             vista.MoveCurrentToFirst();
 
+
         }
 
         private void cargarImg() {
-            if (vistaColeccionFiltrada.View.CurrentPosition != -1) {
-                
-                BitmapImage bi3 = new BitmapImage();
-                bi3.BeginInit();
-                bi3.StreamSource = System.IO.File.OpenRead(listaP[vistaColeccionFiltrada.View.CurrentPosition].Pelicula.Peli_Imagen);
-                bi3.EndInit();
-                PeliImg.Source = bi3;
-            }
+            
+            if (vistaColeccionFiltrada != null) {
+                if (vistaColeccionFiltrada.View.CurrentPosition != -1) {
 
+                    BitmapImage bi3 = new BitmapImage();
+                    bi3.BeginInit();
+                    bi3.StreamSource = System.IO.File.OpenRead(listaP[vistaColeccionFiltrada.View.CurrentPosition].Pelicula.Peli_Imagen);
+                    bi3.EndInit();
+                    PeliImg.Source = bi3;
+                }
+            }
+            //if (vistaColeccionFiltrada.View.CurrentPosition != -1) {
+
+            //    BitmapImage bi3 = new BitmapImage();
+            //    bi3.BeginInit();
+            //    bi3.StreamSource = System.IO.File.OpenRead(listaP[vistaColeccionFiltrada.View.CurrentPosition].Pelicula.Peli_Imagen);
+            //    bi3.EndInit();
+            //    PeliImg.Source = bi3;
+            //}
         }
 
         private void cargarVid() {
-            if (vistaColeccionFiltrada.View.CurrentPosition != -1) {
-                string videoPath = System.IO.File.OpenRead(listaP[vistaColeccionFiltrada.View.CurrentPosition].Pelicula.Peli_Trailer).Name.ToString();
-                trailer.Source = new Uri(videoPath);
+            if (vistaColeccionFiltrada != null) {
+                if (vistaColeccionFiltrada.View.CurrentPosition != -1) {
+                    string videoPath = System.IO.File.OpenRead(listaP[vistaColeccionFiltrada.View.CurrentPosition].Pelicula.Peli_Trailer).Name.ToString();
+                    trailer.Source = new Uri(videoPath);
+                }
             }
+            //if (vistaColeccionFiltrada.View.CurrentPosition != -1) {
+            //    string videoPath = System.IO.File.OpenRead(listaP[vistaColeccionFiltrada.View.CurrentPosition].Pelicula.Peli_Trailer).Name.ToString();
+            //    trailer.Source = new Uri(videoPath);
+            //}
         }
         private void eventVistaPelicula_Filter(object sender, FilterEventArgs e)
         {
             proyeccion = new Proyeccion();
-            
+
             proyeccion = e.Item as Proyeccion;
-        
+
             if (txtProy_Fecha.Text != "") {
                 if (proyeccion.Proy_Fecha == DateTime.Parse(txtProy_Fecha.Text)
                     && proyeccion.Pelicula.Peli_Titulo.StartsWith(txtBuscar.Text, StringComparison.CurrentCultureIgnoreCase)) {
                     e.Accepted = true;
                     listaP.Add(proyeccion);
-                    
+
                 } else {
                     e.Accepted = false;
                 }
-            }else {
+            } else {
                 if (proyeccion.Pelicula.Peli_Titulo.StartsWith(txtBuscar.Text, StringComparison.CurrentCultureIgnoreCase)) {
                     e.Accepted = true;
                     listaP.Add(proyeccion);
@@ -100,8 +118,38 @@ namespace Vistas.ControlUsuario
                 }
             }
         }
+        private void eventVistaPeliculaSiete_Filter(object sender, FilterEventArgs e) {
+            proyeccion = new Proyeccion();
 
-       
+            proyeccion = e.Item as Proyeccion;
+
+
+            if (proyeccion.Proy_Fecha >= DateTime.Now.Date && proyeccion.Proy_Fecha < DateTime.Now.Date.AddDays(8)) {
+                e.Accepted = true;
+                listaP.Add(proyeccion);
+
+            } else {
+                e.Accepted = false;
+            }
+
+
+        }
+
+        private void eventVistaPeliculaSiete_FilterLlenar(object sender, FilterEventArgs e) {
+            proyeccion = new Proyeccion();
+
+            proyeccion = e.Item as Proyeccion;
+
+
+            if (proyeccion.Pelicula.Peli_Titulo.StartsWith(txtBuscar.Text, StringComparison.CurrentCultureIgnoreCase)) {
+                e.Accepted = true;
+                listaP.Add(proyeccion);
+            } else {
+                e.Accepted = false;
+            }
+
+        }
+
         //DashBoard Botones
         private void btnIrPrimero_Click(object sender, RoutedEventArgs e)
         {
@@ -175,12 +223,20 @@ namespace Vistas.ControlUsuario
 
         private void btnDias_Click(object sender, RoutedEventArgs e)
         {
-
+            if (vistaColeccionFiltrada != null) {
+                listaP = new List<Proyeccion>();
+                vistaColeccionFiltrada.Filter += eventVistaPeliculaSiete_Filter;
+            }
         }
 
         private void btnActualizar_Click(object sender, RoutedEventArgs e)
         {
-
+            ABMProyeccion abmproy = new ABMProyeccion();
+            listaP = new List<Proyeccion>();
+            //vista.Refresh();
+            //llenar_vista();
+            cargarImg();
+            cargarVid();
         }
     }
 }

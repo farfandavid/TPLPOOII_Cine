@@ -17,17 +17,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="558" d:DesignWidth="831">
     <UserControl.Resources>
-        <ObjectDataProvider ObjectType="{x:Type svc:ABMUsuario}"
-                            MethodName="traer_usuarioYrol"
-                            x:Key="LIST_USER"/>
-
-        <CollectionViewSource x:Key="VISTA_USER"
-                              Source="{StaticResource ResourceKey=LIST_USER}"
-                              Filter="eventVistaUsuario_Filter">
-            <CollectionViewSource.SortDescriptions>
-                <componentModel:SortDescription PropertyName="Usu_NombreUsuario"  Direction="Ascending"/>
-            </CollectionViewSource.SortDescriptions>
-        </CollectionViewSource>
+        
     </UserControl.Resources>
     <Grid>
         <Grid Background="White">
@@ -61,7 +51,7 @@
                     <StackPanel>
                         <!--aqui va graficos sjhdsjhd avisame que va aqui y lo agrego xd-->
                     </StackPanel>
-                    <ListView Name="listUsuarios" ItemsSource="{Binding Source={StaticResource VISTA_USER}}" Margin="50 159" Height="200" >
+                    <ListView Name="listUsuarios" Margin="50 159" Height="200" >
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Codigo" Width="115" DisplayMemberBinding="{Binding Usu_Id}"/>

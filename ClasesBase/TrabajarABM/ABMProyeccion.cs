@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.ComponentModel;
 
 namespace ClasesBase.TrabajarABM {
-    public class ABMProyeccion {
+    public class ABMProyeccion: INotifyCollectionChanged, INotifyPropertyChanged {
+        public event NotifyCollectionChangedEventHandler CollectionChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
 
-
-        public static ObservableCollection<Proyeccion> traer_viewProy() {
+        public ObservableCollection<Proyeccion> traer_viewProy() {
             ObservableCollection<Proyeccion> lista_proyeccion = new ObservableCollection<Proyeccion>();
             DataTable dt = new DataTable();
             dt = traerProyeccion();
@@ -37,6 +40,9 @@ namespace ClasesBase.TrabajarABM {
                 oProy.Pelicula = oPelicula;
 
                 lista_proyeccion.Add(oProy);
+            }
+            if (CollectionChanged != null) {
+                CollectionChanged(lista_proyeccion, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
             }
             return lista_proyeccion;
         }

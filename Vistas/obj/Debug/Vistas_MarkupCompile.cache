@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\
 Vistas
 none
 false
 DEBUG;TRACE
-C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\App.xaml
-22-1851703976
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\App.xaml
+22-852756290
 4777281825
-26761557432
-161338130522
-ControlUsuario\UserControlABMClientes.xaml;ControlUsuario\UserControlABMProyecciones.xaml;ControlUsuario\UserControlABMSalas.xaml;ControlUsuario\UserControlButacas.xaml;ControlUsuario\UserControlListadoProyeccion.xaml;ControlUsuario\UserControlListadoUsuarios.xaml;ControlUsuario\UserControlLogin.xaml;ControlUsuario\UserControlValidarCliente.xaml;ControlUsuario\UserControlVentas.xaml;ControlUsuario\UserControlVentaTicket.xaml;flowdoc.xaml;ImprimirTicket.xaml;Page1.xaml;PlantillaDicc\ButtonChange.xaml;PlantillaDicc\TextBoxStyle.xaml;Prueba.xaml;UserControlABMPeliculas.xaml;ControlUsuario\UserControlDashboard.xaml;UserControlMenuItem.xaml;MainWindow.xaml;WinMenuAdmin.xaml;WinStackDoc.xaml;
+26-333310924
+161946665010
+ControlUsuario\UserControlABMClientes.xaml;ControlUsuario\UserControlABMProyecciones.xaml;ControlUsuario\UserControlABMSalas.xaml;ControlUsuario\UserControlButacas.xaml;ControlUsuario\UserControlListadoProyeccion.xaml;ControlUsuario\UserControlListadoUsuarios.xaml;ControlUsuario\UserControlLogin.xaml;ControlUsuario\UserControlValidarCliente.xaml;ControlUsuario\UserControlVentas.xaml;ControlUsuario\UserControlVentaTicket.xaml;flowdoc.xaml;ImprimirTicket.xaml;Page1.xaml;PlantillaDicc\ButtonChange.xaml;PlantillaDicc\TextBoxStyle.xaml;Prueba.xaml;ControlUsuario\UserControlABMPeliculas.xaml;ControlUsuario\UserControlDashboard.xaml;UserControlMenuItem.xaml;MainWindow.xaml;WinMenuAdmin.xaml;WinStackDoc.xaml;
 
-True
+False
 

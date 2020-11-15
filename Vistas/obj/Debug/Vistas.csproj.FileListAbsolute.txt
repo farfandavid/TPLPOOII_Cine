@@ -222,7 +222,6 @@ C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\flowdoc.g.cs
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ImprimirTicket.g.cs
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Page1.g.cs
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Prueba.g.cs
-C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\UserControlABMPeliculas.g.cs
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlDashboard.g.cs
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\UserControlMenuItem.g.cs
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\MainWindow.g.cs
@@ -247,7 +246,6 @@ C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Page1.baml
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\PlantillaDicc\ButtonChange.baml
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\PlantillaDicc\TextBoxStyle.baml
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Prueba.baml
-C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\UserControlABMPeliculas.baml
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlDashboard.baml
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\UserControlMenuItem.baml
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\MainWindow.baml
@@ -294,3 +292,8 @@ C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas_Conten
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas_MarkupCompile.cache
 C:\Users\Maxi-Diaz\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas_MarkupCompile.lref
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlVentas.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlABMPeliculas.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas_Content.g.cs
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlVentas.baml
+C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlABMPeliculas.baml

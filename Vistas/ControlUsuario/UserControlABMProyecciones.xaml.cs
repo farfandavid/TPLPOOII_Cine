@@ -90,7 +90,8 @@ namespace Vistas.ControlUsuario {
         }
 
         private void cargar_listView() {
-            dgListadoProyecciones.ItemsSource = ABMProyeccion.traer_viewProy();
+            ABMProyeccion abmpr = new ABMProyeccion();
+            dgListadoProyecciones.ItemsSource = abmpr.traer_viewProy();
         }
 
         private void btnEliminarProy_Click(object sender, RoutedEventArgs e)
