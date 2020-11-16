@@ -28,7 +28,7 @@ namespace Vistas.ControlUsuario {
 
         public UserControlABMProyecciones() {
             InitializeComponent();
-
+            txtProy_Fecha.DisplayDateStart = DateTime.Today;
         }
 
         private async void btnAgregarProy_Click(object sender, RoutedEventArgs e) {
