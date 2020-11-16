@@ -412,6 +412,7 @@
     <Resource Include="imagenes\Control_de_Ventas.png" />
     <Resource Include="imagenes\salto.png" />
     <Resource Include="ListaXML\opciones.xml" />
+    <Resource Include="imagenes\Oliver_PNG.png" />
     <Content Include="Pelicula\Trailer\trailer_endgame.mp4" />
     <Content Include="Pelicula\Trailer\trailer_hitman.mp4" />
     <Content Include="Pelicula\Trailer\trailer_spoderman.mp4" />

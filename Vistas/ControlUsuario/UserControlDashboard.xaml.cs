@@ -75,10 +75,12 @@ namespace Vistas.ControlUsuario {
                     listaUsuario.Remove(Vista.CurrentItem as Usuario);
                     ABMUsuario.eliminar_usuario(oUser);
                     limpiarCampos();
-                    MessageBox.Show("Usuario Eliminado");
+                    txtMensaje.Text = "Usuario Eliminado";
+                    mensajes.IsOpen = true;
                 }else
                 {
-                    MessageBox.Show("El usuario posee ventas, no se puede eliminar");
+                    txtMensaje.Text = "El usuario posee ventas, no se puede eliminar";
+                    mensajes.IsOpen = true;
                 }
                 
                 
@@ -112,7 +114,9 @@ namespace Vistas.ControlUsuario {
                 }
                 else
                 {
-                    MessageBox.Show("Nombre de usuario Existente");
+                    txtMensaje.Text = "Nombre de usuario Existente";
+                    mensajes.IsOpen = true;
+                    
                 }
 
             }
@@ -207,9 +211,14 @@ namespace Vistas.ControlUsuario {
                 Vista.MoveCurrentToLast();
                 deshabilitar_textbox();
                 limpiarCampos();
-                MessageBox.Show("Agregado!");
+                txtMensaje.Text = "Agregado!";
+                mensajes.IsOpen = true;
+
+                
             } catch {
-                MessageBox.Show("El nombre de usuario esta en uso");
+                txtMensaje.Text = "El nombre de usuario esta en uso";
+                mensajes.IsOpen = true;
+                
             }
             
         }
@@ -231,13 +240,14 @@ namespace Vistas.ControlUsuario {
                 deshabilitar_botones();
 
                 listaUsuario[Vista.CurrentPosition] = oUser;
-
-                MessageBox.Show("Modificado!");
+                txtMensaje.Text = "Modificado!";
+                mensajes.IsOpen = true;
                 Vista.MoveCurrentToLast();
                 Vista.MoveCurrentToPosition(0);
                 limpiarCampos();
             } catch {
-                MessageBox.Show("El nombre de usuario esta en uso");
+                txtMensaje.Text = "El nombre de usuario esta en uso";
+                mensajes.IsOpen = true;
             }
         }
         

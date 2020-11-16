@@ -98,12 +98,12 @@
                                     </TextBox.Text>
                                 </TextBox>
                             </StackPanel>
-                            
+
                             <StackPanel Orientation="Horizontal" Margin="40 13 0 0">
                                 <materialDesign:PackIcon Kind="AccountSupervisorOutline" Foreground="{Binding CaretBrush, ElementName=txtPassword_Usu}" VerticalAlignment="Bottom" Margin="0 4"/>
                                 <ComboBox Name="cmbRol" Width="300" materialDesign:HintAssist.Hint="Rol" materialDesign:HintAssist.HintOpacity=".26" IsEnabled="False"/>
                             </StackPanel>
-                            
+
                         </StackPanel>
                     </StackPanel>
                     <StackPanel>
@@ -179,7 +179,7 @@
                                     Width="300"
                                     materialDesign:HintAssist.Hint="Password" IsEnabled="False"/>
                                     </StackPanel>
-                                    
+
                                     <StackPanel Height="50">
                                         <ComboBox Name="cmbRolCanvas" SelectedValue="{Binding Rol_Codigo}" IsEnabled="False" Width="293"/>
                                     </StackPanel>
@@ -190,19 +190,30 @@
                                     Width="300"
                                     materialDesign:HintAssist.Hint="Rol" IsEnabled="False"/>
                                     </StackPanel>
-                                    
+
                                 </StackPanel>
                             </StackPanel>
                         </Canvas>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Height="119" Margin="0,0,0.2,0">
-                    <Image Source="/imagenes/Rectangulo_Blanco.jpg" Stretch="Fill"/>    
+                    <Image Source="/imagenes/Rectangulo_Blanco.jpg" Stretch="Fill"/>
                 </StackPanel>
-                
+
             </StackPanel>
         </Grid>
-
+        <materialDesign:DialogHost  x:Name="mensajes" Grid.RowSpan="2" Margin="0,0,0.2,0.4" >
+            <materialDesign:DialogHost.DialogContent>
+                <StackPanel Margin="15" Orientation="Vertical">
+                    <Image Source="/imagenes/Oliver_PNG.png" Width="178" Height="92" Margin="20 30"/>
+                    <TextBlock Name="txtMensaje" HorizontalAlignment="Center"/>
+                    <DockPanel>
+                        <Button DockPanel.Dock="Right" Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" CommandTarget="{Binding ElementName=CodInexistente}"
+                            Style="{DynamicResource MaterialDesignFlatButton}" Content="Aceptar" Margin="5 10 0 0"/>
+                    </DockPanel>
+                </StackPanel>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
     </Grid>
 </UserControl>
 

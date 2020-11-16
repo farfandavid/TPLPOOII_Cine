@@ -46,7 +46,7 @@ namespace Vistas
 
                 var menuPeliculas = new List<SubItem>();
                 menuPeliculas.Add(new SubItem("ABM Peliculas", new UserControlABMPeliculas()));
-                menuPeliculas.Add(new SubItem("Algo 1"));
+                menuPeliculas.Add(new SubItem("Proximamente"));
                 
                 var item1 = new ItemMenu("Gestionar Peliculas", menuPeliculas, PackIconKind.MovieFilter);
 
@@ -79,7 +79,7 @@ namespace Vistas
             {
                 var menuTickets = new List<SubItem>();
                 menuTickets.Add(new SubItem("Venta de Tickets", new UserControlVentaTicket(aynUser, idUser)));
-                menuTickets.Add(new SubItem("Algo 1"));
+                menuTickets.Add(new SubItem("Proximamente"));
                 
                 var item4 = new ItemMenu("Gestionar Tickets", menuTickets, PackIconKind.LocalActivity);
 
