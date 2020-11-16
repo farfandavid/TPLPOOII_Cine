@@ -63,7 +63,22 @@ namespace ClasesBase.TrabajarABM {
             return dt;
 
         }
+        public static DataTable traerProyeccionEstreno() {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.conexion);
 
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SPProyeccionEstreno";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            DataTable dt = new DataTable();
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+
+            return dt;
+
+        }
         public async static Task<int> agregarProyecciones(Proyeccion proyeccion) {
             SqlConnection conexion = new SqlConnection(ClasesBase.Properties.Settings.Default.conexion);
             SqlCommand cmd = new SqlCommand();

@@ -160,7 +160,7 @@ namespace Vistas.ControlUsuario {
         private void cargarComboBox() {
             cmbProy.DisplayMemberPath = "Proy";
             cmbProy.SelectedValuePath = "proy_Codigo";
-            cmbProy.ItemsSource = ABMProyeccion.traerProyeccion().DefaultView;
+            cmbProy.ItemsSource = ABMProyeccion.traerProyeccionEstreno().DefaultView;
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e) {
@@ -170,7 +170,7 @@ namespace Vistas.ControlUsuario {
         }
 
         private void cmbProy_SelectionChanged(object sender, SelectionChangedEventArgs e) {
-            DataTable dt = ABMProyeccion.traerProyeccion();
+            DataTable dt = ABMProyeccion.traerProyeccionEstreno();
             if (cmbProy.SelectedIndex != -1) {
                 oProyeccion = new Proyeccion();
                 oProyeccion.Proy_Codigo = Int32.Parse(dt.Rows[cmbProy.SelectedIndex]["proy_Codigo"].ToString());
@@ -208,7 +208,7 @@ namespace Vistas.ControlUsuario {
         }
 
         private void ocuparButaca() {
-            DataTable dtp = ABMProyeccion.traerProyeccion();
+            DataTable dtp = ABMProyeccion.traerProyeccionEstreno();
             DataTable dt = ABMTicket.cargar_ticket(dtp.Rows[cmbProy.SelectedIndex]["proy_Codigo"].ToString());
             txtPrecioTicket.Text = dt.Rows[0]["tick_Precio"].ToString();
             int capacidad = filas * columnas;
