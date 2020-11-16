@@ -98,7 +98,6 @@ C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\Us
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlLogin.g.cs
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlValidarCliente.g.cs
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Prueba.g.cs
-C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\UserControlABMPeliculas.g.cs
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlDashboard.g.cs
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\UserControlMenuItem.g.cs
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\MainWindow.g.cs
@@ -116,7 +115,6 @@ C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\Us
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\PlantillaDicc\ButtonChange.baml
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\PlantillaDicc\TextBoxStyle.baml
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Prueba.baml
-C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\UserControlABMPeliculas.baml
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlDashboard.baml
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\UserControlMenuItem.baml
 C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\MainWindow.baml
@@ -303,3 +301,11 @@ C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.Properti
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.csproj.GenerateResource.Cache
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.exe
 C:\Users\Usuario\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\Vistas.pdb
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\bin\Debug\LiveCharts.dll
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\bin\Debug\LiveCharts.pdb
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\bin\Debug\LiveCharts.xml
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlABMPeliculas.g.cs
+C:\Users\Cathy\Documents\GitHub\TPLPOOII_Cine\Vistas\obj\Debug\ControlUsuario\UserControlABMPeliculas.baml

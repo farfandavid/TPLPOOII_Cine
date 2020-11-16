@@ -124,8 +124,8 @@
                             </TabControl>
                         </StackPanel>
                     </StackPanel>
-                    <StackPanel>
-                        <ListView Name="listUsuarios" Margin="50" Height="160" ItemsSource="{Binding Source={StaticResource lista_venta}}" >
+                    <StackPanel Height="219">
+                        <ListView Name="listUsuarios" Margin="50 30" Height="160" ItemsSource="{Binding Source={StaticResource lista_venta}}" >
                             <ListView.View>
                                 <GridView>
                                     <GridViewColumn Header="Codigo" Width="115" DisplayMemberBinding="{Binding vent_ID}"/>
