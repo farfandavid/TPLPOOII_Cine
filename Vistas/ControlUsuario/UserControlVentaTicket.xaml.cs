@@ -230,7 +230,7 @@ namespace Vistas.ControlUsuario {
                     //MessageBox.Show(ABMButaca.obtener_butaca(oProyeccion.Sala_ID.ToString()).Rows[listButaca[i]]["but_ID"].ToString());
                     int NbutID = int.Parse(ABMButaca.obtener_butaca(oProyeccion.Sala_ID.ToString()).Rows[listButaca[i]]["but_ID"].ToString());
                     int NtickID = int.Parse(ABMTicket.obtener_ticket(oProyeccion.Proy_Codigo, NbutID).Rows[0]["tick_ID"].ToString());
-                    oVenta.Tick_ID = NbutID;
+                    oVenta.Tick_ID = NtickID;
                     oTicket.But_ID = NbutID;
                     oTicket.Tick_ID = NtickID;
 
