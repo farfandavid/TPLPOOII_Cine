@@ -64,6 +64,7 @@ namespace Vistas
 
                 var menuVentas = new List<SubItem>();
                 menuVentas.Add(new SubItem("Control de Ventas", new UserControlVentas()));
+                menuVentas.Add(new SubItem("Proximamente"));
 
                 var item4 = new ItemMenu("Gestionar Ventas", menuVentas, PackIconKind.PointOfSale);
 
