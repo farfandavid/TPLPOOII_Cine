@@ -30,7 +30,7 @@ namespace Vistas.ControlUsuario {
             InitializeComponent();
             
            
-            btnEliminarUsu.IsEnabled = false;
+            btnEliminarUsu.IsEnabled = true;
             _usuario = txtUserName_Usu.Text;
         }
 
@@ -152,6 +152,7 @@ namespace Vistas.ControlUsuario {
         
 
         private void llenar_vista() {
+            (FindResource("lista_Usuarios") as ObjectDataProvider).Refresh();
             ObjectDataProvider odp = (ObjectDataProvider)this.Resources["lista_Usuarios"];
             listaUsuario = odp.Data as ObservableCollection<Usuario>;
             Vista = (CollectionView)CollectionViewSource.GetDefaultView(canvas_content.DataContext);
@@ -159,6 +160,7 @@ namespace Vistas.ControlUsuario {
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e) {
+
             llenar_vista();
             cargar_Combo();
         }
