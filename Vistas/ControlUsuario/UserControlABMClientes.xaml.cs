@@ -93,20 +93,17 @@ namespace Vistas.ControlUsuario {
             }
             else
             {
-                //int numero;
-                //Int32.TryParse(txtCli_Dni.Text, out numero);
-                //ocliente.Cli_DNI = numero.ToString();
-                //ocliente.Cli_Nombre = txtCli_Nombre.Text;
-                //ocliente.Cli_Apellido = txtCli_Apellido.Text;
-                //ocliente.Cli_Telefono = txtCli_Telefono.Text;
-                //ocliente.Cli_Email = txtCli_Email.Text;
-                //ABMCliente.eliminar_cliente(ocliente);
                 try {
                     ABMCliente.eliminar_cliente(cliente);
                     dgClientes.ItemsSource = ABMCliente.traerCliente().AsDataView();
                     cliente = null;
-                }catch{
-                    DniInexistente.IsOpen= true;
+                }catch(Exception ex){
+                    if (ex.HResult == -2146232060) {
+                        MessageBox.Show("Cliente asociada a una Venta");
+                    }else {
+                        DniInexistente.IsOpen = true;
+                    }
+                        
                 }
                 
             }

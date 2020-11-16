@@ -116,6 +116,7 @@ namespace Vistas.ControlUsuario
                     StrokeThickness = 1,
                     PointGeometrySize = 0,
                     Stroke = new SolidColorBrush(Colors.Purple),
+                    Title = "Ingreso"
 
                 }
             };
