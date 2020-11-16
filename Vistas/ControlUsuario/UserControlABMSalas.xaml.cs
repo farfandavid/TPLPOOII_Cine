@@ -170,15 +170,17 @@ namespace Vistas.ControlUsuario
 
         private void cmbVisualizarSala_SelectionChanged(object sender, SelectionChangedEventArgs e) {
             var dtsala = ABMSala.cargar_salas();
-           
+
             //filas = int.Parse(dtsala.Rows[cmbVisualizarSala.SelectedIndex]["sala_DimensionFil"].ToString());
             //columnas = int.Parse(dtsala.Rows[cmbVisualizarSala.SelectedIndex]["sala_DimensionCol"].ToString());
+            if (cmbVisualizarSala.SelectedIndex != -1) {
+                txtSala_Columnas.Text = dtsala.Rows[cmbVisualizarSala.SelectedIndex]["sala_DimensionCol"].ToString();
+                txtSala_Filas.Text = dtsala.Rows[cmbVisualizarSala.SelectedIndex]["sala_DimensionFil"].ToString();
 
-            txtSala_Columnas.Text = dtsala.Rows[cmbVisualizarSala.SelectedIndex]["sala_DimensionCol"].ToString();
-            txtSala_Filas.Text = dtsala.Rows[cmbVisualizarSala.SelectedIndex]["sala_DimensionFil"].ToString();
-
-            GridCentral.Children.Clear();
-            generar_Butacas();
+                GridCentral.Children.Clear();
+                generar_Butacas();
+            }
+            
         }
 
         private void vaciarCampos() {
