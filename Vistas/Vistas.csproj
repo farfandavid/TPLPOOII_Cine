@@ -416,7 +416,6 @@
     <Content Include="Pelicula\Trailer\trailer_hitman.mp4" />
     <Content Include="Pelicula\Trailer\trailer_spoderman.mp4" />
     <Resource Include="Pelicula\Imagen\012zgburny931.jpg" />
-    <Resource Include="Pelicula\Imagen\Copia Tu-mensaje-ha-sido-ignorado-con-éxito.jpg" />
     <Resource Include="Pelicula\Imagen\elarañas.jpg" />
     <Resource Include="Pelicula\Imagen\hitman.jpg" />
     <Resource Include="Pelicula\Imagen\teshible.jpg" />

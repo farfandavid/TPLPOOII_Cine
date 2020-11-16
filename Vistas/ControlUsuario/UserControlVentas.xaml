@@ -76,7 +76,7 @@
                                             </Button>
                                             <Button Click="ResetZoomOnClick" Visibility="Collapsed">Reset Zoom</Button>
                                         </StackPanel>
-                                        <lvc:CartesianChart Grid.Row="2" Series="{Binding SeriesCollection}" Zoom="{Binding ZoomingMode}" Padding="1">
+                                        <lvc:CartesianChart Grid.Row="2" Series="{Binding SeriesCollection}" Zoom="{Binding ZoomingMode}" Padding="1" Margin="0,0,0,10">
                                             <lvc:CartesianChart.AxisX>
                                                 <lvc:Axis Name="X" LabelFormatter="{Binding XFormatter}" 
                           Separator="{x:Static lvc:DefaultAxes.CleanSeparator}"/>
