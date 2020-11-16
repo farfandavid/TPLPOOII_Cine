@@ -93,6 +93,7 @@ namespace Vistas.ControlUsuario {
                 }
                 
                 printTicket.PrintDocument(document.DocumentPaginator, "Mi Ticket");
+                vistaImpresion.IsOpen = false;
                 listButaca.Clear();
             }
 
